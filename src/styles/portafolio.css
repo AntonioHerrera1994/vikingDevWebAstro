@@ -1,0 +1,210 @@
+.portafolio{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.cuadros-cont{
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 4rem;
+     padding-left: 4rem;
+}
+
+.main-title-port{
+  padding-top: 5rem;
+  
+}
+
+.main-title-port h4{
+text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: .8rem;
+  color: #0982A8;
+ 
+}
+
+.main-title-port h1{
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+
+ 
+}
+
+
+
+.grid-portafolio{
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 2rem;
+
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+  }
+
+  .main-title-port{
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 10rem;
+     padding-left: 10rem;
+  }
+  
+  img{
+    border-radius: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+    /* Estilos del carrusel (ajusta según tu diseño) */
+    .carousel-container {
+      overflow: hidden;
+      
+    }
+  
+  
+
+    .img1-carrusel{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/1.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel2{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/2.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel3{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/3.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 3rem;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel4{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/4.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel5{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/5.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+    .img1-carrusel6{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/6.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel7{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/7.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel8{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/8.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel9{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/9.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel10{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/10.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel11{
+      width: 93%;
+      height: 22rem;
+      padding: 5rem;
+      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/11.png);
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .bi-arrow-left, .bi-arrow-right{
+      font-size: 2rem;
+      color: black;
+      
+    }
+
+    .bi-arrow-right{
+      margin-left: 45rem;
+      
+    }
+
+    .carousel-prev, .carousel-next{
+background-color: rgba(255, 255, 255, 0);
+border: none;
+      margin-top: 1.8rem;
+    }

@@ -1,0 +1,30 @@
+.contacto{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.contacto-cont{
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 10rem;
+     padding-left: 10rem;
+}
+
+
+.social-media-contact{
+    display: grid;
+    grid-template-columns:repeat(6,minmax(0,1fr)) ;
+    padding: 3rem;
+}
+
+.contacto-grid{
+    gap:3rem;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+
+}
+
+/********* Mailchimp **********/
+

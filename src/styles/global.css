@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+
+
+@media screen and (min-width:360px) and (max-width:736px) {
+  /*Global */
+  .container {
+    width: auto;
+ 
+      }
+  
+      .wrapper {
+        flex-direction: column;
+      }
+    }
