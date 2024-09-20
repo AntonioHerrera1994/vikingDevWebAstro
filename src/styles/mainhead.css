@@ -1,129 +1,58 @@
 
+/********** Gloobal ***********/
+
 .Mainhead{
-    
-    background-color: black;
    margin-left: -8px;
    margin-right: -8px;
    margin-top: -8px;
-    margin-bottom: -rem;
+  
 }
 
-.separator{
-    position: relative;
-    padding: 4rem;
-    background-color: rgb(0, 0, 0);
-    clip-path: polygon(0 0, 160% 0, -220% 238%); /* Diagonal de izquierda a derecha */
-    margin-left: -8px;
-    margin-right: -8px;
-    margin-top: -8px;
-}
-
-.mainhead-cont{
-
-display: flex;
-  justify-content: center;
-    overflow: hidden;
-margin-top: -3rem;
-    background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/img/blur3.png);
-    background-size: 70%;
-    background-position: 50%;
-    background-repeat: no-repeat;     
-    padding-right: 50px;
-    padding-left: 50px;
-}
 .content{
-    overflow: hidden;
-    margin: 0 auto;
-    padding-right: 50px;
-    padding-left: 50px;
-    top: 0px;
-    z-index: 1;
-  }
+  overflow: hidden;
+  margin: 0 auto;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.main-grid{
+  padding: 2rem;
+  display:grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 2rem;
+      margin-top: 15px;     
+}
+
+/*********** Img **********/
+
+.mainhead-cont img{
+  width: 90%;
+  height: 90%;
+  box-shadow: none;
+}
+
+/*********** text **********/
+.mainhead-cont-2 h1{
+  text-align: left;
+  font-size: 3rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.mainhead-cont-2 p{
+  text-align: left;
+}
+
+.buttons-grid{
+  display: flex;
+  justify-content: left;
+}
   
-  .head-grid{
-    padding: 2rem;
-    display:grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
-        gap: 2rem;
-        margin-top: 15px;
-        
-}
-
-.header-img{
-    margin-top: -1.3rem;
-    width: 30%;
-    height: 5rem;
-   
-}
-
-
-.hamburger {
-  padding-right: 20px;
-  cursor: pointer;
- 
-}
-
-.hamburger .line {
-  display: block;
-  width: 21px;
-  height: 2px;
-  margin-bottom: 7px;
-  background-color: #DEE1D4;
-  
-}
 
 
 
-.nav-links {
-  width: 100%;
-  background-color: #DEE1D4;
-  display: none;
-  margin: 0;
 
-  
-}
-
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 0;
-  text-decoration: none;
-  font-size: .9rem;
-  color: rgba(255, 255, 255, 0.642);
- 
-   
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-color: #97AAA0;
-}
-
-.expanded {
-  display: unset;
-  
-}
-
-
-
-@media screen and (min-width: 780px) {
-  .nav-links {
- 
-    margin-top: -5px;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
-  .hamburger{
-    display: none;
-  }
-}
 
 @media screen and (min-width:300px) and (max-width:800px) {
 
@@ -134,60 +63,7 @@ color: #97AAA0;
       padding-right: .5rem;
     }
 
-    .head-grid{
-      width: auto;
-      grid-template-columns: repeat(4,minmax(0,1fr));
-      padding-left:10px;
-       padding-right: 10px;
-    }
-
-    .header-img{
-     
-        height: auto;
-        margin-left: 0;
-        width: 100%;
-    }
-
-    .head-logo{
-      width: 115%;
-      margin-top: .4rem;
-    }
-
-    .nav-links {
-      
-      top: 100px;
-      left: 0;
-      position: fixed;
-      padding: 10px 100px;
-      background-color: #DEE1D4;
-      
-     
-    }
-
-    .hamburger{
-      margin-top: 0;
-     margin-left: 0;
-    }
-
-    .hamburger .line {
-      display: block;
-      width: 17px;
-      height: 1.3px;
-      margin-bottom: 7px;
-      background-color: #DEE1D4;
-      
-    }
-
-    .nav-links a{
-      text-align: left;
-      margin-left:-2.8rem;
-      color: #0F1416;
-      font-family: 'Helvetica', sans-serif;
-      font-size: 1rem;
-      margin-bottom: .4rem;
-    }
-
-    
+   
   
   }
 
@@ -210,32 +86,7 @@ color: #97AAA0;
     }
 
 
-    .head-grid{
-     
-      padding: 2rem;
-      display:grid;
-      grid-template-columns: repeat(1,minmax(0,1fr));
-          gap: 2rem;
-    }
-    .header-img{
-      margin-top: -.8rem;
-      height: auto;
-      margin-left: 0;
-      width: 27%;
-      display: flex;
-    justify-content: center;
-  }
-
-  .nav-links {
-      
-    margin-left: 0;
-    margin-top: -.5rem;
-    display: block;
-    position: static;
-    width: auto;
-    display: flex;
-    justify-content: center;
-  }
+  
 
  
   }
@@ -251,43 +102,10 @@ color: #97AAA0;
     }
 
   
-    .header-img{
-      margin:0;
-      height: 100%;
-      width: 30%;
-  }
-
-
-
   
-    .nav-links {
-      
-      
-      margin-top: 1.2rem;
-      display: block;
-      position: static;
-      width: auto;
-      background: none;
-    }
-
-    .nav-links a{
-font-size: 1rem;
-
-    }
-
   
 
   }
 
 
-
-.mainhead-cont h1{
-    text-align: right;
-    font-size: 6rem;
-    color: white;
-    
-    font-family: "Manrope", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
 

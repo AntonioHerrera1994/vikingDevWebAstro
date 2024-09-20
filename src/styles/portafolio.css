@@ -39,7 +39,7 @@ text-align: center;
 .grid-portafolio{
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns: repeat(4,minmax(0,1fr));
   gap: 2rem;
 
 }
@@ -73,9 +73,9 @@ text-align: center;
 
     .img1-carrusel{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/1.png);
+      background-image: url('/src/assets/trucapitals.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
@@ -84,9 +84,9 @@ text-align: center;
 
     .img1-carrusel2{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/2.png);
+      background-image: url('/src/assets/pn.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
@@ -95,9 +95,9 @@ text-align: center;
 
     .img1-carrusel3{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/3.png);
+      background-image: url('/src/assets/bisodigital.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 3rem;
@@ -107,9 +107,9 @@ text-align: center;
 
     .img1-carrusel4{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/4.png);
+      background-image: url('/src/assets/pn.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
@@ -118,9 +118,9 @@ text-align: center;
 
     .img1-carrusel5{
       width: 93%;
-      height: 22rem;
+       height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/5.png);
+      background-image: url('/src/assets/favlash.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
@@ -128,20 +128,20 @@ text-align: center;
     }
     .img1-carrusel6{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/6.png);
+      background-image: url('/src/assets/luxedental.png');
       background-size: cover;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0) 0px 1px 4px;
       border-radius: 25px;
       background-position: center;
     }
 
     .img1-carrusel7{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/7.png);
+      background-image: url('/src/assets/danyaargote.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
@@ -150,9 +150,9 @@ text-align: center;
 
     .img1-carrusel8{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/8.png);
+      background-image: url('/src/assets/global-recruiters.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
@@ -161,9 +161,9 @@ text-align: center;
 
     .img1-carrusel9{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/9.png);
+      background-image: url('/src/assets/coinase.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
@@ -172,25 +172,60 @@ text-align: center;
 
     .img1-carrusel10{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/10.png);
+      background-image: url('/src/assets/ciplastic.png');
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+   
+    }
+
+    .img1-carrusel11{
+      width: 93%;
+      height: 18rem;
+      padding: 5rem;
+      background-image: url('/src/assets/techmeol.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
       background-position: center;
     }
 
-    .img1-carrusel11{
+    .img1-carrusel12{
       width: 93%;
-      height: 22rem;
+      height: 18rem;
       padding: 5rem;
-      background-image: url(https://raw.githubusercontent.com/AntonioHerrera1994/AntonioHerrera/main/portafolio/11.png);
+      background-image: url('/src/assets/ixaya.png');
       background-size: cover;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
       background-position: center;
     }
+
+    .img1-carrusel13{
+      width: 93%;
+      height: 18rem;
+      padding: 5rem;
+      background-image: url('/src/assets/gruastowing.png');
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
+    .img1-carrusel14{
+      width: 93%;
+      height: 18rem;
+      padding: 5rem;
+      background-image: url('/src/assets/heat.png');
+      background-size: cover;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      border-radius: 25px;
+      background-position: center;
+    }
+
 
     .bi-arrow-left, .bi-arrow-right{
       font-size: 2rem;

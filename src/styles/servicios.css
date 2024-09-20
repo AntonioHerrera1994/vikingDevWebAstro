@@ -69,6 +69,10 @@
   justify-content: center;
 }
 
+.web-img, .movil-img, .mkt-img{
+  width: 100%;
+  height: 42rem;
+}
 
 
 li{
