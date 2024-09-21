@@ -1,7 +1,9 @@
 ---
 import '../styles/servicios.css'
 import {Image} from 'astro:assets';
-import myImage from '../assets/mainasset.png';
+import myImageS from '../assets/d-web.png';
+import myImageS2 from '../assets/d-movil.png';
+import myImage3 from '../assets/mkt.png';
 ---
 
 <section class="servicios">
@@ -15,7 +17,7 @@ import myImage from '../assets/mainasset.png';
 <div class="first-service">
     <div class="left-1">
      <img 
-     src="/src/assets/d-web.png"
+     src={myImageS.src} 
      alt="desarrollo web"
      width="80%"
      style="border-radius: 2rem;"
@@ -70,7 +72,7 @@ import myImage from '../assets/mainasset.png';
 
     <div class="right-2">
         <img 
-     src="/src/assets/d-movil.png"
+        src={myImageS2.src} 
      alt="desarrollo web"
      width="80%"
      style="border-radius: 2rem;"
@@ -81,7 +83,7 @@ import myImage from '../assets/mainasset.png';
 <div class="third-service">
     <div class="left-1">
         <img 
-        src="/src/assets/mkt.png"
+        src={myImage3.src} 
         alt="desarrollo web"
         width="80%"
         style="border-radius: 2rem;"
