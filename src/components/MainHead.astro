@@ -2,7 +2,7 @@
 import '../styles/mainhead.css'
 
 import {Image} from 'astro:assets';
-import myImage from '../assets/banner1.webp';
+import myImage from '../assets/robot.png';
 
 
 ---
@@ -16,7 +16,8 @@ import myImage from '../assets/banner1.webp';
         <div class="main-grid">
 
             <div class="mainhead-cont">
-                <img src="./src/assets/robot.png" alt="robot" width="2500" height="2500">
+               
+                <img  src={myImage.src} alt='robot' width="2500" height="2500"/>
             </div>
         
             <div class="mainhead-cont-2">
