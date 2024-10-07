@@ -1,60 +1,47 @@
 ---
-
-
 import '../styles/footer.css'
 //import {Image} from 'astro:assets';
-//import myImageFooter from "../assets/PNews-logo.svg";
+import ImageLogoFooter from '../assets/vikingdev-logo.png';
 ---
 
  <footer class="footer">
   <div class="footer-cont">
     
-    <div class="footer-grid">
-      <div class="foot-logo">
-      <!-- <a href="/"> <Image src={myImageFooter} alt="Plankton-News-Logo" class="footer-img" />-->
-       </a>
-      </div>
-      <div class="footnav" id="myfooterTopnav">
-        <a href="#features">Servicios</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#tecnologias">Tecnologías</a>
-        <!-- <a href="#">Blog</a>-->
-        <a href="#contacto">Contacto</a>
-        <!--<a href="#">Contacto</a>-->
- 
-      </div>
-    </div>
-    
+
     <div class="footer2-grid">
-      <p style="desc-footer">
-        Plankton es una empresa de desarrollo de tecnología cuya verdadera visión se enfoca 
-        en el impacto social positivo, ofreciendo los beneficios que hoy solo obtienen las grandes 
-        empresas en Bolsa, creando oportunidades para todos.
-      </p>
-     <div class="terminos" ><p >
-      2021 – 2031 – Plankton. <a href="https://plankton.mx/terminos-y-condiciones/">Términos y condiciones.</a><a href="https://plankton.mx/aviso-de-privacidad-plankton-wallet">Aviso de privacidad.</a>
+      
+      <div>
+        <img 
+        src={ImageLogoFooter.src} 
+        
+        alt="desarrollo web"
+        style="border-radius: 2rem;"
+        class="logo-img-footer"/>
+
+        <p style="desc-footer">
+          Somos una empresa de desarrollo de tecnología cuya  visión se enfoca 
+          en el impacto positivo, ofreciendo beneficios tecnologicos desarrollados a la medida.
+        </p>
+      </div>
+     
+     <div class="terminos" ><p>
+      2021 – 2031 – VikingDev. <a href="">Términos y condiciones.</a><a href="">Aviso de privacidad.</a>
     </p></div> 
       
       <div class="suscribe">
-        <p><a href="/suscribirme">Suscríbete</a>
+
           
         </p>
         <div class="iconos">
-
-          <a class="item" href="https://www.facebook.com/PlanktonNews" target="_blank">
-            <i class="bi bi-facebook"></i> </a> 
-
-           <a class="item" href="https://www.instagram.com/planktonnews/" target="_blank">
-             <i class="bi bi-instagram"></i> </a>
-
-           <a class="item" href="https://twitter.com/PlanktonNews" target="_blank">
-              <i class="bi bi-twitter-x"></i></a>
-                    
-           <a class="item" href="https://www.youtube.com/@planktonwallet" target="_blank">
-              <i class="bi bi-youtube"></i> </a>
-                            
-           <a class="item" href="https://www.linkedin.com/company/plankton-news/" target="_blank">
-              <i class="bi bi-linkedin"></i> </a>
+          <div class="footnav" id="myfooterTopnav">
+            <a href="#features">Servicios</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#tecnologias">Tecnologías</a>
+            <!-- <a href="#">Blog</a>-->
+            <a href="#contacto">Contacto</a>
+            <!--<a href="#">Contacto</a>-->
+     
+          </div>
         </div>
       </div>
     </div>
