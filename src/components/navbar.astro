@@ -1,5 +1,6 @@
 ---
 import '../styles/navbar.css'
+import ImageLogo from '../assets/vikingdev-logo.png';
 ---
 
 
@@ -7,21 +8,21 @@ import '../styles/navbar.css'
   <div class="head-grid">
 
     <div class="head-logo">
-  <p>VikingDev</p>
+      <img 
+      src={ImageLogo.src} 
+      width="100%" 
+      height="100%"
+      alt="desarrollo web"
+      style="border-radius: 2rem;"
+      class="logo-img"/>
     </div>
 
     <div class="nav-links">
       <div class="elementos-menu">
-
-    
-      <a href="/">Inicio</a>
+      <a href="#features">Nosotros</a>
       <a href="/servicios/">Servicios</a>
-      <a href="/blog/">Blog</a>
+      <a href="/blog/">Portafolio</a>
       <a href="/contacto/">Contacto</a>
-      <a href="https://plankton.news/">News</a>
-      <a href="https://planktonwallet.com/" class="ingresar-btn">Ingresar</a>
-
-      
     </div>  
 
     <div class="socialmedia-navlinks">

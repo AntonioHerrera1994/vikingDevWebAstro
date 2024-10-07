@@ -1,6 +1,8 @@
+/********* Global *********/
+
 .contacto{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
     margin-left: -8px;
     margin-right: -8px;
 }
@@ -13,18 +15,42 @@
 }
 
 
-.social-media-contact{
-    display: grid;
-    grid-template-columns:repeat(6,minmax(0,1fr)) ;
-    padding: 3rem;
+/********** Titulo ***********/
+.contacto-cont h4{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: .8rem;
+    color: #0982A8;
 }
 
-.contacto-grid{
-    gap:3rem;
-    display: grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
-
+.contacto-cont h1{
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
 }
+
 
 /********* Mailchimp **********/
 
+.mail-formulario{
+    display: flex;
+    justify-content: center;
+}
+
+/*********** Social **********/
+
+.social-media-contact{
+    display: flex;
+    justify-content: center;
+}
+
+ul.socialmedia-contact li{
+    display: inline;
+    padding-right: 2rem;
+   
+}
+
+.socialmedia-contact .bi{
+   font-size: 1.5rem;
+}

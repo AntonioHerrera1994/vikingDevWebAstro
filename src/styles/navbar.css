@@ -7,7 +7,7 @@
       overflow: hidden;
       position: sticky;
       width: 100%; 
-      z-index: 10;
+  
   }
   
   #miDiv {
@@ -20,19 +20,18 @@
   }
   
   .head-grid{
-      padding-bottom: 1rem;
+      padding-bottom: 1.1rem;
+      padding-top: 1.1rem;
       display:grid;
-      grid-template-columns: 40% 60%;
+      grid-template-columns: 50% 60%;
           gap: 2rem;
         
           
   }
   
-  .header-img{
-      margin-top: 0rem;
-      width: 28%;
+  .logo-img{
+      width: 90%;
       height: 5rem;
-     
   }
   
   
@@ -103,15 +102,7 @@
       display: none;
     }
   
-    .ingresar-btn{
-      background-color: #00f0f1;
-      border-radius: 2rem;
-      color: black!important;
-    }
-  
-    .head-logo{
-        margin-left: -4rem;
-    }
+
   
    .nav-links-grid{
     display: none;
@@ -139,7 +130,7 @@
          padding-right: 10px;
       }
   
-      .header-img{
+      .logo-img{
        
           height: auto;
           margin-left: 0;
@@ -199,14 +190,7 @@
         color: white;
       }
   
-  
-      .ingresar-btn{
-        background-color: #00f0f1;
-        border-radius: 25px;
-        margin-left: 1rem;
-        color: black!important;
-      }
-  
+ 
       .elementos-menu{
         margin-top: -15.5rem;
   
@@ -309,7 +293,7 @@
   
     @media screen and (min-width:600px) and (max-width:700px) {
   
-      .header-img{
+      .logo-img{
        
       margin-top:-1.6rem;
    
@@ -319,7 +303,7 @@
   
     @media screen and (min-width:701px) and (max-width:770px) {
   
-      .header-img{
+      .logo-img{
        
       margin-top:-2rem;
     }
@@ -342,7 +326,7 @@
         grid-template-columns: repeat(1,minmax(0,1fr));
             gap: 2rem;
       }
-      .header-img{
+      .logo-img{
         margin-top: -.8rem;
         height: auto;
         margin-left: 0;
@@ -379,7 +363,7 @@
       }
   
     
-      .header-img{
+      .logo-img{
         margin-top:1rem;
         height: 80%;
         width: 20%;

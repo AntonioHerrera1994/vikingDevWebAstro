@@ -1,9 +1,12 @@
+/********* Global *********/
+
 .metodologia{
     padding-top: 5rem;
     padding-bottom: 5rem;
     margin-left: -8px;
     margin-right: -8px;
     margin-bottom: 3rem;
+    background-color:rgba(18, 117, 174, 0.038);
 }
 
 .metodologia-cont{
@@ -13,14 +16,16 @@
      padding-left: 10rem;
 }
 
-.metodologia-meta{
-    text-align: center;
-    margin-bottom: 5rem;
-}
-
 .metodologia-grid{
     display: grid;
     grid-template-columns:repeat(2,minmax(0,1fr)) ;
+}
+
+/********* Titulo *********/
+
+.metodologia-meta{
+    text-align: center;
+    margin-bottom: 5rem;
 }
 
 .metodologia-meta h4{
@@ -36,6 +41,9 @@
     font-weight: 500;
     font-size: 1.8rem;
 }
+
+/********** Grid *********/
+
 .bi-laptop, .bi-code-slash, .bi-rocket-takeoff, .bi-clipboard2-data{
     color: #0982A8;
     margin-right: 1rem;
@@ -55,3 +63,7 @@ li{
     margin-bottom: 6rem;
 }
 
+.metodo-img{
+    width: 100%;
+    height: 32rem;
+}

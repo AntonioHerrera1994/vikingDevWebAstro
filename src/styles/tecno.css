@@ -1,6 +1,6 @@
 .tecnologias{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     margin-left: -8px;
     margin-right: -8px;
 
@@ -19,7 +19,6 @@
 
 .slider {
 
- 
     margin: auto;
     overflow: hidden;
     position: relative;
@@ -28,16 +27,16 @@
 
 img{
     box-shadow: none;
-    width: 40%;
-    height: 40%;
+    width: 36%;
+    height: 36%;
 }
 
 .slider::before,
 .slider::after {
     content: "";
-    height: 100px;
+    height: 70px;
     position: absolute;
-    width: 200px;
+    width: 100px;
     z-index: 2;
 }
 
@@ -63,10 +62,7 @@ img{
     width: 200px;
 }
 
-.elementor-element.elementor-element-9d218b0.elementor-widget__width-initial.animated-slow.elementor-widget.elementor-widget-html.animated.fadeInUp {
-max-width: unset !important;
-width: 100% !important;
-}
+
  @media screen and (max-width:600px) {
 
 .slider {

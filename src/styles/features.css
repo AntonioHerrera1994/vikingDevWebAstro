@@ -1,8 +1,8 @@
+/********** Global **********/
 .features{
-    padding-top: 3rem;
-    padding-bottom: 4rem;
     margin-left: -8px;
     margin-right: -8px;
+    margin-top: -1rem;
 }
 
 .features-cont{
@@ -11,6 +11,7 @@
     overflow: hidden;
     padding-right: 10rem;
     padding-left: 10rem;
+    margin-bottom: 1rem;;
 }
 
 .features-grid{
@@ -31,6 +32,8 @@
     margin-left: 5rem;
     margin-top: 3rem;
 }
+
+/********* lista *********/
 
 ul {
     list-style: none;
@@ -92,4 +95,73 @@ h3{
     color: #ffffff;
     background-color: #0982A8;
   
+}
+
+
+/********** Global programadores **********/
+
+/********** Global **********/
+.programadores{
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.programadores-cont{
+   
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 10rem;
+    padding-left: 10rem;
+margin-bottom: -3rem;
+}
+
+.programadores-grid{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 2rem;
+}
+
+.pg1-img{
+    background-image: url('/src/assets/programadores/1.png');
+    width: 100%;
+    height: 22rem;
+    background-size: cover;
+    border-radius: 14px;
+}
+
+.pg2-img{
+    background-image: url('/src/assets/programadores/2.png');
+    width: 100%;
+    height: 22rem;
+    background-size: cover;
+    border-radius: 14px;
+}
+
+.pg3-img{
+    background-image: url('/src/assets/programadores/3.png');
+    width: 100%;
+    height: 22rem;
+    background-size: cover;
+    border-radius: 14px;
+}
+
+
+
+
+
+ul.socialmedia li{
+    display: inline;
+    padding-right: 0.5em;
+   
+}
+/*
+.social-div{
+    display: flex;
+    justify-content: center;
+} */
+
+.bi{
+    color: #0982A8;
 }

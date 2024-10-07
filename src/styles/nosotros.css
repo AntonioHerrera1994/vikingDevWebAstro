@@ -1,0 +1,23 @@
+.nosotros{
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.nosotros-cont{
+   
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 10rem;
+    padding-left: 10rem;
+}
+
+.nosotrs-grid{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-left: 5rem;
+}
