@@ -1,13 +1,4 @@
-.tecnologias{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-left: -8px;
-    margin-right: -8px;
-
-}
-
-
-     @keyframes scroll {
+ @keyframes scroll {
     0% {
         transform: translateX(0);
     }
@@ -17,12 +8,14 @@
     }
 }
 
-.slider {
+.slide{
+    margin-bottom: -2rem;
+}
 
+.slider {
     margin: auto;
     overflow: hidden;
     position: relative;
-
 }
 
 img{
@@ -63,16 +56,16 @@ img{
 }
 
 
- @media screen and (max-width:600px) {
+
+ @media screen and (max-width:800px) {
 
 .slider {
 
-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-height:180px;
-margin: auto;
+height:100px;
+margin-top:3rem ;
 overflow: hidden;
 position: relative;
-width: 100vw;
+width: 90vw;
 }
 
 

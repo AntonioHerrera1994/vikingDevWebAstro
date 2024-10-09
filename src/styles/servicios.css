@@ -89,3 +89,33 @@ li{
 p{
   color: rgba(0, 0, 0, 0.628);
 }
+
+@media screen and (min-width:300px) and (max-width:800px) {
+  .servicios-cont{
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 2rem;
+     padding-left: 2rem;
+ }
+
+ /*********** Servicios **********/
+ .first-service{
+  padding: 2rem;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+}
+
+.second-service{
+  padding: 2rem;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+}
+
+.third-service{
+  padding: 2rem;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+}
+
+.web-img, .movil-img, .mkt-img{
+  width: 100%;
+  height: 20rem;
+}
+}

@@ -67,3 +67,22 @@ li{
     width: 100%;
     height: 32rem;
 }
+
+@media screen and (min-width:300px) and (max-width:800px) {
+
+    .metodologia-cont{
+        padding-right: 2rem;
+         padding-left: 2rem;
+    }
+
+    .metodologia-grid{
+        display: grid;
+        grid-template-columns:repeat(1,minmax(0,1fr)) ;
+    }
+
+    .metodo-img{
+        width: 100%;
+        height: 20rem;
+    }
+
+}

@@ -54,3 +54,14 @@ ul.socialmedia-contact li{
 .socialmedia-contact .bi{
    font-size: 1.5rem;
 }
+
+@media screen and (min-width:300px) and (max-width:800px) {
+
+    .contacto-cont{
+        margin: 0 auto;
+        overflow: hidden;
+        padding-right: 2rem;
+         padding-left: 2rem;
+    }
+
+}

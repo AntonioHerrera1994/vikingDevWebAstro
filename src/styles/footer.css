@@ -6,6 +6,9 @@
           margin-right:-8px;
           margin-bottom: -8px;
           padding-bottom: 50px;
+          border-top: solid;
+          border-width: 1px;
+          border-color: rgba(0, 0, 0, 0.169);
   }
   
   .footer-cont{
@@ -48,9 +51,6 @@
     font-family: 'Albert Sans', sans-serif;
     text-align: justify;
     color: #DEE1D4;
-    border-top: solid;
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.169);
     padding-right: 2rem;
     padding-left: 2rem;
     display:grid;

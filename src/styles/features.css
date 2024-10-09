@@ -6,7 +6,6 @@
 }
 
 .features-cont{
-   
     margin: 0 auto;
     overflow: hidden;
     padding-right: 10rem;
@@ -100,7 +99,6 @@ h3{
 
 /********** Global programadores **********/
 
-/********** Global **********/
 .programadores{
     padding-top: 3rem;
     padding-bottom: 4rem;
@@ -109,7 +107,6 @@ h3{
 }
 
 .programadores-cont{
-   
     margin: 0 auto;
     overflow: hidden;
     padding-right: 10rem;
@@ -164,4 +161,57 @@ ul.socialmedia li{
 
 .bi{
     color: #0982A8;
+}
+
+@media screen and (min-width:300px) and (max-width:800px) {
+
+    /********** Global **********/
+
+    .features-cont{
+        margin: 0 auto;
+        overflow: hidden;
+        padding-right: 1rem;
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .features-grid{
+        grid-template-columns: repeat(1,minmax(0,1fr));
+        gap: 2rem;
+        margin-left: 0;
+    }
+
+    .features-grid2{
+        grid-template-columns: repeat(1,minmax(0,1fr));
+        gap: 2rem;
+        margin-left: 0;
+    }
+
+    /********** Global programadores **********/
+    .programadores-grid{
+        display: grid;
+        grid-template-columns: repeat(1,minmax(0,1fr));
+        gap: 2rem;
+    }
+
+    .programadores-cont{
+        margin: 0 auto;
+        overflow: hidden;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    margin-bottom: -4rem;
+    }
+
+    .pg1-img{
+        height: 19rem;
+    }
+    
+    .pg2-img{
+        height: 19rem;
+    }
+    
+    .pg3-img{
+        height: 19rem;
+    }
+    
 }

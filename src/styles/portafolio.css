@@ -19,7 +19,6 @@
   display: grid;
   grid-template-columns: repeat(4,minmax(0,1fr));
   gap: 2rem;
-
 }
 /********* Titulo *********/
 
@@ -200,4 +199,27 @@ text-align: center;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 25px;
       background-position: center;
+    }
+
+    @media screen and (min-width:300px) and (max-width:800px) {
+
+      .cuadros-cont{
+        margin: 0 auto;
+        overflow: hidden;
+        padding-right: 2rem;
+         padding-left: 2rem;
+    }
+
+    .main-title-port{
+      padding-right: 2rem;
+       padding-left: 2rem;
+    }
+    
+    .grid-portafolio{
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(1,minmax(0,1fr));
+      gap: 2rem;
+    }
+
     }
