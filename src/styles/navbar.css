@@ -7,14 +7,17 @@
       overflow: hidden;
       position: sticky;
       width: 100%; 
-  
+      border-bottom: solid;
+      border-width: 1px;
+      border-color: rgba(0, 0, 0, 0);
+      
   }
   
   #miDiv {
     background-color:#ffffff00; /* Color inicial */
     transition: background-color 0.3s ease; /* Transición suave */
     top: 0;
-  
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     height: auto; /* O una altura fija si es necesario */
     z-index: 10; /* Opcional */
   }

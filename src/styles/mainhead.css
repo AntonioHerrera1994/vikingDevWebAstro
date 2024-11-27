@@ -8,9 +8,12 @@
   z-index: 1;
   padding-top: 5rem;
   padding-bottom: 10rem;
+  background-image: url('../assets/puntos.png');
+  background-size: cover;
+  background-position: center;
 }
 
-.content{
+.content-main{
   overflow: hidden;
   margin: 0 auto;
   padding-right: 50px;
@@ -58,7 +61,7 @@
 
 @media screen and (min-width:300px) and (max-width:800px) {
 
-    .content{
+    .content-main{
       width: auto;
       padding-left: .5rem;
       padding-right: .5rem;
@@ -85,7 +88,7 @@
   }
   @media screen and (min-width:800px) and (max-width:1200px) {
 
-    .content{
+    .content-main{
     
         position: relative;
         top: 0px;
@@ -98,7 +101,7 @@
 
   @media only screen and (min-width:1400px) {
 
-    .content{
+    .content-main{
       width: auto;
       padding-left: 140px;
       padding-right: 140px;

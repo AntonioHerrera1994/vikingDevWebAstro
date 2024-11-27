@@ -1,0 +1,192 @@
+/************ Animacion **********/
+
+.testimonial-container{
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.testimonial-container.visible{
+    opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transición suave */
+}
+
+
+/********* Global *********/
+.testimoniales{
+    padding-bottom: 3rem;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.testimoniales-cont{
+    padding-top: 3rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(9,130,168,1) 65%);
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-bottom: 3rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    border-radius: 40px;
+}
+
+.testimonial-container {
+   
+    overflow: hidden;
+    position: relative; /* Necesario para el posicionamiento absoluto de las flechas */
+ 
+  }
+  
+  .slidet {
+    display: none; /* Inicialmente ocultamos todos los testimonios */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .slidet.active {
+    display: block;
+  }
+  
+  .author {
+    font-style: italic;
+  }
+  
+  .navigation {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .dots .dot.active {
+    background-color:  #00f0f1;
+  }
+
+  .cont-prev{
+    padding-bottom: 4rem;
+  }
+  
+
+  /********** Texto **********/
+
+  .titulo h1{
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+  }
+  
+  .titulo h4{
+    padding-top: 2rem;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: .8rem;
+    color: #0982A8;
+  }
+
+  .slidet h3{
+    font-size:1.4rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    color: white;
+  }
+
+  .slidet p{
+    font-size:1rem;
+    color: white;
+    margin-left: 3.5rem;
+  }
+
+
+  .author{
+    font-size: 1rem;
+    margin-bottom: -.5rem;
+    font-style: normal;
+    font-weight: 600;
+    color: white;
+  }
+
+  .bi-arrow-left{
+    color: white;
+    font-size: 1.5rem;
+
+   
+  }
+
+  .bi-arrow-right{
+    color: white;
+    font-size: 1.5rem;
+
+  
+  }
+
+  .prev-btn, .next-btn {
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar la posición vertical */
+    cursor: pointer;
+    /* Otros estilos para las flechas (color, tamaño, etc.) */
+  }
+  
+  .prev-btn {
+    left: 10px; /* Ajusta la distancia al borde izquierdo */
+  }
+  
+  .next-btn {
+    right: 10px; /* Ajusta la distancia al borde derecho */
+  }
+
+  @media screen and (min-width:300px) and (max-width:800px) {
+
+    .testimoniales-cont{
+      width: auto;
+        height: auto;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-top: -2rem;
+      margin-bottom: -2rem;
+  }
+
+    .testimoniales{
+      padding-top: 0;
+  }
+
+    .prev-btn, .next-btn{
+      display: none;
+    }
+
+    .slidet h3{
+      font-size:.9rem;
+      line-height: 1.7rem;
+    }
+
+    .slidet p{
+      font-size:.9rem;
+      margin-bottom: -1rem;
+    }
+  
+    .author{
+      font-size: .9rem;
+    }
+
+    .dots .dot {
+      width: 9px;
+    }
+    .bi-quote{
+      font-size: 2rem;
+    }
+
+  }
+  
