@@ -58,6 +58,25 @@
   justify-content: center;
 }
   
+.btn-left{
+  background-color:#0982A8;
+  padding: 17px 52px 17px 52px;
+  color: white;
+  border-radius: 12px;
+  margin-top: 1.9rem;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease; /* Transición de 0.5 segundos */
+}
+
+.btn-left:hover{
+  background-color: white;
+  border: solid;
+  border-width: 1px;
+  border-color: #0982A8;
+  color: #0982A8;
+  
+}
+
 
 @media screen and (min-width:300px) and (max-width:800px) {
 

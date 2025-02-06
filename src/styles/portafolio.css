@@ -63,3 +63,40 @@ div.scroll-container img {
   width: 60%;
   border-radius: 2rem;
 }
+
+@media screen and (min-width:300px) and (max-width:800px) {
+
+  .portafolio{
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+  }
+  .cuadros-cont{
+    padding-right: 2rem;
+     padding-left: 2rem;
+}
+  /********** Grid ***********/
+.carrusel-grid{
+  display: grid;
+  grid-template-columns:100%;
+}
+
+.main-title-port h1{
+  text-align: center;
+
+  font-size: 2.5rem;
+  margin-top: 4rem ;
+}
+
+div.scroll-container img {
+  padding: 0;
+}
+
+.port-img{
+  width: 88%;
+  border-radius: 2rem;
+}
+
+.carrusel-contenedor{
+  padding-left: .7rem;
+}
+}
