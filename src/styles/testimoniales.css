@@ -21,8 +21,9 @@
 
 .testimoniales-cont{
     padding-top: 3rem;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(9,130,168,1) 65%);
+  border: solid;
+  border-width: 1px;
+  border-color: #0982A8;
     margin: 0 auto;
     overflow: hidden;
     padding-right: 70px;
@@ -64,13 +65,13 @@
     width: 10px;
     height: 10px;
     margin: 0 5px;
-    background-color: white;
+    background-color: black;
     border-radius: 50%;
     cursor: pointer;
   }
   
   .dots .dot.active {
-    background-color:  #00f0f1;
+    background-color:  #0982A8;
   }
 
   .cont-prev{
@@ -100,12 +101,12 @@
     font-size:1.4rem;
     font-weight: 300;
     line-height: 2.5rem;
-    color: white;
+    color: black;
   }
 
   .slidet p{
     font-size:1rem;
-    color: white;
+    color: black;
     margin-left: 3.5rem;
   }
 
@@ -115,18 +116,18 @@
     margin-bottom: -.5rem;
     font-style: normal;
     font-weight: 600;
-    color: white;
+    color: black;
   }
 
   .bi-arrow-left{
-    color: white;
+    color: black;
     font-size: 1.5rem;
 
    
   }
 
   .bi-arrow-right{
-    color: white;
+    color: black;
     font-size: 1.5rem;
 
   

@@ -124,3 +124,86 @@ p{
 }
 
 
+
+/* From Uiverse.io by Yaya12085 */ 
+.code-editor-css {
+  max-width: 450px;
+  background-color: #1d1e22;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 2px;
+  height: 270px;
+}
+
+.header-css {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.title-css {
+  font-family: Lato, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 1.57px;
+  color: rgb(212 212 212);
+}
+
+.icon-css {
+  width: 20px;
+  transition: .2s ease;
+}
+
+.icon-css:hover {
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #6e7281;
+}
+
+.editor-content-css {
+  margin: 0 10px 10px;
+  color: white;
+}
+
+.property-css {
+  margin-left: 30px;
+}
+
+.property-css:hover {
+  cursor: text;
+}
+
+.editor-content-css .color-0-css {
+  color: rgb(86 156 214);
+}
+
+.editor-content-css .color-1-css {
+  color: rgb(182 206 168);
+}
+
+.editor-content-css .color-2-css {
+  color: rgb(156 220 254);
+}
+
+.editor-content-css .color-3-css {
+  color: rgb(207 146 120);
+}
+
+.color-preview-1-css,.color-preview-2-css {
+  height: 12px;
+  width: 10px;
+  border: 1px solid #fff;
+  display: inline-block;
+  margin-right: 3px;
+  background-color: white!important;
+}
+
+.color-preview-1-css {
+  background-color: #1d1e22;
+}
+
+.color-preview-1-css {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
