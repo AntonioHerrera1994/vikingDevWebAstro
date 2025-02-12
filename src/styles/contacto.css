@@ -53,9 +53,34 @@ ul.socialmedia-contact li{
    
 }
 
+
+
 .socialmedia-contact .bi{
-   font-size: 1.5rem;
+    padding: .5rem .8rem .5rem .8rem;
+    border-radius: 90%;
+    margin-left: -2rem;
+    font-size: 1.7rem;
+    transition: all 0.3s ease-in-out;
 }
+.socialmedia-contact .bi:hover{
+    color: white;
+    padding: .5rem .8rem .5rem .8rem;
+    border-radius: 90%;
+    transform: scale(1.1);
+}
+
+.socialmedia-contact .bi-facebook:hover{
+    background-color:#3b5998;
+}
+
+.socialmedia-contact .bi-linkedin:hover{
+    background-color: #0e76a8;
+}
+
+.socialmedia-contact .bi-whatsapp:hover{
+    background-color: #25D366;
+}
+
 
 @media screen and (min-width:300px) and (max-width:800px) {
 
@@ -67,3 +92,4 @@ ul.socialmedia-contact li{
     }
 
 }
+
