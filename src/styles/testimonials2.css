@@ -1,0 +1,86 @@
+/********* Global *********/
+
+.testimoniales{
+    padding-top: 3rem;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-bottom: 3rem;
+}
+
+.testimoniales-cont{
+    margin: 0 auto;
+    overflow: hidden;
+    padding-right: 10rem;
+     padding-left: 10rem;
+}
+
+  /********** Texto **********/
+
+  .titulo h1{
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+  }
+  
+  .titulo h4{
+    padding-top: 2rem;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: .8rem;
+    color: #0982A8;
+  }
+
+
+ 
+/********** Carrusel ***********/
+  .roadmap-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow:hidden; 
+    padding: 1rem;
+    cursor: grab; /* Cambia el cursor a una mano */
+    position: relative;
+  }
+
+  .roadmap {
+    display: flex;
+    min-width: 2800px; 
+    white-space: nowrap; 
+    will-change: transform;
+  }
+
+  .stage {
+    flex: 0 0 450px; 
+    height: 250px;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 3rem 3rem 2rem 3rem;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .stage h2{
+    font-family: "Manrope", sans-serif;
+
+  }
+  
+  p{
+      user-select: none;
+  }
+
+  .bi-chat-right-quote{
+    font-size: 2rem;
+  }
+  
+  @media screen and (min-width:300px) and (max-width:800px) {
+       .img-t{
+
+    width: 28%;
+
+  }
+
+
+  }

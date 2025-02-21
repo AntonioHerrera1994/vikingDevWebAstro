@@ -4,8 +4,8 @@
   margin-right: -8px;
   margin-top: -8px;
  z-index: 1;
- padding-top: 7rem;
- padding-bottom: 6rem;
+ padding-bottom: 7rem;
+padding-top: 6rem;
 }
 
 .cuadros-cont{
@@ -16,65 +16,75 @@
 }
 
 /*********** texto ***********/
-.main-title-port h1{
-  text-align: left;
-  font-family: "Manrope", sans-serif;
-  font-weight: 500;
-  font-size: 2.5rem;
-  margin-top: 11rem ;
-}
-
 .main-title-port h4{
   text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: .8rem;
-  color: #0982A8;
+    font-family: "Roboto", sans-serif;
+    font-size: .8rem;
+    color: #0982A8;
 }
 
-.main-title-port p{
-  font-size: 1.1rem;
-  margin-right: -2rem;
+.main-title-port h1{
+  text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
-/********** Grid ***********/
-.carrusel-grid{
-  display: grid;
-  grid-template-columns:20% 80%;
-}
 
 /********** Portafolio ***********/
 
-.carrusel-contenedor{
-  padding-left: 5rem;
-}
-div.scroll-container {
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
-
-
+.galeria {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-template-rows: auto auto; /* 2 filas, altura automática */
+  gap: 10px;
 }
 
-div.scroll-container img {
-  padding: 10px;
-  user-select: none; /* Evita la selección */
-  pointer-events: none; /* Evita eventos del mouse */
+.galeria img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.port-img{
-  width: 60%;
-  border-radius: 2rem;
+.galeria img:hover {
+  opacity: 0.8;
 }
 
-.scroll-container {
-  cursor: -webkit-grab; /* Safari */
-  cursor: grab;
+.paginacion {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.scroll-container:active {
-  cursor: -webkit-grabbing; /* Safari */
-  cursor: grabbing;
+.paginacion button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
+
+.paginacion button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginacion button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+/* Ocultar imágenes después de las primeras 6 */
+.galeria img:nth-child(n + 7) {
+  display: none;
+}
+
+
 
 
 @media screen and (min-width:300px) and (max-width:800px) {
@@ -87,29 +97,10 @@ div.scroll-container img {
     padding-right: 2rem;
      padding-left: 2rem;
 }
-  /********** Grid ***********/
-.carrusel-grid{
-  display: grid;
-  grid-template-columns:100%;
-}
 
 .main-title-port h1{
   text-align: center;
 
   font-size: 2.5rem;
   margin-top: 4rem ;
-}
-
-div.scroll-container img {
-  padding: 0;
-}
-
-.port-img{
-  width: 88%;
-  border-radius: 2rem;
-}
-
-.carrusel-contenedor{
-  padding-left: .7rem;
-}
-}
+}}

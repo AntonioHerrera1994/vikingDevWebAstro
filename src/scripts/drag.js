@@ -1,47 +1,34 @@
-const scrollContainer = document.querySelector('.scroll-container');
+const galeria = document.querySelector('.galeria');
+const btnAnterior = document.getElementById('anterior');
+const btnSiguiente = document.getElementById('siguiente');
+const imagenes = galeria.querySelectorAll('img'); // Selecciona TODAS las imágenes
+const imagenesPorPagina = 6;
+let paginaActual = 1;
 
-let isDragging = false;
-let startX = 0;
-let scrollLeft = 0;
+function mostrarImagenes() {
+const inicio = (paginaActual - 1) * imagenesPorPagina;
+const fin = inicio + imagenesPorPagina;
 
-scrollContainer.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  startX = e.pageX - scrollContainer.offsetLeft;
-  scrollLeft = scrollContainer.scrollLeft;
-});
-
-scrollContainer.addEventListener('mouseleave', () => {
-  isDragging = false;
-});
-
-scrollContainer.addEventListener('mouseup', () => {
-  isDragging = false;
-});
-
-scrollContainer.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-  const x = e.pageX - scrollContainer.offsetLeft;
-  const walk = (x - startX) * 1; // Ajusta este valor para la sensibilidad del arrastre
-  scrollContainer.scrollLeft = scrollLeft - walk;
-});
-
-// Para dispositivos táctiles (opcional):
-scrollContainer.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    if (e.touches && e.touches.length > 0) { // Check if touches are available
-        startX = e.touches.pageX - scrollContainer.offsetLeft;
-        scrollLeft = scrollContainer.scrollLeft;
+// Muestra u oculta las imágenes según la página actual
+imagenes.forEach((img, index) => {
+    if (index >= inicio && index < fin) {
+        img.style.display = 'block'; // Muestra la imagen
+    } else {
+        img.style.display = 'none'; // Oculta la imagen
     }
 });
 
-scrollContainer.addEventListener('touchend', () => {
-    isDragging = false;
+// Deshabilitar/habilitar botones
+btnAnterior.disabled = paginaActual === 1;
+btnSiguiente.disabled = fin >= imagenes.length;
+}
+
+btnAnterior.addEventListener('click', () => {
+    paginaActual--;
+    mostrarImagenes();
 });
 
-scrollContainer.addEventListener('touchmove', (e) => {
-    if (!isDragging ||!e.touches || e.touches.length === 0) return; // Check touches
-
-    const x = e.touches.pageX - scrollContainer.offsetLeft;
-    const walk = (x - startX) * 1; // Ajusta este valor para la sensibilidad del arrastre
-    scrollContainer.scrollLeft = scrollLeft - walk;
+btnSiguiente.addEventListener('click', () => {
+    paginaActual++;
+    mostrarImagenes();
 });

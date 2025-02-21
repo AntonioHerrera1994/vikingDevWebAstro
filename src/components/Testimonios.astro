@@ -1,113 +1,72 @@
 ---
-import '../styles/testimoniales.css'
+import '../styles/testimonials2.css'
 ---
 
-<section class="testimoniales" >
+  <section class="testimoniales" >
     <div class="titulo">
         <h4>TESTIMONIOS</h4>
         <h1>¡Historias reales de éxito!</h1>
     </div>
     <div class="testimoniales-cont">
 
+     
+      <div class="roadmap-container" id="roadmap-container">
+        <div class="roadmap">
+          
+          <div class="stage">
+            <i class="bi bi-chat-right-quote"></i>
+            <h2>Baja Box</h2>
+            <p>Es un método rápido y eficiente para imprimir<br> diseños directamente sobre el cartón con tintas<br> de alta calidad. Ideal para logotipos y textos en <br>hasta tres colores.</p>
+           
+          </div>
+          
+          <div class="stage">
+            <i class="bi bi-chat-right-quote"></i>
+            <h2>Litolaminado</h2>
+            <p>Consiste en adherir una lámina impresa de <br> alta resolución al cartón corrugado, perfecto <br> para gráficosdetallados y de gran impacto visual.
+    </p>
+            
+          </div>
+          
+          <div class="stage">
+            <i class="bi bi-chat-right-quote"></i>
+            <h2>Suaje rotativo</h2>
+            <p>Un proceso que utiliza rodillos <br>con cuchillas para cortar el cartón <br>en formas específicas, ideal para diseños<br> personalizados y en grandes volúmenes.</p>
+            
+          </div>
+          
+          <div class="stage">
+            <i class="bi bi-chat-right-quote"></i>
+            <h2>Suaje plano</h2>
+            <p>Corta el cartón usando una prensa<br> plana para crear formas complejas o<br> precisas, especialmente útil en tirajes <br>pequeños y detallados.</p>
+        
+          </div>
+          
+          <div class="stage">
+            <i class="bi bi-chat-right-quote"></i>
+            <h2>Engomado</h2>
+            <p>Aplica adhesivo al cartón para unir partes<br> de las cajas, garantizando firmeza y <br>estabilidad en su estructura.</p>
+           
+          </div>
+          
+          <div class="stage">
+            <i class="bi bi-chat-right-quote"></i>
+            <h2>Ensamble manual</h2>
+            <p>El armado de las cajas se realiza<br> manualmente para proyectos especiales<br> o diseños complejos, asegurando la atención <br>a cada detalle.</p>
+            
+          </div>
+  
+          
+        </div>
+      </div>
     
-  <div class="testimonial-container">
-
-    <div class="slidet active">
-      <i class="bi bi-quote"></i>
-      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-      <h4 class="author">- Juan N</h4>
-      <p>CEO de xxxxx</p>
-    </div>
-
-    <div class="slidet">
-      <i class="bi bi-quote"></i>
-      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-      <h4 class="author">- Juan N</h4>
-      <p>CEO de xxxxx</p>
-    </div>
-
-    <div class="slidet">
-      <i class="bi bi-quote"></i>
-      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>ed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-      <h4 class="author">- Juan N</h4>
-      <p>CEO de xxxxx</p>
-    </div>
-
-    <div class="navigation">
-     
-      <i class="bi bi-arrow-left prev-btn"></i>
-      <i class="bi bi-arrow-right next-btn"></i>
-      <div class="dots"></div>
-     
-
-    </div>
-  </div>
-
 
 </div>
-
-<div class="cont-prev" id="contacto"></div>
 </section>
 
-  <script>
-  const slides = document.querySelectorAll('.slidet');
-  const dotsContainer = document.querySelector('.dots');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-
-let currentSlide = 0;
-
-function showSlide(n) {
-  slides[currentSlide].classList.remove('active');
-  dotsContainer.children[currentSlide].classList.remove('active');
-
-  currentSlide = (n + slides.length) % slides.length;
-
-  slides[currentSlide].classList.add('active');
-  dotsContainer.children[currentSlide].classList.add('active');
-}
-
-function createDots() {
-  for (let i = 0; i < slides.length; i++) {
-    const dot = document.createElement('span');
-    dot.classList.add('dot');
-    dot.addEventListener('click', () => showSlide(i));
-    dotsContainer.appendChild(dot);
-  }
-  dotsContainer.children[0].classList.add('active');
-}
-
-prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-
-createDots();
-showSlide(currentSlide); // Mostrar el primer testimonio al cargar
-
-// Transición automática (cada 5 segundos)
-setInterval(() => showSlide(currentSlide + 1), 7000); 
+<script>
+    import "../scripts/carrusel.js"
+</script>
 
 
-//Animacion fade in down
-document.addEventListener('DOMContentLoaded', () => {
-  const testanimacion1 = document.querySelector('.testimonial-container');
-
-  // Observadores separados
-  const observer1 = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            testanimacion1.classList.add('visible');
-          }, 600); // Retraso de 1 segundo
-          observer1.unobserve(testanimacion1);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-  observer1.observe(testanimacion1);
-
-
-});
-  </script>
 
