@@ -5,12 +5,12 @@
           margin-left:-8px;
           margin-right:-8px;
           margin-bottom: -8px;
-          padding-bottom: 50px;
+          padding-bottom: 20px;
           border-top: solid;
           border-width: 1px;
           border-color: rgba(0, 0, 0, 0);
           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          
+          background-color: #0982A8;
   }
   
   .footer-cont{

@@ -42,6 +42,14 @@ padding-top: 6rem;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   grid-template-rows: auto auto; /* 2 filas, altura automática */
   gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.imagen-container{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .galeria img {
@@ -50,11 +58,10 @@ padding-top: 6rem;
   display: block;
   margin-bottom: 2rem;
   box-sizing: border-box;
-  cursor: pointer;
 }
 
 .galeria img:hover {
-  opacity: 0.8;
+  opacity: .9;
 }
 
 .paginacion {
