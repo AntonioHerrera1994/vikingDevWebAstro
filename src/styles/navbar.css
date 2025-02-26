@@ -22,8 +22,6 @@
   }
   
   .head-grid{
-      padding-bottom: .7rem;
-      padding-top: .7rem;
       display:grid;
       grid-template-columns: 50% 60%;
       gap: 2rem;   
