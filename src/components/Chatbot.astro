@@ -1,0 +1,47 @@
+---
+import '../styles/chatbot.css'
+
+---
+
+<section class="chatbot">
+<div class="chatbot-popup">
+    <!-- Chatbot Header -->
+    <div class="chat-header">
+        <div class="header-info">
+            <i class="bi bi-robot"></i>
+            <h2 class="logo-text">Chatbot</h2>
+        </div>
+        <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+    </div>
+
+    <!-- Chatbot Body -->
+    <div class="chat-body">
+        <div class="meesage bot-message">
+            <i class="bi bi-robot"></i>
+            <div class="message-text">¡Hola! <br> ¿En que puedo ayudarte?</div>
+    </div>
+</div>
+
+<!-- Chatbot Footer -->
+    <div class="chat-footer">
+        <form action="#" class="chat-form">
+            <textarea placeholder="Escribe tu mensaje..." class="message-input" required></textarea>
+            <div class="chat-controls">
+                <button type="button" class="material-symbols-rounded"> sentiment_satisfied</button>
+                <div class="file-upload-wraper">
+                    <input type="file" accept="images/*" id="file-input" hidden>
+                    <img src="#">
+                    <button type="button" id="file-upload" class="material-symbols-rounded"> attach_file</button>
+                    <button type="button" id="file-cancel" class="material-symbols-rounded"> close</button>
+                </div>
+                <button type="submit" id="send-message" class="material-symbols-rounded"> arrow_upward</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+</section>
+
+<script>
+    import "../scripts/chatbot.js"
+</script>
