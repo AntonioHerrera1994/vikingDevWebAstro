@@ -4,6 +4,12 @@ import '../styles/chatbot.css'
 ---
 
 <section class="chatbot">
+
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-rounded">close</span>
+    </button>
+
 <div class="chatbot-popup">
     <!-- Chatbot Header -->
     <div class="chat-header">
@@ -18,7 +24,7 @@ import '../styles/chatbot.css'
     <div class="chat-body">
         <div class="meesage bot-message">
             <i class="bi bi-robot"></i>
-            <div class="message-text">¡Hola! <br> ¿En que puedo ayudarte?</div>
+            <div class="message-text">¡Hola! <br> soy un asistente virtual potenciado por IA. Puedes preguntarme cualquier cosa sobre la empresa o un tema de tu interes.</div>
     </div>
 </div>
 
@@ -27,7 +33,7 @@ import '../styles/chatbot.css'
         <form action="#" class="chat-form">
             <textarea placeholder="Escribe tu mensaje..." class="message-input" required></textarea>
             <div class="chat-controls">
-                <button type="button" class="material-symbols-rounded"> sentiment_satisfied</button>
+                <!-- <button type="button" class="material-symbols-rounded"> sentiment_satisfied</button>-->
                 <div class="file-upload-wraper">
                     <input type="file" accept="images/*" id="file-input" hidden>
                     <img src="#">
@@ -40,6 +46,9 @@ import '../styles/chatbot.css'
         </form>
     </div>
 </div>
+
+
+
 </section>
 
 <script>

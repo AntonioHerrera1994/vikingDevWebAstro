@@ -4,6 +4,8 @@ const senMessageButton = document.querySelector("#send-message");
 const fileInput = document.querySelector("#file-input");
 const fileUploadWrapper = document.querySelector(".file-upload-wraper");
 const fileCancelButton = document.querySelector("#file-cancel");
+const chatbotToggler = document.querySelector("#chatbot-toggler");
+const closeChatbot = document.querySelector("#close-chatbot");
 
 
 //Configuración de API
@@ -18,6 +20,8 @@ const userData = {
     }
 }
 
+const chatHistory = [];
+const initialInputHeight = messageInput.scrollHeight;
 
 //crear un elemento de mensaje con clases dinámicas y lo devuelve
 const createMessageElement = (content, ...classes) =>{
@@ -30,13 +34,18 @@ const createMessageElement = (content, ...classes) =>{
 //Genera la respuesta del bot
 const generateBotResponse = async (incomingMessageDiv) => {
     const messageElement = incomingMessageDiv.querySelector(".message-text");
+    //agrega el historial del chat del usuario
+    chatHistory.push({
+        role: "user",
+        parts: [{ text: userData.message}, ...(userData.file.data ? [{ inline_data: userData.file}] : [])]
+    });
+
+
     const requestOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            contents: [{
-                parts: [{ text: userData.message}, ...(userData.file.data ? [{ inline_data: userData.file}] : [])]
-            }]
+            contents: chatHistory
         })
     }
     try {
@@ -48,6 +57,13 @@ const generateBotResponse = async (incomingMessageDiv) => {
         //Extrae y muestra la respuesta del bot
         const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
         messageElement.innerText = apiResponseText;
+
+        //agrega el historial de respuestas del chat
+        chatHistory.push({
+            role: "model",
+            parts: [{ text: userData.message}]
+        });
+
     } catch(error){
         console.log(error);
         messageElement.innerText = error.message;
@@ -65,6 +81,8 @@ const handleOutgoingMessage = (e) => {
     userData.message = messageInput.value.trim();
     messageInput.value= "";
     fileUploadWrapper.classList.remove("file-uploaded");
+    messageInput.dispatchEvent(new Event("input"));
+
 
     //crea y muestra el  mensaje del usuario
     const messageContent = `<div class="message-text"></div>
@@ -97,9 +115,16 @@ const handleOutgoingMessage = (e) => {
 //pulsa la tecla enter para enviar mensajes
 messageInput.addEventListener("keydown", (e) => {
     const userMessage = e.target.value.trim();
-    if(e.key === "Enter" && userMessage) {
+    if(e.key === "Enter" && userMessage && !e.shiftKey && window.innerWidth > 768) {
         handleOutgoingMessage(e);
     }
+});
+
+//ajusta el espacio de la caja de texto danamicamente
+messageInput.addEventListener("input", () => {
+    messageInput.style.height = `${initialInputHeight}px`;
+    messageInput.style.height = `${messageInput.scrollHeight}px`;
+   document.querySelector(".chat-form").style.borderRadius = messageInput.scrollHeight > initialInputHeight ? "15px" : "32px"; 
 });
 
 //gestiona el cambio de entrada de archivos y muestra la vista previa
@@ -129,5 +154,8 @@ fileCancelButton.addEventListener("click", () => {
     fileUploadWrapper.classList.remove("file-uploaded")
 });
 
+
 senMessageButton.addEventListener("click", (e) => handleOutgoingMessage(e));
 document.querySelector("#file-upload").addEventListener("click", () => fileInput.click());
+chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatot"));
+closeChatbot.addEventListener("click", () => document.body.classList.remove("show-chatot"));
