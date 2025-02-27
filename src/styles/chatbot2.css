@@ -1,0 +1,119 @@
+.chatbot-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Importante para evitar márgenes extraños */
+}
+
+.chatbot-container {
+    width: 400px; /* Ancho fijo, ajústalo según necesites */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    overflow: hidden; /* Para que las esquinas redondeadas se vean bien */
+}
+
+.chatbot-header {
+    background-color: #4CAF50; /* Color de fondo del encabezado */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.chatbot-messages {
+    height: 300px; /* Altura fija, ajústalo */
+    overflow-y: auto; /* Barra de desplazamiento vertical si hay muchos mensajes */
+    padding: 15px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%; /* Ancho máximo de los mensajes */
+    word-wrap: break-word; /* Para que el texto largo no desborde */
+}
+
+.bot-message {
+    background-color: #eee;
+    align-self: flex-start; /* Alinea los mensajes del bot a la izquierda */
+}
+
+.user-message {
+    background-color: #DCF8C6; /* Un verde claro, como WhatsApp */
+    align-self: flex-end; /* Alinea los mensajes del usuario a la derecha */
+    margin-left: auto; /* Empuja el mensaje del usuario a la derecha */
+}
+
+
+.chatbot-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbot-input input {
+    flex: 1; /* El campo de texto ocupa todo el espacio disponible */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre el campo y el botón */
+}
+
+.chatbot-input button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chatbot-input button:hover{
+     background-color: #38913b;
+}
+
+.chatbot-toggle {
+    position: fixed; /* Fija el botón en la pantalla */
+    bottom: 20px;    /* 20px desde la parte inferior */
+    right: 20px;     /* 20px desde la derecha */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Botón circular */
+    width: 60px;        /* Ancho del botón */
+    height: 60px;       /* Alto del botón */
+    font-size: 24px;   /* Tamaño del icono/emoji */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    z-index: 1000;     /* Asegura que esté por encima de otros elementos */
+    display: flex;     /* Centra el icono/emoji vertical y horizontalmente */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+.chatbot-toggle:hover {
+    background-color: #38913b;
+}
+
+.chatbot-container {
+   /* ... (todos los estilos anteriores del chatbot-container) ... */
+    position: fixed; /* Ahora el contenedor también es fijo */
+    bottom: 100px; /* Lo colocamos un poco arriba del botón */
+    right: 20px;
+    z-index: 999; /* Detrás del botón, pero encima del resto */
+}
+
+/*Estilos agregados al chatbot-header*/
+.chatbot-header {
+    /* ... (estilos anteriores) ... */
+    display: flex;           /* Usamos flexbox */
+    justify-content: space-between; /* Separa los elementos */
+    align-items: center;    /* Centra verticalmente */
+}
+
+.chatbot-header h1{
+    margin: 0;
+    padding: 0;
+}

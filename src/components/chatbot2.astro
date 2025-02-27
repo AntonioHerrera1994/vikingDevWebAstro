@@ -1,0 +1,28 @@
+---
+import '../styles/chatbot2.css';
+---
+
+
+<section class="chatbot-2">
+    <button id="chatbot-toggle" class="chatbot-toggle">
+        <span id="toggle-icon">💬</span>
+    </button>
+
+    <div class="chatbot-container" id="chatbot-container" style="display: none;">
+        <div class="chatbot-header">
+            <h1>Mi Chatbot</h1>
+        </div>
+        <div class="chatbot-messages" id="chat-messages">
+            <div class="message bot-message">¡Hola! Soy tu chatbot.  Hazme una pregunta.</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="user-input" placeholder="Escribe tu pregunta...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    import "../scripts/chatbot2.js"
+</script>
