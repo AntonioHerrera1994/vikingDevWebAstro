@@ -24,47 +24,61 @@
     color: #0982A8;
 }
 
-.contacto-cont h1{
+/*.contacto-cont h1{
     text-align: center;
     font-family: "Manrope", sans-serif;
     font-weight: 500;
     font-size: 1.8rem;
     text-transform: uppercase;
-}
+}*/
 
 /*********** Grid ***********/
 .contact-grid{
     display: grid;
     grid-template-columns:  repeat(2, minmax(0,1fr));
-    padding: 5rem;
+    padding: 2rem 0 5rem 0;
     gap: 2rem;
 }
 
 /********* Mailchimp **********/
 
-.mail-formulario{
-    display: flex;
-    justify-content: center;
+
+
+/*********** Texto **********/
+.txt-izq-cont h2{
+    text-align: left;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    line-height: 2.5rem;
+    padding-right: 1rem;
 }
+
+.txt-izq-cont li{
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+}
+
+.contact .bi{
+    margin-right: .6rem;;
+}
+
 
 /*********** Social **********/
 
-.social-media-contact{
-    display: flex;
-    justify-content: center;
-}
 
 ul.socialmedia-contact li{
     display: inline;
-    padding-right: 2rem;
-   
+    padding-right: .5rem;
+    
 }
 
 .socialmedia-contact .bi{
     padding: .5rem .8rem .5rem .8rem;
     border-radius: 90%;
-    margin-left: -2rem;
-    font-size: 1.7rem;
+    margin-left: -1rem;
+    font-size: 1.3rem;
     transition: all 0.3s ease-in-out;
 }
 .socialmedia-contact .bi:hover{

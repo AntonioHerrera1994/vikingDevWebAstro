@@ -1,83 +1,87 @@
-document.addEventListener("DOMContentLoaded", function() { //Espera a que cargue el HTML
-    const userInput = document.getElementById("user-input");
-    const sendButton = document.getElementById("send-button");
-    const chatMessages = document.getElementById("chat-messages");
-
+document.addEventListener("DOMContentLoaded", function() {
     const chatbotToggle = document.getElementById("chatbot-toggle");
     const chatbotContainer = document.getElementById("chatbot-container");
     const toggleIcon = document.getElementById("toggle-icon");
+    const chatMessages = document.getElementById("chat-messages");
+    const chatbotOptions = document.getElementById("chatbot-options"); // Referencia al contenedor de opciones
 
-    let isChatbotVisible = false; // Variable para rastrear el estado
+    let isChatbotVisible = false;
 
     chatbotToggle.addEventListener("click", function() {
-        isChatbotVisible = !isChatbotVisible; // Invierte el estado
-
-        if (isChatbotVisible) {
-            chatbotContainer.style.display = "block"; // Muestra el chatbot
-            toggleIcon.textContent = "❌"; // Cambia el icono a una "X"
-        } else {
-            chatbotContainer.style.display = "none"; // Oculta el chatbot
-            toggleIcon.textContent = "💬"; // Cambia el icono al emoji de chat
-        }
+        isChatbotVisible = !isChatbotVisible;
+        chatbotContainer.style.display = isChatbotVisible ? "block" : "none";
+        toggleIcon.textContent = isChatbotVisible ? "❌" : "💬";
     });
-    
-    // Preguntas y respuestas predefinidas (¡AQUÍ ESTÁ LA CLAVE!)
-    const respuestas = {
-        "hola": "¡Hola! ¿En qué puedo ayudarte?",
-        "¿cómo estás?": "Estoy bien, gracias por preguntar.",
-        "¿qué haces?": "Respondo tus preguntas. ¡Pregunta lo que quieras!",
-        "adiós": "¡Hasta luego! Que tengas un buen día.",
-        "¿cual es tu nombre?": "Soy un chatbot, no tengo nombre.",
-        "default": "No entiendo tu pregunta.  Intenta con algo más." // Respuesta por defecto
+
+    // --- Parte nueva: Lógica de las opciones ---
+
+    const preguntasYOpciones = {
+        inicio: {
+            mensaje: "¡Hola! ¿En qué puedo ayudarte?",
+            opciones: ["Información de productos", "Horarios de atención", "Contacto"]
+        },
+        "Información de productos": {
+            mensaje: "¿Sobre qué producto te interesa saber?",
+            opciones: ["Producto A", "Producto B", "Volver al inicio"]
+        },
+        "Horarios de atención": {
+            mensaje: "Nuestro horario es de Lunes a Viernes de 9:00 a 18:00.",
+            opciones: ["Volver al inicio"]
+        },
+        "Contacto": {
+            mensaje: "Puedes contactarnos por correo a info@empresa.com o al teléfono 123-456-7890.",
+            opciones: ["Volver al inicio"]
+        },
+        "Producto A": {
+            mensaje: "El Producto A es genial. Tiene X, Y y Z características.",
+            opciones: ["Volver a Información de productos", "Volver al inicio"]
+        },
+        "Producto B": {
+            mensaje: "El Producto B es aún mejor.  Ofrece A, B y C ventajas.",
+            opciones: ["Volver a Información de productos", "Volver al inicio"]
+        },
+         "Volver al inicio": {
+            mensaje: "¡Hola! ¿En qué puedo ayudarte?",
+            opciones: ["Información de productos", "Horarios de atención", "Contacto"]
+        },
+        "Volver a Información de productos":{
+            mensaje: "¿Sobre qué producto te interesa saber?",
+            opciones: ["Producto A", "Producto B", "Volver al inicio"]
+        }
     };
 
-    // Función para mostrar un mensaje en el chat
     function mostrarMensaje(mensaje, esUsuario) {
         const mensajeDiv = document.createElement("div");
         mensajeDiv.classList.add("message");
         mensajeDiv.classList.add(esUsuario ? "user-message" : "bot-message");
         mensajeDiv.textContent = mensaje;
         chatMessages.appendChild(mensajeDiv);
-        // Scroll hacia abajo para mostrar el último mensaje
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Función para obtener la respuesta del chatbot
-    function obtenerRespuesta(pregunta) {
-        const preguntaNormalizada = pregunta.toLowerCase().trim(); // Convertir a minúsculas y quitar espacios extra
-        
-        // Buscar la respuesta en el objeto 'respuestas'
-        for (let clave in respuestas) {
-            if (preguntaNormalizada.includes(clave)) {
-                return respuestas[clave];
-            }
-        }
-        return respuestas["default"];  //Respuesta por defecto.
-    }
 
-    // Evento al hacer clic en el botón de enviar
-    sendButton.addEventListener("click", function() {
-        const pregunta = userInput.value;
+    function mostrarOpciones(opciones) {
+    chatbotOptions.innerHTML = ""; // Limpiar opciones anteriores
 
-        if (pregunta.trim() === "") { //Evita enviar mensajes vacios
-            return;
-        }
-
-        // Mostrar el mensaje del usuario
-        mostrarMensaje(pregunta, true);
-
-        // Obtener y mostrar la respuesta del bot
-        const respuesta = obtenerRespuesta(pregunta);
-        mostrarMensaje(respuesta, false);
-
-        // Limpiar el campo de entrada
-        userInput.value = "";
+    opciones.forEach(opcion => {
+        const boton = document.createElement("button");
+        boton.classList.add("chatbot-option-button");
+        boton.textContent = opcion;
+        boton.addEventListener("click", () => opcionSeleccionada(opcion));
+        chatbotOptions.appendChild(boton);
     });
+}
 
-     // Evento al presionar Enter en el campo de entrada
-     userInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            sendButton.click(); // Simula un clic en el botón de enviar
-        }
-    });
+    function opcionSeleccionada(opcion) {
+        mostrarMensaje(opcion, true); // Mostrar la opción elegida como mensaje del usuario
+        const siguientePaso = preguntasYOpciones[opcion] || preguntasYOpciones["inicio"]; // Obtener el siguiente paso
+
+        mostrarMensaje(siguientePaso.mensaje, false); // Mostrar mensaje del bot
+        mostrarOpciones(siguientePaso.opciones); // Mostrar nuevas opciones
+}
+
+
+    // Iniciar la conversación
+    mostrarOpciones(preguntasYOpciones.inicio.opciones);
+
 });

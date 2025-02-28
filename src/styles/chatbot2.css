@@ -15,7 +15,7 @@
 }
 
 .chatbot-header {
-    background-color: #4CAF50; /* Color de fondo del encabezado */
+    background-color: #0982A8; /* Color de fondo del encabezado */
     color: white;
     padding: 15px;
     text-align: center;
@@ -46,38 +46,11 @@
     margin-left: auto; /* Empuja el mensaje del usuario a la derecha */
 }
 
-
-.chatbot-input {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-}
-
-.chatbot-input input {
-    flex: 1; /* El campo de texto ocupa todo el espacio disponible */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px; /* Espacio entre el campo y el botón */
-}
-
-.chatbot-input button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.chatbot-input button:hover{
-     background-color: #38913b;
-}
-
 .chatbot-toggle {
     position: fixed; /* Fija el botón en la pantalla */
     bottom: 20px;    /* 20px desde la parte inferior */
     right: 20px;     /* 20px desde la derecha */
-    background-color: #4CAF50;
+    background-color: #0982A8;
     color: white;
     border: none;
     border-radius: 50%; /* Botón circular */
@@ -94,7 +67,14 @@
 }
 
 .chatbot-toggle:hover {
-    background-color: #38913b;
+    background-color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: #0982A8;
+}
+
+.chatbot-toggle:hover .bi{
+    color: #0982A8;
 }
 
 .chatbot-container {
@@ -113,7 +93,69 @@
     align-items: center;    /* Centra verticalmente */
 }
 
+
 .chatbot-header h1{
     margin: 0;
-    padding: 0;
+    padding: .6rem;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.4rem;
 }
+
+.bi-robot{
+    color: white;
+    font-size: 1.6rem;
+    margin-right: .5rem;
+}
+
+.chatbot-toggle .bi-robot{
+    margin: 0;
+}
+
+.chatbot-options {
+    padding: 10px;
+    display: flex;        /* Organiza los botones horizontalmente */
+    flex-wrap: wrap;     /* Permite que los botones se envuelvan a la siguiente línea si no caben */
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    gap: 10px;           /* Espacio entre los botones */
+}
+
+.chatbot-option-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-option-button:hover {
+    background-color: #ddd;
+}
+
+
+/*********** POR SI UN DIA LO USO INPUT DE CHATBOT **********/
+/* .chatbot-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chatbot-input input {
+    flex: 1; /* El campo de texto ocupa todo el espacio disponible 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre el campo y el botón 
+}
+
+.chatbot-input button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chatbot-input button:hover{
+     background-color: #38913b;
+}*/ 
