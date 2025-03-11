@@ -4,8 +4,8 @@
   margin-right: -8px;
   margin-top: -8px;
  z-index: 1;
- padding-bottom: 7rem;
-padding-top: 6rem;
+ padding-bottom: 6rem;
+padding-top: 4rem;
 }
 
 .cuadros-cont{
@@ -95,11 +95,11 @@ padding-top: 6rem;
 
 
 
-@media screen and (min-width:300px) and (max-width:800px) {
+@media screen and (min-width:300px) and (max-width:850px) {
 
   .portafolio{
-   padding-top: 1rem;
-   padding-bottom: 1rem;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
   }
   .cuadros-cont{
     padding-right: 2rem;
@@ -108,7 +108,17 @@ padding-top: 6rem;
 
 .main-title-port h1{
   text-align: center;
+}
 
-  font-size: 2.5rem;
-  margin-top: 4rem ;
-}}
+.galeria {
+  margin-top: -1.5rem!important;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+}
+
+.main-title-port h1{
+    font-size: 1.7rem;
+}
+}

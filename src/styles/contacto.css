@@ -1,11 +1,11 @@
 /********* Global *********/
 
 .contacto{
-    padding-top: 2rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
     margin-left: -8px;
     margin-right: -8px;
-  
+  padding-bottom: 4rem;
 }
 
 .contacto-cont{
@@ -42,6 +42,17 @@
 
 /********* Mailchimp **********/
 
+.button{
+    background-color: #0982A8!important;
+}
+
+.button:hover{
+    background-color: white!important;
+    border: solid!important;
+    border-width: 1px!important;
+    border-color: #0982A8!important;
+    color: #0982A8!important;
+}
 
 
 /*********** Texto **********/
@@ -101,7 +112,12 @@ ul.socialmedia-contact li{
 }
 
 
-@media screen and (min-width:300px) and (max-width:800px) {
+@media screen and (min-width:300px) and (max-width:850px) {
+
+    .contacto{
+        padding-top: 0;
+        padding-bottom: 2rem;
+    }
 
     .contacto-cont{
         margin: 0 auto;
@@ -109,6 +125,31 @@ ul.socialmedia-contact li{
         padding-right: 2rem;
          padding-left: 2rem;
     }
+
+    /*********** Texto **********/
+.txt-izq-cont h2{
+    text-align: left;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.contact .bi{
+    margin-right: .6rem;;
+}
+
+    /*********** Grid ***********/
+.contact-grid{
+    display: grid;
+    grid-template-columns:  repeat(1, minmax(0,1fr));
+    padding: 0rem 0 5rem 0;
+    gap: 0rem;
+}
+
+#mc_embed_signup{
+    width: 410px!important;
+    margin-left: -1.4rem;
+}
+
 
 }
 

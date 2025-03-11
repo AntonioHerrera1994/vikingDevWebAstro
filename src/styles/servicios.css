@@ -1,5 +1,5 @@
 .servicios{
-    padding-top: 5rem;
+    padding-top: 4rem;
     margin-left: -8px;
     margin-right: -8px;
     background-color:rgba(18, 117, 174, 0.038);
@@ -13,7 +13,7 @@
 }
 
 .proy-scroll{
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .servicios-cont h4{
@@ -93,13 +93,24 @@ p{
   color: rgba(0, 0, 0, 0.628);
 }
 
-@media screen and (min-width:300px) and (max-width:800px) {
+@media screen and (min-width:850px) {
+  .movil-img-2{
+    display: none;
+  }
+}
+
+
+@media screen and (min-width:300px) and (max-width:850px) {
   .servicios-cont{
     margin: 0 auto;
     overflow: hidden;
     padding-right: 2rem;
      padding-left: 2rem;
  }
+
+ .servicios{
+  padding-top: 2rem;
+}
 
  /*********** Servicios **********/
  .first-service{
@@ -120,90 +131,24 @@ p{
 .web-img, .movil-img, .mkt-img{
   width: 100%;
   height: 20rem;
-}
-}
-
-
-
-/* From Uiverse.io by Yaya12085 */ 
-.code-editor-css {
-  max-width: 450px;
-  background-color: #1d1e22;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  padding: 2px;
-  height: 270px;
+  margin-top: -1.2rem;
 }
 
-.header-css {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px;
+.movil-img-2{
+  padding-right: 2rem;
+     padding-left: 2rem;
+     width: 100%;
+     height: 20rem;
+     margin-top: 2rem;
+     border-radius: 9%;
 }
 
-.title-css {
-  font-family: Lato, sans-serif;
-  font-weight: 900;
-  font-size: 14px;
-  letter-spacing: 1.57px;
-  color: rgb(212 212 212);
+.movil-img{
+  display: none;
 }
 
-.icon-css {
-  width: 20px;
-  transition: .2s ease;
+.servicios-cont h1{
+    font-size: 1.rem;
 }
 
-.icon-css:hover {
-  cursor: pointer;
-  border-radius: 50px;
-  background-color: #6e7281;
 }
-
-.editor-content-css {
-  margin: 0 10px 10px;
-  color: white;
-}
-
-.property-css {
-  margin-left: 30px;
-}
-
-.property-css:hover {
-  cursor: text;
-}
-
-.editor-content-css .color-0-css {
-  color: rgb(86 156 214);
-}
-
-.editor-content-css .color-1-css {
-  color: rgb(182 206 168);
-}
-
-.editor-content-css .color-2-css {
-  color: rgb(156 220 254);
-}
-
-.editor-content-css .color-3-css {
-  color: rgb(207 146 120);
-}
-
-.color-preview-1-css,.color-preview-2-css {
-  height: 12px;
-  width: 10px;
-  border: 1px solid #fff;
-  display: inline-block;
-  margin-right: 3px;
-  background-color: white!important;
-}
-
-.color-preview-1-css {
-  background-color: #1d1e22;
-}
-
-.color-preview-1-css {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-

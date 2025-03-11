@@ -20,7 +20,6 @@
 }
 
 .testimoniales-cont{
-    padding-top: 3rem;
   border: solid;
   border-width: 1px;
   border-color: #0982A8;
@@ -35,10 +34,8 @@
 }
 
 .testimonial-container {
-   
     overflow: hidden;
     position: relative; /* Necesario para el posicionamiento absoluto de las flechas */
- 
   }
   
   .slidet {
@@ -90,7 +87,6 @@
   }
   
   .titulo h4{
-    padding-top: 2rem;
     text-align: center;
     font-family: "Roboto", sans-serif;
     font-size: .8rem;

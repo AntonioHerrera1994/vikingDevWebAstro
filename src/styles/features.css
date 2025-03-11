@@ -101,7 +101,7 @@ h3{
 }
 
 
-/********** Global programadores **********/
+/********** Global programadores *********
 
 .programadores{
     padding-top: 3rem;
@@ -148,15 +148,11 @@ margin-bottom: -3rem;
     border-radius: 14px;
 }
 
-
-
-
-
 ul.socialmedia li{
     display: inline;
     padding-right: 0.5em;
    
-}
+}*/
 /*
 .social-div{
     display: flex;
@@ -167,55 +163,35 @@ ul.socialmedia li{
     color: #0982A8;
 }
 
-@media screen and (min-width:300px) and (max-width:800px) {
+@media screen and (min-width:300px) and (max-width:850px) {
 
     /********** Global **********/
 
     .features-cont{
         margin: 0 auto;
         overflow: hidden;
-        padding-right: 1rem;
+        padding-right: 2rem;
         padding-left: 2rem;
         margin-bottom: 2rem;
     }
     
     .features-grid{
+        display: grid;
         grid-template-columns: repeat(1,minmax(0,1fr));
         gap: 2rem;
         margin-left: 0;
     }
 
     .features-grid2{
+        display: grid;
         grid-template-columns: repeat(1,minmax(0,1fr));
         gap: 2rem;
         margin-left: 0;
     }
 
-    /********** Global programadores **********/
-    .programadores-grid{
-        display: grid;
-        grid-template-columns: repeat(1,minmax(0,1fr));
-        gap: 2rem;
-    }
-
-    .programadores-cont{
-        margin: 0 auto;
-        overflow: hidden;
-        padding-right: 2rem;
-        padding-left: 2rem;
-    margin-bottom: -4rem;
-    }
-
-    .pg1-img{
-        height: 19rem;
+    .features h1{
+        font-size: 1.7rem;
     }
     
-    .pg2-img{
-        height: 19rem;
-    }
-    
-    .pg3-img{
-        height: 19rem;
-    }
     
 }
