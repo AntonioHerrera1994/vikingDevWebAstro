@@ -49,8 +49,8 @@
 .chatbot-toggle {
     position: fixed; /* Fija el botón en la pantalla */
     bottom: 20px;    /* 20px desde la parte inferior */
-    right: 20px;     /* 20px desde la derecha */
-    background-color: #0982A8;
+    right: 31px;     /* 20px desde la derecha */
+    background-color: #074b60;
     color: white;
     border: none;
     border-radius: 50%; /* Botón circular */
@@ -70,7 +70,7 @@
     background-color: white;
     border: solid;
     border-width: 1px;
-    border-color: #0982A8;
+    border-color: #074b60b7;
 }
 
 .chatbot-toggle:hover .bi{
