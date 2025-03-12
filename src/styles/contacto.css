@@ -87,7 +87,7 @@ ul.socialmedia-contact li{
 
 .socialmedia-contact .bi{
     padding: .5rem .8rem .5rem .8rem;
-    border-radius: 90%;
+    border-radius: 25px;
     margin-left: -1rem;
     font-size: 1.3rem;
     transition: all 0.3s ease-in-out;
@@ -95,7 +95,7 @@ ul.socialmedia-contact li{
 .socialmedia-contact .bi:hover{
     color: white;
     padding: .5rem .8rem .5rem .8rem;
-    border-radius: 90%;
+    border-radius: 25px;
     transform: scale(1.1);
 }
 
