@@ -1,7 +1,7 @@
 const galeria = document.querySelector('.galeria');
 const btnAnterior = document.getElementById('anterior');
 const btnSiguiente = document.getElementById('siguiente');
-const enlaces = galeria.querySelectorAll('a'); // Selecciona todos los <a>
+const enlaces = galeria.querySelectorAll('a'); // Selecciona todos los <a> y los guarda en la constante galeria
 const imagenesPorPagina = 6;
 let paginaActual = 1;
 
