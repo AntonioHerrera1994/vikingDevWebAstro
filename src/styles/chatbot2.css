@@ -119,6 +119,11 @@
     gap: 10px;           /* Espacio entre los botones */
     font-family: "Roboto", sans-serif;
 }
+.message.user-message{
+    font-family: "Roboto", sans-serif;
+    background-color: #0982A8;
+    color: white;
+}
 
 .bot-message{
     font-family: "Roboto", sans-serif;
