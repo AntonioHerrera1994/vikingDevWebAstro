@@ -144,7 +144,7 @@
 @media screen and (min-width:300px) and (max-width:850px) {
     
     .chatbot-container {
-        width: 360px; /* Ancho fijo, ajústalo según necesites */
+        width: 320px; /* Ancho fijo, ajústalo según necesites */
 
     }
 }
