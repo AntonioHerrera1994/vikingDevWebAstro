@@ -10,7 +10,7 @@ padding-top: 4rem;
  overflow: hidden;
  margin: 0 auto;
  padding-right: 50px;
- padding-left: 100px;
+ padding-left: 50px;
 }
 
 /*********** texto ***********/
@@ -39,7 +39,6 @@ padding-top: 4rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   grid-template-rows: auto auto; /* 2 filas, altura automática */
-  gap: 8px;
   position: relative;
   overflow: hidden;
 }
