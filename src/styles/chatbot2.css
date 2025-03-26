@@ -141,7 +141,13 @@
     background-color: #ddd;
 }
 
+@media screen and (min-width:300px) and (max-width:850px) {
+    
+    .chatbot-container {
+        width: 360px; /* Ancho fijo, ajústalo según necesites */
 
+    }
+}
 
 
 /*********** POR SI UN DIA LO USO INPUT DE CHATBOT **********/
