@@ -147,7 +147,11 @@ p{
 }
 
 .servicios-cont h1{
-    font-size: 1.rem;
+    font-size: 1.7rem;
+}
+
+.servicios h2{
+  font-size: 1.4rem;
 }
 
 }
