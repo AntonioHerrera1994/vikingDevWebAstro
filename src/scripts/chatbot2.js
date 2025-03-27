@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "Contacto": {
             mensajes: [
                 "Puedes contactarnos de las siguientes maneras:",
-                '📧 Correo: <a href="mailto:info@empresa.com">info@empresa.com</a>',,
+                '📧 Correo: <a href="mailto:vikingdevtj@gmail.com">vikingdevtj@gmail.com</a>',,
                 '📞 Teléfono: <a href="tel:+526632477816">(663)247-7816</a>'
             ], // Ejemplo con múltiples mensajes
             opciones: ["Volver al inicio"]
