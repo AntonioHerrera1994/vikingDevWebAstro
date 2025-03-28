@@ -10,6 +10,7 @@
       border-bottom: solid;
       border-width: 1px;
       border-color: rgba(0, 0, 0, 0);   
+
   }
   
   #miDiv {
@@ -78,6 +79,10 @@
     
   }
   
+  .bi-facebook{
+    color: #0982A8!important;
+  }
+
   
   @media screen and (min-width: 780px) {
     .nav-links {

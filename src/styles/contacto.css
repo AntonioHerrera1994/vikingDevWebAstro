@@ -145,12 +145,16 @@ ul.socialmedia-contact li{
 }
 
 #mc_embed_signup{
-    width: 350px!important;
+      display: flex;
+  justify-content: center;
+  align-items: center;
+    width: 340px!important;
     margin-left: -1.4rem;
 }
 
 .txt-izq-cont h2{
     font-size: 1.5rem;
+    text-align: center;
 }
 
 }
