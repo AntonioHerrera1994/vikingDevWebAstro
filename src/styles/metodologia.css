@@ -45,7 +45,7 @@
 
 .bi-laptop, .bi-code-slash, .bi-rocket-takeoff, .bi-clipboard2-data{
     color: #0982A8;
-    margin-right: 1rem;
+    margin-right: .7rem;
     font-size: 1.5rem;
     border: solid;
     border-width: 1px;
@@ -92,6 +92,10 @@ li{
         font-size: 1.5rem;
     }
 
- 
+    .bi-laptop, .bi-code-slash, .bi-rocket-takeoff, .bi-clipboard2-data{
 
+        margin-right: .5rem;
+
+    }
+    
 }
