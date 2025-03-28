@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "Información de servicios": {
             mensajes: ["Claro, ofrecemos varios servicios.", "¿Sobre cuál te gustaría saber más?"], // Ejemplo con dos mensajes
-            opciones: ["Página web", "Página E-commerce", "Aplicación movil", "Marketing digital", "Volver al inicio"] // Añadida opción Volver
+            opciones: ["Página web", "Página E-commerce", "Aplicación Web", "Marketing digital", "Volver al inicio"] // Añadida opción Volver
         },
         "Horarios de atención": {
             mensajes: ["Nuestro horario de atención es de Lunes a Viernes, de 9:00 AM a 6:00 PM (horario Tijuana, B.C.)."], // Array con un solo mensaje
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ],
             opciones: ["Volver a Información de servicios", "Volver al inicio"]
         },
-        "Aplicación movil": {
+        "Aplicación Web": {
             mensajes: [
                 "El Desarrollo de aplicaciones móviles va más allá de un sitio web informativo.",
                 "Creamos herramientas y sistemas a medida que funcionan desde cualquier dispositivo, diseñados para resolver necesidades específicas de tu negocio, automatizar procesos o interactuar de forma avanzada con tus usuarios (ej: portales de clientes, sistemas internos, CRMs a medida).",
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "Volver a Información de servicios":{ // Nueva opción de navegación
             mensajes: ["Volviendo a servicios. ¿Sobre cuál te interesa saber?"], // Usa 'mensajes'
-            opciones: ["Página web", "Página E-commerce", "Aplicación movil", "Marketing digital", "Volver al inicio"]
+            opciones: ["Página web", "Página E-commerce", "Aplicación Web", "Marketing digital", "Volver al inicio"]
         }
         // Elimina "Volver a Información de productos" si ya no es relevante
     };
