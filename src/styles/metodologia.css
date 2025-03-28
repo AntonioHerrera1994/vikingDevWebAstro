@@ -50,7 +50,7 @@
     border: solid;
     border-width: 1px;
     border-color: #0982A8;
-    padding: .5rem;
+    padding: .3rem .5rem .3rem .5rem;
     border-radius:50px;
 }
 
@@ -74,8 +74,8 @@ li{
     }
 
     .metodologia-cont{
-        padding-right: 2rem;
-         padding-left: 2rem;
+        padding-right: 1.2rem;
+         padding-left: 1.9rem;
     }
 
     .metodologia-grid{
@@ -91,5 +91,7 @@ li{
     .metodologia-meta h1{
         font-size: 1.5rem;
     }
+
+ 
 
 }

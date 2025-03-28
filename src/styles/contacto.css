@@ -111,7 +111,7 @@ ul.socialmedia-contact li{
 }
 
 
-@media screen and (min-width:300px) and (max-width:920px) {
+@media screen and (min-width:300px) and (max-width:850px) {
 
     .contacto{
         padding-top: 0;
