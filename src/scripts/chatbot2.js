@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "Contacto": {
             mensajes: [
-                "Puedes contactarnos de las siguientes maneras:",
+                "¡Inica hoy con nosotros! Contáctanos y cotiza tu proyecto:",
                 '📧 Correo: <a href="mailto:vikingdevtj@gmail.com">vikingdevtj@gmail.com</a>',,
                 '📞 Teléfono: <a href="tel:+526632477816">(663)247-7816</a>'
             ], // Ejemplo con múltiples mensajes
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "Aplicación Web": {
             mensajes: [
-                "El Desarrollo de aplicaciones móviles va más allá de un sitio web informativo.",
+                "El Desarrollo de aplicaciones web va más allá de un sitio web informativo.",
                 "Creamos herramientas y sistemas a medida que funcionan desde cualquier dispositivo, diseñados para resolver necesidades específicas de tu negocio, automatizar procesos o interactuar de forma avanzada con tus usuarios (ej: portales de clientes, sistemas internos, CRMs a medida).",
                 "El tiempo de desarrollo se estima en la primer reunion informativa.",
 
