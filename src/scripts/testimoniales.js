@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slideInterval = setInterval(() => {
             let nextIndex = (currentIndex + 1) % totalSlides; // Bucle infinito
             showSlide(nextIndex);
-        }, 7000); // Cambia cada 7 segundos
+        }, 5000); // Cambia cada 7 segundos
     }
 
     function resetInterval() {
