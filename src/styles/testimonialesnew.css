@@ -1,0 +1,183 @@
+/********* Global *********/
+
+.testimonialesnew{
+    padding-top: 2rem;
+    padding-bottom: 1.2rem;
+}
+
+
+
+ 
+ /********** Texto **********/
+
+  .titulo h1{
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+  }
+  
+  .titulo h4{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: .8rem;
+    color: #0982A8;
+  }
+
+/* Contenedor Principal */
+.testimonial-slider-container {
+    max-width: 1200px; /* Ajusta el ancho máximo */
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 60px; /* Más padding horizontal para los botones */
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Wrapper para Ocultar Slides */
+  .testimonial-wrapper {
+    overflow: hidden;
+    position: relative;
+    min-height: 150px; /* Altura mínima para evitar saltos */
+    margin-top: -1rem;
+  }
+  
+  /* Estilo de cada Slide */
+  .testimonial-slide {
+    display: none; /* Ocultos por defecto */
+    text-align: center;
+    padding: 0px;
+    animation: ts-fadeIn 0.6s ease-in-out; /* Animación de entrada */
+    position: absolute; /* Para superponer en el mismo lugar */
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-left: 1.3rem;
+  }
+  
+  /* Clase para el Slide Activo */
+  .testimonial-slide.active {
+    display: block; /* Mostrar el activo */
+    position: relative; /* O quitar absolute si no quieres superponer */
+  }
+  
+  /* Estilo de la Cita */
+  .testimonial-quote {
+    font-size: 1.2em; /* Tamaño del testimonio */
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  /* Añade comillas si quieres */
+  .testimonial-quote::before {
+    content: '“';
+    font-size: 1.5em;
+    margin-right: 5px;
+    color: #0982A8; /* Color de acento turquesa */
+  }
+  .testimonial-quote::after {
+    content: '”';
+    font-size: 1.5em;
+    margin-left: 5px;
+    color: #0982A8; /* Color de acento turquesa */
+  }
+  
+  
+  /* Estilo del Autor y Fuente */
+  .testimonial-author {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: "Manrope", sans-serif;
+    color: black;
+    text-align: center;
+    color: #0982A8;
+  }
+  
+  /*.testimonial-source {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 0.9em;
+    display: block; /* Para que aparezca debajo del autor 
+    margin-top: 4px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+  }*/
+  
+  /* Estilo de los Botones Prev/Next */
+  .ts-button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: none; /* Sin fondo */
+    border: none;
+    color: #00000047; /* Color de flecha */
+    font-size: 2em; /* Tamaño de flecha */
+    cursor: pointer;
+    padding: 0 0;
+    z-index: 10;
+    transition: color 0.3s ease;
+  }
+  
+  .ts-button:hover {
+    color: #0982A8; /* Color al pasar el mouse */
+  }
+  
+  .ts-button:disabled {
+    color: #555; /* Color cuando está deshabilitado */
+    cursor: default;
+  }
+  
+  .ts-prev {
+    left: 0px;
+  }
+  
+  .ts-next {
+    right: 0px;
+  }
+  
+  /* Estilo del Contenedor de Dots */
+  .testimonial-dots {
+    text-align: center;
+    margin-top: 30px; /* Espacio sobre los dots */
+  
+    
+  }
+  
+  /* Estilo de cada Dot */
+  .ts-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #66666662; /* Color de dot inactivo */
+    border-radius: 50%;
+    margin: 0 6px; /* Espacio entre dots */
+    cursor: pointer;
+    border: none; /* Quitar borde si usas button */
+    padding: 0; /* Quitar padding si usas button */
+    transition: background-color 0.3s ease;
+  }
+  
+  .ts-dot:hover {
+    background-color: #999;
+  }
+  
+  /* Clase para el Dot Activo */
+  .ts-dot.active {
+    background-color: #00bcd4; /* Color de acento turquesa */
+  }
+  
+  /* Animación FadeIn */
+  @keyframes ts-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media screen and (min-width:300px) and (max-width:850px) {
+    .testimonialesnew{
+        padding-top: 0rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+  }
