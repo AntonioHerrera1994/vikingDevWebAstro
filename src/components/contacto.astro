@@ -1,5 +1,6 @@
 ---
 import '../styles/contacto.css'
+
 ---
 
 <section class="contacto" id="contacto" >
@@ -11,7 +12,8 @@ import '../styles/contacto.css'
         <div class="contact-grid">
 
                  <div class="txt-izq-cont">
-                    <h2>¡Inicia hoy tu salto al mundo digital! ¡Dejanos tus datos y nos comunicaremos a la brevedad!</h2>
+                    <h2>¡Iniciemos tu proyecto hoy!</h2>
+                    <p> Confía tu proyecto a manos expertas.<br> ¡Usa nuestro cotizador y planifica tu inversión!</p>
                     <ul class="contact">
                         <li><i class="bi bi-envelope-open-fill"></i><a href="mailto:vikingdevtj@gmail.com" style="color:black;text-decoration: none;">vikingdevtj@gmail.com</a></li>
                         <li><i class="bi bi-telephone-fill"></i></i> <a href="tel:+526632477816" style="color:black;text-decoration: none;">(663) 247-7816</a></li>        
@@ -30,55 +32,29 @@ import '../styles/contacto.css'
            </div>
                  </div>
 
-            <div class="mail-formulario">
-                <div id="mc_embed_shell">
-                    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                      #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 599px;}
-                      /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-              </style>
-              <div id="mc_embed_signup">
-                  <form action="https://gmail.us18.list-manage.com/subscribe/post?u=0b85077fffb17dc2d2c765233&amp;id=baea33f84f&amp;f_id=00a56be1f0" 
-                  method="post" id="mc-embedded-subscribe-form" 
-                  name="mc-embedded-subscribe-form" 
-                  class="validate" 
-                  target="_blank">
-                      
-                          <div class="indicates-required"><span class="asterisk">*</span> indica que es obligatorio</div>
-
-                          <div class="mc-field-group"><label for="mce-FNAME">Nombre <span class="asterisk">*</span></label>
-                            <input type="text" name="FNAME" class=" text" id="mce-FNAME" value="">
-                        </div>
-
-                            <div class="mc-field-group"><label for="mce-PHONE">Número de teléfono <span class="asterisk">*</span></label>
-                                <input type="text" name="PHONE" class="REQ_CSS" id="mce-PHONE" value="">
-                            </div>
-                                
-                                <div class="mc-field-group"><label for="mce-EMAIL">Dirección de correo electrónico <span class="asterisk">*</span></label>
-                                    <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
-                                </div>
-
-                      <div id="mce-responses" class="clear foot">
-                          <div class="response" id="mce-error-response" style="display: none;"></div>
-                          <div class="response" id="mce-success-response" style="display: none;"></div>
+                 <div id="cotizador">
+                    <h3>Cotiza tu proyecto</h3>
+                  
+                    <form id="form-cotizacion">
+                      <label for="web">Tipo de sitio web:</label>
+                      <select id="web">
+                        <option value="0">No necesito sitio web</option>
+                        <option value="3500">One Page</option>
+                        <option value="5500">Sitio Web Completo</option>
+                        <option value="8000">E-commerce</option>
+                      </select>
+                  
+                      <label for="campañas">Servicios adicionales:</label>
+                      <select id="campañas">
+                        <option value="0">Ninguno</option>
+                        <option value="2000">Campañas / Manejo de redes (mensual)</option>
+                      </select>
+                  
+                      <div id="resultado" style="display:none;">
+                        <strong>Total estimado:</strong> <span id="total">0</span> MXN
                       </div>
-                  <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                      /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-                      <input type="text" name="b_0b85077fffb17dc2d2c765233_baea33f84f" tabindex="-1" value="">
+                    </form>
                   </div>
-                      <div class="optionalParent">
-                          <div class="clear foot">
-                              <input type="submit" name="Enviar" id="mc-embedded-subscribe" class="button" value="Enviar">
-                   
-                          </div>
-                      </div>
-                  </div>
-              </form>
-              </div>
-              <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-              <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[4]='PHONE';ftypes[4]='phone';fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-            </div>
               
         </div>
          
@@ -86,3 +62,7 @@ import '../styles/contacto.css'
     </div>
 </div>
 </section>
+
+<script>
+    import "../scripts/cotizador.js"
+</script>

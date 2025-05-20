@@ -74,6 +74,12 @@
     margin-right: .6rem;;
 }
 
+.txt-izq-cont p{
+    font-family: "Roboto", sans-serif;
+    font-size: 19px;
+    margin-bottom: 2rem;
+    line-height: 30px;
+}
 
 /*********** Social **********/
 
@@ -158,4 +164,44 @@ ul.socialmedia-contact li{
 }
 
 }
-
+#cotizador {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  #cotizador h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Manrope", sans-serif;
+    margin-top: -5px;
+    font-size: 1.7rem;
+  }
+  #form-cotizacion label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+  }
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+  }
+  #resultado {
+    margin-top: 25px;
+    background: #0982A8;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 17px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+  }
