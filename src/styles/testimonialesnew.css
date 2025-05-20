@@ -116,7 +116,7 @@
     font-size: 2em; /* Tamaño de flecha */
     cursor: pointer;
     padding: 0 0;
-    z-index: 10;
+    z-index: 9;
     transition: color 0.3s ease;
   }
   
