@@ -163,6 +163,23 @@ ul.socialmedia-contact li{
     text-align: center;
 }
 
+.txt-izq-cont p{
+    text-align: center;
+}
+
+br{
+    display: none;
+}
+
+.contacto-social{
+    display: flex;
+    justify-content: center;
+}
+
+.social-media-contact{
+    display: flex;
+    justify-content: center;
+}
 }
 #cotizador {
     max-width: 800px;
