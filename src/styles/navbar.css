@@ -58,6 +58,7 @@
     background-color: #DEE1D4;
     display: none;
     font-family: "Roboto", sans-serif;
+    
   }
   
   .nav-links a {
@@ -67,6 +68,7 @@
     text-decoration: none;
     font-size: .9rem;
     color: black;
+    margin-top: .3rem;
   }
   
   .nav-links a:hover,
