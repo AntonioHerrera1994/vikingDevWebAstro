@@ -78,11 +78,15 @@
     display: unset;
     
   }
-  
-  .bi-facebook{
-    color: #0982A8!important;
-  }
 
+  /*** ESTE SERA PARA EL BOTON DEL BLOG
+  .btn-ctz {
+    background-color: #0982A8;
+    color: white!important;
+  
+  }
+***/
+ 
   
   @media screen and (min-width: 780px) {
     .nav-links {
@@ -110,10 +114,7 @@
     display: none;
    }
   
-   .socialmedia-navlinks{
-    display: none;
-   }
-  
+
   }
   
   @media screen and (min-width:300px) and (max-width:800px) {
@@ -268,28 +269,7 @@
         width: 28%;
         height: 100%;
       }
-  
-      /********** redessociales **********/
-      .socialmedia-navlinks{
-      
-        display:grid;
-        grid-template-columns: repeat(4,minmax(0,1fr));
-        margin-top:1.5rem;
-        margin-left: -4rem;
-        border-top: solid;
-        color: rgba(255, 255, 255, 0.288);
-        padding-top: 1.5rem;
-        border-width: 1px;
-       
-      }
-  
-      .bi-facebook, .bi-twitter-x, .bi-instagram, .bi-linkedin{
-        color: white;
-        font-size: 1rem;
-  
-      text-align: left;
-      }
-  
+
     
     }
   
@@ -350,11 +330,10 @@
     }
   
   
-    
   
     }
   
-    
+  
   
     @media only screen and (min-width:1400px) {
   

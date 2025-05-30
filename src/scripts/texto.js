@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 typingComplete = false;
             }
             
-            typingSpeed = isDeleting ? 9000 : 500; // Pausa antes de borrar/escribir
+            typingSpeed = isDeleting ? 2000 : 500; // Pausa antes de borrar/escribir
         }
         
         setTimeout(typeWriter, typingSpeed);
