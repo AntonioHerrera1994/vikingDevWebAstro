@@ -1,7 +1,7 @@
 
 
 .typewriter-container {
-    text-align: left;
+
     max-width: 800px;
     padding: 20px 100px 50px 0;
     
@@ -29,4 +29,15 @@
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+@media screen and (max-width:800px){
+    .typewriter-text{
+        text-align: center;
+    }
+
+    .typewriter-container{
+        text-align: center;
+        padding: 0;
+    }
 }
