@@ -1,0 +1,32 @@
+
+
+.typewriter-container {
+    text-align: left;
+    max-width: 800px;
+    padding: 20px 100px 50px 0;
+    
+}
+
+.typewriter-text {
+    display: inline;
+    font-size: 2rem;
+    color: #333;
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 31px;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 3px;
+    animation: blink 0.7s infinite;
+    font-size: 2rem;
+    color: #333;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

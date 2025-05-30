@@ -1,164 +1,114 @@
-.footer{
-          margin-left:-8px;
-          margin-right:-8px;
-          margin-bottom: -8px;
-          margin-top: -6rem;
-          padding-bottom: 20px;
-          border-top: solid;
-          border-width: 1px;
-          border-color: rgba(0, 0, 0, 0);
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          background-color: #0982A8;
-  }
-  
-  .footer-cont{
-    margin: 0 auto;
-  overflow: hidden;
-  padding-right: 50px;
-  padding-left: 50px;
 
-  }
-  
-  .logo-img-footer{
-    width: 30%;
-    height: 4rem;
-    margin-top: 2rem;
+  .footer{
+    margin-left:-18px;
+    margin-right:-8px;
+    margin-bottom: -8px;
+    margin-top: -6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #0982A8;
 }
 
-.desc-footer{
-  color: white;
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 32px;
+    padding: 1rem 3rem 1rem 7rem;
 }
-  .footnav{
-   
-     padding-top: 40px;
-  }
-  
-  .footnav a {
-    float: left;
-    display: block;
-    text-align: left;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    margin-left: -13px;
-  }
 
-  .footnav .icon {
-    display: none;
-  }
-  
-  .footer2-grid{
-    font-family: 'Albert Sans', sans-serif;
+
+.footergrid1{
+margin-top: 2.5rem;
+}
+
+.footergrid1 p{
+    color: white;
+}
+
+li{
+    color: white;
+}
+
+.footer h3{
+  font-family: "Manrope", sans-serif;
+    text-transform: uppercase;
+ color: white;
+
+}
+
+.footer p{
+    font-family: "Roboto", sans-serif;
+   color: white;
     text-align: justify;
-    color: #DEE1D4;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    display:grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
-        gap: 2rem;
-  }
-  
-  .terminos p{
-    text-align: center;
-    color: white;
-    margin-top: 7rem;
-  }
+    font-size: 17px;
+}
 
-  .terminos a{
-    color: white;
-    text-decoration: none;
-  }
-  
-  .iconos{
-    margin-top: 3.7rem;
-  }
+.footer li{
+    font-family: "Roboto", sans-serif;
+   color: white;
+    text-align: justify;
+    font-size: 16px;
+    text-transform: capitalize;
+   margin-right: -2rem;
+    line-height: 34px;
+    font-weight: 400;
 
-  .iconos a {
-    color: white;
-  }
+}
 
-  @media screen and (min-width:300px) and (max-width:800px) {
-    .footer-cont{
-      width: auto;
-      padding-left: 20px;
-      padding-right: 20px;
+.footergrid3 li{
+    display: inline-block;
+    margin-right: 10px; /* Espaciado entre elementos */
+}
+
+.footer ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footergrid2{
+    margin-left: 8rem;
+}
+
+.footergrid3{
+    margin-left: 5rem;
+}
+
+.footer .bi{
+    color: white;
+    margin-right: 1rem;
+}
+
+.footer .bi-facebook{
+  color: white!important;
+}
+
+
+@media screen and (max-width:800px){
+
+    .footer{
+        margin: auto 0;
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+        background-color: black;
     }
-    
+
     .footer-grid{
-      width: auto;
-      grid-template-columns: repeat(1,minmax(0,1fr));
-      padding-left:10px;
-      padding-right: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 32px;
+        padding: 2rem;
+    }
+
+    .footergrid2{
+        margin-left: 0;
+        margin-right: 2rem;
     }
     
-    .footer2-grid{
-      width: auto;
-      grid-template-columns: repeat(1,minmax(0,1fr));
-      padding-left:10px;
-      padding-right: 10px;
+    .footergrid3{
+        margin-left: 0;
     }
-
-    .footer-img{
-      width: 100%;
-      height: 90%;
-      float: left;
-      margin-top: 1.5rem;
-    }
-
-    .footnav a {
-      float: center;
-      display: block;
-      color: #DEE1D4;
-      text-align: left;
-      text-decoration: none;
-      font-size: 16px;
-      margin-top: -1rem;
-
-    }
-
-    .terminos p{
-      text-align: left;
-      margin-top: -1rem;
-    }
-
-    .footer2-grid{
-      text-align: left;
-    }
-
-    .iconos{
-      text-align: left;
-    }
-    .iconos{
-      margin-top: -2rem;
-    }
-  
-    }
-
-    @media screen and (min-width:800px) and (max-width:1200px) {
-      .footer-grid{
-        width: auto;
-        grid-template-columns: repeat(1,minmax(0,1fr));
-        padding-left:10px;
-        padding-right: 10px;
-      }
-      
-      .footer2-grid{
-        width: auto;
-        grid-template-columns: repeat(1,minmax(0,1fr));
-        padding-left:10px;
-        padding-right: 10px;
-      }
-
-      .terminos p{
-        text-align: left;
-        margin-top: -1rem;
-      }
-  
-      .footer2-grid{
-        text-align: left;
-      }
-  
-      .iconos{
-        text-align: left;
-      }
-    }
+    
+}

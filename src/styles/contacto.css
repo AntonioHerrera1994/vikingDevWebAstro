@@ -150,14 +150,6 @@ ul.socialmedia-contact li{
     gap: 0rem;
 }
 
-#mc_embed_signup{
-      display: flex;
-    align-items: center;;
-  justify-content: center;
-    width: 360px!important;
-    margin-left: -1.4rem;
-}
-
 .txt-izq-cont h2{
     font-size: 1.5rem;
     text-align: center;
@@ -181,6 +173,7 @@ br{
     justify-content: center;
 }
 }
+/********** cotizador 
 #cotizador {
     max-width: 800px;
     margin: auto;
@@ -222,3 +215,5 @@ br{
     color: white;
     font-family: "Roboto", sans-serif;
   }
+
+  **********/

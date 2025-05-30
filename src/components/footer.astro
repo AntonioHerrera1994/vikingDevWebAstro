@@ -4,46 +4,47 @@ import '../styles/footer.css'
 import ImageLogoFooter from '../assets/vikigdev-blanco.webp';
 ---
 
- <footer class="footer">
-  <div class="footer-cont">
-    
-
-    <div class="footer2-grid">
+<section class="footer">
+  <div class="footer-grid">
       
-      <div>
-        <img 
-        src={ImageLogoFooter.src} 
-        
-        alt="footer-logo"
-        style="border-radius: 2rem;"
-        class="logo-img-footer"/>
-
-        <p class="desc-footer">
-          Somos una empresa de desarrollo de tecnología cuya  visión se enfoca 
-          en el impacto positivo, ofreciendo beneficios tecnologicos desarrollados a la medida.
-        </p>
+      <div class="footergrid1">
+          <div class="footer-logo">
+              <img 
+              src={ImageLogoFooter.src}
+              width="47%"
+              height="50%"
+              alt="favlash-logo"/>
+            </div>
+            <p>Somos una empresa de desarrollo de tecnología cuya visión se enfoca en el impacto positivo, ofreciendo beneficios tecnologicos desarrollados a la medida. </p>
       </div>
-     
-     <div class="terminos" ><p>
-      2025 – VikingDev
-    </p></div> 
+      <div class="footergrid2">
+          <h3>contacto</h3>
+          <ul>
+             
+              <li><i class="bi bi-telephone-inbound-fill"></i>(663) 247-7816</li>
+              <li><i class="bi bi-envelope-open-fill"></i>vikingdevtj@gmail.com</li>
+          </ul>
+      </div>
+
+      <div class="footergrid3">
+       
+
+          <h3>Síguenos</h3>
+          <ul>
+              <li><a href="https://www.facebook.com/vikingdevtj" target="_blank"><i class="bi bi-facebook"></i></a></li>
+              <li><a href="https://www.linkedin.com/company/vikingdev/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+              <li><a href="https://wa.link/6xz219/" target="_blank"><i class="bi bi-whatsapp"></i></a></li>
+          </ul>
+      </div>
+      <div class="footergrid4">
+          <h3>Privacidad</h3>
+          <ul>
+              <li>Aviso de privacidad</li>
+              <li>Términos y condiciones</li>
+          </ul>
+      </div>
+
       
-      <div class="suscribe">
-
-          
-        </p>
-        <div class="iconos">
-          <div class="footnav" id="myfooterTopnav">
-            <a href="#features">Servicios</a>
-            <a href="#portafolio">Portafolio</a>
-            <a href="#tecnologias">Tecnologías</a>
-            <!-- <a href="#">Blog</a>-->
-            <a href="#contacto">Contacto</a>
-            <!--<a href="#">Contacto</a>-->
-     
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-</footer>
+
+</section>
