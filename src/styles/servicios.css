@@ -92,6 +92,10 @@ p{
   color: rgba(0, 0, 0, 0.628);
 }
 
+.servicios li{
+  color: black;
+}
+
 @media screen and (min-width:850px) {
   .movil-img-2{
     display: none;

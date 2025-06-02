@@ -66,6 +66,10 @@ li{
     height: 32rem;
 }
 
+.metodologia li{
+    color: black;
+}
+
 @media screen and (min-width:300px) and (max-width:850px) {
 
     .metodologia{
