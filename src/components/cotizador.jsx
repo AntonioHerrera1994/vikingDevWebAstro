@@ -12,8 +12,8 @@ export default function Cotizacion() {
   const preciosTipoSitio = {
     "no necesito sitio web": 0,
     "sitio one page": 4000,
-    "sitio web completo": 5500,
-    "e-commerce": 7500,
+    "sitio web completo": 5000,
+    "e-commerce": 7000,
   };
 
   const preciosServiciosAdicionales = {
