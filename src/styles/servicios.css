@@ -97,8 +97,18 @@ p{
 }
 
 .mkt-img2{
-  width: 50%;
-  height: 100%;
+ height: auto;
+   max-width: 200px;
+   object-fit: contain;
+   gap: 20px;
+   margin-left: 2rem;
+}
+.socios{
+
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 @media screen and (min-width:850px) {
@@ -163,10 +173,5 @@ p{
   font-size: 1.3rem;
 }
 
-.mkt-img2{
-  
-  width: 50%;
-  height: 100%;
-}
 
 }

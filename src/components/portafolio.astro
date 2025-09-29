@@ -1,8 +1,8 @@
 ---
-
 import '../styles/portafolio.css'
+
+// Importa imágenes
 import myImageP from '../assets/proyectos/favlashnuevo.png';
-//import myImageP2 from '../assets/proyectos/2.png';
 import myImageP3 from '../assets/proyectos/3.png';
 import myImageP4 from '../assets/proyectos/4.png';
 import myImageP5 from '../assets/proyectos/5.png';
@@ -12,7 +12,6 @@ import myImageP8 from '../assets/proyectos/8.png';
 import myImageP9 from '../assets/proyectos/9.png';
 import myImageP10 from '../assets/proyectos/10.png';
 import myImageP11 from '../assets/proyectos/11.png';
-import myImageP12 from '../assets/proyectos/12.png';
 import myImageP14 from '../assets/proyectos/14.png';
 import myImageP15 from '../assets/proyectos/15.png';
 import myImageP16 from '../assets/proyectos/16.png';
@@ -24,137 +23,71 @@ import myImageP21 from '../assets/proyectos/perioclinic.png';
 import myImageP22 from '../assets/proyectos/holistic.png';
 import myImageP23 from '../assets/proyectos/tjplastic.png';
 import myImageP24 from '../assets/proyectos/reinos.png';
+import myImageP25 from '../assets/proyectos/chicaf.webp';
+import myImageP26 from '../assets/proyectos/define.webp';
+import myImageP27 from '../assets/proyectos/rihab.webp';
+
+// Lista de proyectos con agencia
+const proyectos = [
+  { url: "http://favlash.com/", img: myImageP, agencia: "VikingDev" },
+  { url: "https://danyaargote.com/", img: myImageP3, agencia: "VikingDev" },
+  { url: "https://global-recruiters.com/", img: myImageP4, agencia: "VikingDev" },
+  { url: "https://coinase.mx/", img: myImageP5, agencia: "VikingDev" },
+  { url: "http://ciplastic.com/", img: myImageP6, agencia: "VikingDev" },
+  { url: "https://www.techmeol.com/", img: myImageP7, agencia: "VikingDev" },
+  { url: "https://ixayaresidencial.mx/", img: myImageP8, agencia: "VikingDev" },
+  { url: "https://gruascervantestijuana.com/", img: myImageP9, agencia: "VikingDev" },
+  { url: "https://mudanzashermosillo.com.mx/", img: myImageP10, agencia: "VikingDev" },
+  { url: "https://madeirascollection.com", img: myImageP11, agencia: "VikingDev" },
+  { url: "https://integratj.com.mx/", img: myImageP14, agencia: "Snitch Agency" },
+  { url: "https://ppsolutions.com.mx/", img: myImageP15, agencia: "Snitch Agency" },
+  { url: "http://clidpay.us/", img: myImageP16, agencia: "VikingDev" },
+  { url: "https://snitchagency.com/", img: myImageP17, agencia: "Snitch Agency" },
+  { url: "https://bajabox.com.mx/", img: myImageP18, agencia: "Snitch Agency" },
+  { url: "https://gynandmed.com/", img: myImageP19, agencia: "Define Studio" },
+  { url: "https://larectacoworking.com/", img: myImageP20, agencia: "Define Studio" },
+  { url: "https://perioclinic.com.mx/", img: myImageP21, agencia: "Snitch Agency" },
+  { url: "https://holisticancercoach.com/", img: myImageP22, agencia: "VikingDevy" },
+  { url: "https://tjplasticsurgeryofficial.com/", img: myImageP23, agencia: "Snitch Agency" },
+  { url: "https://los12reinoszodiacales.com/", img: myImageP24, agencia: "VikingDev" },
+  { url: "https://lachicafinanzas.com.mx/", img: myImageP25, agencia: "Snitch Agency" },
+  { url: "https://define-studio.mx/", img: myImageP26, agencia: "Define Studio" },
+  { url: "https://rihabvetcare.com/", img: myImageP27, agencia: "Define Studio" },
+];
 ---
 
 <section class="portafolio" id="proyectos">
   <div class="cuadros-cont">
-
-      <div class="main-title-port">
-        <h4>Portafolio</h4>
-        <h1>Colaboramos en grandes proyectos</h1>
-      </div>
-
-      <!-- <div class="carrusel-contenedor">
-        <div class="scroll-container">
-          <img src={myImageP.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP2.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP3.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP4.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP5.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP6.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP7.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP8.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP9.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP10.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP11.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP12.src} alt="desarrollo web" width="80%" class="port-img"/>
-          <img src={myImageP13.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </div>
-      </div>-->
-
-      <div class="galeria">
-        <a href="http://favlash.com/" target="_blank">
-          <img src={myImageP.src} alt="desarrollo web" width="80%" class="visible"/>
-        </a>
-        
-        
-        <a href="https://danyaargote.com/" target="_blank">
-          <img src={myImageP3.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="https://global-recruiters.com/" target="_blank">
-          <img src={myImageP4.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="https://coinase.mx/" target="_blank">
-          <img src={myImageP5.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="http://ciplastic.com/" target="_blank">
-          <img src={myImageP6.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="https://www.techmeol.com/" target="_blank">
-          <img src={myImageP7.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-       
-        <a href="https://ixayaresidencial.mx/" target="_blank">
-          <img src={myImageP8.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="https://gruascervantestijuana.com/" target="_blank">
-          <img src={myImageP9.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="https://mudanzashermosillo.com.mx/" target="_blank">
-          <img src={myImageP10.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-       
-        <a href="https://madeirascollection.com" target="_blank">
-          <img src={myImageP11.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-       <!--  <a href="https://thegrillgallery.com/" target="_blank">
-          <img src={myImageP12.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>-->
-        
-        <a href="https://integratj.com.mx/" target="_blank">
-          <img src={myImageP14.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-       
-        <a href="https://ppsolutions.com.mx/" target="_blank">
-          <img src={myImageP15.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-       
-        <a href="http://clidpay.us/" target="_blank">
-          <img src={myImageP16.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="https://snitchagency.com/" target="_blank">
-          <img src={myImageP17.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-
-        <a href="https://bajabox.com.mx/" target="_blank">
-          <img src={myImageP18.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-       <!--  <a href="https://gynandmed.com/" target="_blank">
-          <img src={myImageP19.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-        
-        <a href="https://larectacoworking.com/" target="_blank">
-          <img src={myImageP20.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>-->
-
-           <a href="https://perioclinic.com.mx/" target="_blank">
-          <img src={myImageP21.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-       
-            <a href="https://holisticancercoach.com/" target="_blank">
-          <img src={myImageP22.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-
-           <a href="https://tjplasticsurgeryofficial.com/" target="_blank">
-          <img src={myImageP23.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-
-           <a href="https://los12reinoszodiacales.com/" target="_blank">
-          <img src={myImageP24.src} alt="desarrollo web" width="80%" class="port-img"/>
-        </a>
-
-        
-        </div>
-
-    <div class="paginacion">
-        <button id="anterior" disabled>Anterior</button>
-        <button id="siguiente">Siguiente</button>
+    <div class="main-title-port">
+      <h4>Portafolio</h4>
+      <h1>Colaboramos en grandes proyectos</h1>
     </div>
 
-</div>
+    <!-- Filtros -->
+    <div class="filtros">
+      <button data-agencia="VikingDev" class="filtro activo">VikingDev</button>
+      <button data-agencia="Define Studio" class="filtro">Define Studio</button>
+      <button data-agencia="Snitch Agency" class="filtro">Snitch Agency</button>
+    </div>
 
+    <!-- Galería -->
+    <div class="galeria">
+      {proyectos.map((p) => (
+        <a href={p.url} target="_blank" class="proyecto" data-agencia={p.agencia}>
+          <img src={p.img.src} alt="proyecto web" class="port-img" />
+        </a>
+      ))}
+    </div>
 
+    <!-- Paginación -->
+    <div class="paginacion">
+      <button id="anterior" disabled>Anterior</button>
+      <button id="siguiente">Siguiente</button>
+    </div>
+  </div>
 </section>
 
-<script>
-  import "../scripts/drag.js"
-</script>
+
+  <script>
+      import "../scripts/drag.js"
+  </script>

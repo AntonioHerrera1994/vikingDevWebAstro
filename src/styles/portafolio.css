@@ -89,7 +89,36 @@ padding-top: 4rem;
   display: none;
 }
 
+/********** Filtros **********/
+.filtros {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.filtros .filtro {
+  padding: 8px 12px;
+  margin: 5px;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.filtros .filtro.activo {
+  background: #3498db;
+  color: #fff;
+}
 
+.proyecto {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: none; /* inicialmente oculto */
+}
+
+.proyecto.mostrar {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 @media screen and (min-width:300px) and (max-width:850px) {
