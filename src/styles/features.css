@@ -50,15 +50,17 @@ ul {
     font-family: "Manrope", sans-serif;
     font-weight: 500;
     font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
-.features h2{
+.p-inicial{
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: rgba(0, 0, 0, 0.628);
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     padding-bottom: 4rem;
+    line-height: 28px;
 }
 
 .flex-row-1{
@@ -75,6 +77,7 @@ ul {
 p{
     margin-right: 3rem;
     font-family: "Roboto", sans-serif;
+
 }
 
 h3{

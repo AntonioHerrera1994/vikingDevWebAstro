@@ -17,16 +17,6 @@
   padding-left: 50px;
 }
 
-
-/*
-.main-grid{
-  padding: 2rem;
-  display:grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 2rem;
-      margin-top: 15px;     
-}
- */
 /*********** Img **********/
 
 .mainhead-cont img{
@@ -47,7 +37,8 @@
 
 .mainhead-cont-2 p{
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 27px;
 }
 
 .buttons-grid{
@@ -172,5 +163,3 @@
 .cta:active {
   transform: scale(0.95);
 }
-
-

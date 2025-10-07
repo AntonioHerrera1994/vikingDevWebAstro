@@ -171,6 +171,8 @@ margin-top: 20px;
 .servicios h2{
   font-size: 1.3rem;
 }
-
+ .mkt-img2 {
+    max-width: 500px;  /* logos más grandes en tablet/móvil */
+  }
 
 }
