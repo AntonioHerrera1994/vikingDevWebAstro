@@ -67,13 +67,14 @@ padding-top: 4rem;
 }
 
 .paginacion button {
-  padding: 8px 12px;
+ padding: 10px 20px;
   margin: 0 5px;
-  background-color: #3498db;
+  background-color: #0982A8;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+ border-radius: 50px;
+  font-size: 18px;
 }
 
 .paginacion button:disabled {
@@ -95,15 +96,16 @@ padding-top: 4rem;
   margin-bottom: 20px;
 }
 .filtros .filtro {
-  padding: 8px 12px;
+padding: 14px 30px;
   margin: 5px;
   background: #eee;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 50px;
+  font-size: 18px;
 }
 .filtros .filtro.activo {
-  background: #3498db;
+  background: #0982A8;
   color: #fff;
 }
 
