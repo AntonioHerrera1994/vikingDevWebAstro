@@ -1,0 +1,175 @@
+.card-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: relative;
+        }
+
+        .list-container {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo del scrollbar */
+        .list-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .list-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .list-container::-webkit-scrollbar-thumb {
+            background: #0982A8;
+            border-radius: 10px;
+        }
+
+        .list-container::-webkit-scrollbar-thumb:hover {
+            background: #9f7aea;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .list-item:nth-child(1) { animation-delay: 0.1s; }
+        .list-item:nth-child(2) { animation-delay: 0.2s; }
+        .list-item:nth-child(3) { animation-delay: 0.3s; }
+        .list-item:nth-child(4) { animation-delay: 0.4s; }
+        .list-item:nth-child(5) { animation-delay: 0.5s; }
+        .list-item:nth-child(6) { animation-delay: 0.6s; }
+        .list-item:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .bullet {
+            width: 12px;
+            height: 12px;
+            background: #0982A8;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+
+        .list-text {
+            color: #2d3748;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+                font-family: "Source Sans 3", Sans-serif;
+        }
+
+        .read-more-btn {
+            background: #0982A8;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(183, 148, 246, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            text-decoration:none!important;
+        }
+
+        .read-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(183, 148, 246, 0.6);
+            text-decoration:none!important;
+        }
+
+        .read-more-btn:active {
+            transform: translateY(0);
+            text-decoration:none!important;
+        }
+        
+           .read-more-btn:focus {
+                text-decoration:none!important;
+                 background: #0982A8;
+        }
+
+
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more-btn:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .bg-paqueteimg{
+            background-position: center;
+            background-size: cover;
+        }
+
+    .paqueteimg{
+   
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+          display: flex;
+  align-items: flex-end;   
+  justify-content: center; 
+            padding: 0 10px 15px 30px;
+    }
+
+    .img1{
+     background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.550), rgba(0, 0, 0, 0.550)),  
+    url('../assets/onepage.webp'); 
+    }
+
+    .img2{
+         background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.550), rgba(0, 0, 0, 0.550)), 
+    url('../assets/webcompleto.webp');  
+    }
+
+      .img3{
+         background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.550), rgba(0, 0, 0, 0.550)), 
+    url('../assets/ecommerce.webp');  
+    }
+
+      .img4{
+         background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.550), rgba(0, 0, 0, 0.550)), 
+    url('../assets/apoyoweb.webp');  
+    }
+
+
+    .paqueteimg h3{
+            font-size: 30px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #FFFFFF;
+     font-family: "Manrope", sans-serif;
+    }
+
+    .paqueteimg p{
+         font-family: "Roboto", sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #FFFFFF;
+    }

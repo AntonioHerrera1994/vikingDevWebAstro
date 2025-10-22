@@ -1,0 +1,91 @@
+.tabs-container {
+  text-align: center;
+  padding: 4rem;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  background-color: #0982A8;
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Manrope", sans-serif;
+}
+
+.tab-btn.active {
+  background-color: #075f85; 
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tab-btn:hover:not(.active) {
+  background-color: #075f85;
+}
+
+.tab-content {
+  display: none;
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  
+}
+
+.grid-card{
+      display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 2rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.titulo-paquete h4{
+  text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: .8rem;
+    color: #0982A8;
+}
+
+.titulo-paquete h1{
+  text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:801px) {
+
+    .tabs-container {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.titulo-paquete{
+    padding-top: 2rem;
+}
+    .grid-card{
+      display: grid;
+  grid-template-columns: repeat(1,minmax(0,1fr));
+  gap: 2rem;
+}
+
+
+
+}
