@@ -201,6 +201,9 @@
   
     
       }
+.btn-cotiza{
+  display: none!important;
+}
   
         /********** Menu Open transition *********/
       /* Aniamcion para cerrar */
@@ -319,7 +322,9 @@
       justify-content: center;
   
     }
-  
+  .cotiza-movil{
+     display: none!important;
+  }
     .nav-links {
         
       margin-left: 0;
@@ -354,7 +359,9 @@
     }
   
   
-  
+    .cotiza-movil{
+    display: none!important;
+  }
     
       .nav-links {
         
