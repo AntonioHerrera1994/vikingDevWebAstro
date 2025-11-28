@@ -37,6 +37,7 @@ padding-top: 4rem;
   width: 100%;
   margin: 0 auto;
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   grid-template-rows: auto auto; /* 2 filas, altura automática */
   position: relative;
@@ -55,6 +56,8 @@ padding-top: 4rem;
   display: block;
   margin-bottom: 2rem;
   box-sizing: border-box;
+  border-radius: 30px;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .galeria img:hover {
@@ -120,6 +123,17 @@ padding: 14px 30px;
   display: block;
   opacity: 1;
   transform: translateY(0);
+}
+
+.filtros .filtro .contador {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-left: 5px;
+}
+
+.filtros .filtro.activo .contador {
+  opacity: 1;
+  font-weight: 600;
 }
 
 

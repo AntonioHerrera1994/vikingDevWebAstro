@@ -26,6 +26,7 @@ import myImageP24 from '../assets/proyectos/reinos.png';
 import myImageP25 from '../assets/proyectos/chicaf.webp';
 import myImageP26 from '../assets/proyectos/define.webp';
 import myImageP27 from '../assets/proyectos/rihab.webp';
+import myImageP28 from '../assets/proyectos/amt.png';
 
 // Lista de proyectos con agencia
 const proyectos = [
@@ -47,13 +48,20 @@ const proyectos = [
   { url: "https://gynandmed.com/", img: myImageP19, agencia: "VikingDev" },
   { url: "https://larectacoworking.com/", img: myImageP20, agencia: "VikingDev" },
   { url: "https://perioclinic.com.mx/", img: myImageP21, agencia: "Snitch Agency" },
-  { url: "https://holisticancercoach.com/", img: myImageP22, agencia: "VikingDevy" },
   { url: "https://tjplasticsurgeryofficial.com/", img: myImageP23, agencia: "Snitch Agency" },
   { url: "https://los12reinoszodiacales.com/", img: myImageP24, agencia: "VikingDev" },
   { url: "https://lachicafinanzas.com.mx/", img: myImageP25, agencia: "Snitch Agency" },
   { url: "https://define-studio.mx/", img: myImageP26, agencia: "VikingDev" },
   { url: "https://rihabvetcare.com/", img: myImageP27, agencia: "VikingDev" },
+  { url: "https://holisticancercoach.com/", img: myImageP22, agencia: "VikingDev" },
+   { url: "https://alliance-medtech.com/", img: myImageP28, agencia: "Snitch Agency" },
 ];
+// Calcular contador por agencia
+const contadorAgencias = proyectos.reduce((acc, p) => {
+  acc[p.agencia] = (acc[p.agencia] || 0) + 1;
+  return acc;
+}, {});
+
 ---
 
 <section class="portafolio" id="proyectos">
@@ -62,12 +70,14 @@ const proyectos = [
       <h4>Portafolio</h4>
       <h1>Proyectos que Han Transformado Negocios</h1>
     </div>
-
-    <!-- Filtros -->
+  <!-- Filtros con contador -->
     <div class="filtros">
-      <button data-agencia="VikingDev" class="filtro activo">VikingDev</button>
-
-      <button data-agencia="Snitch Agency" class="filtro">Snitch Agency</button>
+      <button data-agencia="VikingDev" class="filtro activo">
+        VikingDev <span class="contador">({contadorAgencias['VikingDev']})</span>
+      </button>
+      <button data-agencia="Snitch Agency" class="filtro">
+        Snitch Agency <span class="contador">({contadorAgencias['Snitch Agency']})</span>
+      </button>
     </div>
 
     <!-- Galería -->
