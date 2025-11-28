@@ -23,14 +23,6 @@
     color: #0982A8;
 }
 
-/*.contacto-cont h1{
-    text-align: center;
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-}*/
-
 /*********** Grid ***********/
 .contact-grid{
     display: grid;
@@ -39,24 +31,9 @@
     gap: 2rem;
 }
 
-/********* Mailchimp **********/
-
-.button{
-    background-color: #0982A8!important;
-}
-
-.button:hover{
-    background-color: white!important;
-    border: solid!important;
-    border-width: 1px!important;
-    border-color: #0982A8!important;
-    color: #0982A8!important;
-}
-
-
 /*********** Texto **********/
-.txt-izq-cont h2{
-    text-align: left;
+.cotizatext {
+    text-align: center;
     font-family: "Manrope", sans-serif;
     font-weight: 500;
     font-size: 1.7rem;
@@ -65,56 +42,14 @@
     padding-right: 1rem;
 }
 
-.txt-izq-cont li{
-    font-weight: 400;
-    font-family: "Roboto", sans-serif;
+/*********** Imagen **********/
+.img-personal img{
+  width: 86%;
+  height: auto;
+  display: block;
+  border-radius: 2rem;
 }
 
-.contact .bi{
-    margin-right: .6rem;;
-}
-
-.txt-izq-cont p{
-    font-family: "Roboto", sans-serif;
-    font-size: 19px;
-    margin-bottom: 2rem;
-    line-height: 30px;
-}
-
-/*********** Social **********/
-
-
-ul.socialmedia-contact li{
-    display: inline;
-    padding-right: .5rem;
-    
-}
-
-.socialmedia-contact .bi{
-    padding: .5rem .8rem .5rem .8rem;
-    border-radius: 25px;
-    margin-left: -1rem;
-    font-size: 1.3rem;
-    transition: all 0.3s ease-in-out;
-}
-.socialmedia-contact .bi:hover{
-    color: white;
-    padding: .5rem .8rem .5rem .8rem;
-    border-radius: 25px;
-    transform: scale(1.1);
-}
-
-.socialmedia-contact .bi-facebook:hover{
-    background-color:#3b5998;
-}
-
-.socialmedia-contact .bi-linkedin:hover{
-    background-color: #0e76a8;
-}
-
-.socialmedia-contact .bi-whatsapp:hover{
-    background-color: #25D366;
-}
 
 
 @media screen and (min-width:300px) and (max-width:850px) {
@@ -130,18 +65,6 @@ ul.socialmedia-contact li{
         padding-right: 2rem;
          padding-left: 2rem;
     }
-
-    /*********** Texto **********/
-.txt-izq-cont h2{
-    text-align: left;
-    font-size: 1.6rem;
-    margin-bottom: 3rem;
-}
-
-.contact .bi{
-    margin-right: .6rem;;
-}
-
     /*********** Grid ***********/
 .contact-grid{
     display: grid;
@@ -150,13 +73,15 @@ ul.socialmedia-contact li{
     gap: 0rem;
 }
 
-.txt-izq-cont h2{
+.cotizatext{
     font-size: 1.5rem;
     text-align: center;
 }
 
-.txt-izq-cont p{
-    text-align: center;
+.img-personal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 br{
@@ -173,47 +98,3 @@ br{
     justify-content: center;
 }
 }
-/********** cotizador 
-#cotizador {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
-  #cotizador h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: "Manrope", sans-serif;
-    margin-top: -5px;
-    font-size: 1.7rem;
-  }
-  #form-cotizacion label {
-    display: block;
-    margin-top: 20px;
-    font-weight: 600;
-    font-weight: 400;
-    font-family: "Roboto", sans-serif;
-    font-size: 17px;
-  }
-  select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    font-size: 17px;
-  }
-  #resultado {
-    margin-top: 25px;
-    background: #0982A8;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 17px;
-    color: white;
-    font-family: "Roboto", sans-serif;
-  }
-
-  **********/

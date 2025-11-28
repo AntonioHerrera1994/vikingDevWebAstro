@@ -1,7 +1,7 @@
 ---
 import '../styles/contacto.css'
 import Cotizacion from "../components/cotizador.jsx";
-import Texto from './Texto.astro';
+import FotoP from "../assets/foto.png"
 ---
 
 <section class="contacto" id="cotizador" >
@@ -9,39 +9,24 @@ import Texto from './Texto.astro';
 
         <h4>COTIZADOR</h4>
         <!-- <h1>¡Inicia hoy tu salto al mundo digital!</h1>-->
-
+ <h2 class="cotizatext">Hablemos de Tu Proyecto <br> ¡Usa nuestro <span style="color:#0982A8 ;">cotizador</span> y planifica tu <span style="color:#0982A8 ;">inversión</span>!</h2>
         <div class="contact-grid">
 
                  <div class="txt-izq-cont">
-                    <h2>Hablemos de Tu Proyecto <br> ¡Usa nuestro <span style="color:#0982A8 ;">cotizador</span> y planifica tu <span style="color:#0982A8 ;">inversión</span>!</h2>
+                   
                     
-
-              <Texto />
+                 <div class="img-personal">
+              <img 
+              src={FotoP.src}
+             
+              />  
+              </div>  
+             
                  </div>
 
-                <!--  <div id="cotizador">
-                    <h3>Cotiza tu proyecto</h3>
-                  
-                    <form id="form-cotizacion">
-                      <label for="web">Tipo de sitio web:</label>
-                      <select id="web">
-                        <option value="0">No necesito sitio web</option>
-                        <option value="3500">One Page</option>
-                        <option value="5500">Sitio Web Completo</option>
-                        <option value="8000">E-commerce</option>
-                      </select>
-                  
-                      <label for="campañas">Servicios adicionales:</label>
-                      <select id="campañas">
-                        <option value="0">Ninguno</option>
-                        <option value="2000">Campañas / Manejo de redes (mensual)</option>
-                      </select>
-                  
-                      <div id="resultado" style="display:none;">
-                        <strong>Total estimado:</strong> <span id="total">0</span> MXN
-                      </div>
-                    </form>
-                  </div>-->
+               
+              
+              
                   
                     <Cotizacion client:load/>
                   
