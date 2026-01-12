@@ -139,13 +139,17 @@ padding: 14px 30px;
 
 @media screen and (min-width:300px) and (max-width:850px) {
 
+  .filtros{
+    margin-bottom: 3rem;
+    margin-top: -3rem;
+  }
   .portafolio{
    padding-top: 2rem;
    padding-bottom: 2rem;
   }
   .cuadros-cont{
-    padding-right: 2rem;
-     padding-left: 2rem;
+    padding-right: 1.5rem;
+     padding-left: 1.5rem;
 }
 
 .main-title-port h1{

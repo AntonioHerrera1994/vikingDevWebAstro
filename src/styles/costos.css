@@ -74,7 +74,8 @@
 
     .tabs-container {
   text-align: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  
 }
 
 .titulo-paquete{
@@ -86,6 +87,10 @@
   gap: 2rem;
 }
 
-
+.titulo-paquete h1{
+ 
+    font-size: 1.5rem;
+ 
+}
 
 }

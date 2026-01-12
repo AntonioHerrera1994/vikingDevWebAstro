@@ -99,65 +99,6 @@ h3{
   
 }
 
-
-/********** Global programadores *********
-
-.programadores{
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-    margin-left: -8px;
-    margin-right: -8px;
-}
-
-.programadores-cont{
-    margin: 0 auto;
-    overflow: hidden;
-    padding-right: 10rem;
-    padding-left: 10rem;
-margin-bottom: -3rem;
-}
-
-.programadores-grid{
-    display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
-    gap: 2rem;
-}
-
-.pg1-img{
-    background-image: url('/src/assets/programadores/1.png');
-    width: 100%;
-    height: 22rem;
-    background-size: cover;
-    border-radius: 14px;
-}
-
-.pg2-img{
-    background-image: url('/src/assets/programadores/2.png');
-    width: 100%;
-    height: 22rem;
-    background-size: cover;
-    border-radius: 14px;
-}
-
-.pg3-img{
-    background-image: url('/src/assets/programadores/3.png');
-    width: 100%;
-    height: 22rem;
-    background-size: cover;
-    border-radius: 14px;
-}
-
-ul.socialmedia li{
-    display: inline;
-    padding-right: 0.5em;
-   
-}*/
-/*
-.social-div{
-    display: flex;
-    justify-content: center;
-} */
-
 .bi{
     color: #0982A8;
 }
@@ -169,8 +110,8 @@ ul.socialmedia li{
     .features-cont{
         margin: 0 auto;
         overflow: hidden;
-        padding-right: 2rem;
-        padding-left: 2rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
         margin-bottom: 2rem;
     }
     
@@ -191,6 +132,9 @@ ul.socialmedia li{
     .features h1{
         font-size: 1.5rem;
     }
-    
+  
+    .features-txt p{
+margin: 0;
+    }
     
 }
