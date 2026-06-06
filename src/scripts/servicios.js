@@ -20,7 +20,7 @@
   const modalDesc     = document.getElementById('modal-desc');
   const modalFeatures = document.getElementById('modal-features');
   const modalPrice    = document.getElementById('modal-price');
-  const modalCta      = document.getElementById('modal-cta');
+
 
   if (!section || !modal) return;
 
@@ -85,9 +85,6 @@
     modalDesc.textContent  = d.desc  || '';
     modalPrice.textContent = d.from  || '';
 
-    /* CTA */
-    modalCta.textContent = d.cta || 'Solicitar información';
-    modalCta.href        = d.ctaHref || '#cotizador';
 
     /* Features list */
     modalFeatures.innerHTML = '';
