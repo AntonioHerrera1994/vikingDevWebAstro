@@ -16,6 +16,10 @@
   margin-inline: auto;
 }
 
+#paquetes{
+  margin-top: -50px;
+}
+
 /* ══════════════════════════════════════════════════════════════
    TABS
    ══════════════════════════════════════════════════════════════ */
@@ -463,4 +467,9 @@
   .pricing__features-wrap::before {
     animation: none;
   }
+}
+@media (max-width: 801px) {
+#paquetes{
+  margin-top: -10px;
+}
 }
