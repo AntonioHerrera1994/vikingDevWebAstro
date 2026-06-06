@@ -1,187 +1,481 @@
-/************ Animacion **********/
-
-.testimonial-container{
-    opacity: 0;
-    transform: translateY(-20px);
+/* ══════════════════════════════════════════════════════════════
+   SECCIÓN — fondo navy con blobs
+   ══════════════════════════════════════════════════════════════ */
+.testi {
+  position: relative;
+  background: var(--color-primary);
+  overflow: hidden;
 }
 
-.testimonial-container.visible{
-    opacity: 1;
+/* ── Blobs decorativos ───────────────────────────────────────── */
+.testi__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.testi__blob {
+  position: absolute;
+  border-radius: var(--radius-full);
+  filter: blur(80px);
+  opacity: 0.12;
+  animation: blobDrift 12s ease-in-out infinite alternate;
+}
+
+.testi__blob--1 {
+  width: 500px;
+  height: 500px;
+  background: var(--color-secondary-container);
+  top: -120px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.testi__blob--2 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-tertiary-fixed-dim);
+  bottom: -80px;
+  right: -80px;
+  animation-delay: -6s;
+}
+
+@keyframes blobDrift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.08); }
+}
+
+/* ── Container ───────────────────────────────────────────────── */
+.testi__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HEADER
+   ══════════════════════════════════════════════════════════════ */
+.testi__header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 550ms var(--ease-default), transform 550ms var(--ease-default);
+}
+
+.testi__header.is-visible {
+  opacity: 1;
   transform: translateY(0);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transición suave */
 }
 
-
-/********* Global *********/
-.testimoniales{
-    padding-bottom: 3rem;
+.testi__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-tertiary-fixed-dim);
+  margin-bottom: var(--space-md);
 }
 
-.testimoniales-cont{
-  border: solid;
-  border-width: 1px;
-  border-color: #0982A8;
-    margin: 0 auto;
-    overflow: hidden;
-    padding-right: 70px;
-    padding-left: 70px;
-    padding-bottom: 3rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    border-radius: 40px;
+.testi__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg-mobile);
+  line-height: var(--text-display-lg-mobile-lh);
+  letter-spacing: var(--text-display-lg-mobile-ls);
+  font-weight: 700;
+  color: var(--color-on-primary);
+  margin-bottom: var(--space-md);
 }
 
-.testimonial-container {
-    overflow: hidden;
-    position: relative; /* Necesario para el posicionamiento absoluto de las flechas */
+@media (min-width: 768px) {
+  .testi__title {
+    font-size: clamp(36px, 4vw, 52px);
   }
-  
-  .slidet {
-    display: none; /* Inicialmente ocultamos todos los testimonios */
-    text-align: center;
-    padding: 20px;
+}
+
+.testi__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--text-body-lg-lh);
+  color: var(--color-on-primary-container);
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CARRUSEL
+   ══════════════════════════════════════════════════════════════ */
+.testi__carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms var(--ease-default) 100ms, transform 600ms var(--ease-default) 100ms;
+}
+
+.testi__carousel.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Viewport ────────────────────────────────────────────────── */
+.testi__viewport {
+  overflow: hidden;
+  /* Permite que las cards laterales sean parcialmente visibles */
+  padding-inline: 0;
+}
+
+/* ── Track ───────────────────────────────────────────────────── */
+.testi__track {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+  margin: 0;
+  padding: var(--space-lg) 0 var(--space-xl);
+  transition: transform 480ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SLIDES
+   ══════════════════════════════════════════════════════════════ */
+.testi__slide {
+  /* Ancho: ocupa casi todo en mobile, 80% en tablet, 60% en desktop */
+  flex: 0 0 88%;
+  transition:
+    transform 480ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity   480ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Slides no activos: encogidos y semitransparentes */
+  transform: scale(0.90);
+  opacity: 0.45;
+}
+
+@media (min-width: 640px) {
+  .testi__slide {
+    flex: 0 0 76%;
   }
-  
-  .slidet.active {
-    display: block;
+}
+
+@media (min-width: 1024px) {
+  .testi__slide {
+    flex: 0 0 58%;
   }
-  
-  .author {
-    font-style: italic;
-  }
-  
-  .navigation {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .dots .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: black;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .dots .dot.active {
-    background-color:  #0982A8;
+}
+
+/* Slide activo */
+.testi__slide.is-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CARD
+   ══════════════════════════════════════════════════════════════ */
+.testi__card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  overflow: hidden;
+  transition: background 400ms ease, border-color 400ms ease;
+}
+
+/* Card activa: fondo ligeramente más brillante */
+.testi__slide.is-active .testi__card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 64px rgba(0, 0, 0, 0.30);
+}
+
+/* ── Quote mark decorativa ───────────────────────────────────── */
+.testi__quote-mark {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-xl);
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+  transition: color 400ms ease;
+}
+
+.testi__slide.is-active .testi__quote-mark {
+  color: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Stars ───────────────────────────────────────────────────── */
+.testi__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.testi__star {
+  font-size: 18px;
+  color: #fbbf24; /* amber */
+  transition: transform 300ms ease;
+}
+
+.testi__slide.is-active .testi__star {
+  animation: starPop 400ms var(--ease-default) both;
+}
+
+.testi__slide.is-active .testi__star:nth-child(1) { animation-delay:  0ms; }
+.testi__slide.is-active .testi__star:nth-child(2) { animation-delay: 50ms; }
+.testi__slide.is-active .testi__star:nth-child(3) { animation-delay: 100ms; }
+.testi__slide.is-active .testi__star:nth-child(4) { animation-delay: 150ms; }
+.testi__slide.is-active .testi__star:nth-child(5) { animation-delay: 200ms; }
+
+@keyframes starPop {
+  0%   { transform: scale(0.5) rotate(-15deg); opacity: 0; }
+  60%  { transform: scale(1.3) rotate(5deg);  opacity: 1; }
+  100% { transform: scale(1)   rotate(0deg);  opacity: 1; }
+}
+
+/* ── Blockquote ──────────────────────────────────────────────── */
+.testi__blockquote {
+  margin: 0;
+}
+
+.testi__quote {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  font-style: italic;
+  transition: color 400ms ease;
+}
+
+.testi__slide.is-active .testi__quote {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ── Autor ───────────────────────────────────────────────────── */
+.testi__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.testi__avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.testi__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 400ms ease;
+}
+
+.testi__slide.is-active .testi__avatar {
+  border-color: rgba(255, 255, 255, 0.30);
+}
+
+/* Ring de acento — color dinámico via CSS var */
+.testi__avatar-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--accent, var(--color-secondary-container));
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 400ms ease,
+    transform 400ms ease;
+}
+
+.testi__slide.is-active .testi__avatar-ring {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.testi__author-name {
+  font-family: var(--font-display);
+  font-size: var(--text-headline-md);
+  font-weight: 600;
+  color: var(--color-on-primary);
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.testi__author-role {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-on-primary-container);
+  margin: 0;
+}
+
+/* ── Accent line inferior ────────────────────────────────────── */
+.testi__accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 0 0 var(--radius-3xl) var(--radius-3xl);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms var(--ease-default);
+}
+
+.testi__slide.is-active .testi__accent-line {
+  transform: scaleX(1);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CONTROLES: flechas + dots
+   ══════════════════════════════════════════════════════════════ */
+.testi__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+/* ── Flechas ─────────────────────────────────────────────────── */
+.testi__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-hover);
+}
+
+.testi__arrow:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.40);
+  color: var(--color-on-primary);
+  transform: scale(1.08);
+}
+
+.testi__arrow:active {
+  transform: scale(0.95);
+}
+
+.testi__arrow:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ── Dots ────────────────────────────────────────────────────── */
+.testi__dots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.testi__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    width 300ms var(--ease-default),
+    background 300ms var(--ease-default),
+    transform 300ms var(--ease-default);
+}
+
+.testi__dot.is-active {
+  width: 28px;
+  background: var(--color-secondary-container);
+  /* El color del dot activo cambia con el accent del testimonial */
+  background: var(--dot-active-color, var(--color-secondary-container));
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PROGRESS BAR — auto-play
+   ══════════════════════════════════════════════════════════════ */
+.testi__progress {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.testi__progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--color-secondary-container);
+  border-radius: var(--radius-full);
+  transition: width linear;
+  /* La duración la setea JS */
+}
+
+/* Pausa visible en hover */
+.testi__carousel.is-paused .testi__progress-bar {
+  transition: none;
+}
+
+/* ─── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .testi__blob {
+    animation: none;
   }
 
-  .cont-prev{
-    padding-bottom: 4rem;
-  }
-  
-
-  /********** Texto **********/
-
-  .titulo h1{
-    text-align: center;
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-  }
-  
-  .titulo h4{
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    font-size: .8rem;
-    color: #0982A8;
+  .testi__track {
+    transition: none;
   }
 
-  .slidet h3{
-    font-size:1.4rem;
-    font-weight: 300;
-    line-height: 2.5rem;
-    color: black;
+  .testi__slide {
+    transition: none;
+    transform: scale(1);
+    opacity: 1;
   }
 
-  .slidet p{
-    font-size:1rem;
-    color: black;
-    margin-left: 3.5rem;
+  .testi__star {
+    animation: none;
   }
 
-
-  .author{
-    font-size: 1rem;
-    margin-bottom: -.5rem;
-    font-style: normal;
-    font-weight: 600;
-    color: black;
+  .testi__accent-line {
+    transition: none;
+    transform: scaleX(1);
   }
 
-  .bi-arrow-left{
-    color: black;
-    font-size: 1.5rem;
-
-   
+  .testi__header,
+  .testi__carousel {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
-  .bi-arrow-right{
-    color: black;
-    font-size: 1.5rem;
-
-  
+  .testi__progress-bar {
+    transition: none;
   }
-
-  .prev-btn, .next-btn {
-    position: absolute;
-    top: 50%; /* Centrar verticalmente */
-    transform: translateY(-50%); /* Ajustar la posición vertical */
-    cursor: pointer;
-    /* Otros estilos para las flechas (color, tamaño, etc.) */
-  }
-  
-  .prev-btn {
-    left: 10px; /* Ajusta la distancia al borde izquierdo */
-  }
-  
-  .next-btn {
-    right: 10px; /* Ajusta la distancia al borde derecho */
-  }
-
-  @media screen and (min-width:300px) and (max-width:800px) {
-
-    .testimoniales-cont{
-      width: auto;
-        height: auto;
-      padding-right: 20px;
-      padding-left: 20px;
-      margin-top: -2rem;
-      margin-bottom: -2rem;
-  }
-
-    .testimoniales{
-      padding-top: 0;
-  }
-
-    .prev-btn, .next-btn{
-      display: none;
-    }
-
-    .slidet h3{
-      font-size:.9rem;
-      line-height: 1.7rem;
-    }
-
-    .slidet p{
-      font-size:.9rem;
-      margin-bottom: -1rem;
-    }
-  
-    .author{
-      font-size: .9rem;
-    }
-
-    .dots .dot {
-      width: 9px;
-    }
-    .bi-quote{
-      font-size: 2rem;
-    }
-
-  }
-  
+}

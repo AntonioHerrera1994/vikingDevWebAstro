@@ -1,45 +1,81 @@
-// Abrir menú
+(function () {
+  'use strict';
 
-document.querySelector('.hamburger').addEventListener('click', () => {
-  document.querySelector('.nav-links').classList.toggle('expanded');
-});
+  /* ─── Elementos ─────────────────────────────────────────── */
+  const nav        = document.getElementById('main-nav');
+  const hamburger  = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-// Cerrar menú al hacer clic en el botón "close"
-document.querySelector('.close').addEventListener('click',   
-() => {
-document.querySelector('.nav-links').classList.remove('expanded');
-});
+  if (!nav || !hamburger || !mobileMenu) return;
 
-// Cerrar menú al hacer clic en cualquier enlace dentro de nav-links
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.remove('expanded');
+  /* ─── 1. Scroll: shrink nav ─────────────────────────────── */
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 50);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // ejecutar al cargar por si la página empieza con scroll
+
+  /* ─── 2. Hamburger toggle ───────────────────────────────── */
+  function openMenu() {
+    hamburger.classList.add('is-open');
+    mobileMenu.classList.add('is-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('is-open');
+    mobileMenu.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function toggleMenu() {
+    const isOpen = hamburger.classList.contains('is-open');
+    isOpen ? closeMenu() : openMenu();
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  /* ─── 3a. Cierre al hacer click en links del menú móvil ── */
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
   });
-});
 
+  /* ─── 3b. Cierre al hacer click fuera del nav ───────────── */
+  document.addEventListener('click', function (e) {
+    if (
+      hamburger.classList.contains('is-open') &&
+      !nav.contains(e.target)
+    ) {
+      closeMenu();
+    }
+  });
 
-// Cambiar color de fondo al hacer scroll (para #miDiv)
-window.addEventListener('scroll', function() {
-  const div = document.getElementById('miDiv');
-  const scrollPosition = window.scrollY;
+  /* ─── 4. Cierre con tecla Escape ────────────────────────── */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && hamburger.classList.contains('is-open')) {
+      closeMenu();
+      hamburger.focus(); // devolver el foco al botón (accesibilidad)
+    }
+  });
 
-  if (scrollPosition > 100) { // Cambia a 100px o la distancia que prefieras
-    div.style.backgroundColor = 'white'; // Nuevo color de fondo
-  } else {
-    div.style.backgroundColor = '#ffffff00'; // Color inicial
+  /* ─── 5. Resetear estado al redimensionar a desktop ─────── */
+  const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+  function onResize(mq) {
+    if (mq.matches && hamburger.classList.contains('is-open')) {
+      closeMenu();
+    }
   }
-});
 
-
-// Cambiar color de fondo al hacer scroll (para #miMenu)
-window.addEventListener('scroll', function() {
-  const div = document.getElementById('miMenu');
-  const scrollPosition = window.scrollY;
-
-  if (scrollPosition > 100) { // Cambia a 100px o la distancia que prefieras
-    div.style.backgroundColor = 'white'; // Nuevo color de fondo
+  // Usar addEventListener si está disponible, si no addListener (Safari antiguo)
+  if (typeof mediaQuery.addEventListener === 'function') {
+    mediaQuery.addEventListener('change', onResize);
   } else {
-    div.style.backgroundColor = 'white'; // Color inicial
+    mediaQuery.addListener(onResize);
   }
-});
-
+})();

@@ -1,170 +1,307 @@
-
-/********** Gloobal ***********/
-
-.Mainhead{
-  z-index: 1;
-  padding-top: 5rem;
-  padding-bottom: 10rem;
-  background-image: url('../assets/puntos.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.content-main{
+/* ─── Section ────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding-top: calc(var(--nav-height) + var(--space-2xl));
+  padding-bottom: var(--space-3xl);
   overflow: hidden;
-  margin: 0 auto;
-  padding-right: 50px;
-  padding-left: 50px;
 }
 
-/*********** Img **********/
-
-.mainhead-cont img{
-  width: 90%;
-  height: 90%;
-  box-shadow: none;
+@media (min-width: 768px) {
+  .hero { padding-bottom: var(--space-5xl); }
 }
 
-/*********** text **********/
-.mainhead-cont-2 h1{
-  text-align: center;
-  font-size: 3rem;
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+/* ─── Grid interior ──────────────────────────────────────────── */
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero__inner { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── Badge ──────────────────────────────────────────────────── */
+.hero__badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--color-on-secondary-fixed-variant);
+  background: var(--color-secondary-fixed);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
 }
 
-.mainhead-cont-2 p{
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 27px;
+/* ─── H1 ─────────────────────────────────────────────────────── */
+.hero__h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg-mobile);
+  line-height: var(--text-display-lg-mobile-lh);
+  letter-spacing: var(--text-display-lg-mobile-ls);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
 }
 
-.buttons-grid{
+@media (min-width: 768px) {
+  .hero__h1 {
+    font-size: var(--text-display-lg);
+    line-height: var(--text-display-lg-lh);
+    letter-spacing: var(--text-display-lg-ls);
+  }
+}
+
+.hero__accent { color: var(--color-secondary); }
+
+/* ─── Subheadline ────────────────────────────────────────────── */
+.hero__sub {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--text-body-lg-lh);
+  color: var(--color-on-surface-variant);
+  max-width: 520px;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ─── CTAs ───────────────────────────────────────────────────── */
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 480px) {
+  .hero__actions { flex-direction: row; flex-wrap: wrap; }
+}
+
+.hero__btn-primary { padding: 16px 32px; border-radius: var(--radius-xl); }
+.hero__btn-outline  { padding: 14px 32px; border-radius: var(--radius-xl); }
+
+/* ─── Social proof ───────────────────────────────────────────── */
+.hero__proof {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.hero__proof-dot {
+  width: 8px; height: 8px;
+  border-radius: var(--radius-full);
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   VISUAL SIDE
+   ══════════════════════════════════════════════════════════════ */
+
+.hero__visual {
+  position: relative;
   display: flex;
   justify-content: center;
-}
-  
-.btn-left{
-  background-color:#0982A8;
-  padding: 17px 52px 17px 52px;
-  color: white;
-  border-radius: 12px;
-  margin-top: 1.9rem;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease; /* Transición de 0.5 segundos */
-  text-decoration: none;
+  align-items: flex-start;
 }
 
-.btn-left:hover{
-  background-color: white;
-  border: solid;
-  border-width: 1px;
-  border-color: #0982A8;
-  color: #0982A8;
-  
-}
-
-
-@media screen and (min-width:300px) and (max-width:850px) {
-  .Mainhead{
-   padding-top: 1rem;
-   padding-bottom: 2rem;
- }
-
-    .content-main{
-      width: auto;
-      padding-left: .5rem;
-      padding-right: .5rem;
-    }
-
-    .main-grid{
-      padding: 1rem;
-      grid-template-columns: repeat(1,minmax(0,1fr));
-          gap: 0;
-          margin-top: 1rem;     
-    }
-
-    /*********** text **********/
-.mainhead-cont-2 h1{
-  font-size: 2.2rem;
-}
-.mainhead-cont-2 p{
-margin: 0;
-padding-bottom: 1rem;
-}
-
-  
-  }
- 
-  @media only screen and (min-width:1400px) {
-
-    .content-main{
-      width: auto;
-      padding-left: 140px;
-      padding-right: 140px;
-    }
-
-  }
-
-
-  /* From Uiverse.io by alexmaracinaru */ 
-.cta {
-  position: relative;
-  margin: auto;
-  padding: 12px 18px;
-  transition: all 0.2s ease;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.cta:before {
-  content: "";
+/* Glow blob */
+.hero__blob {
   position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  border-radius: 50px;
-  background: #b1dae7;
-  width: 45px;
-  height: 45px;
-  transition: all 0.3s ease;
+  top: -60px; right: -60px;
+  width: 340px; height: 340px;
+  background: rgba(76, 215, 246, 0.15);
+  border-radius: var(--radius-full);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.cta span {
+/* ══════════════════════════════════════════════════════════════
+   GRID 2×2 DE CARDS
+   ══════════════════════════════════════════════════════════════ */
+.hero__cards-grid {
   position: relative;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #0982A8;
- 
-}
-
-.cta svg {
-  position: relative;
-  top: 0;
-  margin-left: 10px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke: #0982A8;
-  stroke-width: 2;
-  transform: translateX(-5px);
-  transition: all 0.3s ease;
-}
-
-.cta:hover:before {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
   width: 100%;
-  background: #b1dae7;
+  max-width: 480px;
 }
 
-.cta:hover svg {
-  transform: translateX(0);
+/* ── Card individual ─────────────────────────────────────────── */
+.hero__illus-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-slow),
+    box-shadow var(--transition-slow),
+    border-color var(--transition-slow);
+
+  /* Entrada: estado invisible hasta que JS arranca la animación */
+  opacity: 0;
 }
 
-.cta:active {
-  transform: scale(0.95);
+.hero__illus-card.is-ready {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .hero__illus-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(70, 72, 212, 0.20);
+  }
+}
+
+/* ── SVG wrap ────────────────────────────────────────────────── */
+.hero__illus-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+/* Ambos SVG apilados */
+.hero__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* SVG de relleno: empieza invisible */
+.hero__svg--fill {
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.hero__illus-card.fill-visible .hero__svg--fill {
+  opacity: 1;
+}
+
+/* ── Label de la card ────────────────────────────────────────── */
+.hero__illus-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-on-surface-variant);
+  text-align: center;
+  line-height: 1.3;
+
+  /* Entrada slide-up */
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 400ms var(--ease-default),
+    transform 400ms var(--ease-default);
+}
+
+.hero__illus-card.label-visible .hero__illus-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ANIMACIÓN SVG — TRAZADO
+   Técnica: stroke-dasharray = longitud total del path
+            stroke-dashoffset: longitud → 0  (se va "dibujando")
+   El JS calcula la longitud real de cada path con getTotalLength()
+   y aplica la animación con un stagger por card.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Estado base de TODOS los paths del stroke SVG —
+   el JS setea --path-len y lanza la animación */
+.hero__svg--stroke path,
+.hero__svg--stroke line,
+.hero__svg--stroke rect,
+.hero__svg--stroke circle,
+.hero__svg--stroke polyline,
+.hero__svg--stroke polygon {
+  stroke-dasharray: var(--path-len, 500);
+  stroke-dashoffset: var(--path-len, 500);
+}
+
+/* Clase que el JS añade para lanzar el draw */
+.hero__svg--stroke.is-drawing path,
+.hero__svg--stroke.is-drawing line,
+.hero__svg--stroke.is-drawing rect,
+.hero__svg--stroke.is-drawing circle,
+.hero__svg--stroke.is-drawing polyline,
+.hero__svg--stroke.is-drawing polygon {
+  animation: svgDraw var(--draw-duration, 900ms) var(--ease-default) forwards;
+  /* Stagger por elemento dentro del SVG — el JS lo setea via style */
+  animation-delay: var(--draw-delay, 0ms);
+}
+
+@keyframes svgDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ANIMACIONES COPY (izquierda)
+   ══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__badge {
+    animation: fadeUp var(--duration-slower) var(--ease-default) both;
+    animation-delay: 60ms;
+  }
+  .hero__h1 {
+    animation: fadeUp var(--duration-slower) var(--ease-default) both;
+    animation-delay: 150ms;
+  }
+  .hero__sub {
+    animation: fadeUp var(--duration-slower) var(--ease-default) both;
+    animation-delay: 240ms;
+  }
+  .hero__actions {
+    animation: fadeUp var(--duration-slower) var(--ease-default) both;
+    animation-delay: 320ms;
+  }
+  .hero__proof {
+    animation: fadeUp var(--duration-slower) var(--ease-default) both;
+    animation-delay: 390ms;
+  }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero__illus-card {
+    opacity: 1;
+  }
+  .hero__illus-label {
+    opacity: 1;
+    transform: none;
+  }
+  .hero__svg--fill {
+    opacity: 1;
+  }
+  /* Sin draw animation — paths visibles directamente */
+  .hero__svg--stroke path,
+  .hero__svg--stroke line,
+  .hero__svg--stroke rect,
+  .hero__svg--stroke circle,
+  .hero__svg--stroke polyline,
+  .hero__svg--stroke polygon {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
 }

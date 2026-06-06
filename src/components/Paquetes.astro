@@ -1,475 +1,253 @@
 ---
-import '../styles/paquetes.css';
-import '../styles/costos.css';
-import OnepageImg from '../assets/onepage.webp';
+import '../styles/paquetes.css'
+const plans = [
+  {
+    id: 'one-page',
+    tab: 'One Page',
+    image: 'https://vikingdevtj.com/_astro/onepage.BPXwVdHY.webp',
+    imageAlt: 'Diseño de landing page one page — VikingDev Tijuana',
+    price: '$4,000',
+    currency: 'MXN + IVA',
+    period: 'pago único',
+    tag: 'Lanzamiento rápido',
+    desc: 'Ideal para emprendedores, freelancers, eventos y lanzamientos de producto que necesitan presencia digital profesional de inmediato.',
+    cta: '¡Lo quiero!',
+    ctaHref: 'https://wa.link/wnb0m6',
+    features: [
+      'Diseño personalizado basado en tu marca',
+      '1 página con scroll fluido',
+      'Diseño responsive (móvil, tablet, desktop)',
+      '3–6 secciones estratégicas',
+      'Formulario de contacto funcional',
+      'Botón de WhatsApp flotante',
+      'CTAs estratégicos',
+      'Mapa de ubicación integrado',
+      'Galería, carrusel, videos y más',
+      'Blog con hasta 2 entradas',
+      'SEO básico on-page',
+      'Google Analytics integrado',
+      '2 rondas de revisiones',
+      'Hosting por un año incluido',
+      'Capacitación básica',
+      'Entrega en 5-7 días',
+    ],
+  },
+  {
+    id: 'sitio-completo',
+    tab: 'Sitio Web Completo',
+    image: 'https://vikingdevtj.com/_astro/webcompleto.CveNQIPt.webp',
+    imageAlt: 'Sitio web completo multisección — VikingDev Tijuana',
+    price: '$6,000',
+    currency: 'MXN + IVA',
+    period: 'pago único',
+    tag: 'Más popular',
+    desc: 'Ideal para empresas establecidas, servicios profesionales, agencias y consultorías que necesitan una presencia web robusta.',
+    cta: '¡Lo quiero!',
+    ctaHref: 'https://wa.link/wnb0m6',
+    features: [
+      'Diseño personalizado basado en tu marca',
+      '5–8 páginas navegables',
+      'Diseño responsive (móvil, tablet, desktop)',
+      'Páginas internas estilizadas',
+      'Formularios en todas las páginas',
+      'Botón de WhatsApp flotante',
+      'CTAs estratégicos',
+      'Mapa de ubicación en todas las páginas',
+      'Calendarios, galerías, chatbot y más',
+      'Blog con hasta 4 entradas',
+      'SEO técnico optimizado',
+      'Mapas de calor (opcional)',
+      'Google Analytics integrado',
+      '3 rondas de revisiones',
+      'Hosting por un año incluido',
+      'Capacitación básica',
+      'Entrega en 7-10 días',
+    ],
+  },
+  {
+    id: 'ecommerce',
+    tab: 'E-Commerce',
+    image: 'https://vikingdevtj.com/_astro/ecommerce.B0zSKEQM.webp',
+    imageAlt: 'Tienda en línea e-commerce — VikingDev Tijuana',
+    price: '$8,000',
+    currency: 'MXN + IVA',
+    period: 'pago único',
+    tag: 'Vende en línea',
+    desc: 'Ideal para tiendas retail, marcas de producto, distribuidores y emprendedores digitales listos para vender 24/7.',
+    cta: '¡Lo quiero!',
+    ctaHref: 'https://wa.link/wnb0m6',
+    features: [
+      'Diseño de tienda personalizado',
+      'Página de inicio optimizada para ventas',
+      '5–8 páginas navegables',
+      'Carrito de compras flotante',
+      'Checkout optimizado (1–3 pasos)',
+      'Catálogo de hasta 50 productos',
+      'Variantes de producto (talla, color, etc.)',
+      'Cupones y códigos de descuento',
+      'Múltiples métodos de pago',
+      'Seguimiento de envíos',
+      'Notificaciones automáticas por email',
+      'Facturas PDF automáticas',
+      'SEO técnico + Meta Pixel integrado',
+      'Google Analytics integrado',
+      '3 rondas de revisiones',
+      'Hosting por un año incluido',
+      'Capacitación completa',
+      'Entrega en 7-10 días',
+    ],
+  },
+  {
+    id: 'complemento',
+    tab: 'Complemento Web',
+    image: 'https://vikingdevtj.com/_astro/apoyoweb.eLp5Ab2-.webp',
+    imageAlt: 'Complemento web — SEO y marketing digital mensual',
+    price: '$2,000',
+    currency: 'MXN + IVA',
+    period: '/ mes',
+    tag: 'Suscripción',
+    desc: 'Plan para negocios que ya tienen sitio web y buscan potencializar su presencia con SEO, Ads y mantenimiento continuo.',
+    cta: '¡Lo quiero!',
+    ctaHref: 'https://wa.link/wnb0m6',
+    features: [
+      'SEO técnico y de contenido mensual',
+      'Google Ads (gestión de campañas)(opcional)',
+      'Google Analytics — reportes mensuales',
+      'Meta Pixel (Facebook / Instagram)(opcional)',
+      'Blogs y contenido SEO',
+      'Mantenimiento general del sitio',
+      'Actualizaciones de seguridad',
+      'Respaldos periódicos',
+      'Soporte técnico dedicado',
+      'Reunión de seguimiento mensual',
+    ],
+  },
+];
 ---
 
-<section id="paquetes">
-<section class="titulo-paquete">
- <h4>Paquetes Web</h4>
-            <h1>Contamos con la solución perfecta para tu negocio</h1>
+<section class="pricing section" id="paquetes" aria-labelledby="pricing-title">
+  <div class="container">
+
+    <!-- Header -->
+    <header class="pricing__header">
+      <span class="section-label">Paquetes Web</span>
+      <h2 class="section-title" id="pricing-title">
+        La solución perfecta para tu negocio
+      </h2>
+      <p class="section-subtitle pricing__subtitle">
+        Elige el plan que se adapta a tu etapa. Todos incluyen hosting por un año y soporte post-entrega.
+      </p>
+    </header>
+
+    <!-- Tabs -->
+    <div class="pricing__tabs" role="tablist" aria-label="Planes de precios">
+      {plans.map((plan, i) => (
+        <button
+          class={`pricing__tab${i === 0 ? ' is-active' : ''}`}
+          role="tab"
+          aria-selected={i === 0 ? 'true' : 'false'}
+          aria-controls={`panel-${plan.id}`}
+          id={`tab-${plan.id}`}
+          data-index={i}
+          type="button"
+        >
+          {plan.tab}
+          {plan.tag === 'Más popular' && (
+            <span class="pricing__tab-badge">★</span>
+          )}
+        </button>
+      ))}
+      <!-- Indicador deslizante del tab activo -->
+      <span class="pricing__tab-indicator" aria-hidden="true"></span>
+    </div>
+
+    <!-- Panels -->
+    <div class="pricing__panels">
+      {plans.map((plan, i) => (
+        <div
+          class={`pricing__panel${i === 0 ? ' is-active' : ''}`}
+          role="tabpanel"
+          id={`panel-${plan.id}`}
+          aria-labelledby={`tab-${plan.id}`}
+          hidden={i !== 0}
+        >
+          <div class="pricing__panel-inner">
+
+            <!-- Imagen con precio superpuesto -->
+            <div class="pricing__img-col">
+              <div class="pricing__img-wrap">
+                <img
+                  src={plan.image}
+                  alt={plan.imageAlt}
+                  class="pricing__img"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  width="600"
+                  height="480"
+                />
+                <!-- Overlay gradiente -->
+                <div class="pricing__img-overlay" aria-hidden="true"></div>
+                <!-- Precio superpuesto -->
+                <div class="pricing__img-content">
+                  <span class="pricing__img-tag">{plan.tag}</span>
+                  <p class="pricing__img-period">
+                    {plan.period === '/ mes' ? 'Suscripción mensual:' : 'Inversión:'}
+                  </p>
+                  <p class="pricing__img-price">
+                    {plan.price}
+                    <span class="pricing__img-currency"> {plan.currency}</span>
+                  </p>
+                  <p class="pricing__img-desc">{plan.desc}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Features + CTA -->
+            <div class="pricing__info-col">
+              <p class="pricing__includes-label">¿Qué incluye?</p>
+
+              <div class="pricing__features-wrap">
+                <ul class="pricing__features" aria-label={`Características del plan ${plan.tab}`}>
+                  {plan.features.map((feat) => (
+                    <li class="pricing__feature">
+                      <span class="pricing__dot" aria-hidden="true"></span>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href={plan.ctaHref}
+                class="pricing__cta"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Contratar plan ${plan.tab}`}
+              >
+                {plan.cta}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Nota pie -->
+    <p class="pricing__note">
+      ¿Proyecto especial o a medida?
+      <a href="https://wa.link/wnb0m6" class="pricing__note-link" target="_blank" rel="noopener noreferrer">
+        Hablemos →
+      </a>
+    </p>
+
+  </div>
 </section>
-<div class="tabs-container">
-  <div class="tab-buttons">
-    <button class="tab-btn active" data-tab="onepage">ONE PAGE</button>
-    <button class="tab-btn" data-tab="sitio">SITIO WEB COMPLETO</button>
-    <button class="tab-btn" data-tab="ecommerce">E-COMMERCE</button>
-    <button class="tab-btn" data-tab="complemento">COMPLEMENTO WEB</button>
-  </div>
 
-  <div class="tab-content active" id="onepage">
-    <div class="grid-card">
-        <div class="paqueteimg img1">
-            <div class="paquete-cont">
-           <h3>Inversión: <b>$5,000 MXN + IVA</b></h3>
-           <p>Ideal para: Emprendedores, freelancers, eventos, campañas específicas, lanzamientos de productos.</p>
-       </div>
-        </div>
-        <div>
-             <div class="card-container">
-        <div class="list-container" id="listContainer">
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Diseño personalizado basado en tu marca.</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">1 página completa con scroll fluido.</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Diseño responsive (móvil, tablet, desktop).</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">3-6 secciones estratégicas (nosotros, servicios, testimonios, etc).</div>
-            </div>
-            
-          
-            
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Formulario de contacto funcional.</div>
-            </div>
-                
-            
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Boton de WhatsApp flotante.</div>
-            </div>
-            
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Llamadas a la acción (CTAs) estratégicos.</div>
-            </div>
-      
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Mapa de ubicación integrado.</div>
-            </div>
-            
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Enlaces a redes sociales.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Componentes adicionales tales como: calendarios, galerías, carrusel, videos, etc.</div>
-                
-              
-            </div>
-            
-                <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Blog con hasta dos entradas.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">SEO básico on-page.</div>
-            </div>
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Integración Google Analytics.</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">2 rondas de revisiones.</div>
-            </div>
-
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Host por un año.</div>
-            </div>
-            
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Capacitación básica.</div>
-            </div>
-            
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Entrega en 10-15 días.</div>
-            </div>
-            
-            
-        </div>
-
-             <a href="https://wa.link/wnb0m6" target="_blank" style="text-decoration: none;"> <button class="read-more-btn">
-            ¡Lo Quiero!
-            <span class="arrow">→</span>
-        </button></a>
-    </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="tab-content" id="sitio">
-      <div class="grid-card">
-         <div class="paqueteimg img2">
-            <div class="paquete-cont">
-           <h3>Inversión: <b>$6,000 MXN + IVA</b></h3>
-           <p>Ideal para: Empresas establecidas, servicios profesionales, agencias, consultorías, instituciones.</p>
-       </div>
-        </div>
-       <div class="card-container">
-        <div class="list-container" id="listContainer">
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Diseño personalizado basado en tu marca.</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">5-8 páginas navegables.</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Diseño responsive (móvil, tablet, desktop).</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Páginas internas estilizadas.</div>
-            </div>
-            
-          
-            
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Formularios de contacto funcional en todás las páginas.</div>
-            </div>
-                
-            
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Boton de WhatsApp flotante.</div>
-            </div>
-            
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Llamadas a la acción (CTAs) estratégicos.</div>
-            </div>
-      
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Mapa de ubicación integrado en todas las páginas.</div>
-            </div>
-            
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Enlaces a redes sociales.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Componentes adicionales tales como: calendarios, galerías, carrusel, videos, chatbot, etc.</div>
-                
-              
-            </div>
-            
-                <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Blog con hasta 4 entradas.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">SEO técnico optimizado.</div>
-            </div>
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Mapas de calor (opcional).</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Integración Google Analytics.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">3 rondas de revisiones.</div>
-            </div>
-
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Host por un año.</div>
-            </div>
-            
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Capacitación básica.</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Entrega en 10-15 días.</div>
-            </div>
-            
-            
-            
-            
-        </div>
-
-             <a href="https://wa.link/wnb0m6" target="_blank" style="text-decoration: none;"> <button class="read-more-btn">
-            ¡Lo Quiero!
-            <span class="arrow">→</span>
-        </button></a>
-    </div>
-    </div>
-  </div>
-
-  <div class="tab-content" id="ecommerce">
-   <div class="grid-card">
-       <div class="paqueteimg img3">
-            <div class="paquete-cont">
-           <h3>Inversión: <b>$8,000 MXN + IVA</b></h3>
-           <p>Ideal para: Tiendas retail, marcas de productos, distribuidores, mayoristas, emprendedores digitales.</p>
-       </div>
-        </div>
-      <div class="card-container">
-        <div class="list-container" id="listContainer">
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Diseño de tienda personalizado.</div>
-            </div>
-            
-             <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Página de inicio optimizada para ventas.</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">5-8 páginas navegables.</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Diseño responsive (móvil, tablet, desktop).</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Páginas internas estilizadas.</div>
-            </div>
-            
-           <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Carrito de compras flotante.</div>
-            </div>
-            
-                <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Checkout optimizado (1-3 pasos).</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Páginas de categorías.</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Barra de búsqueda avanzada.</div>
-            </div>
-            
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Catálogo de hasta 50 productos.</div>
-            </div>
-            
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Variantes de producto (talla, color, etc.)</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Cupones y códigos de descuento.</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Múltiples métodos de pago.</div>
-            </div>
-            
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Formularios de contacto funcional en todás las páginas.</div>
-            </div>
-            
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Seguimiento de envíos.</div>
-            </div>
-            
-             <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text"> Notificaciones automáticas por email.</div>
-            </div>
-            
-             <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Facturas PDF automáticas.</div>
-            </div>
-            
-             <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Historial de pedidos del cliente.</div>
-            </div>
-                
-            
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Boton de WhatsApp flotante.</div>
-            </div>
-            
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Llamadas a la acción (CTAs) estratégicos.</div>
-            </div>
-      
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Mapa de ubicación integrado en todas las páginas.</div>
-            </div>
-            
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Enlaces a redes sociales.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Componentes adicionales tales como: calendarios, galerías, carrusel, videos, chatbot, etc.</div>
-                
-              
-            </div>
-            
-                <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Blog con hasta 4 entradas.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">SEO técnico optimizado.</div>
-            </div>
-               <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Mapas de calor (opcional).</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Integración Google Analytics.</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Integración Meta Pixel.</div>
-            </div>
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">3 rondas de revisiones.</div>
-            </div>
-            
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Host por un año.</div>
-            </div>
-
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Capacitación completa.</div>
-            </div>
-            
-              <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Entrega en 15-20 días.</div>
-            </div>
-        </div>
-
-             <a href="https://wa.link/wnb0m6" target="_blank" style="text-decoration: none;"> <button class="read-more-btn">
-            ¡Lo Quiero!
-            <span class="arrow">→</span>
-        </button></a>
-    </div>
-    </div>
-  </div>
-
-  <div class="tab-content" id="complemento">
-    <div class="grid-card">
-           <div class="paqueteimg img4">
-            <div class="paquete-cont">
-           <h3 style="line-height: 40px;">Suscripción mensual: <br><b>$3,000 MXN + IVA</b></h3>
-           <p>Plan ideado especialmente para negocios que cuentan con sitio web y buscan potencializar su presencia.</p>
-       </div>
-        </div>
- <div class="card-container">
-        <div class="list-container" id="listContainer">
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">SEO (Optimización para Motores de Búsqueda).</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Google Ads (Publicidad de Pago).</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Google Analytics (Análisis Web).</div>
-            </div>
-            <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Pixel de Meta (Facebook/Instagram).</div>
-            </div>
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Blogs y Contenido.</div>
-            </div>
-            
-                
-            
-            
-                  <div class="list-item">
-                <div class="bullet"></div>
-                <div class="list-text">Mantenimiento general.</div>
-            </div>
-            
-            
-            
-        </div>
-
-        <a href="https://wa.link/wnb0m6" target="_blank" style="text-decoration: none;"> <button class="read-more-btn">
-            ¡Lo Quiero!
-            <span class="arrow">→</span>
-        </button></a>
-    </div>
-    </div>
-  </div>
-</div>
-
-    <script>
-    import "../scripts/costos.js"
+<script>
+  import '../scripts/costos'
 </script>
-</section>

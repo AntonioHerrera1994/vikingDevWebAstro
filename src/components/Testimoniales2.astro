@@ -1,65 +1,186 @@
 ---
-import '../styles/testimonialesnew.css'
+import '../styles/testimoniales.css'
+const testimonials = [
+  {
+    id: 'bajabox',
+    name: 'BajaBox',
+    role: 'CEO',
+    company: 'BajaBox',
+    avatar: 'https://bajabox.com.mx/wp-content/uploads/2024/12/favicon-ok-150x150.png',
+    rating: 5,
+    quote: 'Hemos visto un aumento significativo en la eficiencia de nuestros procesos y una mejora en la satisfacción de nuestros clientes. El equipo de VikingDev entiende exactamente lo que un negocio necesita para crecer en digital. ¡Los recomendamos ampliamente!',
+    accent: '#4cd7f6', // cyan
+  },
+  {
+    id: 'ppsolutions',
+    name: 'P&P Solutions',
+    role: 'Director General',
+    company: 'P&P Solutions',
+    avatar: 'https://ppsolutions.com.mx/wp-content/uploads/2025/01/cropped-Logo-2-e1738261177163-192x192.png',
+    rating: 5,
+    quote: 'El diseño del sitio es moderno, elegante y transmite exactamente la confianza que buscábamos. Estamos muy satisfechos con el resultado y hemos recibido comentarios muy positivos de nuestros clientes desde el lanzamiento.',
+    accent: '#6063ee', // indigo
+  },
+  {
+    id: 'integra',
+    name: 'Integra TJ',
+    role: 'Directora',
+    company: 'Integra TJ',
+    avatar: 'https://integratj.com.mx/wp-content/uploads/2025/01/Diseno-sin-titulo-300x300.webp',
+    rating: 5,
+    quote: 'El sitio web es claro, conciso y fácil de navegar. Desde que lanzamos el nuevo sitio web, hemos notado un aumento considerable en las consultas de clientes potenciales. VikingDev cumplió cada detalle a tiempo.',
+    accent: '#22c55e', // green
+  },
+  {
+    id: 'zactech',
+    name: 'Zac Tech Semi',
+    role: 'Gerente Comercial',
+    company: 'Zac Tech Semi',
+    avatar: 'https://zacsemi.com.mx/favicon.png',
+    rating: 5,
+    quote: 'El sitio web ha sido una herramienta invaluable para atraer nuevos clientes y mejorar nuestra imagen corporativa. La velocidad, el diseño y el SEO superaron nuestras expectativas. Seguimos trabajando juntos.',
+    accent: '#f59e0b', // amber
+  },
+  {
+    id: 'favlash',
+    name: 'Favlash',
+    role: 'Fundadora',
+    company: 'Favlash',
+    avatar: 'https://favlash.com/favicon2.svg',
+    rating: 5,
+    quote: 'El diseño es vibrante y atractivo, las fotos de nuestros trabajos se ven increíbles, y el sistema de reservas online es súper fácil de usar. VikingDev lo entendió perfectamente desde el primer brief.',
+    accent: '#ec4899', // pink
+  },
+];
 ---
 
-<section class="testimonialesnew">
+<section class="testi section" id="testimonios" aria-labelledby="testi-title">
+  <div class="testi__bg" aria-hidden="true">
+    <!-- Blob decorativo animado -->
+    <div class="testi__blob testi__blob--1"></div>
+    <div class="testi__blob testi__blob--2"></div>
+  </div>
 
-    <div class="titulo">
-        <h4>TESTIMONIOS</h4>
-        <h1>Historias de Éxito de Negocios Como el Tuyo</h1>
-    </div>
-    <div class="testimoniales-cont">
+  <div class="container testi__container">
 
-    
-  <div class="testimonial-container">
+    <!-- Header -->
+    <header class="testi__header">
+      <span class="testi__label">Testimonios</span>
+      <h2 class="testi__title" id="testi-title">
+        Lo que dicen nuestros clientes
+      </h2>
+      <p class="testi__subtitle">
+        Más de 30 negocios en Tijuana y la región confían en VikingDev
+        para crecer en digital.
+      </p>
+    </header>
 
-    <div class="testimonial-slider-container">
-        <div class="testimonial-wrapper">
-          <div class="testimonial-slide" data-index="0">
-            <p class="testimonial-quote">Hemos visto un aumento significativo en la eficiencia
-                de nuestros procesos y una mejora en la satisfacción 
-                de nuestros clientes. ¡Recomendamos ampliamente 
-                sus servicios!</p>
-            <p class="testimonial-author">- Baja Box<span class="testimonial-source"></span></p>
-          </div>
+    <!-- Carrusel -->
+    <div class="testi__carousel" aria-label="Testimonios de clientes">
 
-          <div class="testimonial-slide" data-index="1">
-            <p class="testimonial-quote">El diseño del sitio es moderno y elegante.
-                Estamos muy satisfechos con el resultado y 
-                hemos recibido comentarios muy positivos de 
-                nuestros clientes.</p>
-            <p class="testimonial-author">- P&P Solutions<span class="testimonial-source"></span></p>
-          </div>
+      <!-- Track -->
+      <div class="testi__viewport">
+        <ul class="testi__track" role="list" id="testi-track">
+          {testimonials.map((t, i) => (
+            <li
+              class={`testi__slide${i === 0 ? ' is-active' : ''}`}
+              data-index={i}
+              data-accent={t.accent}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${i + 1} de ${testimonials.length}: ${t.company}`}
+            >
+              <div class="testi__card">
+                <!-- Quote mark decorativo -->
+                <div class="testi__quote-mark" aria-hidden="true">"</div>
 
-          <div class="testimonial-slide" data-index="2">
-            <p class="testimonial-quote">El sitio web es claro, conciso y fácil de navegar.
-                Desde que lanzamos el nuevo sitio web, hemos notado 
-                un aumento considerable en las consultas de clientes 
-                potenciales.</p>
-            <p class="testimonial-author">- Integra<span class="testimonial-source"></span></p>
-          </div>
+                <!-- Rating -->
+                <div class="testi__stars" aria-label={`${t.rating} de 5 estrellas`}>
+                  {Array.from({ length: t.rating }).map(() => (
+                    <span class="testi__star" aria-hidden="true">★</span>
+                  ))}
+                </div>
 
-          <div class="testimonial-slide" data-index="2">
-            <p class="testimonial-quote">El sitio web ha sido una herramienta invaluable para atraer nuevos pacientes y mejorar nuestra imagen.</p>
-            <p class="testimonial-author">- Ciplastic <span class="testimonial-source"></span></p>
-          </div>
+                <!-- Cita -->
+                <blockquote class="testi__blockquote">
+                  <p class="testi__quote">"{t.quote}"</p>
+                </blockquote>
 
-          <div class="testimonial-slide" data-index="2">
-            <p class="testimonial-quote">El diseño es vibrante y atractivo, las fotos de nuestros trabajos se ven increíbles, y el sistema de reservas online es súper fácil de usar, tanto para nosotros como para nuestros clientes.</p>
-            <p class="testimonial-author">- Favlash<span class="testimonial-source"></span></p>
-          </div>
-          </div>
-      
-        <button class="ts-button ts-prev" aria-label="Anterior Testimonio">&#10094;</button>
-        <button class="ts-button ts-next" aria-label="Siguiente Testimonio">&#10095;</button>
-      
-        <div class="testimonial-dots">
-          </div>
+                <!-- Autor -->
+                <div class="testi__author">
+                  <div class="testi__avatar-wrap">
+                    <img
+                      src={t.avatar}
+                      alt={`Avatar de ${t.name} — ${t.company}`}
+                      class="testi__avatar"
+                      width="56"
+                      height="56"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <!-- Accent ring -->
+                    <span
+                      class="testi__avatar-ring"
+                      style={`--accent: ${t.accent}`}
+                      aria-hidden="true"
+                    ></span>
+                  </div>
+                  <div class="testi__author-info">
+                    <p class="testi__author-name">{t.name}</p>
+                    <p class="testi__author-role">{t.role} · {t.company}</p>
+                  </div>
+                </div>
+
+                <!-- Accent line inferior -->
+                <div
+                  class="testi__accent-line"
+                  style={`background: ${t.accent}`}
+                  aria-hidden="true"
+                ></div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
 
+      <!-- Flechas -->
+      <div class="testi__controls" aria-label="Controles del carrusel">
+        <button
+          id="testi-prev"
+          class="testi__arrow testi__arrow--prev"
+          aria-label="Testimonio anterior"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
 
-</div>
+        <!-- Dots -->
+        <div class="testi__dots" id="testi-dots" role="tablist" aria-label="Seleccionar testimonio"></div>
+
+        <button
+          id="testi-next"
+          class="testi__arrow testi__arrow--next"
+          aria-label="Siguiente testimonio"
+          type="button"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Progress bar auto-play -->
+      <div class="testi__progress" aria-hidden="true">
+        <div class="testi__progress-bar" id="testi-progress"></div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
+
 
   <script>
       import "../scripts/testimoniales.js"

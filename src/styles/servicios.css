@@ -1,178 +1,297 @@
-.servicios{
-    padding-top: 4rem;
-    background-color:rgba(18, 117, 174, 0.038);
+/* ─── Section ───────────────────────────────────────────────── */
+.ikari {
+  background: var(--color-primary);
+  padding-block: var(--space-3xl);
+  overflow: hidden;
 }
 
-.servicios-cont{
-   margin: 0 auto;
-   overflow: hidden;
-   padding-right: 10rem;
-    padding-left: 10rem;
+@media (min-width: 768px) {
+  .ikari {
+    padding-block: var(--space-5xl);
+  }
 }
 
-.proy-scroll{
-  padding-bottom: 2rem;
-}
-
-.servicios-cont h4{
-  text-align: center;
-    font-family: "Roboto", sans-serif;
-    font-size: .8rem;
-    color: #0982A8;
-}
-
-.servicios-cont h1{
-  text-align: center;
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-}
-
-.servicios h2{
-
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-}
-
-.first-service{
-  padding: 5rem;
+/* ─── Grid interior ─────────────────────────────────────────── */
+.ikari__inner {
   display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
 }
 
-.second-service{
-  padding: 5rem;
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 2rem;
+@media (min-width: 768px) {
+  .ikari__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+  }
 }
 
-.third-service{
-  padding: 5rem;
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 2rem;
-}
+/* ══════════════════════════════════════════════════════════════
+   COLUMNA IZQUIERDA — visual
+   ══════════════════════════════════════════════════════════════ */
 
-.left-1{
+.ikari__visual {
+  position: relative;
   display: flex;
   justify-content: center;
+
+  /* Entrada */
+  opacity: 0;
+  transform: translateX(-24px);
+  transition:
+    opacity 600ms var(--ease-default),
+    transform 600ms var(--ease-default);
 }
 
-
-.right-2{
-  display: flex;
-  justify-content: center;
+.ikari__visual.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.web-img, .movil-img, .mkt-img{
+/* Imagen */
+.ikari__img {
   width: 100%;
-  height: 36rem;
+  max-width: 600px;
+  height: auto;
+  border-radius: var(--radius-2xl);
+  display: block;
+  object-fit: cover;
+  /* Borde sutil para que resalte sobre el navy */
+  border: 4px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    var(--shadow-xl);
 }
 
 
-li{
-  font-family: "Manrope", sans-serif;
+/* ─── Stat flotante ─────────────────────────────────────────── */
+.ikari__stat {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary);
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-secondary-md);
+  min-width: 180px;
+
+  /* Entrada con delay */
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 600ms var(--ease-default) 300ms,
+    transform 600ms var(--ease-default) 300ms;
+}
+
+.ikari__visual.is-visible .ikari__stat {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .ikari__stat {
+    right: -16px;
+    bottom: -24px;
+  }
+}
+
+.ikari__stat-number {
+  font-family: var(--font-display);
+  font-size: 36px;
   font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
 }
 
-.bi-check-circle{
-  color: #0982A8;
-  margin-right: .6rem;
-  font-size: 1.5rem;
+.ikari__stat-pct {
+  font-size: 22px;
 }
 
-p{
-  margin-top: -.4rem;
-  color: rgba(0, 0, 0, 0.628);
+.ikari__stat-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
-.servicios li{
-  color: black;
+/* ══════════════════════════════════════════════════════════════
+   COLUMNA DERECHA — copy
+   ══════════════════════════════════════════════════════════════ */
+
+.ikari__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0; /* controlado con margin en cada hijo */
+
+  /* Entrada */
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    opacity 600ms var(--ease-default) 100ms,
+    transform 600ms var(--ease-default) 100ms;
 }
 
-.mkt-img2{
- height: auto;
-   max-width: 700px;
-   object-fit: contain;
-margin-top: 20px;
+.ikari__copy.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
-.socios{
+
+/* ─── Logo ──────────────────────────────────────────────────── */
+.ikari__logo-link {
+  display: inline-block;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: opacity var(--transition-base);
+}
+
+.ikari__logo-link:hover {
+  opacity: 0.75;
+}
+
+.ikari__logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  /* Si el logo es oscuro, invertirlo para que se vea en fondo navy */
+  filter: brightness(0) invert(1);
+}
+
+/* ─── Label ─────────────────────────────────────────────────── */
+.ikari__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  /* Cyan del template */
+  color: var(--color-on-tertiary-container);
+  margin-bottom: var(--space-md);
+}
+
+/* ─── H2 ────────────────────────────────────────────────────── */
+.ikari__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg-mobile);
+  line-height: 1.1;
+  letter-spacing: var(--text-display-lg-mobile-ls);
+  font-weight: 700;
+  color: var(--color-on-primary);
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .ikari__title {
+    font-size: clamp(40px, 4vw, 56px);
+  }
+}
+
+/* ─── Descripción ───────────────────────────────────────────── */
+.ikari__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--text-body-lg-lh);
+  color: var(--color-on-primary-container);
+  margin-bottom: var(--space-2xl);
+  max-width: 480px;
+}
+
+/* ─── Beneficios ────────────────────────────────────────────── */
+.ikari__benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg) var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  width: 100%;
+}
+
+@media (max-width: 479px) {
+  .ikari__benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ikari__benefit {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+/* Ícono wrapper */
+.ikari__benefit-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: var(--radius-md);
+  /* Fondo cyan translúcido */
+  background: rgba(0, 152, 178, 0.15);
+  color: var(--color-on-tertiary-container);
+  flex-shrink: 0;
 }
 
-@media screen and (min-width:850px) {
-  .movil-img-2{
-    display: none;
+.ikari__benefit-title {
+  font-family: var(--font-body);
+  font-size: var(--text-label-md);
+  font-weight: 600;
+  color: var(--color-on-primary);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.ikari__benefit-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-on-primary-container);
+  margin: 0;
+}
+
+/* ─── CTA ───────────────────────────────────────────────────── */
+.ikari__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-label-md);
+  font-weight: 600;
+  letter-spacing: var(--text-label-md-ls);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-on-primary);
+  background: var(--color-secondary-container);
+  padding: 14px var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-secondary-sm);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base),
+    gap var(--transition-base);
+}
+
+.ikari__cta:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+  gap: var(--space-md); /* flecha se separa */
+}
+
+.ikari__cta:active {
+  transform: scale(0.97);
+}
+
+/* ─── Reduced motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ikari__visual,
+  .ikari__stat,
+  .ikari__copy {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
-}
-
-
-@media screen and (min-width:300px) and (max-width:850px) {
-  .servicios-cont{
-    margin: 0 auto;
-    overflow: hidden;
-    padding-right: 1.5rem;
-     padding-left: 1.5rem;
- }
-
- .servicios{
-  padding-top: 2rem;
-}
-
- /*********** Servicios **********/
- .first-service{
-  padding: 2rem;
-  grid-template-columns: repeat(1,minmax(0,1fr));
-}
-
-.second-service{
-  padding: 2rem;
-  grid-template-columns: repeat(1,minmax(0,1fr));
-}
-
-.third-service{
-  padding: 2rem;
-  grid-template-columns: repeat(1,minmax(0,1fr));
-}
-
-.web-img, .movil-img, .mkt-img{
-  width: 100%;
-  height: 20rem;
-  margin-top: -1.2rem;
-}
-
-.movil-img-2{
-  padding-right: 2rem;
-     padding-left: 2rem;
-     width: 100%;
-     height: 20rem;
-     margin-top: 2rem;
-     border-radius: 9%;
-}
-
-.movil-img{
-  display: none;
-}
-
-.servicios-cont h1{
-    font-size: 1.5rem;
-}
-
-.servicios h2{
-  font-size: 1.3rem;
-}
- .mkt-img2 {
-    max-width: 500px;  /* logos más grandes en tablet/móvil */
-  }
-
 }

@@ -9,86 +9,61 @@ import imgTec5 from '../assets/grises/5.webp'
 import imgTec6 from '../assets/grises/6.webp'
 ---
 
+<section class="partners" aria-label="Nuestros socios estratégicos">
+  <div class="container partners__inner">
 
-    <section id="nosotros" >
-     
-        <div class="slider">
-            <div class="slide-track">
-                <div class="slide">
-                    <img src={imgTec1.src} height="110"
-                        width="110" alt="wordpress" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec2.src} height="110"
-                        width="110" alt="react" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec3.src} height="110"
-                        width="110" alt="astro" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec4.src}height="110"
-                        width="110" alt="html" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec5.src} height="110"
-                        width="110" alt="css" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec6.src} height="110"
-                        width="110" alt="javascript" />
-                </div>
-  
-                <div class="slide">
-                    <img src={imgTec1.src} height="110"
-                        width="110" alt="wordpress" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec2.src} height="110"
-                        width="110" alt="react" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec3.src} height="110"
-                        width="110" alt="astro" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec4.src} height="110"
-                        width="110" alt="html" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec5.src} height="110"
-                        width="110" alt="css" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec6.src} height="110"
-                        width="110" alt="javascript" />
-                </div>
- 
-                <div class="slide">
-                    <img src={imgTec1.src} height="110"
-                        width="110" alt="wordpress" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec2.src} height="110"
-                        width="110" alt="react" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec3.src} height="110"
-                        width="110" alt="astro" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec4.src} height="110"
-                        width="110" alt="html" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec5.src}height="110"
-                        width="110" alt="css" />
-                </div>
-                <div class="slide">
-                    <img src={imgTec6.src} height="110"
-                        width="110" alt="javascript" />
-                </div>
-        
-            </div>
-        </div>
-    </section> 
+    <p class="partners__label">Nuestros Socios Estratégicos</p>
+
+    <ul class="partners__list" role="list">
+
+      <!-- Partner 1: Snitch Agency -->
+      <!-- Reemplaza img por <Image src={snitchLogo} ... /> en producción -->
+      <li class="partners__item">
+        <a
+          href="https://snitchagency.com/"
+          class="partners__link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Snitch Agency — socio estratégico de VikingDev"
+        >
+          <img
+            src="https://vikingdevtj.com/_astro/snitch-logo.DbVmL_0H.png"
+            alt="Snitch Agency"
+            class="partners__logo"
+            width="140"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </li>
+
+      <!-- Partner 2: reemplaza con tu segundo partner -->
+      <li class="partners__item">
+        <a
+          href="#"
+          class="partners__link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Nombre del segundo partner — socio estratégico de VikingDev"
+        >
+          <img
+            src="https://ikaricrm.com/_astro/ikarilogo.Ch4RmPql.png"
+            alt="Nombre del Partner 2"
+            class="partners__logo"
+            width="140"
+            height="48"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
+
+<script>
+    import '../scripts/partners'
+</script>

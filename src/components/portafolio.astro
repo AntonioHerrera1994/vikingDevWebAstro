@@ -1,146 +1,391 @@
 ---
 import '../styles/portafolio.css'
+const vikingProjects = [
+  {
+    id: 'favlash',
+    image: 'https://vikingdevtj.com/_astro/favlashnuevo.ZTUh02wh.png',
+    imageAlt: 'Sitio web de Favlash — estudio de pestañas en Tijuana',
+    category: 'Desarrollo Web',
+    title: 'Favlash',
+    desc: 'Sitio web para estudio de pestañas con sistema de reservas online, galería de trabajos y diseño vibrante acorde a la marca.',
+    url: 'https://favlash.com',
+  },
+   {
+    id: 'techmeolgroup',
+    image: '/assets/portfolio/vikingdev/techmeolgroup.webp',
+    imageAlt: 'Sitio web de Tech Meol Group',
+    category: 'Desarrollo Web',
+    title: 'Tech Meol Group',
+    desc: 'Sitio web corporativo para empresa de tecnología e innovación con presentación de servicios y equipo directivo.',
+    url: '#',
+  },
 
-// Importa imágenes
-import myImageP from '../assets/proyectos/favlashnuevo.png';
-import myImageP3 from '../assets/proyectos/3.png';
-import myImageP4 from '../assets/proyectos/4.png';
-import myImageP5 from '../assets/proyectos/5.png';
-import myImageP6 from '../assets/proyectos/6.png';
-import myImageP7 from '../assets/proyectos/7.png';
-import myImageP8 from '../assets/proyectos/8.png';
-import myImageP9 from '../assets/proyectos/9.png';
-import myImageP10 from '../assets/proyectos/10.png';
-import myImageP11 from '../assets/proyectos/11.png';
-import myImageP14 from '../assets/proyectos/14.png';
-import myImageP15 from '../assets/proyectos/15.png';
-import myImageP16 from '../assets/proyectos/16.png';
-import myImageP17 from '../assets/proyectos/17.png';
-import myImageP18 from '../assets/proyectos/18.png';
-import myImageP19 from '../assets/proyectos/19.png';
-import myImageP20 from '../assets/proyectos/20.png';
-import myImageP21 from '../assets/proyectos/perioclinic.png';
-import myImageP22 from '../assets/proyectos/holistic.png';
-import myImageP23 from '../assets/proyectos/tjplastic.png';
-import myImageP24 from '../assets/proyectos/reinos.png';
-import myImageP25 from '../assets/proyectos/chicaf.webp';
-import myImageP26 from '../assets/proyectos/perezgrovas.webp'
-import myImageP27 from '../assets/proyectos/rihab.webp';
-import myImageP28 from '../assets/proyectos/amt.png';
-import MyImage29 from '../assets/proyectos/altiveweb.webp'
-import MyImage30 from '../assets/proyectos/rms.webp'
-import MyImage31 from '../assets/proyectos/artivia.webp'
-import MyImage32 from '../assets/proyectos/radio.webp'
-import MyImage33 from '../assets/proyectos/ricceta.webp'
-import MyImage34 from '../assets/proyectos/velora.webp'
-import MyImage35 from '../assets/proyectos/yunuen.webp'
+  {
+    id: 'drayunuen',
+    image: 'https://vikingdevtj.com/_astro/yunuen.uV9m48BS.webp',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'GYNEHEALTH & AESTHETIC MEDICINE',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://rihabvetcare.com/',
+  },
+  {
+    id: 'altive',
+    image: 'https://vikingdevtj.com/_astro/altiveweb.Dr9SOYOx.webp',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'ClidPay',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://altive.realty/',
+  },
+  {
+    id: 'velora',
+    image: 'https://vikingdevtj.com/_astro/velora.DpZ4BNhR.webp',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'ClidPay',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://veloracargo.com/',
+  },
+  {
+    id: 'globalrecruiters',
+    image: 'https://vikingdevtj.com/_astro/4.C2o6h1ob.png',
+    imageAlt: 'Sitio web de Global Recruiters en Tijuana',
+    category: 'Desarrollo Web',
+    title: 'Global Recruiters',
+    desc: 'Plataforma de reclutamiento ejecutivo bilingüe con formularios de aplicación, integración de vacantes y diseño corporativo premium.',
+    url: 'https://global-recruiters.com/',
+  },
 
-// Lista de proyectos con agencia, tecnología y nombre
-const proyectos = [
-  { url: "http://favlash.com/", img: myImageP, agencia: "VikingDev", tech: "Astro", nombre: "Favlash" },
-  { url: "https://danyaargote.com/", img: myImageP3, agencia: "VikingDev", tech: "WordPress", nombre: "Danya Argote" },
-  { url: "https://global-recruiters.com/", img: myImageP4, agencia: "VikingDev", tech: "WordPress", nombre: "Global Recruiters" },
-  { url: "https://coinase.mx/", img: myImageP5, agencia: "VikingDev", tech: "WordPress", nombre: "Grupo Coinase" },
-  { url: "http://ciplastic.com/", img: myImageP6, agencia: "VikingDev", tech: "WordPress", nombre: "Ciplastic" },
-  { url: "https://www.techmeol.com/", img: myImageP7, agencia: "VikingDev", tech: "Squarespace", nombre: "Tech Meol Group" },
-  { url: "https://ixayaresidencial.mx/", img: myImageP8, agencia: "VikingDev", tech: "WordPress", nombre: "Ixaya Residencial" },
-  { url: "https://gruascervantestijuana.com/", img: myImageP9, agencia: "VikingDev", tech: "WordPress", nombre: "Grúas Cervantes" },
-  { url: "https://mudanzashermosillo.com.mx/", img: myImageP10, agencia: "VikingDev", tech: "WordPress", nombre: "Mudanzas Hermosillo" },
-  { url: "https://madeirascollection.com", img: myImageP11, agencia: "VikingDev", tech: "WordPress", nombre: "Madeiras Collection" },
-  { url: "https://integratj.com.mx/", img: myImageP14, agencia: "Snitch Agency", tech: "WordPress", nombre: "Integra TJ" },
-  { url: "https://ppsolutions.com.mx/", img: myImageP15, agencia: "Snitch Agency", tech: "WordPress", nombre: "PP Solutions" },
-  { url: "http://clidpay.us/", img: myImageP16, agencia: "VikingDev", tech: "WordPress", nombre: "ClidPay" },
-  { url: "https://snitchagency.com/", img: myImageP17, agencia: "Snitch Agency", tech: "Astro", nombre: "Snitch Agency" },
-  { url: "https://bajabox.com.mx/", img: myImageP18, agencia: "Snitch Agency", tech: "WordPress", nombre: "BajaBox" },
-  { url: "https://gynandmed.com/", img: myImageP19, agencia: "VikingDev", tech: "WordPress", nombre: "GynandMed" },
-  { url: "https://larectacoworking.com/", img: myImageP20, agencia: "VikingDev", tech: "WordPress", nombre: "La Recta Coworking" },
-  { url: "https://perioclinic.com.mx/", img: myImageP21, agencia: "Snitch Agency", tech: "WordPress", nombre: "Perioclinic" },
-  { url: "https://tjplasticsurgeryofficial.com/", img: myImageP23, agencia: "Snitch Agency", tech: "WordPress", nombre: "TJ Plastic Surgery" },
-  { url: "https://los12reinoszodiacales.com/", img: myImageP24, agencia: "VikingDev", tech: "WordPress", nombre: "Los 12 Reinos Zodiacales" },
-  { url: "https://lachicafinanzas.com.mx/", img: myImageP25, agencia: "Snitch Agency", tech: "WordPress", nombre: "La Chica Finanzas" },
-  { url: "https://perezgrovas.com/", img: myImageP26, agencia: "VikingDev", tech: "WordPress", nombre: "Pérez Grovas" },
-  { url: "https://rihabvetcare.com/", img: myImageP27, agencia: "VikingDev", tech: "WordPress", nombre: "Rihab Vet Care" },
-  { url: "https://holisticancercoach.com/", img: myImageP22, agencia: "VikingDev", tech: "Astro", nombre: "Holistic Cancer Coach" },
-  { url: "https://alliance-medtech.com/", img: myImageP28, agencia: "Snitch Agency", tech: "WordPress", nombre: "Alliance MedTech" },
-  { url: "https://altive.realty/", img: MyImage29, agencia: "VikingDev", tech: "Astro", nombre: "Altive Realty" },
-   { url: "https://registrarmanagementsystems.com/", img: MyImage30, agencia: "Snitch Agency", tech: "WordPress", nombre: "RMS" },
-   { url: "https://artiviaclinic.com/", img: MyImage31, agencia: "Snitch Agency", tech: "WordPress", nombre: "Artivia Clinic" },
-   { url: "https://vascularradtj.com/", img: MyImage33, agencia: "Snitch Agency", tech: "WordPress", nombre: "Radiología Vascular Intervencionista" },
-   { url: "https://ricetta-restaurantconsulting.com/", img: MyImage32, agencia: "VikingDev", tech: "WordPress", nombre: "Ricceta Restaurant Consulting" },
-    { url: "https://veloracargo.com/", img: MyImage34, agencia: "VikingDev", tech: "Astro", nombre: "Velora Cargo" },
-    { url: "https://define-studio.mx/drapartida/", img: MyImage35, agencia: "VikingDev", tech: "Wordpress", nombre: "GYNEHEALTH & AESTHETIC MEDICINE" },
+ 
+  {
+    id: 'ixayaresidencial',
+    image: 'https://vikingdevtj.com/_astro/8.vCQuSfrV.png',
+    imageAlt: 'Sitio web de Ixaya Residencial — bienes raíces',
+    category: 'Desarrollo Web',
+    title: 'Ixaya Residencial',
+    desc: 'Landing page de desarrollo inmobiliario con galería interactiva, mapa de ubicación y formulario de interés.',
+    url: 'https://ixayaresidencial.mx/',
+  },
+  {
+    id: 'gruascervantes',
+    image: 'https://vikingdevtj.com/_astro/9.B0XxBWfz.png',
+    imageAlt: 'Sitio web de Grúas Cervantes',
+    category: 'Desarrollo Web',
+    title: 'Grúas Cervantes',
+    desc: 'Sitio web de servicio de grúas con llamada a la acción directa a WhatsApp y ubicación en tiempo real.',
+    url: 'https://gruascervantestijuana.com/',
+  },
+  
+  {
+    id: 'clidpay',
+    image: 'https://vikingdevtj.com/_astro/16.BtfcI5xH.png',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'ClidPay',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'http://clidpay.us/',
+  },
+   {
+    id: 'mudanzashermosillo',
+    image: 'https://vikingdevtj.com/_astro/10.DZI6Mf_Y.png',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'Mudanzas Hermosillo',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://mudanzashermosillo.com.mx/',
+  },
+    {
+    id: 'gynandmed',
+    image: 'https://vikingdevtj.com/_astro/19.B90b1CfK.png',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'Gyn and Med',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://gynandmed.com/',
+  },
+    {
+    id: 'madeiras',
+    image: 'https://vikingdevtj.com/_astro/11.8wZqLYUT.png',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'Madeiras Collection',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://madeirascollection.com/',
+  },
+    {
+    id: 'holisticcancer',
+    image: 'https://vikingdevtj.com/_astro/holistic.wLHtsxug.png',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'Holistic Cancer Coach',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://holisticancercoach.com/',
+  },
+  {
+    id: 'ricetta',
+    image: 'https://vikingdevtj.com/_astro/radio.BQ8Rdk1K.webp',
+    imageAlt: 'Sitio web de ClidPay — fintech',
+    category: 'Aplicación Web',
+    title: 'Ricetta Restaurant',
+    desc: 'Plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
+    url: 'https://ricetta-restaurantconsulting.com/',
+  },
+  
+    {
+    id: 'danyaargote',
+    image: 'https://vikingdevtj.com/_astro/3.B70d-Sn-.png',
+    imageAlt: 'Sitio web de Danya Argote — coach personal',
+    category: 'Desarrollo Web',
+    title: 'Danya Argote',
+    desc: 'Sitio personal para coach con integración de agenda, testimonios y embudo de captación de clientes.',
+    url: 'https://danyaargote.com/',
+  },
+
 ];
 
-// Calcular contador por agencia
-const contadorAgencias = proyectos.reduce((acc, p) => {
-  acc[p.agencia] = (acc[p.agencia] || 0) + 1;
-  return acc;
-}, {});
+const snitchProjects = [
+  {
+    id: 'snitchagency',
+    image: 'https://vikingdevtj.com/_astro/17.BiTFbPLu.png',
+    imageAlt: 'Sitio web de Snitch Agency',
+    category: 'Branding & Web',
+    title: 'Snitch Agency',
+    desc: 'Diseño y desarrollo del sitio de la propia agencia con identidad de marca fuerte, portafolio interactivo y generación de leads.',
+    url: 'https://snitchagency.com/',
+  },
 
+  {
+    id: 'Baja Box',
+    image: 'https://vikingdevtj.com/_astro/18.CAJYrQSE.png',
+    imageAlt: 'Sitio web de Altive Realty — bienes raíces',
+    category: 'Desarrollo Web',
+    title: 'Baja Box',
+    desc: 'Plataforma inmobiliaria bilingüe con listados de propiedades, tours virtuales y formulario de contacto para agentes.',
+    url: 'https://bajabox.com.mx/',
+  },
+  {
+    id: 'Perioclinic',
+    image: 'https://vikingdevtj.com/_astro/perioclinic.W-_itnZa.png',
+    imageAlt: 'Sitio web de Holistic Cancer Coach',
+    category: 'Desarrollo Web',
+    title: 'Perioclinic',
+    desc: 'Sitio de bienestar y salud integrativa con blog, sistema de reserva de sesiones y diseño cálido y empático.',
+    url: 'https://perioclinic.com.mx/',
+  },
+  {
+    id: 'Artivia',
+    image: 'https://vikingdevtj.com/_astro/artivia.C-SQ0MH8.webp',
+    imageAlt: 'Sitio web de Alliance MedTech',
+    category: 'Desarrollo Web',
+    title: 'Artivia',
+    desc: 'Sitio corporativo para empresa de tecnología médica con catálogo de dispositivos, certificaciones y contacto B2B.',
+    url: 'https://artiviaclinic.com/',
+  },
+  {
+    id: 'rms',
+    image: 'https://vikingdevtj.com/_astro/rms.C7MQ71xZ.webp',
+    imageAlt: 'Sitio web de Rihab Vet Care — veterinaria',
+    category: 'Desarrollo Web',
+    title: 'RMS',
+    desc: 'Sitio para clínica veterinaria con sistema de citas online, galería de servicios y botón de emergencias 24/7.',
+    url: 'https://registrarmanagementsystems.com/',
+  },
+  {
+    id: 'tj plastic',
+    image: 'https://vikingdevtj.com/_astro/tjplastic.C1PnlCXl.png',
+    imageAlt: 'Sitio web de Velora Cargo — logística',
+    category: 'Desarrollo Web',
+    title: 'TJ Plastic Surgery',
+    desc: 'Plataforma de logística y carga con cotizador de envíos, tracking y diseño enfocado en confianza empresarial.',
+    url: 'https://tjplasticsurgeryofficial.com/',
+  },
+  {
+    id: 'chicafinanzas',
+    image: 'https://vikingdevtj.com/_astro/chicaf.DWwXoReV.webp',
+    imageAlt: 'Sitio web de Artivia Clinic',
+    category: 'Desarrollo Web',
+    title: 'La Chica Finanzas',
+    desc: 'Sitio web para clínica estética con galería de tratamientos, sistema de citas y diseño elegante y moderno.',
+    url: 'https://lachicafinanzas.com.mx/',
+  },
+   {
+    id: 'ams',
+    image: 'https://vikingdevtj.com/_astro/amt.BRFz2ec7.png',
+    imageAlt: 'Sitio web de Artivia Clinic',
+    category: 'Desarrollo Web',
+    title: 'AMS',
+    desc: 'Sitio web para clínica estética con galería de tratamientos, sistema de citas y diseño elegante y moderno.',
+    url: 'https://alliance-medtech.com/',
+  },
+   {
+    id: 'radiografia',
+    image: 'https://vikingdevtj.com/_astro/ricceta.CgqkYZ1d.webp',
+    imageAlt: 'Sitio web de Artivia Clinic',
+    category: 'Desarrollo Web',
+    title: 'Radiología Vascular Intervencionista',
+    desc: 'Sitio web para clínica estética con galería de tratamientos, sistema de citas y diseño elegante y moderno.',
+    url: 'https://vascularradtj.com/',
+  },
+   {
+    id: 'integra',
+    image: 'https://vikingdevtj.com/_astro/14.FPmJhsPe.png',
+    imageAlt: 'Sitio web de Artivia Clinic',
+    category: 'Desarrollo Web',
+    title: 'Integra',
+    desc: 'Sitio web para clínica estética con galería de tratamientos, sistema de citas y diseño elegante y moderno.',
+    url: 'https://integratj.com.mx/',
+  },
+   {
+    id: 'ppsolutions',
+    image: 'https://vikingdevtj.com/_astro/15.BIj3WVNj.png',
+    imageAlt: 'Sitio web de Artivia Clinic',
+    category: 'Desarrollo Web',
+    title: 'PP Solutions',
+    desc: 'Sitio web para clínica estética con galería de tratamientos, sistema de citas y diseño elegante y moderno.',
+    url: 'https://ppsolutions.com.mx/',
+  },
+];
 ---
 
-<section class="portafolio" id="proyectos">
-  <div class="cuadros-cont">
-    <div class="main-title-port">
-      <h4>Portafolio</h4>
-      <h1>Proyectos que Han Transformado Negocios</h1>
-    </div>
-    
-    <!-- Filtros con contador -->
-    <div class="filtros">
-      <button data-agencia="VikingDev" class="filtro activo">
-        VikingDev <span class="contador">({contadorAgencias['VikingDev']})</span>
-      </button>
-      <button data-agencia="Snitch Agency" class="filtro">
-        Snitch Agency <span class="contador">({contadorAgencias['Snitch Agency']})</span>
-      </button>
-    </div>
+<section class="portfolio section" id="proyectos" aria-labelledby="portfolio-title">
+  <div class="container">
 
-    <!-- Galería -->
-    <div class="galeria">
-      {proyectos.map((p) => (
-        <div 
-          class="proyecto" 
-          data-agencia={p.agencia}
-          data-nombre={p.nombre}
-          data-tech={p.tech}
-          data-url={p.url}
-        >
-          <img src={p.img.src} alt={p.nombre} class="port-img" />
+    <!-- ══ Carrusel 1: VikingDev ══════════════════════════════ -->
+    <div class="portfolio__block" data-carousel="vikingdev">
+
+      <div class="portfolio__header">
+        <div class="portfolio__header-left">
+          <span class="section-label">Portafolio</span>
+          <h2 class="section-title" id="portfolio-title">VikingDev</h2>
+          <p class="section-subtitle">Proyectos de desarrollo web, e-commerce y aplicaciones.</p>
         </div>
-      ))}
+        <div class="portfolio__nav" aria-label="Navegación carrusel VikingDev">
+          <button class="portfolio__arrow portfolio__arrow--prev" aria-label="Proyecto anterior" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button class="portfolio__arrow portfolio__arrow--next" aria-label="Siguiente proyecto" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Track -->
+      <div class="portfolio__viewport">
+        <ul class="portfolio__track" role="list">
+          {vikingProjects.map((p) => (
+            <li class="portfolio__card" data-id={p.id}>
+              <div class="portfolio__img-wrap">
+                <img
+                  src={p.image}
+                  alt={p.imageAlt}
+                  class="portfolio__img"
+                  loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="300"
+                />
+              </div>
+              <div class="portfolio__card-body">
+                <span class="portfolio__category">{p.category}</span>
+                <h3 class="portfolio__card-title">{p.title}</h3>
+                <p class="portfolio__card-desc">{p.desc}</p>
+                <a
+                  href={p.url}
+                  class="portfolio__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Ver sitio web de ${p.title}`}
+                >
+                  Ver sitio web
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Dots -->
+      <div class="portfolio__dots" aria-label="Posición en el carrusel"></div>
     </div>
 
-    <!-- Paginación -->
-    <div class="paginacion">
-      <button id="anterior" disabled>Anterior</button>
-      <button id="siguiente">Siguiente</button>
+    <!-- Divider -->
+    <div class="portfolio__divider" aria-hidden="true"></div>
+
+    <!-- ══ Carrusel 2: Snitch Agency ══════════════════════════ -->
+    <div class="portfolio__block" data-carousel="snitch">
+
+      <div class="portfolio__header">
+        <div class="portfolio__header-left">
+          <span class="section-label">Portafolio</span>
+          <h2 class="section-title">Snitch Agency</h2>
+          <p class="section-subtitle">Branding, marketing digital y estrategia creativa.</p>
+        </div>
+        <div class="portfolio__nav" aria-label="Navegación carrusel Snitch Agency">
+          <button class="portfolio__arrow portfolio__arrow--prev" aria-label="Proyecto anterior" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button class="portfolio__arrow portfolio__arrow--next" aria-label="Siguiente proyecto" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="portfolio__viewport">
+        <ul class="portfolio__track" role="list">
+          {snitchProjects.map((p) => (
+            <li class="portfolio__card" data-id={p.id}>
+              <div class="portfolio__img-wrap">
+                <img
+                  src={p.image}
+                  alt={p.imageAlt}
+                  class="portfolio__img"
+                  loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="300"
+                />
+              </div>
+              <div class="portfolio__card-body">
+                <span class="portfolio__category">{p.category}</span>
+                <h3 class="portfolio__card-title">{p.title}</h3>
+                <p class="portfolio__card-desc">{p.desc}</p>
+                <a
+                  href={p.url}
+                  class="portfolio__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Ver sitio web de ${p.title}`}
+                >
+                  Ver sitio web
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="portfolio__dots" aria-label="Posición en el carrusel"></div>
     </div>
+
   </div>
 </section>
-
-<!-- Modal -->
-<div id="modalProyecto" class="modal-proyecto">
-  <div class="modal-overlay"></div>
-  <div class="modal-content-proyecto">
-    <span class="close-modal">&times;</span>
-    <img id="modalImagen" src="" alt="Proyecto" />
-    <div class="modal-info-overlay">
-      <div class="info-item">
-        <h3>Cliente</h3>
-        <p id="modalNombre"></p>
-      </div>
-      <div class="info-item">
-        <h3>Tecnología</h3>
-        <p id="modalTech"></p>
-      </div>
-      <div class="info-item">
-        <h3>URL</h3>
-        <a id="modalUrl" href="" target="_blank"></a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
   import "../scripts/drag.js"

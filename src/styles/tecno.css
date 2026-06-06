@@ -1,76 +1,139 @@
- @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-250px * 7));
-    }
+/* ─── Section ───────────────────────────────────────────────── */
+.partners {
+  padding-block: var(--space-xl);
+  background: var(--color-surface-container-low);
+  border-top:    1px solid rgba(196, 198, 206, 0.25);
+  border-bottom: 1px solid rgba(196, 198, 206, 0.25);
 }
 
-.slide{
-    margin-bottom: -2rem;
+/* ─── Inner layout ──────────────────────────────────────────── */
+.partners__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
 }
 
-.slider {
-    margin: auto;
-    overflow: hidden;
+@media (min-width: 640px) {
+  .partners__inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-4xl);
+  }
+}
+
+/* ─── Label ─────────────────────────────────────────────────── */
+.partners__label {
+  font-family: var(--font-body);
+  font-size: var(--text-label-md);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+  opacity: 0.70;
+  flex-shrink: 0;
+}
+
+/* Separador vertical entre label y logos en desktop */
+@media (min-width: 640px) {
+  .partners__label {
     position: relative;
-}
+    padding-right: var(--space-4xl);
+  }
 
-img{
-    box-shadow: none;
-    width: 36%;
-    height: 36%;
-}
-
-.slider::before,
-.slider::after {
-    content: "";
-    height: 70px;
+  .partners__label::after {
+    content: '';
     position: absolute;
-    width: 100px;
-    z-index: 2;
-}
-
-.slider::after {
     right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 32px;
+    background: var(--color-outline-variant);
+    opacity: 0.5;
+  }
 }
 
-.slider::before {
-    left: 0;
-    top: 0;
+/* ─── Lista de partners ─────────────────────────────────────── */
+.partners__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.slider .slide-track {
-    animation: scroll 40s linear infinite;
-    display: flex;
-    width: calc(300px * 14);
+/* ─── Item ──────────────────────────────────────────────────── */
+.partners__item {
+  display: flex;
+  align-items: center;
 }
 
-.slider .slide {
-    height: 200px;
-    width: 200px;
+/* ─── Link ──────────────────────────────────────────────────── */
+.partners__link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition:
+    opacity var(--transition-base),
+    filter var(--transition-slow);
+  /* Estado inicial: desaturado y semitransparente */
+  filter: grayscale(100%);
+  opacity: 0.55;
 }
 
-
-
- @media screen and (max-width:850px) {
-
-.slider {
-height:100px;
-margin-top:3rem ;
-margin-bottom: 3rem;
-overflow: hidden;
-position: relative;
-width: 90vw;
+.partners__link:hover,
+.partners__link:focus-visible {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
-img{
-    box-shadow: none;
-    width: 30%;
-    height: 30%;
+/* ─── Logo ──────────────────────────────────────────────────── */
+.partners__logo {
+  height: 36px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
 }
+
+@media (min-width: 768px) {
+  .partners__logo {
+    height: 44px;
+  }
+}
+
+/* ─── Animación de entrada ──────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .partners__label,
+  .partners__item {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 500ms var(--ease-default),
+      transform 500ms var(--ease-default);
+  }
+
+  .partners.is-visible .partners__label {
+    opacity: 0.70;
+    transform: translateY(0);
+    transition-delay: 0ms;
+  }
+
+  .partners.is-visible .partners__item:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 80ms;
+  }
+
+  .partners.is-visible .partners__item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 160ms;
+  }
 }

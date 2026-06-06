@@ -1,112 +1,210 @@
 ---
 import '../styles/features.css';
-
-import AHImg from '../assets/programadores/1.png';
-import HRImg from '../assets/programadores/2.png';
-import ASImg from '../assets/programadores/3.png';
-
+ 
+const services = [
+  {
+    id: 'web',
+    image: 'https://vikingdevtj.com/_astro/d-web.By_OMtp3.webp',
+    imageAlt: 'Desarrollo web y e-commerce en Tijuana — VikingDev',
+    tag: 'Desarrollo',
+    title: 'Desarrollo Web & E-Commerce',
+    tagline: 'Sitios rápidos, modernos y diseñados para vender.',
+    modalDesc: 'Construimos tu presencia digital desde cero o rediseñamos lo que ya tienes. Cada proyecto es personalizado, optimizado para Google y entregado listo para convertir visitantes en clientes reales.',
+    features: [
+      'Diseño 100% personalizado basado en tu marca',
+      'Responsive Mobile First (móvil, tablet, desktop)',
+      'Velocidad de carga < 2 segundos (Core Web Vitals)',
+      'SEO técnico on-page incluido desde el inicio',
+      'Panel autogestionable (CMS) sin conocimientos técnicos',
+      'Formularios, WhatsApp flotante y CTAs estratégicos',
+      'Google Analytics + Meta Pixel integrados',
+      'E-Commerce con carrito, checkout y pasarelas de pago',
+      'Hasta 3 rondas de revisión sin costo extra',
+    ],
+    cta: 'Ver paquetes de precios',
+    ctaHref: '#paquetes',
+    from: 'Desde $5,000 MXN',
+  },
+  {
+    id: 'ads',
+    image: 'https://vikingdevtj.com/_astro/googleads.DU1J_smH.webp',
+    imageAlt: 'Campañas de Google Ads y Meta Ads — VikingDev Tijuana',
+    tag: 'Publicidad Digital',
+    title: 'Google Ads & Meta Ads',
+    tagline: 'Tus clientes ideales, en el momento exacto.',
+    modalDesc: 'Gestionamos campañas de pago en Google y Facebook/Instagram con segmentación quirúrgica y optimización continua. Tu presupuesto trabaja al máximo, sin desperdicio.',
+    features: [
+      'Configuración y auditoría de cuenta desde cero',
+      'Campañas Search, Display, Shopping y YouTube',
+      'Anuncios en Facebook, Instagram y Reels',
+      'Segmentación por ubicación, intereses y comportamiento',
+      'Retargeting y audiencias personalizadas',
+      'Creatividades diseñadas para conversión',
+      'A/B testing de anuncios y landing pages',
+      'Reporte mensual detallado con métricas clave',
+      'Reunión de seguimiento mensual incluida',
+    ],
+    cta: 'Solicitar propuesta',
+    ctaHref: '#cotizador',
+    from: 'Desde $2,000 MXN / mes',
+  },
+  {
+    id: 'apps',
+    image: 'https://vikingdevtj.com/_astro/d-movil.DDWQARzU.webp',
+    imageAlt: 'Desarrollo de aplicaciones web a medida — VikingDev',
+    tag: 'Desarrollo',
+    title: 'Aplicaciones Web',
+    tagline: 'Tecnología a medida para automatizar y escalar.',
+    modalDesc: 'Desarrollamos herramientas web internas o productos digitales que resuelven problemas específicos de tu negocio: desde paneles de gestión hasta plataformas con lógica compleja.',
+    features: [
+      'Análisis y diseño de solución a medida',
+      'Dashboards y paneles de administración internos',
+      'Integraciones con APIs externas (CRM, ERP, pagos)',
+      'Automatización de flujos y notificaciones',
+      'Autenticación de usuarios y control de accesos',
+      'Base de datos escalable y segura',
+      'Despliegue en la nube con alta disponibilidad',
+      'Documentación y capacitación al equipo',
+      'Mantenimiento y soporte post-lanzamiento',
+    ],
+    cta: 'Cuéntanos tu idea',
+    ctaHref: '#cotizador',
+    from: 'Cotización a medida',
+  },
+  {
+    id: 'consultoria',
+    image: 'https://vikingdevtj.com/_astro/apoyoweb.eLp5Ab2-.webp',
+    imageAlt: 'Consultoría digital y auditoría SEO en Tijuana — VikingDev',
+    tag: 'Consultoría',
+    title: 'Consultoría Digital',
+    tagline: '¿Tu web no convierte? Te decimos exactamente por qué.',
+    modalDesc: 'Si ya tienes presencia digital pero no está generando resultados, nuestro servicio de consultoría te da claridad: diagnóstico experto, recomendaciones priorizadas y un plan de acción concreto. No requiere contratación de desarrollo.',
+    features: [
+      'Auditoría SEO técnica completa (on-page y off-page)',
+      'Análisis de velocidad y Core Web Vitals',
+      'Revisión de campañas de Google Ads y Meta Ads activas',
+      'Análisis de competencia y palabras clave estratégicas',
+      'Revisión de estructura, UX y copy del sitio',
+      'Reporte con hallazgos priorizados por impacto',
+      'Sesión 1-a-1 con experto para revisar resultados',
+      'Plan de acción en 30 / 60 / 90 días',
+      'Seguimiento de implementación (opcional)',
+    ],
+    cta: 'Agendar diagnóstico',
+    ctaHref: '#cotizador',
+    from: 'Desde $1,500 MXN',
+  },
+];
 ---
-
-<section class="features" >
-<div class="features-cont">
-<div class="features-txt">
-    <h4>NOSOTROS</h4>
-    <h1>Nuestra Misión: Tu Crecimiento Digital</h1>
-    <p class="p-inicial">En VikingDev nos encargamos de desarrollar soluciones tecnológicas para impulsar tu negocio.<br>
-        Nos comprometemos a entregarte un servicio con la más alta calidad.</p>
-</div>
-    <div class="features-grid">
-        
-        <div class="flex-row-1">
-            <i class="bi bi-person-check"></i>
-            <h3>Credibilidad y Profesionalismo</h3>
-            <p>Con un amplio portafolio que incluye desarrollo web, aplicaciones web y campañas publicitarias garantizamos un trabajo excepcional.</p>
-        </div>
-
-        <div class="flex-row-1">
-            <i class="bi bi-eyeglasses"></i>
-            <h3>Visibilidad 24/7</h3>
-            <p>Nuestro enfoque en SEO permite que tu sitio web en poco tiempo se encuentre entre los primeros resultados de busqueda de Google.</p>
-
-        </div>
-        
-    </div>
-
-    
-    <div class="features-grid2" >
-        
-        <div class="flex-row-1">
-            <i class="bi bi-globe"></i>
-            <h3>Alcance Global</h3>
-            <p>Nuestro trabajo no conoce fronteras, desarrollamos sitios bilingües que permiten exponer tu marca a todas partes.</p>
-        </div>
-
-        <div class="flex-row-1">
-            <i class="bi bi-graph-up-arrow"></i>
-            <h3>Análisis y Mejora Continua</h3>
-            <p>Mantenerte actualizado es parte importante para nosotros, creamos y mantenemos tu sitio web actualizado y con el mayor rendimiento.</p>
-
-        </div>
-        
-    </div>
-
-
-</div>
-
-<div class="serv-espacio" id="servicios">
-    
-</div>
-
+ 
+<section class="services section" id="servicios" aria-labelledby="services-title">
+  <div class="container">
+ 
+    <header class="services__header">
+      <span class="section-label">Nuestros Servicios</span>
+      <h2 class="section-title" id="services-title">
+        Soluciones digitales de alto impacto
+      </h2>
+      <p class="section-subtitle services__subtitle">
+        Desde el diseño de tu sitio hasta la estrategia que llena tu agenda —
+        todo bajo un mismo techo en Tijuana.
+      </p>
+    </header>
+ 
+    <ul class="services__grid" role="list">
+      {services.map((svc, i) => (
+        <li
+          class="services__card"
+          data-index={i}
+          data-service={svc.id}
+          data-title={svc.title}
+          data-tag={svc.tag}
+          data-tagline={svc.tagline}
+          data-desc={svc.modalDesc}
+          data-features={JSON.stringify(svc.features)}
+          data-cta={svc.cta}
+          data-cta-href={svc.ctaHref}
+          data-from={svc.from}
+          data-img={svc.image}
+          data-img-alt={svc.imageAlt}
+          role="button"
+          tabindex="0"
+          aria-haspopup="dialog"
+          aria-label={`Ver detalles de ${svc.title}`}
+        >
+          <div class="services__img-wrap">
+            <img
+              src={svc.image}
+              alt={svc.imageAlt}
+              class="services__img"
+              width={600}
+              height={400}
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="services__tag">{svc.tag}</span>
+            <div class="services__overlay" aria-hidden="true">
+              <span class="services__overlay-label">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                Ver detalle
+              </span>
+            </div>
+          </div>
+ 
+          <div class="services__copy">
+            <h3 class="services__title">{svc.title}</h3>
+            <p class="services__tagline">{svc.tagline}</p>
+            <span class="services__from">{svc.from}</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
 </section>
-
-<!--
-<section class="programadores">
-    <div class="programadores-cont">
-        <div class="programadores-grid">
-
-            <div class="pg-1">
-            
-                <div class="pg1-img"></div>
-
-                <h3>Ing. Antonio Herrera</h3>
-                <p>Programador Web / Web Master</p>
-                <div class="social-div">
-                <ul class="socialmedia">
-                    <li><i class="bi bi-linkedin"></i></li>
-                    <li><i class="bi bi-whatsapp"></i></li>
-                    <li><i class="bi bi-envelope"></i></li>
-                  </ul>
-                </div>
-            </div>
-            
-            <div class="pg-2">
-          
-                <div class="pg2-img"> </div>
-                
-                <h3>Ing. Hector Ríos</h3>
-                <p>Programador Full Stack</p>
-                <div class="social-div">
-                    <ul class="socialmedia">
-                        <li><i class="bi bi-linkedin"></i></li>
-                        <li><i class="bi bi-whatsapp"></i></li>
-                        <li><i class="bi bi-envelope"></i></li>
-                      </ul>
-                    </div>
-            </div>
-
-            <div class="pg-3">
-                <div class="pg3-img"></div>
-                <h3>Ing. Alonso Santana</h3>
-                <p>Programador Full Stack</p>
-                <div class="social-div">
-                    <ul class="socialmedia">
-                        <li><i class="bi bi-linkedin"></i></li>
-                        <li><i class="bi bi-whatsapp"></i></li>
-                        <li><i class="bi bi-envelope"></i></li>
-                      </ul>
-                    </div>
-            </div>
-
+ 
+<!-- MODAL / SHEET -->
+<div
+  id="services-modal"
+  class="svc-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+  aria-hidden="true"
+>
+  <div class="svc-modal__backdrop" id="modal-backdrop" aria-hidden="true"></div>
+ 
+  <div class="svc-modal__panel" id="modal-panel">
+    <div class="svc-modal__handle" aria-hidden="true"></div>
+ 
+    <button class="svc-modal__close" id="modal-close" aria-label="Cerrar" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+ 
+    <div class="svc-modal__img-wrap">
+      <img id="modal-img" src="" alt="" class="svc-modal__img" width="800" height="380" loading="lazy" decoding="async" />
+      <span class="svc-modal__img-tag" id="modal-img-tag"></span>
     </div>
+ 
+    <div class="svc-modal__body">
+      <h3 class="svc-modal__title" id="modal-title"></h3>
+      <p class="svc-modal__desc" id="modal-desc"></p>
+      <p class="svc-modal__includes-label">¿Qué incluye?</p>
+      <ul class="svc-modal__features" id="modal-features"></ul>
+      <div class="svc-modal__footer">
+        <span class="svc-modal__price" id="modal-price"></span>
+        <a href="#cotizador" class="btn btn--primary svc-modal__cta" id="modal-cta"></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-</section> -->
+
+<script>
+  import '../scripts/servicios'
+</script>

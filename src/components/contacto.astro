@@ -1,42 +1,231 @@
 ---
 import '../styles/contacto.css'
-import Cotizacion from "../components/cotizador.jsx";
-import FotoP from "../assets/antonio.png"
 ---
 
-<section class="contacto" id="cotizador" >
-    <div class="contacto-cont">
+<section class="quoter section hero-gradient" id="cotizador" aria-labelledby="quoter-title">
+  <div class="container quoter__inner">
 
-        <h4>COTIZADOR</h4>
-        <!-- <h1>¡Inicia hoy tu salto al mundo digital!</h1>-->
- <h2 class="cotizatext">Hablemos de Tu Proyecto <br> ¡Usa nuestro <span style="color:#0982A8 ;">cotizador</span> y planifica tu <span style="color:#0982A8 ;">inversión</span>!</h2>
-        <div class="contact-grid">
+    <!-- ══ COLUMNA IZQUIERDA: foto + pasos ══════════════════ -->
+    <div class="quoter__left">
 
-                 <div class="txt-izq-cont">
-                   
-                    
-                 <div class="img-personal">
-              <img 
-              src={FotoP.src}
-             
-              />  
-              </div>  
-             
-                 </div>
-
-               
-              
-              
-                  
-                    <Cotizacion client:load/>
-                  
+      <!-- Foto 
+      <div class="quoter__photo-wrap">
+      
+          Reemplaza con <Image src={heroPhoto} ... /> en producción
+     
+        <img
+          src="/assets/quoter/vikingdev-photo.webp"
+          alt="Equipo VikingDev trabajando en proyectos digitales en Tijuana"
+          class="quoter__photo"
+          width="600"
+          height="480"
+          loading="lazy"
+          decoding="async"
+        />
+       Badge flotante
+        <div class="quoter__photo-badge">
+          <span class="quoter__photo-badge-num">+30</span>
+          <span class="quoter__photo-badge-label">proyectos<br/>entregados</span>
         </div>
-         
- 
+      </div>
+      -->
+
+      <!-- Pasos del proceso -->
+      <div class="quoter__steps">
+        <span class="section-label">¿Cómo funciona?</span>
+
+        <ol class="quoter__steps-list" role="list">
+
+          <li class="quoter__step">
+            <div class="quoter__step-num" aria-hidden="true">01</div>
+            <div class="quoter__step-body">
+              <h3 class="quoter__step-title">Cotiza tu proyecto</h3>
+              <p class="quoter__step-desc">
+                Usa el cotizador para seleccionar los servicios que necesitas.
+                En segundos tendrás una estimación real de inversión, sin rodeos
+                ni letras pequeñas.
+              </p>
+            </div>
+          </li>
+
+          <li class="quoter__step">
+            <div class="quoter__step-num" aria-hidden="true">02</div>
+            <div class="quoter__step-body">
+              <h3 class="quoter__step-title">Envíanos un mensaje</h3>
+              <p class="quoter__step-desc">
+                Con un clic te conectas directo a WhatsApp con tu cotización
+                lista. Nuestro equipo responde en menos de 24 horas con una
+                propuesta personalizada para tu negocio.
+              </p>
+            </div>
+          </li>
+
+          <li class="quoter__step">
+            <div class="quoter__step-num" aria-hidden="true">03</div>
+            <div class="quoter__step-body">
+              <h3 class="quoter__step-title">Platiquemos</h3>
+              <p class="quoter__step-desc">
+                Agendamos una llamada o reunión en Tijuana para entender tu
+                visión, ajustar detalles y definir el plan exacto. Sin costo
+                ni compromiso.
+              </p>
+            </div>
+          </li>
+
+          <li class="quoter__step">
+            <div class="quoter__step-num" aria-hidden="true">04</div>
+            <div class="quoter__step-body">
+              <h3 class="quoter__step-title">Arrancamos</h3>
+              <p class="quoter__step-desc">
+                Una vez alineados, iniciamos el desarrollo. Te mantenemos
+                informado en cada etapa con avances reales, entregas puntuales
+                y soporte post-lanzamiento incluido.
+              </p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
     </div>
-</div>
+
+    <!-- ══ COLUMNA DERECHA: cotizador ═══════════════════════ -->
+    <div class="quoter__right">
+      <div class="quoter__card glass-panel">
+
+        <!-- Header del cotizador -->
+        <div class="quoter__card-header">
+          <h2 class="quoter__card-title" id="quoter-title">Cotizador Interactivo</h2>
+          <p class="quoter__card-subtitle">
+            Configura tu plan ideal y obtén un presupuesto estimado al instante.
+          </p>
+        </div>
+
+        <!-- Servicios (checkboxes) -->
+        <fieldset class="quoter__fieldset">
+          <legend class="quoter__legend">Servicios Requeridos</legend>
+          <div class="quoter__checkboxes">
+
+       <label class="quoter__check-label">
+  <input
+    type="checkbox"
+    class="quoter__checkbox"
+    data-price="4000"
+    data-label="Landing Page"
+    aria-label="Landing Page: $4,000 MXN"
+  />
+  <span class="quoter__check-box" aria-hidden="true"></span>
+  <span class="quoter__check-text">Landing Page</span>
+</label>
+
+<label class="quoter__check-label">
+  <input
+    type="checkbox"
+    class="quoter__checkbox"
+    data-price="6000"
+    data-label="Página Web Completa"
+    aria-label="Página Web Completa: $6,000 MXN"
+  />
+  <span class="quoter__check-box" aria-hidden="true"></span>
+  <span class="quoter__check-text">Página Web Completa</span>
+</label>
+
+<label class="quoter__check-label">
+  <input
+    type="checkbox"
+    class="quoter__checkbox"
+    data-price="8000"
+    data-label="Tienda E-Commerce"
+    aria-label="Tienda E-Commerce: $8,000 MXN"
+  />
+  <span class="quoter__check-box" aria-hidden="true"></span>
+  <span class="quoter__check-text">Tienda E-Commerce</span>
+</label>
+
+<label class="quoter__check-label">
+  <input
+    type="checkbox"
+    class="quoter__checkbox"
+    data-price="1800"
+    data-label="Meta Ads (no incluye inversión)"
+    aria-label="Meta Ads: $1,800 MXN (gestión, no incluye inversión)"
+  />
+  <span class="quoter__check-box" aria-hidden="true"></span>
+  <span class="quoter__check-text">Meta Ads <em class="quoter__check-note">· gestión</em></span>
+</label>
+
+<label class="quoter__check-label">
+  <input
+    type="checkbox"
+    class="quoter__checkbox"
+    data-price="1800"
+    data-label="Google Ads (no incluye inversión)"
+    aria-label="Google Ads: $1,800 MXN (gestión, no incluye inversión)"
+  />
+  <span class="quoter__check-box" aria-hidden="true"></span>
+  <span class="quoter__check-text">Google Ads <em class="quoter__check-note">· gestión</em></span>
+</label>
+
+<label class="quoter__check-label">
+  <input
+    type="checkbox"
+    class="quoter__checkbox"
+    data-price="2000"
+    data-label="Consultoría Digital"
+    aria-label="Consultoría Digital: $2,000 MXN"
+  />
+  <span class="quoter__check-box" aria-hidden="true"></span>
+  <span class="quoter__check-text">Consultoría Digital</span>
+</label>
+
+<label class="quoter__check-label">
+  <input
+    type="checkbox"
+    class="quoter__checkbox"
+    data-price="0"
+    data-label="Proyecto a la Medida"
+    aria-label="Proyecto a la Medida: cotización personalizada"
+  />
+  <span class="quoter__check-box" aria-hidden="true"></span>
+  <span class="quoter__check-text">Proyecto a la Medida <em class="quoter__check-note">· cotización esp.</em></span>
+</label>
+
+          </div>
+        </fieldset>
+
+    
+
+        <!-- Divider -->
+        <div class="quoter__divider" aria-hidden="true"></div>
+
+        <!-- Total + CTA -->
+        <div class="quoter__footer">
+          <div class="quoter__total-wrap">
+            <p class="quoter__total-label">Estimado de Inversión Inicial:</p>
+            <p class="quoter__total" id="quoter-total" aria-live="polite">$0 MXN</p>
+          </div>
+          <a
+            id="quoter-cta"
+            href="https://wa.link/wnb0m6"
+            class="quoter__cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Solicitar cotización formal por WhatsApp"
+          >
+            Solicitar Cotización
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </section>
 
+
 <script>
-    import "../scripts/cotizador.js"
+    import "../scripts/cotizador"
 </script>
