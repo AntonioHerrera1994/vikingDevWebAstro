@@ -305,3 +305,9 @@
     stroke-dashoffset: 0;
   }
 }
+
+@media (max-width:801px){
+  .hero__badge {
+  font-size: 10px;
+}
+}

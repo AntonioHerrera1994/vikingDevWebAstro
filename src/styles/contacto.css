@@ -1,10 +1,3 @@
-/* ============================================================
-   Quoter.css — VikingDev Redesign
-   Layout: izquierda (foto + pasos) | derecha (cotizador card)
-   Depende de: global.css (.section, .container, .glass-panel,
-               .hero-gradient, .section-label, tokens)
-   ============================================================ */
-
 /* ─── Section ───────────────────────────────────────────────── */
 .quoter__inner {
   display: grid;
@@ -255,8 +248,14 @@
 
 .quoter__checkboxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr; /* 1 columna en móvil por defecto */
   gap: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+  .quoter__checkboxes {
+    grid-template-columns: 1fr 1fr; /* 2 columnas a partir de tablets */
+  }
 }
 
 /* ── Label de checkbox ───────────────────────────────────────── */
@@ -345,8 +344,13 @@
   line-height: 1.3;
 }
 
+.quoter__check-label:hover .quoter__check-text{
+  color:white;
+}
+
+
 .quoter__check-label:has(.quoter__checkbox:checked) .quoter__check-text {
-  color: var(--color-primary);
+ color:white;
   font-weight: 600;
 }
 
@@ -508,5 +512,28 @@
 
   .quoter__total {
     transition: none;
+  }
+}
+
+@media (max-width: 801px) {
+  .quoter__step-title {
+    font-size: 20px;
+  }
+
+  .quoter__step-desc {
+    font-size: 17px;
+  }
+
+  /* Padding seguro para despegar el contenido de los bordes en móvil */
+  .quoter__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  /* Puedes ajustar el padding interno de la tarjeta en móvil si la ves muy saturada */
+  .quoter__card {
+    padding: var(--space-xl); 
   }
 }
