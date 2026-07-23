@@ -1,0 +1,80 @@
+---
+import '../styles/experienciacv.css'
+
+const EXPERIENCIA = [
+  {
+    empresa: "VikingDev / Freelance",
+    periodo: "2022 - Actualidad",
+    rol: "Desarrollo Web",
+    activo: false,
+    logros: [
+      "Desarrollo y mantenimiento de sitios web para diferentes empresas y negocios.",
+      "Diseño gráfico y programación de publicaciones en redes sociales.",
+      "Campañas en Meta y Google Ads.",
+    ],
+  },
+  {
+    empresa: "TruCapitals",
+    periodo: "2022 - Actualidad",
+    rol: "Desarrollo Web",
+    activo: true,
+    logros: [
+      "Desarrollo y mantenimiento de los sitios web de TruCapitals.",
+      "Manejo de host y CRM.",
+      "Apoyo al área de Marketing Digital en tareas específicas.",
+    ],
+  },
+  {
+    empresa: "Gas Silza",
+    periodo: "2022",
+    rol: "Software Development",
+    activo: false,
+    logros: [
+      "Programación del sitio web de la empresa.",
+      "Desarrollo de aplicaciones móviles y sistemas de gestión.",
+      "Soporte técnico especializado.",
+    ],
+  },
+];
+---
+
+<section class="experience" id="experiencia">
+  <div class="experience__container">
+
+    <h2 class="experience__title">
+      <span class="experience__title-bar" aria-hidden="true"></span>
+      Experiencia Relevante
+    </h2>
+
+    <div class="experience__list">
+      {EXPERIENCIA.map((item) => (
+        <div class="experience__row">
+          <div class="experience__meta">
+            <p class="experience__company">{item.empresa}</p>
+            <p class="experience__period">{item.periodo}</p>
+          </div>
+
+          <div class:list={["experience__card", { "experience__card--active": item.activo }]}>
+            <h3 class="experience__role">{item.rol}</h3>
+            <ul class="experience__achievements">
+              {item.logros.map((logro) => (
+                <li class="experience__achievement">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="9 12 11 14 15 10" />
+                  </svg>
+                  <span>{logro}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+    import "../scripts/experienciacv"
+</script>

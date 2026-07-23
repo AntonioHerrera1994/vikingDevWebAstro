@@ -1,0 +1,92 @@
+---
+import '../styles/presentacioncv.css'
+---
+
+
+<section class="profile" id="perfil">
+  <div class="profile__container">
+
+    <!-- Columna izquierda: texto -->
+    <div class="profile__content">
+      <p class="profile__eyebrow">Programador Web</p>
+
+      <h1 class="profile__name">
+        José Antonio<br />
+        Herrera<br />
+        Quintero
+      </h1>
+
+      <p class="profile__bio">
+        Apasionado por mi trabajo y por las pequeñas cosas de la vida. Capaz de
+        evolucionar y aprender en diferentes entornos, priorizando el
+        aprendizaje constante para mejorar las buenas prácticas con las que
+        llevo a cabo los diferentes proyectos.
+      </p>
+
+      <div class="profile__cta">
+        <a href="/cv-jose-herrera.pdf" class="profile__btn profile__btn--primary" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Descargar CV
+        </a>
+        <a href="#contacto" class="profile__btn profile__btn--outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16v16H4z" opacity="0" />
+            <path d="M22 6 12 13 2 6" />
+            <path d="M2 6h20v12H2z" />
+          </svg>
+          Contáctame
+        </a>
+      </div>
+
+      <div class="profile__divider" role="separator"></div>
+
+      <ul class="profile__meta">
+        <li class="profile__meta-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>+52 (663) 247-78-16</span>
+        </li>
+        <li class="profile__meta-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Tijuana, Baja California</span>
+        </li>
+        <li class="profile__meta-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span>vikingdevtj.com</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Columna derecha: foto -->
+    <div class="profile__media">
+      <div class="profile__media-backdrop" aria-hidden="true"></div>
+      <div class="profile__photo-frame">
+        <img
+          src="/assets/jose-herrera.jpg"
+          alt="José Antonio Herrera Quintero trabajando en su laptop"
+          class="profile__photo"
+          loading="eager"
+          width="800"
+          height="960"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+    import '../scripts/presentacioncv'
+    </script>
