@@ -1,15 +1,3 @@
-/* ============================================================
-   Portfolio.js — VikingDev Redesign
-   Inicializa un carrusel independiente por cada .portfolio__block.
-   Funcionalidades:
-     1. Flechas prev / next
-     2. Dots de paginación clickeables
-     3. Drag / swipe (mouse y touch)
-     4. Teclado (← →) cuando el carrusel tiene foco
-     5. ResizeObserver: recalcula al cambiar tamaño de ventana
-     6. IntersectionObserver: animación de entrada por bloque
-   ============================================================ */
-
 (function () {
   'use strict';
 
@@ -19,39 +7,48 @@
      FACTORY: inicializa un carrusel dado su .portfolio__block
      ════════════════════════════════════════════════════════════ */
   function initCarousel(block) {
-    var track     = block.querySelector('.portfolio__track');
-    var cards     = Array.from(block.querySelectorAll('.portfolio__card'));
-    var prevBtn   = block.querySelector('.portfolio__arrow--prev');
-    var nextBtn   = block.querySelector('.portfolio__arrow--next');
-    var dotsWrap  = block.querySelector('.portfolio__dots');
+    var track      = block.querySelector('.portfolio__track');
+    var allCards   = Array.from(block.querySelectorAll('.portfolio__card'));
+    var emptyMsg   = block.querySelector('.portfolio__empty');
+    var prevBtn    = block.querySelector('.portfolio__arrow--prev');
+    var nextBtn    = block.querySelector('.portfolio__arrow--next');
+    var dotsWrap   = block.querySelector('.portfolio__dots');
 
-    if (!track || !cards.length) return;
+    if (!track || !allCards.length) return;
 
     /* ── Estado ─────────────────────────────────────────────── */
-    var currentIndex  = 0;    // índice del primer card visible
-    var visibleCount  = 1;    // cuántos cards se ven a la vez
-    var cardWidth     = 0;    // ancho de un card + gap
-    var maxIndex      = 0;    // índice máximo permitido
-    var dots          = [];
+    var cards         = allCards.slice(); // cards actualmente visibles (según filtro)
+    var currentIndex   = 0;
+    var visibleCount    = 1;
+    var cardWidth       = 0;
+    var maxIndex        = 0;
+    var dots            = [];
 
     /* ── Calcular dimensiones ────────────────────────────────── */
     function measure() {
+      if (!cards.length) {
+        if (dotsWrap) dotsWrap.style.display = 'none';
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0px)';
+        return;
+      }
+
       var gap = parseInt(getComputedStyle(track).gap) || 24;
       var firstCard = cards[0];
       cardWidth = firstCard.offsetWidth + gap;
 
-      /* Cuántos cards caben en el viewport */
       var viewportWidth = block.querySelector('.portfolio__viewport').offsetWidth;
       visibleCount = Math.max(1, Math.round(viewportWidth / cardWidth));
       visibleCount = Math.min(visibleCount, cards.length);
 
       maxIndex = Math.max(0, cards.length - visibleCount);
 
-      /* Ajustar currentIndex si quedó fuera de rango */
       if (currentIndex > maxIndex) currentIndex = maxIndex;
 
       renderDots();
-      goTo(currentIndex, false); /* sin animación al recalcular */
+      goTo(currentIndex, false);
     }
 
     /* ── Render dots ─────────────────────────────────────────── */
@@ -60,7 +57,6 @@
       dotsWrap.innerHTML = '';
       dots = [];
 
-      /* Un dot por cada "página" (paso de visibleCount) */
       var pages = maxIndex + 1;
       if (pages <= 1) { dotsWrap.style.display = 'none'; return; }
       dotsWrap.style.display = '';
@@ -83,6 +79,7 @@
 
     /* ── Ir a un índice ──────────────────────────────────────── */
     function goTo(index, animate) {
+      if (!cards.length) return;
       if (animate === undefined) animate = true;
 
       currentIndex = Math.max(0, Math.min(index, maxIndex));
@@ -111,6 +108,26 @@
       });
     }
 
+    /* ── Filtro por categoría ────────────────────────────────── */
+    function applyFilter(category) {
+      allCards.forEach(function (card) {
+        var match = category === 'todos' || card.dataset.category === category;
+        card.style.display = match ? '' : 'none';
+      });
+
+      cards = allCards.filter(function (card) {
+        return card.style.display !== 'none';
+      });
+
+      if (emptyMsg) emptyMsg.hidden = cards.length > 0;
+
+      currentIndex = 0;
+      measure();
+    }
+
+    /* Expone applyFilter para el control global del filtro */
+    block._applyFilter = applyFilter;
+
     /* ── Event listeners: flechas ────────────────────────────── */
     if (prevBtn) {
       prevBtn.addEventListener('click', function () {
@@ -137,8 +154,8 @@
     var isDragging   = false;
     var startOffset  = 0;
 
-    /* Mouse */
     track.addEventListener('mousedown', function (e) {
+      if (!cards.length) return;
       isDragging   = true;
       dragStartX   = e.clientX;
       startOffset  = -(currentIndex * cardWidth);
@@ -161,8 +178,8 @@
       snapAfterDrag(delta);
     });
 
-    /* Touch */
     track.addEventListener('touchstart', function (e) {
+      if (!cards.length) return;
       dragStartX  = e.touches[0].clientX;
       startOffset = -(currentIndex * cardWidth);
       track.style.transition = 'none';
@@ -184,13 +201,13 @@
     });
 
     function snapAfterDrag(delta) {
-      var threshold = cardWidth * 0.25; /* 25% del ancho = snap */
+      var threshold = cardWidth * 0.25;
       if (delta < -threshold) {
         goTo(currentIndex + 1, true);
       } else if (delta > threshold) {
         goTo(currentIndex - 1, true);
       } else {
-        goTo(currentIndex, true); /* volver al mismo */
+        goTo(currentIndex, true);
       }
     }
 
@@ -220,28 +237,46 @@
       b.classList.add('is-visible');
       initCarousel(b);
     });
-    return;
+  } else {
+    var sectionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            setTimeout(function () {
+              initCarousel(entry.target);
+            }, 50);
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    blocks.forEach(function (b) {
+      sectionObserver.observe(b);
+    });
   }
 
-  var sectionObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          /* Inicializar carrusel después de que el bloque sea visible
-             para que offsetWidth esté disponible */
-          setTimeout(function () {
-            initCarousel(entry.target);
-          }, 50);
-          sectionObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+  /* ════════════════════════════════════════════════════════════
+     FILTRO GLOBAL — aplica a ambos carruseles a la vez
+     ════════════════════════════════════════════════════════════ */
+  var filterSelects = document.querySelectorAll('[data-filter-select]');
 
-  blocks.forEach(function (b) {
-    sectionObserver.observe(b);
+  function applyGlobalFilter(category) {
+    blocks.forEach(function (block) {
+      if (typeof block._applyFilter === 'function') {
+        block._applyFilter(category);
+      }
+    });
+  }
+
+  filterSelects.forEach(function (select) {
+    select.addEventListener('change', function (e) {
+      var category = e.target.value;
+      filterSelects.forEach(function (s) { s.value = category; });
+      applyGlobalFilter(category);
+    });
   });
 
 })();

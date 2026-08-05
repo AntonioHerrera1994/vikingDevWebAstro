@@ -1,11 +1,12 @@
 ---
 import '../styles/portafolio.css'
 const vikingProjects = [
-    {
+  {
     id: 'zactech',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/zactech.webp',
     imageAlt: 'Sitio web de zac tech',
     category: 'Desarrollo Web',
+    filterCategory: 'tecnologia',
     title: 'Zac Tech Semi',
     desc: 'Desarrollo de un sitio web profesional para un laboratorio internacional especializado en la industria de semiconductores.',
     url: 'https://zacsemi.com.mx/',
@@ -15,6 +16,7 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/bajasomms.webp',
     imageAlt: 'Sitio web de Baja Somms',
     category: 'Desarrollo Web',
+    filterCategory: 'restaurante',
     title: 'Baja Somms´s',
     desc: 'Experiencia web premium para club de cata de vinos.Desarrollo de una plataforma web diseñada para promocionar eventos exclusivos.',
     url: 'http://bajasomms.com/',
@@ -24,6 +26,7 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/itest.webp',
     imageAlt: 'Sitio web de Itest',
     category: 'Desarrollo Web',
+    filterCategory: 'tecnologia',
     title: 'ITest',
     desc: 'Desarrollo de una solución web corporativa para una empresa líder en pruebas de estrés y Latch-up.',
     url: 'https://ztechnano.ai/',
@@ -33,6 +36,7 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/prime.webp',
     imageAlt: 'Sitio web de prime excess',
     category: 'Desarrollo Web',
+    filterCategory: 'industrial',
     title: 'Prime Excess Management',
     desc: 'Desarrollo de un sitio web profesional optimizado para destacar los servicios de Prime Excess Management.',
     url: 'https://excess-mgt.com/',
@@ -42,25 +46,27 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/favlashnuevo.png',
     imageAlt: 'Sitio web de Favlash — estudio de pestañas en Tijuana',
     category: 'Desarrollo Web',
+    filterCategory: 'belleza',
     title: 'Favlash',
     desc: 'Sitio web para estudio de pestañas con sistema de reservas online, galería de trabajos y diseño vibrante acorde a la marca.',
     url: 'https://favlash.com',
   },
-   {
+  {
     id: 'techmeolgroup',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/techmeol.webp',
     imageAlt: 'Sitio web de Tech Meol Group',
     category: 'Desarrollo Web',
+    filterCategory: 'tecnologia',
     title: 'Tech Meol Group',
     desc: 'Sitio web corporativo para empresa de tecnología e innovación con presentación de servicios y equipo directivo.',
     url: 'https://techmeol.com/',
   },
-
   {
     id: 'drayunuen',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/yunuen.webp',
     imageAlt: 'Sitio web dra Partida',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'GYNEHEALTH & AESTHETIC MEDICINE',
     desc: 'Diseño y desarrollo de un sitio web corporativo para una especialista en la salud.',
     url: 'https://define-studio.mx/drapartida/',
@@ -70,7 +76,8 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/altiveweb.webp',
     imageAlt: 'Sitio web de Altive',
     category: 'Desarrollo Web',
-    title: 'ClidPay',
+    filterCategory: 'bienes-raices',
+    title: 'Altive Realty',
     desc: 'Diseño y desarrollo de una página web profesional orientada a promover servicios integrales de bienes raíces.',
     url: 'https://altive.realty/',
   },
@@ -79,7 +86,8 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/velora.webp',
     imageAlt: 'Sitio web de velora',
     category: 'Desarrollo Web',
-    title: 'ClidPay',
+    filterCategory: 'transporte',
+    title: 'Velora Cargo ',
     desc: 'Diseño y desarrollo de una página web B2B enfocada en el sector de transporte y carga.',
     url: 'https://veloracargo.com/',
   },
@@ -88,6 +96,7 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/4.png',
     imageAlt: 'Sitio web de Global Recruiters en Tijuana',
     category: 'Desarrollo Web',
+    filterCategory: 'otro',
     title: 'Global Recruiters',
     desc: 'Plataforma de reclutamiento ejecutivo bilingüe con formularios de aplicación, integración de vacantes y diseño corporativo premium.',
     url: 'https://global-recruiters.com/',
@@ -97,6 +106,7 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/8.png',
     imageAlt: 'Sitio web de Ixaya Residencial — bienes raíces',
     category: 'Desarrollo Web',
+    filterCategory: 'bienes-raices',
     title: 'Ixaya Residencial',
     desc: 'Landing page de desarrollo inmobiliario con galería interactiva, mapa de ubicación y formulario de interés.',
     url: 'https://ixayaresidencial.mx/',
@@ -106,6 +116,7 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/9.png',
     imageAlt: 'Sitio web de Grúas Cervantes',
     category: 'Desarrollo Web',
+    filterCategory: 'transporte',
     title: 'Grúas Cervantes',
     desc: 'Sitio web de servicio de grúas con llamada a la acción directa a WhatsApp y ubicación en tiempo real.',
     url: 'https://gruascervantestijuana.com/',
@@ -115,42 +126,47 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/16.png',
     imageAlt: 'Sitio web de ClidPay — fintech',
     category: 'Desarrollo Web',
+    filterCategory: 'tecnologia',
     title: 'ClidPay',
     desc: 'Sitio web para plataforma fintech de pagos digitales con dashboard de transacciones, onboarding de usuarios y diseño de confianza.',
     url: 'http://clidpay.us/',
   },
-   {
+  {
     id: 'mudanzashermosillo',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/10.png',
     imageAlt: 'Sitio web de mudanzas',
     category: 'Desarrollo Web',
+    filterCategory: 'transporte',
     title: 'Mudanzas Hermosillo',
     desc: 'Diseño y desarrollo de una página web corporativa enfocada en el sector de mudanzas y transporte.',
     url: 'https://mudanzashermosillo.com.mx/',
   },
-    {
+  {
     id: 'gynandmed',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/19.png',
     imageAlt: 'Sitio web de gynandmed',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'Gyn and Med',
     desc: 'Diseño y desarrollo de un sitio web corporativo enfocado en el sector médico.',
     url: 'https://gynandmed.com/',
   },
-    {
+  {
     id: 'madeiras',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/11.png',
     imageAlt: 'Sitio web de madeiras',
     category: 'Desarrollo Web',
+    filterCategory: 'otro',
     title: 'Madeiras Collection',
     desc: 'Diseño y desarrollo de un E-commerce web corporativo enfocado en destacar la estética y calidad de productos de diseño e interiorismo.',
     url: 'https://madeirascollection.com/',
   },
-    {
+  {
     id: 'holisticcancer',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/holistic.png',
     imageAlt: 'Sitio web de holistic cancer',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'Holistic Cancer Coach',
     desc: 'Diseño y desarrollo de un sitio web profesional enfocado en la salud y el bienestar oncológico.',
     url: 'https://holisticancercoach.com/',
@@ -160,21 +176,21 @@ const vikingProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/radio.webp',
     imageAlt: 'Sitio web de ricceta',
     category: 'Desarrollo Web',
+    filterCategory: 'restaurante',
     title: 'Ricetta Restaurant',
     desc: 'Desarrollo de una página web B2B diseñada para destacar servicios de asesoría, apertura y optimización de restaurantes.',
     url: 'https://ricetta-restaurantconsulting.com/',
   },
-  
-    {
+  {
     id: 'danyaargote',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/3.png',
     imageAlt: 'Sitio web de Danya Argote — coach personal',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'Danya Argote',
     desc: 'Diseño y desarrollo de un sitio web enfocado en la terapia y el acompañamiento emocional.',
     url: 'https://danyaargote.com/',
   },
-
 ];
 
 const snitchProjects = [
@@ -183,16 +199,17 @@ const snitchProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/17.png',
     imageAlt: 'Sitio web de Snitch Agency',
     category: 'Branding & Web',
+    filterCategory: 'otro',
     title: 'Snitch Agency',
     desc: 'Diseño y desarrollo del sitio de la propia agencia con identidad de marca fuerte, portafolio interactivo y generación de leads.',
     url: 'https://snitchagency.com/',
   },
-
   {
     id: 'Baja Box',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/18.png',
     imageAlt: 'Sitio web de bajabox',
     category: 'Desarrollo Web',
+    filterCategory: 'industrial',
     title: 'Baja Box',
     desc: 'Sitio web B2B para empresa de empaques.',
     url: 'https://bajabox.com.mx/',
@@ -202,6 +219,7 @@ const snitchProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/perioclinic.png',
     imageAlt: 'Sitio web de perioclinic',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'Perioclinic',
     desc: 'Página web médica para clínica odontológica. Un sitio enfocado en transmitir profesionalismo',
     url: 'https://perioclinic.com.mx/',
@@ -211,6 +229,7 @@ const snitchProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/artivia.webp',
     imageAlt: 'Sitio web de artivia',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'Artivia',
     desc: 'Sitio web profesional para centro de rehabilitación.',
     url: 'https://artiviaclinic.com/',
@@ -220,6 +239,7 @@ const snitchProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/rms.webp',
     imageAlt: 'Sitio web de rms',
     category: 'Desarrollo Web',
+    filterCategory: 'industrial',
     title: 'RMS',
     desc: 'Sitio web corporativo para servicios de certificación.',
     url: 'https://registrarmanagementsystems.com/',
@@ -229,6 +249,7 @@ const snitchProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/tjplastic.png',
     imageAlt: 'Sitio web de tjplastic',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'TJ Plastic Surgery',
     desc: 'Página web premium para clínica de cirugía plástica. Diseño enfocado en la estética.',
     url: 'https://tjplasticsurgeryofficial.com/',
@@ -238,47 +259,76 @@ const snitchProjects = [
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/chicaf.webp',
     imageAlt: 'Sitio web de chica finanzas',
     category: 'Desarrollo Web',
+    filterCategory: 'educacion',
     title: 'La Chica Finanzas',
     desc: 'Sitio web de marca personal para consultoría y coaching financiero.',
     url: 'https://lachicafinanzas.com.mx/',
   },
-   {
+  {
     id: 'amt',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/amt.png',
     imageAlt: 'Sitio web de amt',
     category: 'Desarrollo Web',
+    filterCategory: 'industrial',
     title: 'AMT',
     desc: 'Plataforma web corporativa para manufactura médica.',
     url: 'https://alliance-medtech.com/',
   },
-   {
+  {
     id: 'radiografia',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/ricceta.webp',
     imageAlt: 'Sitio web de radiologia',
     category: 'Desarrollo Web',
+    filterCategory: 'salud',
     title: 'Radiología Vascular Intervencionista',
     desc: 'Página web especializada en radiología y procedimientos vasculares.',
     url: 'https://vascularradtj.com/',
   },
-   {
+  {
     id: 'integra',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/14.png',
     imageAlt: 'Sitio web de integra',
     category: 'Desarrollo Web',
+    filterCategory: 'otro',
     title: 'Integra',
     desc: 'Sitio web enfocada en ofrecer de manera clara servicios de contabilidad, impuestos y asesoría financiera para empresas.',
     url: 'https://integratj.com.mx/',
   },
-   {
+  {
     id: 'ppsolutions',
-    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/refs/src/assets/proyectos/15.png',
+    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/15.png',
     imageAlt: 'Sitio web de ppsolutions',
     category: 'Desarrollo Web',
+    filterCategory: 'industrial',
     title: 'PP Solutions',
     desc: 'Diseño corporativo enfocado en mostrar catálogos de servicios, mantenimiento especializado y proyectos de ingeniería.',
     url: 'https://ppsolutions.com.mx/',
   },
 ];
+
+const filterOptions = [
+  { value: 'todos', label: 'Todos' },
+  { value: 'tecnologia', label: 'Tecnología' },
+  { value: 'salud', label: 'Salud' },
+  { value: 'belleza', label: 'Belleza y Cuidado' },
+  { value: 'bienes-raices', label: 'Bienes Raíces' },
+  { value: 'transporte', label: 'Transporte' },
+  { value: 'educacion', label: 'Educación' },
+  { value: 'restaurante', label: 'Restaurante' },
+  { value: 'industrial', label: 'Industrial' },
+  { value: 'otro', label: 'Otro' },
+];
+
+/* Combina ambos portafolios para contar por categoría de forma global */
+const allProjects = [...vikingProjects, ...snitchProjects];
+
+const categoryCounts = filterOptions.reduce((acc, opt) => {
+  acc[opt.value] =
+    opt.value === 'todos'
+      ? allProjects.length
+      : allProjects.filter((p) => p.filterCategory === opt.value).length;
+  return acc;
+}, {});
 ---
 
 <section class="portfolio section" id="proyectos" aria-labelledby="portfolio-title">
@@ -294,6 +344,14 @@ const snitchProjects = [
           <p class="section-subtitle">Proyectos de desarrollo web, e-commerce y aplicaciones.</p>
         </div>
         <div class="portfolio__nav" aria-label="Navegación carrusel VikingDev">
+          <div class="portfolio__filter">
+            <label class="portfolio__filter-label" for="portfolio-filter-vikingdev">Filtrar por categoría</label>
+            <select class="portfolio__filter-select" id="portfolio-filter-vikingdev" data-filter-select>
+             {filterOptions.map((opt) => (
+    <option value={opt.value}>{opt.label} ({categoryCounts[opt.value]})</option>
+  ))}
+            </select>
+          </div>
           <button class="portfolio__arrow portfolio__arrow--prev" aria-label="Proyecto anterior" type="button">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="15 18 9 12 15 6"/>
@@ -311,7 +369,7 @@ const snitchProjects = [
       <div class="portfolio__viewport">
         <ul class="portfolio__track" role="list">
           {vikingProjects.map((p) => (
-            <li class="portfolio__card" data-id={p.id}>
+            <li class="portfolio__card" data-id={p.id} data-category={p.filterCategory}>
               <div class="portfolio__img-wrap">
                 <img
                   src={p.image}
@@ -345,6 +403,8 @@ const snitchProjects = [
           ))}
         </ul>
       </div>
+
+      <p class="portfolio__empty" hidden>No hay proyectos en esta categoría por el momento.</p>
 
       <!-- Dots -->
       <div class="portfolio__dots" aria-label="Posición en el carrusel"></div>
@@ -363,6 +423,14 @@ const snitchProjects = [
           <p class="section-subtitle">Branding, marketing digital y estrategia creativa.</p>
         </div>
         <div class="portfolio__nav" aria-label="Navegación carrusel Snitch Agency">
+          <div class="portfolio__filter">
+            <label class="portfolio__filter-label" for="portfolio-filter-snitch">Filtrar por categoría</label>
+            <select class="portfolio__filter-select" id="portfolio-filter-snitch" data-filter-select>
+             {filterOptions.map((opt) => (
+    <option value={opt.value}>{opt.label} ({categoryCounts[opt.value]})</option>
+  ))}
+            </select>
+          </div>
           <button class="portfolio__arrow portfolio__arrow--prev" aria-label="Proyecto anterior" type="button">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="15 18 9 12 15 6"/>
@@ -379,7 +447,7 @@ const snitchProjects = [
       <div class="portfolio__viewport">
         <ul class="portfolio__track" role="list">
           {snitchProjects.map((p) => (
-            <li class="portfolio__card" data-id={p.id}>
+            <li class="portfolio__card" data-id={p.id} data-category={p.filterCategory}>
               <div class="portfolio__img-wrap">
                 <img
                   src={p.image}
@@ -413,6 +481,8 @@ const snitchProjects = [
           ))}
         </ul>
       </div>
+
+      <p class="portfolio__empty" hidden>No hay proyectos en esta categoría por el momento.</p>
 
       <div class="portfolio__dots" aria-label="Posición en el carrusel"></div>
     </div>
