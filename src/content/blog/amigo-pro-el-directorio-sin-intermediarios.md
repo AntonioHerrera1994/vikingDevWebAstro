@@ -8,7 +8,7 @@ coverImageAlt: "Plataforma Amig@ Pro mostrando perfiles de profesionales disponi
 readTime: "4 min de lectura"
 ---
 
-Existe un problema silencioso en la forma en que buscamos ayuda profesional: entre el cliente y quien realmente va a resolver su problema, casi siempre hay una plataforma cobrando una comision, un formulario eterno, o un intermediario que solo estorba. **Amig@ Pro** nace para eliminar eso.
+Existe un problema silencioso en la forma en que buscamos ayuda profesional: entre el cliente y quien realmente va a resolver su problema, casi siempre hay una plataforma cobrando una comision, un formulario eterno, o un intermediario que solo estorba. **[Amig@ Pro](https://amigo-pro.com/)** nace para eliminar eso.
 
 ## El problema que resolvimos
 
