@@ -1,0 +1,36 @@
+---
+import '../../styles/blog.css';
+import '../../styles/global.css'
+
+import Navbar from '../../components/navbar.astro';
+import Footer from '../../components/footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<Navbar />
+<article class="blog-post section">
+  <div class="container container--narrow">
+    <span class="blog-post__category">{post.data.category}</span>
+    <h1 class="blog-post__title">{post.data.title}</h1>
+<p class="blog-post__meta">{post.data.date.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })} &middot; {post.data.readTime}</p>
+    <div class="blog-post__cover">
+      <img src={post.data.coverImage} alt={post.data.coverImageAlt} />
+    </div>
+
+    <div class="blog-post__content">
+      <Content />
+    </div>
+  </div>
+</article>
+
+<Footer /> 

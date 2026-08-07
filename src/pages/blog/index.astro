@@ -1,0 +1,49 @@
+---
+import '../../styles/blog.css';
+import '../../styles/global.css'
+
+import Navbar from '../../components/navbar.astro';
+import Footer from '../../components/footer.astro';
+
+import { getCollection } from 'astro:content';
+
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<head>
+    <!-- Meta básicos -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    </head>
+<Navbar />
+<section class="blog-index section" id="blog" aria-labelledby="blog-title">
+  <div class="container">
+    <span class="section-label">Blog</span>
+    <h1 class="section-title" id="blog-title">Historias y proyectos</h1>
+    <p class="section-subtitle">Casos de estudio, aprendizajes y novedades de VikingDev.</p>
+
+    <ul class="blog-index__grid" role="list">
+      {posts.map((post) => (
+        <li class="blog-index__item">
+          <a href={`/blog/${post.id}`} class="blog-card">
+            <div class="blog-card__img-wrap">
+              <img src={post.data.coverImage} alt={post.data.coverImageAlt} loading="lazy" />
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__category">{post.data.category}</span>
+              <h2 class="blog-card__title">{post.data.title}</h2>
+              <p class="blog-card__excerpt">{post.data.excerpt}</p>
+              <span class="blog-card__meta">{post.data.readTime}</span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<Footer /> 
