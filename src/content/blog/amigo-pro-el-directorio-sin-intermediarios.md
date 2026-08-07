@@ -3,7 +3,7 @@ title: "Amig@ Pro: el directorio que conecta talento sin intermediarios"
 excerpt: "Desarrollamos una plataforma que elimina las comisiones abusivas y pone en contacto directo a clientes y profesionales, desde el primer mensaje."
 category: "Caso de Estudio"
 date: 2026-08-01
-coverImage: "https://amigo-pro.com/wp-content/uploads/2026/06/Tecnologia-para-todos.png"
+coverImage: "https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/blog/amigo1.webp"
 coverImageAlt: "Plataforma Amig@ Pro mostrando perfiles de profesionales disponibles"
 readTime: "4 min de lectura"
 ---

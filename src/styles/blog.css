@@ -144,7 +144,7 @@
 }
 
 .blog-post__cover img {
-  width: 50%;
+  width: 100%;
   height: auto;
   display: block;
 }
