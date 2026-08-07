@@ -24,6 +24,12 @@
     "readTime": {
       "type": "string"
     },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }

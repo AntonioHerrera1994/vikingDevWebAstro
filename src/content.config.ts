@@ -11,6 +11,8 @@ const blog = defineCollection({
     coverImage: z.string(),
     coverImageAlt: z.string(),
     readTime: z.string(),
+    metaTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
   }),
 });
 

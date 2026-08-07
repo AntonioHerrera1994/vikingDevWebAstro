@@ -1,0 +1,37 @@
+---
+import Seo from '../components/Seo.astro';
+import Navbar from '../components/navbar.astro';
+import Footer from '../components/footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalPath: string;
+  type?: 'website' | 'article';
+  publishedDate?: Date;
+}
+
+const { title, description, image, canonicalPath, type, publishedDate } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Seo
+      title={title}
+      description={description}
+      image={image}
+      canonicalPath={canonicalPath}
+      type={type}
+      publishedDate={publishedDate}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>
