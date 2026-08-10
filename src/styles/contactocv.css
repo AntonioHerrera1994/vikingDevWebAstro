@@ -1,0 +1,87 @@
+.contact-cv {
+  background: var(--color-secondary);
+  padding: 96px 24px;
+}
+
+.contact-cv__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-cv__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.contact-cv__title-bar {
+  width: 4px;
+  height: 30px;
+  background: var(--secondary-container);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.contact-cv__subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 48px;
+}
+
+.contact-cv__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contact-cv__card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 14px 24px;
+  transition: background var(--transition), border-color var(--transition),
+    transform var(--transition);
+}
+
+.contact-cv__card:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.contact-cv__card svg {
+  color: var(--secondary-container);
+  flex-shrink: 0;
+}
+
+.contact-cv__card:hover svg {
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .contact-cv {
+    padding: 72px 20px;
+  }
+  .contact-cv__card {
+    width: 100%;
+    justify-content: center;
+  }
+}

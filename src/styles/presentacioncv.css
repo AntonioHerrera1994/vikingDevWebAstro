@@ -29,7 +29,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--secondary);
+  color: var(--color-secondary);
   margin: 0 0 16px;
 }
 
@@ -72,6 +72,8 @@
   border-radius: 10px;
   transition: transform var(--transition), box-shadow var(--transition),
     background var(--transition), border-color var(--transition);
+    background-color: var(--color-secondary)!important;
+    color: white;
 }
 
 .profile__btn--primary {
@@ -90,7 +92,7 @@
 
 .profile__btn--outline {
   background: transparent;
-  color: var(--primary);
+  color: white;
   border: 1px solid var(--outline-variant);
 }
 
@@ -98,6 +100,7 @@
   border-color: var(--secondary);
   color: var(--secondary);
   transform: translateY(-2px);
+   color: white;
 }
 
 /* ── Divisor ───────────────────────────────────────────────── */

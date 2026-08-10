@@ -1,0 +1,37 @@
+---
+import '../styles/educacioncv.css'
+
+const EDUCACION = [
+  {
+    institucion: "Instituto Tecnológico de Tijuana",
+    periodo: "2017 - 2021",
+    titulo: "Ing. En Sistemas Computacionales",
+  },
+];
+---
+
+<section class="education" id="educacion">
+  <div class="education__container">
+
+    <h2 class="education__title">
+      <span class="education__title-bar" aria-hidden="true"></span>
+      Educación
+    </h2>
+
+    <div class="education__list">
+      {EDUCACION.map((item) => (
+        <div class="education__row">
+          <div class="education__meta">
+            <p class="education__institution">{item.institucion}</p>
+            <p class="education__period">{item.periodo}</p>
+          </div>
+
+          <div class="education__card">
+            <h3 class="education__degree">{item.titulo}</h3>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
