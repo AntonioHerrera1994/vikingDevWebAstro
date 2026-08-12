@@ -3,7 +3,7 @@ title: "VikingDev: la agencia detras del desarrollo web y marketing digital en T
 excerpt: "Mas de 30 proyectos entregados combinando desarrollo web, automatizacion con CRM y campanas rentables en Google y Meta Ads. Asi trabajamos y asi pensamos cada proyecto."
 category: "Sobre Nosotros"
 date: 2026-08-12
-coverImage: "https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/d-web.webp"
+coverImage: "https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/blog-vikingfev.webp"
 coverImageAlt: "Logo de VikingDev, agencia de desarrollo web y marketing digital en Tijuana"
 readTime: "5 min de lectura"
 ---
