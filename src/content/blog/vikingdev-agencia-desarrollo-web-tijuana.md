@@ -1,5 +1,5 @@
 ---
-title: "VikingDev: la agencia detras del desarrollo web y marketing digital en Tijuana"
+title: "VikingDev: la agencia detras del desarrollo web y estrategias digitales en Tijuana"
 excerpt: "Mas de 30 proyectos entregados combinando desarrollo web, automatizacion con CRM y campanas rentables en Google y Meta Ads. Asi trabajamos y asi pensamos cada proyecto."
 category: "Sobre Nosotros"
 date: 2026-08-12
