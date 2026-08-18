@@ -1,7 +1,7 @@
 ---
 import '../styles/habilidadescv.css'
 
-const MARKETING_DISENO = ["Photoshop", "Canva", "CRM (Go HighLevel, Hubspot, Kommo, Zoho)", "Google Ads", "Meta Ads"];
+const MARKETING_DISENO = ["Canva", "CRM (Go HighLevel, Hubspot, Kommo, Zoho)", "Google Ads", "Meta Ads"];
 const DESARROLLO = [
   "HTML / CSS",
   "JavaScript",
@@ -9,9 +9,9 @@ const DESARROLLO = [
   "PHP",
   "Astro",
   "React",
+  "Node Js",
   "WordPress",
-  "SQL",
-  "Git",
+  "SQL",,
 ];
 ---
 
@@ -24,19 +24,21 @@ const DESARROLLO = [
     </h2>
 
     <div class="skills__grid">
-      <div class="skills__column">
-        <h3 class="skills__column-title">Marketing & Diseño</h3>
-        <ul class="skills__list">
-          {MARKETING_DISENO.map((item) => (
-            <li class="skills__item">{item}</li>
-          ))}
-        </ul>
-      </div>
+     
 
       <div class="skills__column">
         <h3 class="skills__column-title">Desarrollo</h3>
         <ul class="skills__list">
           {DESARROLLO.map((item) => (
+            <li class="skills__item">{item}</li>
+          ))}
+        </ul>
+      </div>
+
+       <div class="skills__column">
+        <h3 class="skills__column-title">Otros</h3>
+        <ul class="skills__list">
+          {MARKETING_DISENO.map((item) => (
             <li class="skills__item">{item}</li>
           ))}
         </ul>
