@@ -13,6 +13,17 @@ const vikingProjects = [
     url: 'https://esparragosdelosplanes.com/',
   },
   */
+     {
+    id: 'asm',
+    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/asm.webp',
+    imageAlt: 'Sitio web ASM-360',
+    category: 'Desarrollo Web',
+    filterCategory: 'otro',
+    title: 'ASM 360',
+    desc: 'Desarrollo de un sitio web para empresa ASM 360.',
+    url: 'https://www.asm-360.com/',
+    stack: 'HTML, CSS, JS',
+  },
   {
     id: 'amigo pro',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/proyectos/amigopro.webp',
@@ -357,7 +368,7 @@ const filterOptions = [
 /* Combina ambos portafolios para contar por categoría de forma global */
 const allProjects = [...vikingProjects, ...snitchProjects];
 
-const categoryCounts = filterOptions.reduce((acc, opt) => {
+const categoryCounts = filterOptions.reduce<Record<string, number>>((acc, opt) => {
   acc[opt.value] =
     opt.value === 'todos'
       ? allProjects.length
