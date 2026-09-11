@@ -346,3 +346,40 @@
     width: 100%;
   }
 }
+
+.portfolio__meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.portfolio__stack {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface-variant);
+}
+
+.portfolio__stack[data-stack="Astro"] {
+  color: #8b5cf6;
+  border-color: rgba(139, 92, 246, 0.35);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.portfolio__stack[data-stack="WordPress"] {
+  color: #0071b8;
+  border-color: rgba(0, 113, 184, 0.35);
+  background: rgba(0, 113, 184, 0.08);
+}
+
+.portfolio__stack[data-stack="HighLevel"] {
+  color: #ff5c5c;
+  border-color: rgba(255, 92, 92, 0.35);
+  background: rgba(255, 92, 92, 0.08);
+}
