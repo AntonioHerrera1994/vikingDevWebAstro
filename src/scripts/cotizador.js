@@ -8,10 +8,14 @@
   var rightCol   = document.querySelector('.quoter__right');
   var checkboxes = document.querySelectorAll('.quoter__checkbox');
   var totalEl    = document.getElementById('quoter-total');
+  var totalLabelEl = document.getElementById('quoter-total-label');
   var ctaLink    = document.getElementById('quoter-cta');
   var steps      = document.querySelectorAll('.quoter__step');
 
   if (!section) return;
+
+  /* Precio combinado especial cuando se seleccionan ambos Ads */
+  var ADS_BUNDLE_PRICE = 2500;
 
   /* ── 1. Entrada animada ──────────────────────────────────── */
   if (noMotion) {
@@ -30,11 +34,30 @@
   }
 
   /* ── 2. Calculadora ─────────────────────────────────────── */
+  function getSelectedAdsCount() {
+    var count = 0;
+    checkboxes.forEach(function (cb) {
+      if (cb.checked && cb.dataset.group === 'ads') count++;
+    });
+    return count;
+  }
+
   function calcTotal() {
     var total = 0;
+    var adsSelected = getSelectedAdsCount();
+
     checkboxes.forEach(function (cb) {
-      if (cb.checked) total += parseInt(cb.dataset.price || 0, 10);
+      if (!cb.checked) return;
+
+      /* Si ambos Ads están seleccionados, no sumamos cada uno por separado */
+      if (cb.dataset.group === 'ads' && adsSelected === 2) return;
+
+      total += parseInt(cb.dataset.price || 0, 10);
     });
+
+    /* Si están ambos, se agrega una sola vez el precio de paquete */
+    if (adsSelected === 2) total += ADS_BUNDLE_PRICE;
+
     return total;
   }
 
@@ -50,9 +73,18 @@
       return cb.checked && cb.dataset.label === 'Proyecto a la Medida';
     });
 
+    var adsSelected = getSelectedAdsCount();
+
     totalEl.textContent = hasCustom && total === 0
       ? 'Cotización personalizada'
       : formatMXN(total) + (hasCustom ? ' + cotización esp.' : '');
+
+    /* Mensaje contextual: si eligió ambos Ads, avisamos del descuento */
+    if (totalLabelEl) {
+      totalLabelEl.textContent = adsSelected === 2
+        ? 'Estimado de Inversión (incluye paquete Meta+Google):'
+        : 'Estimado de Inversión Inicial:';
+    }
 
     if (!noMotion) {
       totalEl.classList.add('is-bump');
@@ -75,16 +107,14 @@
       return 'Hola VikingDev! Vengo del cotizador de su web y me gustaría recibir más información sobre sus servicios. ¡Gracias!';
     }
 
-    // Clasificar servicios por tipo
-    var webServices  = ['Landing Page', 'Página Web Completa', 'Tienda E-Commerce', 'Proyecto a la Medida'];
-    var adsServices  = ['Meta Ads (no incluye inversión)', 'Google Ads (no incluye inversión)'];
-    var otherServices = ['Consultoría Digital'];
+    var webServices = ['Landing Page', 'Página Web Completa', 'Tienda E-Commerce', 'Proyecto a la Medida'];
+    var adsServices = ['Meta Ads (no incluye inversión)', 'Google Ads (no incluye inversión)'];
+    var crmServices = ['CRM HighLevel'];
 
-    var web   = selected.filter(function (s) { return webServices.indexOf(s) !== -1; });
-    var ads   = selected.filter(function (s) { return adsServices.indexOf(s) !== -1; });
-    var other = selected.filter(function (s) { return otherServices.indexOf(s) !== -1; });
+    var web = selected.filter(function (s) { return webServices.indexOf(s) !== -1; });
+    var ads = selected.filter(function (s) { return adsServices.indexOf(s) !== -1; });
+    var crm = selected.filter(function (s) { return crmServices.indexOf(s) !== -1; });
 
-    // Nombres cortos para el mensaje
     var friendlyName = {
       'Landing Page': 'una landing page',
       'Página Web Completa': 'una página web completa',
@@ -92,13 +122,13 @@
       'Proyecto a la Medida': 'un proyecto a la medida',
       'Meta Ads (no incluye inversión)': 'campañas en Meta Ads',
       'Google Ads (no incluye inversión)': 'campañas en Google Ads',
-      'Consultoría Digital': 'consultoría digital'
+      'CRM HighLevel': 'un CRM en HighLevel'
     };
 
     var parts = [];
-    web.forEach(function (s)   { parts.push(friendlyName[s]); });
-    ads.forEach(function (s)   { parts.push(friendlyName[s]); });
-    other.forEach(function (s) { parts.push(friendlyName[s]); });
+    web.forEach(function (s) { parts.push(friendlyName[s]); });
+    ads.forEach(function (s) { parts.push(friendlyName[s]); });
+    crm.forEach(function (s) { parts.push(friendlyName[s]); });
 
     var serviceList = parts.length === 1
       ? parts[0]

@@ -1,243 +1,322 @@
 ---
 import '../styles/paquetes.css'
-const plans = [
+
+const webPlans = [
   {
-    id: 'one-page',
-    tab: 'One Page',
-    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/onepage.webp',
-    imageAlt: 'Diseño de landing page one page — VikingDev Tijuana',
-    price: '$4,000',
+    id: 'landing',
+    label: 'Landing Page',
+    tag: 'Lanzamiento rápido',
+    price: '$6,000',
     currency: 'MXN + IVA',
     period: 'pago único',
-    tag: 'Lanzamiento rápido',
-    desc: 'Ideal para emprendedores, freelancers, eventos y lanzamientos de producto que necesitan presencia digital profesional de inmediato.',
+    desc: 'Ideal para emprendedores, freelancers, eventos y lanzamientos de producto.',
+    highlight: false,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
     features: [
       'Diseño personalizado basado en tu marca',
-      '1 página con scroll fluido',
+      '1 página con scroll fluido, 3–6 secciones',
       'Diseño responsive (móvil, tablet, desktop)',
-      '3–6 secciones estratégicas',
-      'Formulario de contacto funcional',
-      'Botón de WhatsApp flotante',
-      'CTAs estratégicos',
-      'Mapa de ubicación integrado',
-      'Galería, carrusel, videos y más',
+      'Formulario de contacto + WhatsApp flotante',
       'Blog con hasta 2 entradas',
       'SEO básico on-page',
       'Google Analytics integrado',
       '2 rondas de revisiones',
       'Hosting por un año incluido',
-      'Capacitación básica',
       'Entrega en 5-7 días hábiles',
     ],
   },
   {
-    id: 'sitio-completo',
-    tab: 'Sitio Web Completo',
-    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/webcompleto.webp',
-    imageAlt: 'Sitio web completo multisección — VikingDev Tijuana',
-    price: '$5,000',
+    id: 'completa',
+    label: 'Página Web Completa',
+    tag: 'Más popular',
+    price: '$7,000',
     currency: 'MXN + IVA',
     period: 'pago único',
-    tag: 'Más popular',
-    desc: 'Ideal para empresas establecidas, servicios profesionales, agencias y consultorías que necesitan una presencia web robusta.',
+    desc: 'Ideal para empresas establecidas, servicios profesionales y consultorías.',
+    highlight: true,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
     features: [
       'Diseño personalizado basado en tu marca',
       '5–8 páginas navegables',
       'Diseño responsive (móvil, tablet, desktop)',
-      'Páginas internas estilizadas',
-      'Formularios en todas las páginas',
-      'Botón de WhatsApp flotante',
-      'CTAs estratégicos',
-      'Mapa de ubicación en todas las páginas',
-      'Calendarios, galerías, chatbot y más',
+      'Formularios en todas las páginas + WhatsApp',
       'Blog con hasta 4 entradas',
       'SEO técnico optimizado',
-      'Mapas de calor (opcional)',
+      'Calendarios, galerías, chatbot y más',
       'Google Analytics integrado',
       '3 rondas de revisiones',
       'Hosting por un año incluido',
-      'Capacitación básica',
       'Entrega en 5-7 días hábiles',
     ],
   },
   {
     id: 'ecommerce',
-    tab: 'E-Commerce',
-    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/ecommerce.webp',
-    imageAlt: 'Tienda en línea e-commerce — VikingDev Tijuana',
-    price: '$7,000',
+    label: 'E-Commerce',
+    tag: 'Vende en línea',
+    price: '$9,000',
     currency: 'MXN + IVA',
     period: 'pago único',
-    tag: 'Vende en línea',
-    desc: 'Ideal para tiendas retail, marcas de producto, distribuidores y emprendedores digitales listos para vender 24/7.',
+    desc: 'Ideal para tiendas retail, marcas de producto y emprendedores digitales.',
+    highlight: false,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
     features: [
       'Diseño de tienda personalizado',
-      'Página de inicio optimizada para ventas',
       '5–8 páginas navegables',
-      'Carrito de compras flotante',
-      'Checkout optimizado (1–3 pasos)',
+      'Carrito de compras + checkout optimizado',
       'Catálogo de hasta 50 productos',
-      'Variantes de producto (talla, color, etc.)',
-      'Cupones y códigos de descuento',
       'Múltiples métodos de pago',
-      'Seguimiento de envíos',
-      'Notificaciones automáticas por email',
       'Facturas PDF automáticas',
       'SEO técnico + Meta Pixel integrado',
       'Google Analytics integrado',
       '3 rondas de revisiones',
       'Hosting por un año incluido',
-      'Capacitación completa',
       'Entrega en 7-10 días hábiles',
     ],
   },
+];
+
+const adsPlans = [
   {
-    id: 'consultoria',
-    tab: 'Consultoría Digital',
-    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/apoyoweb.webp',
-    imageAlt: 'Complemento web — SEO y marketing digital mensual',
-    price: '$2,000',
+    id: 'meta',
+    label: 'Meta Ads',
+    tag: 'Facebook e Instagram',
+    price: '$1,500',
     currency: 'MXN + IVA',
     period: '/ mes',
-    tag: 'Suscripción',
-    desc: 'Plan para negocios que ya tienen sitio web y buscan potencializar su presencia con SEO, Ads y mantenimiento continuo.',
+    desc: 'Gestión de campañas en Facebook e Instagram.',
+    highlight: false,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
     features: [
-      'SEO técnico y de contenido mensual',
-      'Google Ads (gestión de campañas)(opcional)',
-      'Google Analytics — reportes mensuales',
-      'Meta Pixel (Facebook / Instagram)(opcional)',
-      'Blogs y contenido SEO',
-      'Mantenimiento general del sitio',
-      'Actualizaciones de seguridad',
-      'Respaldos periódicos',
-      'Soporte técnico dedicado',
+      'Configuración y auditoría de cuenta',
+      'Campañas en Facebook, Instagram y Reels',
+      'Segmentación por ubicación e intereses',
+      'Retargeting y audiencias personalizadas',
+      'Creatividades diseñadas para conversión',
+      'Reporte mensual con métricas clave',
       'Reunión de seguimiento mensual',
     ],
+    note: 'No incluye presupuesto de inversión publicitaria.',
+  },
+  {
+    id: 'google',
+    label: 'Google Ads',
+    tag: 'Search y Display',
+    price: '$1,500',
+    currency: 'MXN + IVA',
+    period: '/ mes',
+    desc: 'Gestión de campañas en la red de búsqueda de Google.',
+    highlight: false,
+    cta: '¡Lo quiero!',
+    ctaHref: 'https://wa.link/wnb0m6',
+    features: [
+      'Configuración y auditoría de cuenta',
+      'Campañas Search, Display, Shopping y YouTube',
+      'Investigación y segmentación de keywords',
+      'Optimización continua de pujas',
+      'Extensiones de anuncio y remarketing',
+      'Reporte mensual con métricas clave',
+      'Reunión de seguimiento mensual',
+    ],
+    note: 'No incluye presupuesto de inversión publicitaria.',
+  },
+  {
+    id: 'ambos',
+    label: 'Meta + Google',
+    tag: 'Ahorra vs. por separado',
+    price: '$2,500',
+    currency: 'MXN + IVA',
+    period: '/ mes',
+    desc: 'Gestión combinada bajo una sola estrategia unificada.',
+    highlight: true,
+    cta: '¡Lo quiero!',
+    ctaHref: 'https://wa.link/wnb0m6',
+    features: [
+      'Todo lo incluido en Meta Ads y Google Ads',
+      'Estrategia unificada entre plataformas',
+      'Distribución de presupuesto por canal',
+      'Retargeting cruzado entre plataformas',
+      'Un solo reporte mensual consolidado',
+      'Reunión de seguimiento mensual',
+    ],
+    note: 'No incluye presupuesto de inversión publicitaria.',
   },
 ];
+
+const crmPlan = {
+  price: '$10,000',
+  currency: 'MXN + IVA',
+  period: '/ mes',
+  tag: 'Automatización · Todo incluido',
+  desc: 'Administramos tu CRM en HighLevel de principio a fin: pipelines, automatizaciones, seguimiento de leads y reportes.',
+  cta: '¡Lo quiero!',
+  ctaHref: 'https://wa.link/wnb0m6',
+  note: 'Este precio ya incluye la suscripción mensual de la plataforma HighLevel — sin costos aparte.',
+  features: [
+    'Suscripción de HighLevel incluida',
+    'Configuración de pipeline comercial (Kanban)',
+    'Automatización de flujos y seguimiento de leads',
+    'Agenda con recordatorios automáticos',
+    'Captación de leads desde formularios y landings',
+    'Migración de tus contactos y datos actuales',
+    'Plantillas de embudos y páginas de aterrizaje',
+    'Gestión de reputación (reseñas automáticas en Google)',
+    'Capacitación práctica para tu equipo',
+    'Soporte prioritario y ajustes continuos',
+    'Reportes de rendimiento mensuales',
+  ],
+};
 ---
 
 <section class="pricing section" id="paquetes" aria-labelledby="pricing-title">
   <div class="container">
 
-    <!-- Header -->
     <header class="pricing__header">
       <span class="section-label">Paquetes Web</span>
       <h2 class="section-title" id="pricing-title">
         La solución perfecta para tu negocio
       </h2>
       <p class="section-subtitle pricing__subtitle">
-        Elige el plan que se adapta a tu etapa. Todos incluyen hosting por un año y soporte post-entrega.
+        Precios claros, sin letras chiquitas. Elige lo que tu negocio necesita hoy.
       </p>
     </header>
 
-    <!-- Tabs -->
-    <div class="pricing__tabs" role="tablist" aria-label="Planes de precios">
-      {plans.map((plan, i) => (
-        <button
-          class={`pricing__tab${i === 0 ? ' is-active' : ''}`}
-          role="tab"
-          aria-selected={i === 0 ? 'true' : 'false'}
-          aria-controls={`panel-${plan.id}`}
-          id={`tab-${plan.id}`}
-          data-index={i}
-          type="button"
-        >
-          {plan.tab}
-          {plan.tag === 'Más popular' && (
-            <span class="pricing__tab-badge">★</span>
-          )}
-        </button>
-      ))}
-      <!-- Indicador deslizante del tab activo -->
-      <span class="pricing__tab-indicator" aria-hidden="true"></span>
-    </div>
+    <nav class="pricing__quicknav" aria-label="Navegación de paquetes">
+      <button class="pricing__quicknav-btn is-active" data-target="paquetes-web" type="button">
+        Desarrollo Web
+      </button>
+      <button class="pricing__quicknav-btn" data-target="paquetes-ads" type="button">
+        Google & Meta Ads
+      </button>
+      <button class="pricing__quicknav-btn" data-target="paquetes-crm" type="button">
+        CRM HighLevel
+      </button>
+    </nav>
 
-    <!-- Panels -->
-    <div class="pricing__panels">
-      {plans.map((plan, i) => (
-        <div
-          class={`pricing__panel${i === 0 ? ' is-active' : ''}`}
-          role="tabpanel"
-          id={`panel-${plan.id}`}
-          aria-labelledby={`tab-${plan.id}`}
-          hidden={i !== 0}
-        >
-          <div class="pricing__panel-inner">
+    <!-- ══ Tabla 1: Desarrollo Web ══════════════════════════════ -->
+    <div class="pricing__block" id="paquetes-web">
+      <h3 class="pricing__block-title">Desarrollo Web</h3>
+      <div class="pricing__grid">
+        {webPlans.map((plan) => (
+          <div class={`pricing__bar${plan.highlight ? ' pricing__bar--highlight' : ''}`}>
+            {plan.highlight && <span class="pricing__bar-badge">★ Más popular</span>}
+            <span class="pricing__bar-tag">{plan.tag}</span>
+            <h4 class="pricing__bar-label">{plan.label}</h4>
+            <p class="pricing__bar-desc">{plan.desc}</p>
 
-            <!-- Imagen con precio superpuesto -->
-            <div class="pricing__img-col">
-              <div class="pricing__img-wrap">
-                <img
-                  src={plan.image}
-                  alt={plan.imageAlt}
-                  class="pricing__img"
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                  width="600"
-                  height="480"
-                />
-                <!-- Overlay gradiente -->
-                <div class="pricing__img-overlay" aria-hidden="true"></div>
-                <!-- Precio superpuesto -->
-                <div class="pricing__img-content">
-                  <span class="pricing__img-tag">{plan.tag}</span>
-                  <p class="pricing__img-period">
-                    {plan.period === '/ mes' ? 'Suscripción mensual:' : 'Inversión:'}
-                  </p>
-                  <p class="pricing__img-price">
-                    {plan.price}
-                    <span class="pricing__img-currency"> {plan.currency}</span>
-                  </p>
-                  <p class="pricing__img-desc">{plan.desc}</p>
-                </div>
-              </div>
+            <div class="pricing__bar-price-row">
+              <span class="pricing__bar-price">{plan.price}</span>
+              <span class="pricing__bar-currency">{plan.currency}</span>
             </div>
+            <p class="pricing__bar-period">{plan.period}</p>
 
-            <!-- Features + CTA -->
-            <div class="pricing__info-col">
-              <p class="pricing__includes-label">¿Qué incluye?</p>
+            <ul class="pricing__bar-features">
+              {plan.features.map((feat) => (
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
 
-              <div class="pricing__features-wrap">
-                <ul class="pricing__features" aria-label={`Características del plan ${plan.tab}`}>
-                  {plan.features.map((feat) => (
-                    <li class="pricing__feature">
-                      <span class="pricing__dot" aria-hidden="true"></span>
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <a
-                href={plan.ctaHref}
-                class="pricing__cta"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Contratar plan ${plan.tab}`}
-              >
-                {plan.cta}
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
-            </div>
-
+            <a
+              href={plan.ctaHref}
+              class={`pricing__bar-cta${plan.highlight ? ' pricing__bar-cta--highlight' : ''}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Contratar ${plan.label}`}
+            >
+              {plan.cta}
+            </a>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
 
-    <!-- Nota pie -->
+    <!-- ══ Tabla 2: Google & Meta Ads ═══════════════════════════ -->
+    <div class="pricing__block" id="paquetes-ads">
+      <h3 class="pricing__block-title">Google & Meta Ads</h3>
+      <div class="pricing__grid">
+        {adsPlans.map((plan) => (
+          <div class={`pricing__bar${plan.highlight ? ' pricing__bar--highlight' : ''}`}>
+            {plan.highlight && <span class="pricing__bar-badge">★ Ahorra más</span>}
+            <span class="pricing__bar-tag">{plan.tag}</span>
+            <h4 class="pricing__bar-label">{plan.label}</h4>
+            <p class="pricing__bar-desc">{plan.desc}</p>
+
+            <div class="pricing__bar-price-row">
+              <span class="pricing__bar-price">{plan.price}</span>
+              <span class="pricing__bar-currency">{plan.currency}</span>
+            </div>
+            <p class="pricing__bar-period">{plan.period}</p>
+
+            <ul class="pricing__bar-features">
+              {plan.features.map((feat) => (
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p class="pricing__bar-note">{plan.note}</p>
+
+            <a
+              href={plan.ctaHref}
+              class={`pricing__bar-cta${plan.highlight ? ' pricing__bar-cta--highlight' : ''}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Contratar ${plan.label}`}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ══ CRM HighLevel — banner único, no es tabla comparativa ═ -->
+    <div class="pricing__block" id="paquetes-crm">
+      <h3 class="pricing__block-title">CRM HighLevel</h3>
+      <div class="pricing__crm-banner">
+        <div class="pricing__crm-copy">
+          <span class="pricing__bar-tag pricing__bar-tag--light">{crmPlan.tag}</span>
+          <p class="pricing__crm-desc">{crmPlan.desc}</p>
+          <ul class="pricing__crm-features">
+            {crmPlan.features.map((feat) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>{feat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="pricing__crm-price-col">  
+          <span class="pricing__crm-price">{crmPlan.price}</span>
+          <span class="pricing__crm-currency">{crmPlan.currency} {crmPlan.period}</span>
+          <p class="pricing__crm-note">{crmPlan.note}</p>
+          <a
+            href={crmPlan.ctaHref}
+            class="pricing__bar-cta pricing__bar-cta--highlight"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contratar CRM HighLevel"
+          >
+            {crmPlan.cta}
+          </a>
+        </div>
+      </div>
+    </div>
+
     <p class="pricing__note">
       ¿Proyecto especial o a medida?
       <a href="https://wa.link/wnb0m6" class="pricing__note-link" target="_blank" rel="noopener noreferrer">
