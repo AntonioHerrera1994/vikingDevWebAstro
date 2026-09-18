@@ -28,18 +28,15 @@ import IkariImg from '../assets/logoblanco.png'
     <!-- ─── Columna derecha: copy ─────────────────────────── -->
     <div class="ikari__copy">
  
-      <!-- Logo Ikari (placeholder — reemplaza el img src) -->
+      <!-- Logo Ikari -->
       <a
-        href="https://ikari.mx"
+        href="https://ikaricrm.com"
         class="ikari__logo-link"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Visitar Ikari — CRM para agencias digitales"
+        aria-label="Visitar Ikari — CRM y gestión interna"
       >
-  
-       
-          <img src={IkariImg.src} alt="Ikari" class="ikari__logo" />
-      
+        <img src={IkariImg.src} alt="Ikari" class="ikari__logo" />
       </a>
  
       <!-- Label -->
@@ -56,15 +53,58 @@ import IkariImg from '../assets/logoblanco.png'
       <p class="ikari__desc">
         No solo generamos tráfico; cerramos el ciclo. Nuestra integración
         personalizada conecta tus landings con Ikari en tiempo real para que
-        ningún lead se pierda en el camino.
+        ningún lead se pierda en el camino. Elige la versión que se adapte a
+        tu etapa: desde una app ligera incluida con tu sitio, hasta el
+        sistema completo de Ikari.
       </p>
+
+      <!-- Comparativa Lite vs Full -->
+      <div class="ikari__tiers">
+
+        <div class="ikari__tier">
+          <span class="ikari__tier-name">Ikari Lite</span>
+          <p class="ikari__tier-price">Desde $1,000 <span>MXN/mes</span></p>
+          <p class="ikari__tier-desc">
+            Complemento de tu Landing Page o Sitio Web Completo: pipeline,
+            clientes, servicios y calendario para hasta 2 usuarios.
+          </p>
+          <a href="#paquetes" class="ikari__tier-cta">
+            Ver paquetes
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="ikari__tier ikari__tier--full">
+          <span class="ikari__tier-name">Ikari Completo</span>
+          <p class="ikari__tier-price">Desde $2,499 <span>MXN/mes</span></p>
+          <p class="ikari__tier-desc">
+            El sistema completo: email marketing, finanzas, reportes
+            avanzados, multi-sede y soporte prioritario.
+          </p>
+          <a
+            href="https://ikaricrm.com/#precios"
+            class="ikari__tier-cta ikari__tier-cta--highlight"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver planes completos
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
  
       <!-- Iconos de beneficios -->
       <div class="ikari__benefits">
  
         <div class="ikari__benefit">
           <span class="ikari__benefit-icon" aria-hidden="true">
-            <!-- Rayo / instantáneo -->
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
@@ -77,7 +117,6 @@ import IkariImg from '../assets/logoblanco.png'
  
         <div class="ikari__benefit">
           <span class="ikari__benefit-icon" aria-hidden="true">
-            <!-- Analytics / atribución -->
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="20" x2="18" y2="10"/>
               <line x1="12" y1="20" x2="12" y2="4"/>
@@ -93,7 +132,6 @@ import IkariImg from '../assets/logoblanco.png'
  
         <div class="ikari__benefit">
           <span class="ikari__benefit-icon" aria-hidden="true">
-            <!-- Sincronización -->
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="23 4 23 10 17 10"/>
               <polyline points="1 20 1 14 7 14"/>
@@ -108,7 +146,6 @@ import IkariImg from '../assets/logoblanco.png'
  
         <div class="ikari__benefit">
           <span class="ikari__benefit-icon" aria-hidden="true">
-            <!-- Pipeline -->
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <line x1="3"  y1="9"  x2="21" y2="9"/>
@@ -124,9 +161,9 @@ import IkariImg from '../assets/logoblanco.png'
  
       </div>
  
-      <!-- CTA -->
+      <!-- CTA general -->
       <a
-        href="https://ikari.mx"
+        href="https://ikaricrm.com"
         class="ikari__cta"
         target="_blank"
         rel="noopener noreferrer"

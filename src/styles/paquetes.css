@@ -416,3 +416,41 @@
 .pricing__block {
   scroll-margin-top: 90px;
 }
+
+/* ── Variante de banner: Ikari (más claro que el de HighLevel) ── */
+.pricing__crm-banner--ikari {
+  background: var(--color-secondary);
+}
+
+.pricing__crm-note-link {
+  color: var(--color-secondary-container);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.pricing__crm-note-link:hover {
+  opacity: 0.85;
+}
+
+/* ── Grid de 4 columnas (Desarrollo Web con Ikari add-on) ─────── */
+@media (min-width: 1100px) {
+  .pricing__grid--4col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Card de add-on (Ikari Lite): visualmente distinta ────────── */
+.pricing__bar--addon {
+  border-style: dashed;
+  background: var(--color-surface-container);
+}
+
+.pricing__bar-note-link {
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.pricing__bar-note-link:hover {
+  opacity: 0.8;
+}

@@ -295,3 +295,96 @@
     transition: none;
   }
 }
+
+/* ─── Comparativa Lite vs Full ─────────────────────────────── */
+.ikari__tiers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  width: 100%;
+  margin-bottom: var(--space-2xl);
+}
+
+@media (min-width: 480px) {
+  .ikari__tiers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ikari__tier {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+}
+
+.ikari__tier--full {
+  border-color: var(--color-secondary-container);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ikari__tier-name {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-on-tertiary-container);
+  margin-bottom: var(--space-xs);
+}
+
+.ikari__tier-price {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-on-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.ikari__tier-price span {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.ikari__tier-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-on-primary-container);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.ikari__tier-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-on-primary);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  transition: background var(--transition-base), gap var(--transition-base);
+  align-self: flex-start;
+}
+
+.ikari__tier-cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  gap: var(--space-sm);
+}
+
+.ikari__tier-cta--highlight {
+  background: var(--color-secondary-container);
+  border-color: var(--color-secondary-container);
+  color: var(--color-on-secondary);
+}
+
+.ikari__tier-cta--highlight:hover {
+  opacity: 0.9;
+}

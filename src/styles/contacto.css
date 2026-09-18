@@ -537,3 +537,29 @@
     padding: var(--space-xl); 
   }
 }
+/* ── Ikari add-on: estado deshabilitado y hint ─────────────────── */
+.quoter__check-label--addon {
+  position: relative;
+}
+
+.quoter__check-label.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quoter__check-label.is-disabled .quoter__check-box,
+.quoter__check-label.is-disabled .quoter__check-text {
+  pointer-events: none;
+}
+
+.quoter__check-hint {
+  display: block;
+  font-size: 10.5px;
+  font-style: italic;
+  color: var(--color-on-surface-variant);
+  margin-top: 2px;
+}
+
+.quoter__check-label.is-disabled .quoter__check-hint {
+  color: var(--color-secondary);
+}
