@@ -55,7 +55,7 @@ const webPlans = [
     id: 'ecommerce',
     label: 'E-Commerce',
     tag: 'Vende en línea',
-    price: '$9,000',
+    price: '$10,000',
     currency: 'MXN + IVA',
     period: 'pago único',
     desc: 'Ideal para tiendas retail, marcas de producto y emprendedores digitales.',
@@ -77,28 +77,28 @@ const webPlans = [
     ],
   },
   {
-    id: 'ikari-lite',
-    label: 'Ikari CRM (Add-on)',
-    tag: 'Complemento · Ikari Lite',
-    price: '$1,199',
+    id: 'consultoria',
+    label: 'Consultoría y Mantenimiento',
+    tag: 'Servicio recurrente',
+    price: '$2,000',
     currency: 'MXN + IVA',
     period: '/ mes',
-    desc: 'Agrega este CRM ligero a tu Landing Page o Sitio Web Completo: pipeline, servicios, clientes y calendario.',
+    desc: 'Mejora continua para tu sitio: SEO, actualizaciones, DNS, hosting y soporte técnico.',
     highlight: false,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
     features: [
-      'Pipeline visual (Kanban)',
-      'Catálogo de servicios',
-      'Gestión de clientes (CRUD)',
-      'Calendario y citas',
-      'Hasta 2 usuarios',
-      'Requiere una Landing Page o Sitio Web Completo',
-      'Escalable al plan completo de Ikari cuando lo necesites',
+      'Auditoría y optimización SEO técnica',
+      'Actualizaciones y mantenimiento del sitio',
+      'Configuración y gestión de DNS',
+      'Configuración y migración de hosting',
+      'Monitoreo de seguridad y backups periódicos',
+      'Auditorías de rendimiento (Core Web Vitals)',
+      'Reporte mensual de avances',
+      'Soporte técnico continuo',
     ],
-    note: '¿Necesitas más funciones? Ver planes completos de Ikari →',
-    noteHref: 'https://ikaricrm.com/#precios',
   },
+  
 ];
 
 const adsPlans = [
@@ -170,7 +170,7 @@ const adsPlans = [
 ];
 
 const crmPlan = {
-  price: '$10,000',
+  price: '$6,000',
   currency: 'MXN + IVA',
   period: '/ mes',
   tag: 'Automatización · Todo incluido',
@@ -219,10 +219,10 @@ const crmPlan = {
       </button>
     </nav>
 
-    <!-- ══ Tabla 1: Desarrollo Web (ahora con 4 cards) ══════════ -->
+    <!-- ══ Tabla 1: Desarrollo Web (ahora con 5 cards) ══════════ -->
     <div class="pricing__block" id="paquetes-web">
       <h3 class="pricing__block-title">Desarrollo Web</h3>
-      <div class="pricing__grid pricing__grid--4col">
+      <div class="pricing__grid pricing__grid--5col">
         {webPlans.map((plan) => (
           <div class={`pricing__bar${plan.highlight ? ' pricing__bar--highlight' : ''}${plan.id === 'ikari-lite' ? ' pricing__bar--addon' : ''}`}>
             {plan.highlight && <span class="pricing__bar-badge">★ Más popular</span>}
@@ -247,15 +247,7 @@ const crmPlan = {
               ))}
             </ul>
 
-            {plan.note && (
-              <p class="pricing__bar-note">
-                {plan.noteHref ? (
-                  <a href={plan.noteHref} target="_blank" rel="noopener noreferrer" class="pricing__bar-note-link">
-                    {plan.note}
-                  </a>
-                ) : plan.note}
-              </p>
-            )}
+   
 
             <a
               href={plan.ctaHref}

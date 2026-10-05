@@ -12,9 +12,6 @@
   var ctaLink    = document.getElementById('quoter-cta');
   var steps      = document.querySelectorAll('.quoter__step');
 
-  var ikariCheckbox = document.getElementById('ikari-checkbox');
-  var ikariLabel     = document.getElementById('ikari-check-label');
-
   if (!section) return;
 
   /* Precio combinado especial cuando se seleccionan ambos Ads */
@@ -45,33 +42,6 @@
     return count;
   }
 
-  function hasWebSelected() {
-    var found = false;
-    checkboxes.forEach(function (cb) {
-      if (cb.checked && cb.dataset.group === 'web') found = true;
-    });
-    return found;
-  }
-
-  /* ── Ikari: se habilita solo si hay un servicio web seleccionado ── */
-  function syncIkariAvailability() {
-    if (!ikariCheckbox || !ikariLabel) return;
-
-    var webSelected = hasWebSelected();
-
-    if (webSelected) {
-      ikariCheckbox.disabled = false;
-      ikariLabel.classList.remove('is-disabled');
-    } else {
-      /* Si estaba marcado y ya no hay servicio web, lo desmarcamos */
-      if (ikariCheckbox.checked) {
-        ikariCheckbox.checked = false;
-      }
-      ikariCheckbox.disabled = true;
-      ikariLabel.classList.add('is-disabled');
-    }
-  }
-
   function calcTotal() {
     var total = 0;
     var adsSelected = getSelectedAdsCount();
@@ -96,8 +66,6 @@
   }
 
   function updateTotal() {
-    syncIkariAvailability();
-
     var total = calcTotal();
     if (!totalEl) return;
 
@@ -133,9 +101,6 @@
     cb.addEventListener('change', updateTotal);
   });
 
-  /* Estado inicial: Ikari deshabilitado hasta que se elija un servicio web */
-  syncIkariAvailability();
-
   /* ── 3. CTA WhatsApp — mensaje natural ──────────────────── */
   function buildNaturalMessage(selected) {
     if (selected.length === 0) {
@@ -143,31 +108,31 @@
     }
 
     var webServices = ['Landing Page', 'Página Web Completa', 'Tienda E-Commerce', 'Proyecto a la Medida'];
-    var addonServices = ['Ikari CRM (Add-on)'];
+    var maintenanceServices = ['Consultoría y Mantenimiento'];
     var adsServices = ['Meta Ads (no incluye inversión)', 'Google Ads (no incluye inversión)'];
     var crmServices = ['CRM HighLevel'];
 
-    var web    = selected.filter(function (s) { return webServices.indexOf(s) !== -1; });
-    var addon  = selected.filter(function (s) { return addonServices.indexOf(s) !== -1; });
-    var ads    = selected.filter(function (s) { return adsServices.indexOf(s) !== -1; });
-    var crm    = selected.filter(function (s) { return crmServices.indexOf(s) !== -1; });
+    var web         = selected.filter(function (s) { return webServices.indexOf(s) !== -1; });
+    var maintenance = selected.filter(function (s) { return maintenanceServices.indexOf(s) !== -1; });
+    var ads         = selected.filter(function (s) { return adsServices.indexOf(s) !== -1; });
+    var crm         = selected.filter(function (s) { return crmServices.indexOf(s) !== -1; });
 
     var friendlyName = {
       'Landing Page': 'una landing page',
       'Página Web Completa': 'una página web completa',
       'Tienda E-Commerce': 'una tienda en línea',
       'Proyecto a la Medida': 'un proyecto a la medida',
-      'Ikari CRM (Add-on)': 'el complemento de Ikari CRM',
+      'Consultoría y Mantenimiento': 'consultoría y mantenimiento web',
       'Meta Ads (no incluye inversión)': 'campañas en Meta Ads',
       'Google Ads (no incluye inversión)': 'campañas en Google Ads',
       'CRM HighLevel': 'un CRM en HighLevel'
     };
 
     var parts = [];
-    web.forEach(function (s)   { parts.push(friendlyName[s]); });
-    addon.forEach(function (s) { parts.push(friendlyName[s]); });
-    ads.forEach(function (s)   { parts.push(friendlyName[s]); });
-    crm.forEach(function (s)   { parts.push(friendlyName[s]); });
+    web.forEach(function (s)         { parts.push(friendlyName[s]); });
+    maintenance.forEach(function (s) { parts.push(friendlyName[s]); });
+    ads.forEach(function (s)         { parts.push(friendlyName[s]); });
+    crm.forEach(function (s)         { parts.push(friendlyName[s]); });
 
     var serviceList = parts.length === 1
       ? parts[0]

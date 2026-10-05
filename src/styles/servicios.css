@@ -1,18 +1,18 @@
 /* ─── Section ───────────────────────────────────────────────── */
-.ikari {
+.codice {
   background: var(--color-primary);
   padding-block: var(--space-3xl);
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  .ikari {
+  .codice {
     padding-block: var(--space-5xl);
   }
 }
 
 /* ─── Grid interior ─────────────────────────────────────────── */
-.ikari__inner {
+.codice__inner {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-3xl);
@@ -20,7 +20,7 @@
 }
 
 @media (min-width: 768px) {
-  .ikari__inner {
+  .codice__inner {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-4xl);
   }
@@ -30,12 +30,11 @@
    COLUMNA IZQUIERDA — visual
    ══════════════════════════════════════════════════════════════ */
 
-.ikari__visual {
+.codice__visual {
   position: relative;
   display: flex;
   justify-content: center;
 
-  /* Entrada */
   opacity: 0;
   transform: translateX(-24px);
   transition:
@@ -43,29 +42,26 @@
     transform 600ms var(--ease-default);
 }
 
-.ikari__visual.is-visible {
+.codice__visual.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Imagen */
-.ikari__img {
+.codice__img {
   width: 100%;
   max-width: 600px;
   height: auto;
   border-radius: var(--radius-2xl);
   display: block;
   object-fit: cover;
-  /* Borde sutil para que resalte sobre el navy */
   border: 4px solid rgba(255, 255, 255, 0.06);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.04),
     var(--shadow-xl);
 }
 
-
 /* ─── Stat flotante ─────────────────────────────────────────── */
-.ikari__stat {
+.codice__stat {
   position: absolute;
   bottom: -20px;
   right: 0;
@@ -76,7 +72,6 @@
   box-shadow: var(--shadow-secondary-md);
   min-width: 180px;
 
-  /* Entrada con delay */
   opacity: 0;
   transform: translateY(12px);
   transition:
@@ -84,19 +79,19 @@
     transform 600ms var(--ease-default) 300ms;
 }
 
-.ikari__visual.is-visible .ikari__stat {
+.codice__visual.is-visible .codice__stat {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (min-width: 640px) {
-  .ikari__stat {
+  .codice__stat {
     right: -16px;
     bottom: -24px;
   }
 }
 
-.ikari__stat-number {
+.codice__stat-number {
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 700;
@@ -104,11 +99,7 @@
   margin-bottom: var(--space-xs);
 }
 
-.ikari__stat-pct {
-  font-size: 22px;
-}
-
-.ikari__stat-label {
+.codice__stat-label {
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
@@ -121,13 +112,12 @@
    COLUMNA DERECHA — copy
    ══════════════════════════════════════════════════════════════ */
 
-.ikari__copy {
+.codice__copy {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0; /* controlado con margin en cada hijo */
+  gap: 0;
 
-  /* Entrada */
   opacity: 0;
   transform: translateX(24px);
   transition:
@@ -135,46 +125,44 @@
     transform 600ms var(--ease-default) 100ms;
 }
 
-.ikari__copy.is-visible {
+.codice__copy.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
 /* ─── Logo ──────────────────────────────────────────────────── */
-.ikari__logo-link {
+.codice__logo-link {
   display: inline-block;
   margin-bottom: var(--space-lg);
   border-radius: var(--radius-md);
   transition: opacity var(--transition-base);
 }
 
-.ikari__logo-link:hover {
+.codice__logo-link:hover {
   opacity: 0.75;
 }
 
-.ikari__logo {
-  height: 52px;
+.codice__logo {
+  height: 40px;
   width: auto;
   display: block;
-  /* Si el logo es oscuro, invertirlo para que se vea en fondo navy */
   filter: brightness(0) invert(1);
 }
 
 /* ─── Label ─────────────────────────────────────────────────── */
-.ikari__label {
+.codice__label {
   display: inline-block;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  /* Cyan del template */
   color: var(--color-on-tertiary-container);
   margin-bottom: var(--space-md);
 }
 
 /* ─── H2 ────────────────────────────────────────────────────── */
-.ikari__title {
+.codice__title {
   font-family: var(--font-display);
   font-size: var(--text-display-lg-mobile);
   line-height: 1.1;
@@ -185,13 +173,13 @@
 }
 
 @media (min-width: 768px) {
-  .ikari__title {
+  .codice__title {
     font-size: clamp(40px, 4vw, 56px);
   }
 }
 
 /* ─── Descripción ───────────────────────────────────────────── */
-.ikari__desc {
+.codice__desc {
   font-family: var(--font-body);
   font-size: var(--text-body-lg);
   line-height: var(--text-body-lg-lh);
@@ -200,8 +188,8 @@
   max-width: 480px;
 }
 
-/* ─── Beneficios ────────────────────────────────────────────── */
-.ikari__benefits {
+/* ─── Los 4 agentes ────────────────────────────────────────── */
+.codice__benefits {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-lg) var(--space-xl);
@@ -210,19 +198,18 @@
 }
 
 @media (max-width: 479px) {
-  .ikari__benefits {
+  .codice__benefits {
     grid-template-columns: 1fr;
   }
 }
 
-.ikari__benefit {
+.codice__benefit {
   display: flex;
   gap: var(--space-md);
   align-items: flex-start;
 }
 
-/* Ícono wrapper */
-.ikari__benefit-icon {
+.codice__benefit-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,13 +217,12 @@
   height: 36px;
   min-width: 36px;
   border-radius: var(--radius-md);
-  /* Fondo cyan translúcido */
   background: rgba(0, 152, 178, 0.15);
   color: var(--color-on-tertiary-container);
   flex-shrink: 0;
 }
 
-.ikari__benefit-title {
+.codice__benefit-title {
   font-family: var(--font-body);
   font-size: var(--text-label-md);
   font-weight: 600;
@@ -245,7 +231,7 @@
   line-height: 1.3;
 }
 
-.ikari__benefit-desc {
+.codice__benefit-desc {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.4;
@@ -254,7 +240,7 @@
 }
 
 /* ─── CTA ───────────────────────────────────────────────────── */
-.ikari__cta {
+.codice__cta {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
@@ -275,116 +261,23 @@
     gap var(--transition-base);
 }
 
-.ikari__cta:hover {
+.codice__cta:hover {
   opacity: 0.88;
   transform: translateY(-2px);
-  gap: var(--space-md); /* flecha se separa */
+  gap: var(--space-md);
 }
 
-.ikari__cta:active {
+.codice__cta:active {
   transform: scale(0.97);
 }
 
 /* ─── Reduced motion ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .ikari__visual,
-  .ikari__stat,
-  .ikari__copy {
+  .codice__visual,
+  .codice__stat,
+  .codice__copy {
     opacity: 1;
     transform: none;
     transition: none;
   }
-}
-
-/* ─── Comparativa Lite vs Full ─────────────────────────────── */
-.ikari__tiers {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-  width: 100%;
-  margin-bottom: var(--space-2xl);
-}
-
-@media (min-width: 480px) {
-  .ikari__tiers {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.ikari__tier {
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-xl);
-  padding: var(--space-lg);
-}
-
-.ikari__tier--full {
-  border-color: var(--color-secondary-container);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.ikari__tier-name {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-on-tertiary-container);
-  margin-bottom: var(--space-xs);
-}
-
-.ikari__tier-price {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--color-on-primary);
-  margin-bottom: var(--space-xs);
-}
-
-.ikari__tier-price span {
-  font-size: 12px;
-  font-weight: 500;
-  opacity: 0.7;
-}
-
-.ikari__tier-desc {
-  font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--color-on-primary-container);
-  margin-bottom: var(--space-md);
-  flex-grow: 1;
-}
-
-.ikari__tier-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--color-on-primary);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 8px 14px;
-  border-radius: var(--radius-full);
-  transition: background var(--transition-base), gap var(--transition-base);
-  align-self: flex-start;
-}
-
-.ikari__tier-cta:hover {
-  background: rgba(255, 255, 255, 0.1);
-  gap: var(--space-sm);
-}
-
-.ikari__tier-cta--highlight {
-  background: var(--color-secondary-container);
-  border-color: var(--color-secondary-container);
-  color: var(--color-on-secondary);
-}
-
-.ikari__tier-cta--highlight:hover {
-  opacity: 0.9;
 }

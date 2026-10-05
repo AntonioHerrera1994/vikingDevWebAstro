@@ -23,7 +23,7 @@ const services = [
     ],
     cta: 'Ver paquetes de precios',
     ctaHref: '#paquetes',
-    from: 'Desde $6,000 MXN',
+
   },
   {
     id: 'ads',
@@ -46,40 +46,38 @@ const services = [
     ],
     cta: 'Solicitar propuesta',
     ctaHref: '#cotizador',
-    from: 'Desde $1,500 MXN / mes',
+    
   },
   {
-    id: 'apps',
-    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/d-movil.webp',
-    imageAlt: 'Desarrollo de aplicaciones web a medida y CRM ligero para landing pages — VikingDev',
-    tag: 'Desarrollo',
-    title: 'Aplicaciones Web',
-    tagline: 'Tecnología a medida, desde una app de gestión ligera hasta plataformas complejas.',
-    modalDesc: 'Desarrollamos herramientas web internas o productos digitales que resuelven problemas específicos de tu negocio. Esto incluye Ikari Lite: una aplicación a la medida para landing pages, pensada como complemento accesible cuando solo necesitas organizar pipeline, clientes y calendario — hasta plataformas más complejas con lógica avanzada.',
+    id: 'consultoria',
+    image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/apoyoweb.webp',
+    imageAlt: 'Consultoría, SEO y mantenimiento web — VikingDev Tijuana',
+    tag: 'Consultoría',
+    title: 'Consultoría & Mantenimiento Web',
+    tagline: 'Mejora continua para que tu sitio nunca se quede atrás.',
+    modalDesc: 'Mantenemos y optimizamos tu presencia digital de forma continua: SEO, actualizaciones del sitio, configuración de DNS y hosting, y soporte técnico — para que tu negocio mejore mes a mes, no solo el día del lanzamiento.',
     features: [
-      'Ikari Lite: app a la medida para landing pages (pipeline, clientes, calendario)',
-      'Análisis y diseño de solución a medida',
-      'Dashboards y paneles de administración internos',
-      'Integraciones con APIs externas (CRM, ERP, pagos)',
-      'Automatización de flujos y notificaciones',
-      'Autenticación de usuarios y control de accesos',
-      'Base de datos escalable y segura',
-      'Despliegue en la nube con alta disponibilidad',
-      'Documentación y capacitación al equipo',
-      'Mantenimiento y soporte post-lanzamiento',
+      'Auditoría y optimización SEO técnica',
+      'Actualizaciones y mantenimiento del sitio',
+      'Configuración y gestión de DNS',
+      'Configuración y migración de hosting',
+      'Monitoreo de seguridad y backups periódicos',
+      'Auditorías de rendimiento (Core Web Vitals)',
+      'Reporte mensual de avances',
+      'Soporte técnico continuo',
     ],
-    cta: 'Cuéntanos tu idea',
+    cta: 'Solicitar propuesta',
     ctaHref: '#cotizador',
-    from: 'Desde $1,000 MXN/mes',
+ 
   },
   {
     id: 'highlevel',
     image: 'https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/apoyoweb.webp',
     imageAlt: 'HighLevel — CRM externo administrado por VikingDev Tijuana',
-    tag: 'CRM Externo',
-    title: 'HighLevel — CRM Externo',
-    tagline: 'La plataforma profesional para operaciones más complejas.',
-    modalDesc: 'Implementamos y administramos HighLevel como tu CRM externo: pipelines, automatizaciones, seguimiento de leads y reportes — todo bajo una plataforma reconocida a nivel internacional. El precio ya incluye la suscripción mensual de la plataforma.',
+    tag: 'Integración CRM',
+    title: 'HighLevel — Integración y Administración',
+    tagline: 'Todo el poder de HighLevel, administrado por nosotros.',
+    modalDesc: 'Integramos HighLevel a tu operación con acceso a todas las funciones que ofrece la plataforma — pipelines, automatizaciones, seguimiento de leads y reportes — administradas íntegramente por el equipo de VikingDev. El precio ya incluye la suscripción mensual de la plataforma.',
     features: [
       'Suscripción de HighLevel incluida',
       'Configuración de pipeline comercial (Kanban)',
@@ -92,7 +90,7 @@ const services = [
     ],
     cta: 'Solicitar demo',
     ctaHref: '#cotizador',
-    from: 'Desde $10,000 MXN/mes',
+    
   },
 ];
 ---
@@ -124,7 +122,7 @@ const services = [
           data-features={JSON.stringify(svc.features)}
           data-cta={svc.cta}
           data-cta-href={svc.ctaHref}
-          data-from={svc.from}
+
           data-img={svc.image}
           data-img-alt={svc.imageAlt}
           role="button"
@@ -157,7 +155,7 @@ const services = [
           <div class="services__copy">
             <h3 class="services__title">{svc.title}</h3>
             <p class="services__tagline">{svc.tagline}</p>
-            <span class="services__from">{svc.from}</span>
+      
           </div>
         </li>
       ))}

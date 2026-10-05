@@ -40,7 +40,7 @@
 /* ─── H1 ─────────────────────────────────────────────────────── */
 .hero__h1 {
   font-family: var(--font-display);
-  font-size: var(--text-display-lg-mobile);
+  font-size: 60px;
   line-height: var(--text-display-lg-mobile-lh);
   letter-spacing: var(--text-display-lg-mobile-ls);
   font-weight: 700;
