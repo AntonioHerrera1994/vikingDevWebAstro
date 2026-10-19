@@ -56,6 +56,15 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero__h1 {
+    font-size: 44px;
+    line-height: 43px;
+    letter-spacing: var(--text-display-lg-ls);
+
+  }
+}
+
 .hero__accent { color: var(--color-secondary); }
 
 /* ─── Subheadline ────────────────────────────────────────────── */
