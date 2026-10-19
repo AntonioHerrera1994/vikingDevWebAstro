@@ -1,51 +1,57 @@
 ---
-title: "VikingDev: la agencia detras del desarrollo web y estrategias digitales en Tijuana"
-excerpt: "Mas de 30 proyectos entregados combinando desarrollo web, automatizacion con CRM y campanas rentables en Google y Meta Ads. Asi trabajamos y asi pensamos cada proyecto."
+title: "Conoce VikingDev: páginas web, Ads y HighLevel en Tijuana"
+excerpt: "Quiénes somos, cómo trabajamos y por qué combinamos páginas web, campañas en Google y Meta Ads y automatización con GoHighLevel en un solo equipo en Tijuana."
 category: "Sobre Nosotros"
 date: 2026-08-12
 coverImage: "https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/blog-vikingfev.webp"
-coverImageAlt: "Logo de VikingDev, agencia de desarrollo web y marketing digital en Tijuana"
+coverImageAlt: "Equipo de VikingDev, agencia de páginas web, Ads y GoHighLevel en Tijuana"
 readTime: "5 min de lectura"
 ---
 
-Cada negocio que crece llega a un punto donde necesita mas que una pagina bonita: necesita un sitio que convierta, un sistema que ordene su operacion, y una estrategia de anuncios que no queme presupuesto sin resultados. **VikingDev** nace en Tijuana para cubrir exactamente eso, sin fragmentar el trabajo entre cinco proveedores distintos que no se hablan entre si.
+Cada negocio que crece llega a un punto donde necesita más que una página bonita: necesita un sitio que convierta, un sistema que ordene su operación y anuncios que no quemen presupuesto sin resultados. **VikingDev** nació en Tijuana para cubrir exactamente eso, sin repartir el trabajo entre cinco proveedores distintos que no se hablan entre sí.
 
-## Mas que sitios web
+Somos una [agencia de marketing digital en Tijuana](/) enfocada en tres cosas: páginas web que venden, campañas publicitarias rentables y automatización de ventas con GoHighLevel.
 
-Nuestro enfoque parte de una idea simple: un sitio web bonito que no genera clientes es solo una tarjeta de presentacion cara. Por eso estructuramos cada proyecto alrededor de cuatro pilares que trabajan juntos:
+## Más que sitios web
 
-- **Desarrollo Web** - sitios y aplicaciones a medida, construidos para cargar rapido y convertir.
-- **Google & Meta Ads** - campanas publicitarias pensadas para traer clientes reales, no solo trafico.
-- **CRM & Automatizacion** - procesos que dejan de depender de hojas de calculo sueltas o memoria humana.
-- **Consultoria Digital** - una vision clara de que mover primero para crecer, sin adivinar.
+Partimos de una idea simple: una página web que no genera clientes es solo una tarjeta de presentación cara. Por eso cada proyecto se apoya en servicios que trabajan juntos:
 
-Mas de 30 proyectos entregados en sectores tan distintos como salud, bienes raices, transporte, restaurantes y tecnologia confirman que este enfoque combinado funciona mejor que atacar cada pieza por separado.
+- **Páginas web y tiendas en línea:** sitios a la medida, rápidos y pensados para convertir visitantes en clientes.
+- **Google Ads y Meta Ads:** campañas que traen prospectos reales, no solo tráfico.
+- **CRM y automatización con GoHighLevel:** seguimiento de leads, citas y mensajes en un solo sistema, sin depender de hojas de cálculo ni de la memoria de alguien.
+- **Consultoría SEO y mantenimiento:** mejora continua para que tu presencia digital siga creciendo después del lanzamiento.
 
-## Como trabajamos, paso a paso
+Más de 30 proyectos entregados en sectores como salud, bienes raíces, transporte, restaurantes y tecnología nos confirman que este enfoque combinado funciona mejor que atacar cada pieza por separado.
 
-El proceso esta disenado para que cotizar un proyecto tome minutos, no semanas de idas y vueltas:
+## Por qué apostamos por GoHighLevel
 
-1. **Cotiza tu proyecto** - un cotizador interactivo en la propia pagina da una estimacion real de inversion al instante, sin letras pequenas.
-2. **Envia un mensaje** - la cotizacion se conecta directo a WhatsApp, con respuesta en menos de 24 horas.
-3. **Platiquemos** - una llamada o reunion en Tijuana para entender la vision del negocio y ajustar el plan exacto, sin costo ni compromiso.
-4. **Arrancamos** - desarrollo con avances reales, entregas puntuales y soporte incluido despues del lanzamiento.
+El error más común que vemos en negocios de Tijuana no es la falta de prospectos, sino perderlos: mensajes de WhatsApp sin responder, citas que nadie confirma y cotizaciones a las que nadie da seguimiento.
 
-## Lo que dicen quienes ya trabajaron con nosotros
+GoHighLevel resuelve eso porque reúne prospectos, agenda, mensajes y seguimiento automático en una sola plataforma. Nosotros lo implementamos, lo configuramos para tu proceso de venta y lo administramos por ti. Así, cada lead que generan tu página web y tus anuncios recibe seguimiento desde el primer minuto.
 
-No es solo lo que decimos nosotros. Clientes como BajaBox, P&P Solutions, Integra TJ, Zac Tech Semi y Favlash han destacado algo en comun en sus experiencias: procesos mas eficientes, sitios que generan consultas reales de clientes potenciales, y un equipo que entiende lo que un negocio necesita para crecer en digital antes de escribir la primera linea de codigo.
+## Cómo trabajamos
+
+Cotizar con nosotros toma minutos, no semanas. Usas el [cotizador de nuestra página](/#cotizador), tu estimación llega directo a WhatsApp, respondemos en menos de 24 horas y agendamos una llamada o reunión en Tijuana para definir el plan exacto, sin costo ni compromiso. Después arrancamos con avances en cada etapa y soporte incluido tras el lanzamiento.
+
+## Lo que dicen nuestros clientes
+
+Clientes como BajaBox, P&P Solutions, Integra TJ, Zac Tech Semi y Favlash coinciden en algo: procesos más eficientes, sitios que generan consultas reales y un equipo que entiende lo que el negocio necesita antes de escribir la primera línea de código. Puedes leer sus testimonios completos en [nuestra página principal](/#testimonios).
 
 ## Un ecosistema, no un proyecto aislado
 
-VikingDev no trabaja solo. Construimos junto a **Snitch Agency**, nuestro socio estrategico en branding y estrategia creativa, y desarrollamos **[Ikari](https://ikaricrm.com/)**, un sistema propio de CRM y gestion operativa pensado para negocios que necesitan dejar de operar a la deriva - agenda, finanzas, pipeline comercial y reportes, todo en una sola plataforma.
+VikingDev no trabaja solo. Colaboramos con **[Snitch Agency](https://snitchagency.com)**, nuestro socio estratégico en branding y estrategia creativa.
 
-Tambien somos los desarrolladores detras de **[Amig@ Pro](https://amigo-pro.com/)**, el directorio que conecta talento profesional independiente con clientes sin intermediarios ni comisiones abusivas.
+También desarrollamos productos propios:
 
-Cada uno de estos proyectos parte de la misma filosofia: menos friccion, mas resultados medibles.
+- **[CodiceAgents](https://codiceagents.com/):** un sistema de gestión operativa para negocios que necesitan ordenar agenda, finanzas, pipeline comercial y reportes en una sola plataforma.
+- **[Amig@ Pro](https://amigo-pro.com/):** un directorio que conecta a profesionales independientes con clientes, sin intermediarios ni comisiones. Te contamos cómo lo construimos en [este caso de estudio](/blog/amigo-pro-plataforma-web-tijuana).
+
+Todos parten de la misma filosofía: menos fricción y más resultados medibles.
 
 ## El resultado
 
-Una agencia con base en Tijuana, con presencia en sectores de salud, bienes raices, tecnologia, transporte y mas, construyendo presencias digitales que generan resultados reales - no solo sitios que se ven bien en una demo.
+Una agencia con base en Tijuana que construye presencias digitales que generan resultados reales, no solo sitios que se ven bien en una demo.
 
 ---
 
-Tienes un negocio que necesita una estrategia digital completa, no solo un sitio web? [Cotiza tu proyecto gratis](https://wa.link/wnb0m6) o revisa nuestro [portafolio completo](/#proyectos).
+¿Tu negocio necesita una estrategia digital completa y no solo una página web? [Cotiza tu proyecto gratis](/#cotizador), [escríbenos por WhatsApp](https://wa.link/wnb0m6) o revisa nuestros [proyectos de páginas web en Tijuana](/#proyectos).

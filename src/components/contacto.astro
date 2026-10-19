@@ -5,7 +5,7 @@ import '../styles/contacto.css'
 <section class="quoter section hero-gradient" id="cotizador" aria-labelledby="quoter-title">
   <div class="container quoter__inner">
 
-    <!-- ══ COLUMNA IZQUIERDA: foto + pasos ══════════════════ -->
+    <!-- ══ COLUMNA IZQUIERDA: pasos ═════════════════════════ -->
     <div class="quoter__left">
 
       <!-- Pasos del proceso -->
@@ -19,9 +19,9 @@ import '../styles/contacto.css'
             <div class="quoter__step-body">
               <h3 class="quoter__step-title">Cotiza tu proyecto</h3>
               <p class="quoter__step-desc">
-                Usa el cotizador para seleccionar los servicios que necesitas.
-                En segundos tendrás una estimación real de inversión, sin rodeos
-                ni letras pequeñas.
+                Selecciona en el cotizador los servicios que necesitas: página
+                web, campañas de Ads o CRM. En segundos tendrás una estimación
+                real de inversión, sin letras chiquitas.
               </p>
             </div>
           </li>
@@ -32,8 +32,8 @@ import '../styles/contacto.css'
               <h3 class="quoter__step-title">Envíanos un mensaje</h3>
               <p class="quoter__step-desc">
                 Con un clic te conectas directo a WhatsApp con tu cotización
-                lista. Nuestro equipo responde en menos de 24 horas con una
-                propuesta personalizada para tu negocio.
+                lista. Respondemos en menos de 24 horas con una propuesta
+                personalizada para tu negocio.
               </p>
             </div>
           </li>
@@ -55,9 +55,9 @@ import '../styles/contacto.css'
             <div class="quoter__step-body">
               <h3 class="quoter__step-title">Arrancamos</h3>
               <p class="quoter__step-desc">
-                Una vez alineados, iniciamos el desarrollo. Te mantenemos
+                Una vez alineados, iniciamos el proyecto. Te mantenemos
                 informado en cada etapa con avances reales, entregas puntuales
-                y soporte post-lanzamiento incluido.
+                y soporte después del lanzamiento.
               </p>
             </div>
           </li>
@@ -72,9 +72,10 @@ import '../styles/contacto.css'
 
         <!-- Header del cotizador -->
         <div class="quoter__card-header">
-          <h2 class="quoter__card-title" id="quoter-title">Cotizador Interactivo</h2>
+          <h2 class="quoter__card-title" id="quoter-title">Cotiza tu página web o campaña</h2>
           <p class="quoter__card-subtitle">
-            Configura tu plan ideal y obtén un presupuesto estimado al instante.
+            Selecciona los servicios que necesitas y obtén un estimado de
+            inversión al instante.
           </p>
         </div>
 
@@ -83,6 +84,7 @@ import '../styles/contacto.css'
           <legend class="quoter__legend">Servicios Requeridos</legend>
           <div class="quoter__checkboxes">
 
+            <!-- ── Páginas web ── -->
             <label class="quoter__check-label">
               <input
                 type="checkbox"
@@ -114,29 +116,29 @@ import '../styles/contacto.css'
                 type="checkbox"
                 class="quoter__checkbox"
                 data-price="10000"
-                data-label="Tienda E-Commerce"
-                aria-label="Tienda E-Commerce: $10,000 MXN"
+                data-label="Tienda en Línea"
+                aria-label="Tienda en Línea: $10,000 MXN"
                 data-group="web"
               />
               <span class="quoter__check-box" aria-hidden="true"></span>
-              <span class="quoter__check-text">Tienda E-Commerce</span>
+              <span class="quoter__check-text">Tienda en Línea</span>
             </label>
 
-   
-
+            <!-- ── Mantenimiento ── -->
             <label class="quoter__check-label">
               <input
                 type="checkbox"
                 class="quoter__checkbox"
                 data-price="2000"
-                data-label="Consultoría y Mantenimiento"
-                aria-label="Consultoría y Mantenimiento: $2,000 MXN al mes"
+                data-label="Consultoría SEO y Mantenimiento"
+                aria-label="Consultoría SEO y Mantenimiento: $2,000 MXN al mes"
                 data-group="maintenance"
               />
               <span class="quoter__check-box" aria-hidden="true"></span>
-              <span class="quoter__check-text">Consultoría y Mantenimiento <em class="quoter__check-note">· $2,000/mes</em></span>
+              <span class="quoter__check-text">Consultoría SEO y Mantenimiento <em class="quoter__check-note">· $2,000/mes</em></span>
             </label>
 
+            <!-- ── Ads (grupo excluyente: elegir una opción) ── -->
             <label class="quoter__check-label">
               <input
                 type="checkbox"
@@ -167,14 +169,29 @@ import '../styles/contacto.css'
               <input
                 type="checkbox"
                 class="quoter__checkbox"
-                data-price="6000"
-                data-label="CRM HighLevel"
-                aria-label="CRM HighLevel: $6,000 MXN al mes, incluye la suscripción de la plataforma"
+                data-price="2500"
+                data-label="Meta Ads + Google Ads (no incluye inversión)"
+                aria-label="Meta Ads y Google Ads: $2,500 MXN al mes (gestión combinada, no incluye inversión)"
+                data-group="ads"
               />
               <span class="quoter__check-box" aria-hidden="true"></span>
-              <span class="quoter__check-text">CRM HighLevel <em class="quoter__check-note">· $6,000/mes</em></span>
+              <span class="quoter__check-text">Meta + Google Ads <em class="quoter__check-note">· $2,500/mes</em></span>
             </label>
 
+            <!-- ── CRM ── -->
+            <label class="quoter__check-label">
+              <input
+                type="checkbox"
+                class="quoter__checkbox"
+                data-price="6000"
+                data-label="CRM GoHighLevel"
+                aria-label="CRM GoHighLevel: $6,000 MXN al mes, incluye la suscripción de la plataforma"
+              />
+              <span class="quoter__check-box" aria-hidden="true"></span>
+              <span class="quoter__check-text">CRM GoHighLevel <em class="quoter__check-note">· $6,000/mes</em></span>
+            </label>
+
+            <!-- ── A la medida ── -->
             <label class="quoter__check-label">
               <input
                 type="checkbox"

@@ -1,0 +1,83 @@
+---
+import '../styles/faq.css';
+
+const faqs = [
+  {
+    q: '¿Cuánto cuesta una página web en Tijuana?',
+    a: 'Nuestros paquetes empiezan en $6,000 MXN + IVA para una landing page, $7,000 MXN + IVA para una página web completa y $10,000 MXN + IVA para una tienda en línea. Todos incluyen diseño personalizado, SEO on-page y hosting por un año. Consulta el detalle en <a href="#paquetes">paquetes y precios</a> o calcula tu inversión en el <a href="#cotizador">cotizador</a>.',
+  },
+  {
+    q: '¿Cuánto tiempo tarda en estar lista mi página web?',
+    a: 'Una landing page o una página web completa se entrega en 5 a 7 días hábiles, y una tienda en línea en 7 a 10 días hábiles, a partir de que recibimos tu contenido.',
+  },
+  {
+    q: '¿Qué es GoHighLevel y cómo ayuda a mi negocio?',
+    a: 'GoHighLevel es un CRM que reúne en un solo lugar tus prospectos, citas y mensajes de WhatsApp, SMS y correo. Lo configuramos y administramos por ti, con automatizaciones que dan seguimiento a cada lead para que no se te escape ninguno. El servicio incluye la suscripción mensual de la plataforma.',
+  },
+  {
+    q: '¿Qué incluye el manejo de Google Ads y Meta Ads?',
+    a: 'Configuramos tus cuentas, creamos las campañas y los anuncios, segmentamos a tu cliente ideal y optimizamos cada mes con un reporte de resultados. La gestión cuesta $1,500 MXN al mes por plataforma o $2,500 MXN al mes por ambas. El presupuesto de inversión publicitaria se paga aparte, directo a Google o Meta.',
+  },
+  {
+    q: '¿Cómo es el proceso para trabajar con VikingDev?',
+    a: `<ol>
+      <li><strong>Cotiza tu proyecto:</strong> selecciona los servicios en nuestro <a href="#cotizador">cotizador</a> y obtén una estimación al instante.</li>
+      <li><strong>Envíanos un mensaje:</strong> tu cotización llega directo a nuestro WhatsApp y respondemos en menos de 24 horas.</li>
+      <li><strong>Platiquemos:</strong> agendamos una llamada o reunión en Tijuana para definir el plan exacto, sin costo ni compromiso.</li>
+      <li><strong>Arrancamos:</strong> iniciamos el proyecto con avances en cada etapa y soporte después del lanzamiento.</li>
+    </ol>`,
+  },
+  {
+    q: '¿Manejan redes sociales?',
+    a: 'Nos especializamos en páginas web, publicidad pagada y automatización. Para branding y contenido creativo trabajamos con nuestro socio <a href="https://snitchagency.com" target="_blank" rel="noopener noreferrer">Snitch Agency</a>.',
+  },
+  {
+    q: '¿Atienden negocios fuera de Tijuana?',
+    a: 'Sí. Estamos en Tijuana y atendemos negocios en todo Baja California y México. Las reuniones pueden ser presenciales en Tijuana o en línea.',
+  },
+];
+
+const stripHtml = (html: string): string => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: stripHtml(f.a) },
+  })),
+};
+---
+
+<section class="faq section" id="faq" aria-labelledby="faq-title">
+  <div class="container faq__inner">
+
+    <header class="faq__header">
+      <span class="section-label">Preguntas Frecuentes</span>
+      <h2 class="section-title" id="faq-title">
+        Preguntas frecuentes sobre páginas web y marketing en Tijuana
+      </h2>
+      <p class="section-subtitle faq__subtitle">
+        Resolvemos las dudas más comunes sobre precios, tiempos, Ads y GoHighLevel.
+      </p>
+    </header>
+
+    <div class="faq__list">
+      {faqs.map((f, i) => (
+        <details class="faq__item" open={i === 0}>
+          <summary class="faq__question">
+            <span>{f.q}</span>
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </summary>
+          <div class="faq__answer" set:html={f.a} />
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

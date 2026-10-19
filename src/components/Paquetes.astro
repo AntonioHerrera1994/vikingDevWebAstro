@@ -9,7 +9,7 @@ const webPlans = [
     price: '$6,000',
     currency: 'MXN + IVA',
     period: 'pago único',
-    desc: 'Ideal para emprendedores, freelancers, eventos y lanzamientos de producto.',
+desc: 'Ideal para emprendedores, eventos, lanzamientos de producto y campañas de Ads.',
     highlight: false,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
@@ -53,12 +53,12 @@ const webPlans = [
   },
   {
     id: 'ecommerce',
-    label: 'E-Commerce',
+    label: 'Tienda en linea',
     tag: 'Vende en línea',
     price: '$10,000',
     currency: 'MXN + IVA',
     period: 'pago único',
-    desc: 'Ideal para tiendas retail, marcas de producto y emprendedores digitales.',
+desc: 'Ideal para tiendas, marcas de producto y emprendedores que quieren vender en línea.',
     highlight: false,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
@@ -109,7 +109,7 @@ const adsPlans = [
     price: '$1,500',
     currency: 'MXN + IVA',
     period: '/ mes',
-    desc: 'Gestión de campañas en Facebook e Instagram.',
+desc: 'Gestión de campañas en Google: búsqueda, Display, Shopping y YouTube.',
     highlight: false,
     cta: '¡Lo quiero!',
     ctaHref: 'https://wa.link/wnb0m6',
@@ -174,11 +174,10 @@ const crmPlan = {
   currency: 'MXN + IVA',
   period: '/ mes',
   tag: 'Automatización · Todo incluido',
-  desc: 'Administramos tu CRM en HighLevel de principio a fin: pipelines, automatizaciones, seguimiento de leads y reportes.',
+desc: 'Administramos tu CRM en GoHighLevel de principio a fin: pipelines, automatizaciones, seguimiento de leads y reportes.',
   cta: '¡Lo quiero!',
   ctaHref: 'https://wa.link/wnb0m6',
-  note: 'Este precio ya incluye la suscripción mensual de la plataforma HighLevel — sin costos aparte.',
-  features: [
+note: 'El precio ya incluye la suscripción mensual de GoHighLevel, sin costos aparte.',  features: [
     'Suscripción de HighLevel incluida',
     'Configuración de pipeline comercial (Kanban)',
     'Automatización de flujos y seguimiento de leads',
@@ -198,30 +197,31 @@ const crmPlan = {
   <div class="container">
 
     <header class="pricing__header">
-      <span class="section-label">Paquetes Web</span>
+      <span class="section-label">Paquetes y Precios</span>
       <h2 class="section-title" id="pricing-title">
-        La solución perfecta para tu negocio
+       Precios de páginas web y marketing digital en Tijuana
       </h2>
       <p class="section-subtitle pricing__subtitle">
-        Precios claros, sin letras chiquitas. Elige lo que tu negocio necesita hoy.
+        Paquetes de páginas web, campañas de Google y Meta Ads, y CRM con
+    GoHighLevel. Precios claros, sin letras chiquitas.
       </p>
     </header>
 
     <nav class="pricing__quicknav" aria-label="Navegación de paquetes">
       <button class="pricing__quicknav-btn is-active" data-target="paquetes-web" type="button">
-        Desarrollo Web
+        Páginas web
       </button>
       <button class="pricing__quicknav-btn" data-target="paquetes-ads" type="button">
         Google & Meta Ads
       </button>
       <button class="pricing__quicknav-btn" data-target="paquetes-crm" type="button">
-        CRM HighLevel
+        CRM GoHighLevel
       </button>
     </nav>
 
     <!-- ══ Tabla 1: Desarrollo Web (ahora con 5 cards) ══════════ -->
     <div class="pricing__block" id="paquetes-web">
-      <h3 class="pricing__block-title">Desarrollo Web</h3>
+      <h3 class="pricing__block-title">Páginas Web</h3>
       <div class="pricing__grid pricing__grid--5col">
         {webPlans.map((plan) => (
           <div class={`pricing__bar${plan.highlight ? ' pricing__bar--highlight' : ''}${plan.id === 'ikari-lite' ? ' pricing__bar--addon' : ''}`}>
@@ -309,7 +309,7 @@ const crmPlan = {
 
     <!-- ══ CRM HighLevel — banner único, no es tabla comparativa ═ -->
     <div class="pricing__block" id="paquetes-crm">
-      <h3 class="pricing__block-title">CRM HighLevel</h3>
+      <h3 class="pricing__block-title">CRM GoHighLevel</h3>
       <div class="pricing__crm-banner">
         <div class="pricing__crm-copy">
           <span class="pricing__bar-tag pricing__bar-tag--light">{crmPlan.tag}</span>
