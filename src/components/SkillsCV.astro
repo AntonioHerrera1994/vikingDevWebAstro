@@ -1,26 +1,28 @@
 ---
 import '../styles/habilidadescv.css'
 
-const MARKETING_DISENO = ["Canva", "Go HighLevel", "Hubspot", "Go HighLevel", "Kommo", "Zoho", "Meta Ads", "Google Analytics", "Google Search Console",];
+const MARKETING_DISENO = ["Meta Ads", "Google Ads", "Google Analytics", "SEO", "Google Search Console"];
 const DESARROLLO = [
   "HTML / CSS",
   "JavaScript",
-  "C#",
   "PHP",
   "Astro",
   "React",
-  "Node Js",
   "WordPress",
-  "SQL",
-  "Python",
-    "SEO",
       "Squarespace",
         "Netlify",
           "Vercel",
-            "Supabase",
-             "DNS Admin",
 
 
+];
+const BACKEND = [
+"C#", "PHP", "Python", "Node.js", "SQL", "Supabase",
+
+
+];
+
+const CRM = [ 
+  "GoHighLevel", "HubSpot", "Zoho CRM", "Kommo", "DNS Administration"
 ];
 const Idiomas = ["Español - 100%", "Inglés- 50%"];
 ---
@@ -36,7 +38,7 @@ const Idiomas = ["Español - 100%", "Inglés- 50%"];
     <div class="skills__grid">
     
       <div class="skills__column">
-        <h3 class="skills__column-title">Desarrollo</h3>
+        <h3 class="skills__column-title">Desarrollo Frontend & CMS</h3>
         <ul class="skills__list">
           {DESARROLLO.map((item) => (
             <li class="skills__item">{item}</li>
@@ -44,8 +46,25 @@ const Idiomas = ["Español - 100%", "Inglés- 50%"];
         </ul>
       </div>
 
+         <div class="skills__column">
+        <h3 class="skills__column-title">Desarrollo Backend & DB</h3>
+        <ul class="skills__list">
+          {BACKEND.map((item) => (
+            <li class="skills__item">{item}</li>
+          ))}
+        </ul>
+      </div>
+
        <div class="skills__column">
-        <h3 class="skills__column-title">Otros</h3>
+        <h3 class="skills__column-title">MarTech & CRM</h3>
+        <ul class="skills__list">
+          {CRM.map((item) => (
+            <li class="skills__item">{item}</li>
+          ))}
+        </ul>
+      </div>
+       <div class="skills__column">
+        <h3 class="skills__column-title">Marketing & Analytics</h3>
         <ul class="skills__list">
           {MARKETING_DISENO.map((item) => (
             <li class="skills__item">{item}</li>
