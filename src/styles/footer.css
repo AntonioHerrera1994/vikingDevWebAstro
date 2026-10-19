@@ -389,3 +389,12 @@
     transform: translateY(0);
   }
 }
+
+.footer__ext-icon {
+  margin-left: 4px;
+  opacity: 0.6;
+}
+
+.footer__address {
+  font-style: normal;
+}

@@ -1,27 +1,32 @@
 ---
 import '../styles/footer.css'
+import FooterLogo from '../assets/vikigdev-blanco.webp'
+
 const currentYear = new Date().getFullYear();
 
+// Rutas con "/" al inicio para que funcionen desde cualquier página (blog, legales, subpáginas).
+// Al publicar cada subpágina, cambia su href (ver comentarios).
 const links = {
   servicios: [
-    { label: 'Desarrollo Web',        href: '#servicios' },
-    { label: 'Google Ads & Meta Ads', href: '#servicios' },
-    { label: 'Aplicaciones Web',      href: '#servicios' },
-    { label: 'Consultoría Digital',   href: '#servicios' },
-    { label: 'Paquetes y Precios',    href: '#paquetes'  },
+    { label: 'Páginas Web',          href: '/#servicios' }, // → '/paginas-web-tijuana'
+    { label: 'Google Ads y Meta Ads',           href: '/#servicios' }, // → '/google-meta-ads-tijuana'
+    { label: 'CRM GoHighLevel',                 href: '/#servicios' }, // → '/gohighlevel-tijuana'
+    { label: 'Consultoría SEO y Mantenimiento', href: '/#servicios' },
+    { label: 'Paquetes y Precios',              href: '/#paquetes'  },
   ],
   empresa: [
-    { label: 'Portafolio VikingDev',  href: '#proyectos'  },
-    { label: 'Portafolio Snitch',     href: '#proyectos'  },
-    { label: 'Testimonios',           href: '#testimonios' },
-    { label: 'Cotizador',             href: '#cotizador'  },
-    { label: 'Ikari CRM',             href: 'https://ikaricrm.com/', external: true },
+    { label: 'Portafolio',            href: '/#proyectos'   },
+    { label: 'Testimonios',           href: '/#testimonios' },
+    { label: 'Preguntas Frecuentes',  href: '/#faq'         },
+    { label: 'Blog',                  href: '/blog'         },
+    { label: 'Cotizador',             href: '/#cotizador'   },
+    { label: 'Ikari CRM',             href: 'https://ikaricrm.com/',   external: true },
+    { label: 'CodiceAgents',          href: 'https://codiceagents.com/', external: true },
   ],
   contacto: [
-    { label: '(663) 247-7816',        href: 'tel:+526632477816'                },
-    { label: 'vikingdevtj@gmail.com', href: 'mailto:vikingdevtj@gmail.com'     },
+    { label: '(663) 247-7816',        href: 'tel:+526632477816'            },
+    { label: 'vikingdevtj@gmail.com', href: 'mailto:vikingdevtj@gmail.com' },
     { label: 'WhatsApp',              href: 'https://wa.link/wnb0m6', external: true },
-    { label: 'Tijuana, Baja California', href: null },
   ],
 };
 
@@ -41,32 +46,67 @@ const social = [
     href: 'https://wa.link/6xz219',
     icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`,
   },
-
 ];
-import FooterLogo from '../assets/vikigdev-blanco.webp'
+
+// Schema de negocio local (se imprime en todas las páginas que usan el footer)
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'VikingDev',
+  description: 'Agencia de marketing digital en Tijuana: páginas web, campañas en Google y Meta Ads, y CRM con GoHighLevel.',
+  url: 'https://vikingdevtj.com/',
+  logo: 'https://vikingdevtj.com/og-image.jpg', // cambia por la URL fija de tu logo en /public
+  image: 'https://vikingdevtj.com/og-image.jpg',
+  telephone: '+52-663-247-7816',
+  email: 'vikingdevtj@gmail.com',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    // streetAddress: 'Calle y número', // agrégalo solo si coincide con tu Google Business Profile
+    addressLocality: 'Tijuana',
+    addressRegion: 'Baja California',
+    addressCountry: 'MX',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Tijuana' },
+    { '@type': 'State', name: 'Baja California' },
+  ],
+  knowsAbout: [
+    'Diseño de páginas web',
+    'Tiendas en línea',
+    'Google Ads',
+    'Meta Ads',
+    'GoHighLevel',
+    'Automatización de ventas',
+    'SEO',
+  ],
+  sameAs: [
+    'https://www.facebook.com/vikingdevtj',
+    'https://www.linkedin.com/company/vikingdev/',
+  ],
+};
 ---
 
-<footer class="footer" role="contentinfo" aria-label="Pie de página VikingDev">
+<footer class="footer" aria-label="Pie de página VikingDev">
 
   <!-- ── CTA final de conversión ──────────────────────────── -->
   <div class="footer__cta-band">
     <div class="container footer__cta-inner">
       <div class="footer__cta-copy">
         <h2 class="footer__cta-title">
-          ¿Listo para llevar tu negocio al siguiente nivel?
+          ¿Listo para conseguir más clientes en Tijuana?
         </h2>
         <p class="footer__cta-desc">
-         Gestiona tus leads, citas y mensajes desde un solo sistema.
+          Cotiza tu página web, campaña de Ads o CRM con GoHighLevel en menos
+          de un minuto. Respondemos en menos de 24 horas.
         </p>
       </div>
       <a
-        href="https://codiceagents.com/"
+        href="/#cotizador"
         class="footer__cta-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Iniciar proyecto con VikingDev por WhatsApp"
+        aria-label="Cotizar proyecto con VikingDev"
       >
-       Conoce CodiceAgents
+        Cotiza Tu Proyecto Gratis
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="5" y1="12" x2="19" y2="12"/>
           <polyline points="12 5 19 12 12 19"/>
@@ -82,15 +122,19 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
       <!-- Columna 1: Logo + tagline + social -->
       <div class="footer__brand">
         <a href="/" class="footer__logo" aria-label="VikingDev — ir al inicio">
-         <img 
-         src={FooterLogo.src}
-         width="150"
-         alt="VikingDev Logo Blanco"
-         />
+          <img
+            src={FooterLogo.src}
+            width={150}
+            height={Math.round((FooterLogo.height / FooterLogo.width) * 150)}
+            alt="VikingDev, agencia de marketing digital en Tijuana"
+            loading="lazy"
+            decoding="async"
+          />
         </a>
         <p class="footer__tagline">
-          Agencia de desarrollo web y marketing digital en Tijuana.
-          Construimos presencias digitales que generan resultados reales.
+          Agencia de marketing digital en Tijuana. Creamos páginas web,
+          campañas en Google y Meta Ads, y automatizamos tus ventas con
+          GoHighLevel.
         </p>
 
         <!-- Redes sociales -->
@@ -101,7 +145,7 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
               class="footer__social-link"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={s.label}
+              aria-label={`VikingDev en ${s.label}`}
               set:html={s.icon}
             />
           ))}
@@ -113,13 +157,12 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
           class="footer__partner"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Snitch Agency — socio estratégico"
+          aria-label="Snitch Agency, socio estratégico en branding"
         >
           <span class="footer__partner-label">Partner</span>
           <span class="footer__partner-name">Snitch Agency</span>
-          <span class="footer__partner-name"></span>
         </a>
-        
+
       </div>
 
       <!-- Columna 2: Servicios -->
@@ -148,7 +191,7 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
               >
                 {l.label}
                 {l.external && (
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" style="margin-left:4px;opacity:0.6;">
+                  <svg class="footer__ext-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
                     <line x1="7" y1="17" x2="17" y2="7"/>
                     <polyline points="7 7 17 7 17 17"/>
                   </svg>
@@ -160,12 +203,12 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
       </nav>
 
       <!-- Columna 4: Contacto -->
-      <div class="footer__nav" aria-label="Contacto">
+      <div class="footer__nav">
         <h3 class="footer__nav-title">Contacto</h3>
-        <ul class="footer__nav-list">
-          {links.contacto.map((l) => (
-            <li>
-              {l.href ? (
+        <address class="footer__address">
+          <ul class="footer__nav-list">
+            {links.contacto.map((l) => (
+              <li>
                 <a
                   href={l.href}
                   class="footer__nav-link"
@@ -174,12 +217,13 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
                 >
                   {l.label}
                 </a>
-              ) : (
-                <span class="footer__nav-text">{l.label}</span>
-              )}
+              </li>
+            ))}
+            <li>
+              <span class="footer__nav-text">Tijuana, Baja California, México</span>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </address>
       </div>
 
     </div>
@@ -189,7 +233,7 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
       <p class="footer__copy">
-        © {currentYear} VikingDev. Todos los derechos reservados.
+        © {currentYear} VikingDev · Agencia de marketing digital en Tijuana.
       </p>
       <nav class="footer__legal" aria-label="Legal">
         <a href="/aviso-de-privacidad" class="footer__legal-link">
@@ -205,6 +249,7 @@ import FooterLogo from '../assets/vikigdev-blanco.webp'
 
 </footer>
 
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 
 <script>
     import '../scripts/footer'
