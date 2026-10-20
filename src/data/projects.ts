@@ -132,7 +132,7 @@ export const vikingProjects: Project[] = [
     filterCategory: 'salud',
     title: 'GYNEHEALTH & AESTHETIC MEDICINE',
     desc: 'Diseño y desarrollo de un sitio web corporativo para una especialista en la salud.',
-    url: 'https://define-studio.mx/drapartida/',
+    url: 'http://drapartida.define-studio.mx/',
   },
   {
     id: 'altive',
