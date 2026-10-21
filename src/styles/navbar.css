@@ -273,3 +273,255 @@ width: 110px;
   display: none;
 }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Dropdown "Servicios" (escritorio)
+   ═══════════════════════════════════════════════════════════ */
+.nav__dd {
+  position: relative;
+}
+
+.nav__dd-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.nav__dd-chevron {
+  transition: transform var(--transition-base);
+}
+.nav__dd.is-open .nav__dd-chevron,
+.nav__mobile-acc.is-open .nav__dd-chevron {
+  transform: rotate(180deg);
+}
+
+.nav__dd-trigger:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Panel */
+.nav__dd-panel {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  width: min(460px, 90vw);
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(247, 249, 251, 0.96);
+  backdrop-filter: var(--glass-blur-heavy);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid rgba(0, 15, 34, 0.08);
+  box-shadow: 0 24px 60px -20px rgba(0, 15, 34, 0.28);
+
+  /* Cerrado: visibility para no bloquear clics ni scroll */
+  visibility: hidden;
+  opacity: 0;
+  translate: -50% -8px;
+  transition:
+    visibility 0s linear 200ms,
+    opacity 200ms var(--ease-default),
+    translate 200ms var(--ease-default);
+}
+
+/* Puente invisible para que el panel no se cierre al bajar el cursor */
+.nav__dd-panel::before {
+  content: '';
+  position: absolute;
+  inset: -18px 0 auto;
+  height: 18px;
+}
+
+.nav__dd.is-open .nav__dd-panel {
+  visibility: visible;
+  opacity: 1;
+  translate: -50% 0;
+  transition:
+    visibility 0s linear 0ms,
+    opacity 200ms var(--ease-default),
+    translate 200ms var(--ease-default);
+}
+
+.nav__dd-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.nav__dd-item {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: background var(--transition-base);
+}
+.nav__dd-item:hover,
+.nav__dd-item:focus-visible {
+  background: rgba(0, 15, 34, 0.05);
+  outline: none;
+}
+.nav__dd-item[aria-current='page'] {
+  background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+}
+
+.nav__dd-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+  color: var(--color-secondary);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+.nav__dd-item:hover .nav__dd-icon {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.nav__dd-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+.nav__dd-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.nav__dd-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+}
+.nav__dd-price {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  white-space: nowrap;
+}
+
+.nav__dd-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 12px 12px 4px;
+  border-top: 1px solid rgba(0, 15, 34, 0.08);
+}
+.nav__dd-all,
+.nav__dd-quote {
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-decoration: none;
+}
+.nav__dd-all {
+  color: var(--color-on-surface-variant);
+}
+.nav__dd-all:hover {
+  color: var(--color-primary);
+}
+.nav__dd-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+.nav__dd-quote svg {
+  transition: translate var(--transition-base);
+}
+.nav__dd-quote:hover svg {
+  translate: 3px 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Acordeón "Servicios" (menú móvil)
+   ═══════════════════════════════════════════════════════════ */
+.nav__mobile-acc-trigger {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Animación de altura con grid (sin medir en JS) */
+.nav__mobile-acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms var(--ease-default);
+}
+.nav__mobile-acc.is-open .nav__mobile-acc-panel {
+  grid-template-rows: 1fr;
+}
+
+.nav__mobile-sub {
+  overflow: hidden;
+  min-height: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.nav__mobile-acc.is-open .nav__mobile-sub {
+  padding-bottom: var(--space-xs);
+}
+
+.nav__mobile-sublink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px var(--space-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background var(--transition-base);
+}
+.nav__mobile-sublink:hover,
+.nav__mobile-sublink[aria-current='page'] {
+  background: rgba(0, 15, 34, 0.05);
+}
+.nav__mobile-sublink .nav__dd-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+.nav__mobile-sublink--all {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* Menú móvil largo: que se pueda desplazar si no cabe */
+.nav__mobile {
+  max-height: calc(100dvh - var(--nav-height-sm));
+  overflow-y: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__dd-panel,
+  .nav__dd.is-open .nav__dd-panel,
+  .nav__mobile-acc-panel,
+  .nav__dd-chevron {
+    transition: none;
+  }
+}

@@ -78,4 +78,103 @@
   } else {
     mediaQuery.addListener(onResize);
   }
+
+  /* ─── 6. Dropdown "Servicios" (escritorio) ──────────────── */
+  const dd = nav.querySelector('[data-nav-dd]');
+
+  if (dd) {
+    const trigger = dd.querySelector('[data-nav-dd-trigger]');
+    const panel   = dd.querySelector('[data-nav-dd-panel]');
+    const items   = Array.from(panel.querySelectorAll('a'));
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let closeTimer = null;
+    let openedAt = 0;
+
+    function openDd() {
+      clearTimeout(closeTimer);
+      if (dd.classList.contains('is-open')) return;
+      dd.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      openedAt = Date.now();
+    }
+
+    function closeDd(returnFocus) {
+      clearTimeout(closeTimer);
+      if (!dd.classList.contains('is-open')) return;
+      dd.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      if (returnFocus) trigger.focus();
+    }
+
+    // Clic / toque: abre o cierra. Si se acaba de abrir por hover, el clic no lo cierra.
+    trigger.addEventListener('click', function () {
+      if (dd.classList.contains('is-open')) {
+        if (Date.now() - openedAt > 400) closeDd(false);
+      } else {
+        openDd();
+      }
+    });
+
+    // Hover en escritorio, con pequeño retraso al salir
+    if (canHover) {
+      dd.addEventListener('mouseenter', openDd);
+      dd.addEventListener('mouseleave', function () {
+        closeTimer = setTimeout(function () { closeDd(false); }, 180);
+      });
+    }
+
+    // Teclado: flecha abajo entra al panel, flechas recorren, Escape cierra
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        openDd();
+        items[0] && items[0].focus();
+      }
+    });
+
+    panel.addEventListener('keydown', function (e) {
+      const i = items.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        items[(i + 1) % items.length].focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (i <= 0) trigger.focus();
+        else items[i - 1].focus();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && dd.classList.contains('is-open')) {
+        closeDd(dd.contains(document.activeElement));
+      }
+    });
+
+    // Cierra al hacer clic fuera o al sacar el foco del dropdown con Tab
+    document.addEventListener('click', function (e) {
+      if (!dd.contains(e.target)) closeDd(false);
+    });
+
+    dd.addEventListener('focusout', function (e) {
+      if (!dd.contains(e.relatedTarget)) closeDd(false);
+    });
+
+    // Cierra al elegir una opción (útil si el destino es la misma página con #ancla)
+    items.forEach(function (link) {
+      link.addEventListener('click', function () { closeDd(false); });
+    });
+  }
+
+  /* ─── 7. Acordeón "Servicios" (menú móvil) ──────────────── */
+  const acc = mobileMenu.querySelector('[data-nav-acc]');
+
+  if (acc) {
+    const accTrigger = acc.querySelector('[data-nav-acc-trigger]');
+
+    accTrigger.addEventListener('click', function () {
+      const open = !acc.classList.contains('is-open');
+      acc.classList.toggle('is-open', open);
+      accTrigger.setAttribute('aria-expanded', String(open));
+    });
+  }
 })();
