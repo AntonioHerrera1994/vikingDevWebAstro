@@ -1,0 +1,109 @@
+---
+import '../styles/global.css'
+
+import Navbar from '../components/navbar.astro';       // AJUSTA igual que en paginas-web-tijuana.astro
+import Footer from '../components/footer.astro';       // AJUSTA
+import Cotizador from '../components/contacto.astro';  // AJUSTA
+import Faq from '../components/Faq.astro';
+
+import PwSubnav from '../components/paginas-web/PwSubnav.astro';
+import PwProceso from '../components/paginas-web/PwProceso.astro';
+
+import HlHero from '../components/gohighlevel/HlHero.astro';
+import HlAntesDespues from '../components/gohighlevel/HlAntesDespues.astro';
+import HlIncluye from '../components/gohighlevel/HlIncluye.astro';
+import HlWhatsapp from '../components/gohighlevel/HlWhatsapp.astro';
+import HlAutomatizacion from '../components/gohighlevel/HlAutomatizacion.astro';
+import HlIndustrias from '../components/gohighlevel/HlIndustrias.astro';
+import HlPrecio from '../components/gohighlevel/HlPrecio.astro';
+
+import '../styles/web/pw-shared.css';
+import { hlMeta, hlSubnav, hlPrecio, hlProceso, hlFaq } from '../data/crm-gohighlevel';
+
+// ── Schema: servicio + migas de pan ──
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Implementación y administración de GoHighLevel en español',
+  serviceType: 'CRM y automatización de ventas',
+  description: hlMeta.description,
+  url: hlMeta.url,
+  areaServed: { '@type': 'Country', name: 'México' },
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'VikingDev',
+    url: 'https://vikingdevtj.com/',
+    telephone: '+52-663-247-7816',
+  },
+  offers: {
+    '@type': 'Offer',
+    name: 'CRM GoHighLevel administrado, suscripción incluida',
+    price: hlPrecio.priceValue,
+    priceCurrency: 'MXN',
+    url: `${hlMeta.url}#precio`,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: hlPrecio.priceValue,
+      priceCurrency: 'MXN',
+      unitText: 'MES',
+    },
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://vikingdevtj.com/' },
+    { '@type': 'ListItem', position: 2, name: 'CRM GoHighLevel', item: hlMeta.url },
+  ],
+};
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{hlMeta.title}</title>
+    <meta name="description" content={hlMeta.description} />
+    <link rel="canonical" href={hlMeta.url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content={hlMeta.title} />
+    <meta property="og:description" content={hlMeta.description} />
+    <meta property="og:url" content={hlMeta.url} />
+    <meta property="og:image" content={hlMeta.image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={hlMeta.title} />
+    <meta name="twitter:description" content={hlMeta.description} />
+    <meta name="twitter:image" content={hlMeta.image} />
+
+    <!-- AJUSTA: favicon, fuentes, GA4 y Meta Pixel igual que en index.astro -->
+
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </head>
+
+  <body>
+    <Navbar />
+
+    <main>
+      <HlHero />
+      <PwSubnav items={hlSubnav} />
+      <HlAntesDespues />
+      <HlIncluye />
+      <HlWhatsapp />
+      <HlAutomatizacion />
+      <HlIndustrias />
+      <HlPrecio />
+      <PwProceso label={hlProceso.label} data={hlProceso} />
+      <Cotizador />
+      <Faq title={hlFaq.title} subtitle={hlFaq.subtitle} faqs={hlFaq.faqs} />
+    </main>
+
+    <Footer />
+  </body>
+</html>

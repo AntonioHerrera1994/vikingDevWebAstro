@@ -1,0 +1,107 @@
+/* ══ AD SEARCH MOCK ═════════════════════════════════════════ */
+
+.camp-sm {
+  width: min(100%, 460px);
+  margin: 0;
+}
+
+.camp-sm__window {
+  padding: 1.1rem;
+  border-radius: var(--pw-radius);
+  border: 1px solid var(--pw-line);
+  box-shadow: 0 30px 70px -30px color-mix(in srgb, var(--pw-ink) 40%, transparent);
+}
+
+.camp-sm__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 46px;
+  margin-bottom: 1rem;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--pw-line);
+  background: var(--color-surface, #fff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--pw-ink);
+}
+.camp-sm__bar svg { flex-shrink: 0; color: var(--pw-muted); }
+
+.camp-sm__caret {
+  width: 2px;
+  height: 18px;
+  margin-left: -0.45rem;
+  background: var(--pw-accent);
+  animation: camp-sm-blink 1s steps(1) infinite;
+}
+@keyframes camp-sm-blink { 50% { opacity: 0; } }
+
+.camp-sm__results { display: grid; gap: 0.9rem; }
+
+.camp-sm__ad {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: var(--color-surface, #fff);
+  border: 1.5px solid var(--camp-c, #1a73e8);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--camp-c, #1a73e8) 12%, transparent);
+  font-family: var(--font-body);
+}
+.camp-sm__sponsored { font-size: 0.72rem; font-weight: 700; color: #202124; }
+.camp-sm__site {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #4d5156;
+}
+.camp-sm__favicon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--pw-accent);
+}
+.camp-sm__title { font-size: 1rem; font-weight: 500; color: #1a0dab; }
+.camp-sm__desc { font-size: 0.8rem; line-height: 1.45; color: #4d5156; }
+.camp-sm__links {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: #1a0dab;
+}
+
+.camp-sm__organic { display: grid; gap: 0.4rem; padding: 0 1rem; }
+.camp-sm__organic span {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--pw-tint-strong);
+}
+.camp-sm__organic span:first-child { width: 45%; }
+.camp-sm__organic .is-short { width: 70%; }
+
+.camp-sm__caption {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  text-align: center;
+  color: var(--pw-muted);
+}
+
+/* Estados que activa camp-search-mock.js */
+.camp-sm.is-typing .camp-sm__results > * {
+  opacity: 0;
+  translate: 0 10px;
+}
+.camp-sm .camp-sm__results > * {
+  transition: opacity 0.5s ease, translate 0.5s var(--pw-ease);
+}
+.camp-sm.is-done .camp-sm__results > *:nth-child(2) { transition-delay: 0.15s; }
+.camp-sm.is-done .camp-sm__results > *:nth-child(3) { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .camp-sm__caret { display: none; }
+  .camp-sm .camp-sm__results > * { transition: none; }
+}

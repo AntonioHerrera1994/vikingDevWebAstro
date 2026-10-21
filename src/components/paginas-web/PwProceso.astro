@@ -1,0 +1,49 @@
+---
+// Línea de tiempo reutilizable. Sin props usa el proceso de páginas web.
+import '../../styles/web/pw-proceso.css';
+import { pwProceso } from '../../data/paginas-web';
+
+interface Props {
+  label?: string;
+  data?: {
+    h2: string;
+    intro: string;
+    steps: { title: string; text: string }[];
+    note: string;
+  };
+}
+const { label = 'Proceso', data = pwProceso } = Astro.props;
+---
+
+<section class="pw-process section" id="proceso" aria-labelledby="pw-process-title" data-pw-process>
+  <div class="container">
+
+    <header class="pw-process__header" data-reveal>
+      <span class="section-label">{label}</span>
+      <h2 class="section-title" id="pw-process-title">{data.h2}</h2>
+      <p class="section-subtitle">{data.intro}</p>
+    </header>
+
+    <div class="pw-process__wrap" data-pw-process-list>
+      <span class="pw-process__track" aria-hidden="true"><span class="pw-process__fill"></span></span>
+      <ol class="pw-process__list">
+        {data.steps.map((step, i) => (
+          <li class="pw-process__step" data-reveal>
+            <span class="pw-process__dot" aria-hidden="true">{i + 1}</span>
+            <div class="pw-process__body">
+              <h3 class="pw-process__title">{step.title}</h3>
+              <p class="pw-process__text">{step.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <p class="pw-process__note" data-reveal>{data.note}</p>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/pw-proceso.js';
+</script>

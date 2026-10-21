@@ -1,0 +1,85 @@
+/* ══ Estilos compartidos de las páginas pilar ═══════════════
+   Se importa una sola vez desde la página (paginas-web-tijuana.astro).
+   Usa los tokens de la plantilla; los valores después de la coma
+   son respaldo por si algún token no existe. */
+
+:root {
+  --pw-radius: 20px;
+  --pw-radius-sm: 12px;
+  --pw-accent: var(--color-secondary, #5b4fff);
+  --pw-ink: var(--color-primary, #0f1b3d);
+  --pw-muted: var(--color-on-surface-variant, #5a6380);
+  --pw-line: var(--outline-variant, rgba(15, 27, 61, 0.12));
+  --pw-tint: color-mix(in srgb, var(--pw-accent) 8%, transparent);
+  --pw-tint-strong: color-mix(in srgb, var(--pw-accent) 16%, transparent);
+  --pw-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Revelado al hacer scroll (lo activa scripts/utils/reveal.js).
+   Solo se oculta cuando el script cargó (html.reveal-ready): si un bloqueador
+   o un error impide el JS, el contenido se ve normal. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  translate: 0 24px;
+  transition:
+    opacity 0.7s var(--pw-ease) var(--reveal-delay, 0ms),
+    translate 0.7s var(--pw-ease) var(--reveal-delay, 0ms);
+}
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Enlace puente entre pilares */
+.pw-bridge {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  border-radius: var(--pw-radius-sm);
+  background: var(--pw-tint);
+  border: 1px dashed color-mix(in srgb, var(--pw-accent) 35%, transparent);
+  color: var(--pw-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.pw-bridge svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--pw-accent);
+}
+.pw-bridge a {
+  color: var(--pw-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Lista con palomitas */
+.pw-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.pw-checklist li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  color: var(--pw-ink);
+  line-height: 1.5;
+}
+.pw-checklist svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--pw-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-reveal] {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}

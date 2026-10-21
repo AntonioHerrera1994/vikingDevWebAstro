@@ -1,0 +1,69 @@
+---
+import '../../styles/web/hl-precio.css';
+import { hlPrecio as d } from '../../data/crm-gohighlevel';
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+---
+
+<section class="hl-price section" id="precio" aria-labelledby="hl-price-title" data-hl-price>
+  <div class="container">
+
+    <header class="hl-price__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="hl-price-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <div class="hl-price__layout">
+
+      <!-- Tarjeta de precio -->
+      <div class="hl-price__card" data-reveal>
+        <span class="hl-price__tag">Automatización · Todo incluido</span>
+        <div class="hl-price__row">
+          <span class="hl-price__amount">{d.price}</span>
+          <span class="hl-price__period">{d.period}</span>
+        </div>
+        <p class="hl-price__note">{d.note}</p>
+
+        <ul class="pw-checklist hl-price__features">
+          {d.features.map((f) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a href="#cotizador" class="btn btn--primary hl-price__cta" data-quoter-select={d.quoterLabel}>{d.cta}</a>
+      </div>
+
+      <!-- Comparativa -->
+      <div class="hl-price__compare" data-reveal>
+        <table class="hl-price__table">
+          <caption class="hl-price__caption">HighLevel por tu cuenta vs. administrado por VikingDev</caption>
+          <thead>
+            <tr>
+              {d.compare.head.map((h, i) => (
+                <th scope="col" class:list={{ 'hl-price__us': i === 2 }}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {d.compare.rows.map(([feature, diy, us]) => (
+              <tr>
+                <th scope="row">{feature}</th>
+                <td>{diy}</td>
+                <td class="hl-price__us">{us}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/hl-precio.js';
+</script>

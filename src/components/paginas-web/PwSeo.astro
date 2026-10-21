@@ -1,0 +1,60 @@
+---
+import '../../styles/web/pw-seo.css';
+import { pwSeo } from '../../data/paginas-web';
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+---
+
+<section class="pw-seo section" id="seo" aria-labelledby="pw-seo-title" data-pw-seo>
+  <div class="container">
+
+    <header class="pw-seo__header" data-reveal>
+      <span class="section-label pw-seo__label">{pwSeo.label}</span>
+      <h2 class="section-title pw-seo__title" id="pw-seo-title">{pwSeo.h2}</h2>
+      <p class="pw-seo__lead">{pwSeo.lead}</p>
+    </header>
+
+    <div class="pw-seo__layout">
+
+      <ol class="pw-seo__pillars">
+        {pwSeo.pillars.map((p, i) => (
+          <li class="pw-seo__pillar" data-reveal>
+            <span class="pw-seo__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="pw-seo__pillar-title">{p.title}</h3>
+            <p class="pw-seo__pillar-text">{p.text}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="pw-seo__card" data-reveal>
+        <span class="pw-seo__tag">Servicio recurrente</span>
+        <div class="pw-seo__price-row">
+          <span class="pw-seo__price">{pwSeo.price}</span>
+          <span class="pw-seo__period">{pwSeo.period}</span>
+        </div>
+
+        <ul class="pw-checklist pw-seo__features">
+          {pwSeo.features.map((feat) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+              <span>{feat}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a href="#cotizador" class="btn btn--primary pw-seo__cta" data-quoter-select="Consultoría SEO y Mantenimiento">
+          {pwSeo.cta}
+        </a>
+
+        <p class="pw-bridge pw-seo__bridge">
+          <span>{pwSeo.bridge.before}<a href={pwSeo.bridge.href}>{pwSeo.bridge.anchor}</a>{pwSeo.bridge.after}</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/pw-seo.js';
+</script>

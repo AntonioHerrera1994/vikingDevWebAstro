@@ -1,0 +1,103 @@
+/* ══ AD PLATFORM (Google Ads / Meta Ads) ════════════════════ */
+
+.camp-pf--google { --camp-c: #1a73e8; }
+.camp-pf--meta   { --camp-c: #d6249f; }
+
+.camp-pf--meta {
+  background: linear-gradient(180deg, transparent, var(--pw-tint) 25%, var(--pw-tint) 75%, transparent);
+}
+
+.camp-pf__top {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.camp-pf__lead {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--pw-muted);
+}
+
+.camp-pf__formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.camp-pf__formats li {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--camp-c) 30%, transparent);
+  background: color-mix(in srgb, var(--camp-c) 7%, transparent);
+  color: var(--camp-c);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.camp-pf__visual {
+  display: grid;
+  place-items: center;
+}
+
+/* ── Franja de precio ── */
+.camp-pf__plan {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--pw-radius);
+  border: 1px solid var(--pw-line);
+  box-shadow: 0 24px 60px -35px color-mix(in srgb, var(--pw-ink) 40%, transparent);
+}
+
+.camp-pf__plan-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--camp-c);
+}
+.camp-pf__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+.camp-pf__price {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--pw-ink);
+}
+.camp-pf__period { font-size: 0.9rem; color: var(--pw-muted); }
+.camp-pf__note {
+  margin: 0.4rem 0 1.25rem;
+  font-size: 0.85rem;
+  color: var(--pw-muted);
+}
+.camp-pf__cta { width: 100%; justify-content: center; }
+
+.camp-pf__features { align-content: center; }
+
+@media (min-width: 720px) {
+  .camp-pf__features { grid-template-columns: 1fr 1fr; column-gap: 1.5rem; }
+}
+
+@media (min-width: 960px) {
+  .camp-pf__top { grid-template-columns: 1.1fr 0.9fr; }
+  .camp-pf--reverse .camp-pf__top { grid-template-columns: 0.9fr 1.1fr; }
+  .camp-pf--reverse .camp-pf__copy { order: 2; }
+
+  .camp-pf__plan { grid-template-columns: 300px 1fr; align-items: center; }
+  .camp-pf__price-col {
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--pw-line);
+  }
+}

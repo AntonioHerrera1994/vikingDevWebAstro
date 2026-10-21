@@ -1,0 +1,157 @@
+/* ══ AD COMBO (banda oscura) ════════════════════════════════ */
+
+.camp-combo {
+  position: relative;
+  overflow: hidden;
+  background: var(--pw-ink);
+  color: #fff;
+  isolation: isolate;
+}
+.camp-combo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(500px circle at 15% 20%, rgba(26, 115, 232, 0.35), transparent 60%),
+    radial-gradient(500px circle at 85% 80%, rgba(214, 36, 159, 0.3), transparent 60%),
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px) 0 0 / 22px 22px;
+}
+
+.camp-combo__inner {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+}
+
+.camp-combo .section-label { color: var(--color-tertiary-fixed-dim, #b8adff); }
+.camp-combo__title { color: #fff; }
+.camp-combo__lead {
+  margin: 0 0 2rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Diagrama de Venn ── */
+.camp-combo__venn {
+  position: relative;
+  width: min(100%, 380px);
+  aspect-ratio: 1.7;
+}
+.camp-combo__circle {
+  position: absolute;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  mix-blend-mode: screen;
+}
+.camp-combo__circle--g {
+  left: 0;
+  padding-right: 18%;
+  background: rgba(26, 115, 232, 0.55);
+  animation: camp-combo-l 5s ease-in-out infinite;
+}
+.camp-combo__circle--m {
+  right: 0;
+  padding-left: 18%;
+  background: rgba(214, 36, 159, 0.55);
+  animation: camp-combo-r 5s ease-in-out infinite;
+}
+.camp-combo__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 0.35rem 0.6rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--pw-ink);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+@keyframes camp-combo-l { 50% { translate: 4% 0; } }
+@keyframes camp-combo-r { 50% { translate: -4% 0; } }
+
+/* ── Tarjeta ── */
+.camp-combo__card {
+  position: relative;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--pw-radius);
+  background: var(--color-surface, #fff);
+  color: var(--pw-ink);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.5);
+}
+.camp-combo__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  translate: -50% 0;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: var(--pw-accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.camp-combo__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.camp-combo__was {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--pw-muted);
+}
+.camp-combo__price {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--pw-ink);
+}
+.camp-combo__period { font-size: 0.9rem; color: var(--pw-muted); }
+.camp-combo__savings {
+  display: inline-block;
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, #16a34a 10%, transparent);
+  color: #15803d;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.camp-combo__features {
+  margin-bottom: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--pw-line);
+}
+.camp-combo__cta { width: 100%; justify-content: center; }
+.camp-combo__note {
+  margin: 0.75rem 0 0;
+  font-size: 0.82rem;
+  text-align: center;
+  color: var(--pw-muted);
+}
+
+@media (min-width: 960px) {
+  .camp-combo__inner { grid-template-columns: 1fr 420px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .camp-combo__circle { animation: none; }
+}

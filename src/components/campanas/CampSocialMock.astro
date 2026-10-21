@@ -1,0 +1,59 @@
+---
+// Ilustración: el mismo anuncio en Feed, Stories y Reels (rota solo; también se puede elegir).
+import '../../styles/web/camp-social-mock.css';
+
+const formats = [
+  { id: 'feed', label: 'Feed' },
+  { id: 'stories', label: 'Stories' },
+  { id: 'reels', label: 'Reels' },
+];
+---
+
+<figure class="camp-so" data-camp-so data-format="feed">
+  <div class="camp-so__switch" role="group" aria-label="Formato de anuncio de ejemplo">
+    {formats.map((f, i) => (
+      <button type="button" class="camp-so__opt" data-so-set={f.id} aria-pressed={i === 0 ? 'true' : 'false'}>{f.label}</button>
+    ))}
+  </div>
+
+  <div class="camp-so__phone" aria-hidden="true">
+    <div class="camp-so__screen">
+      <!-- Barras de progreso (Stories) -->
+      <div class="camp-so__progress"><span></span><span></span><span></span></div>
+
+      <div class="camp-so__head">
+        <span class="camp-so__avatar"></span>
+        <span class="camp-so__who">
+          <strong>Tu negocio</strong>
+          <small>Publicidad</small>
+        </span>
+      </div>
+
+      <div class="camp-so__media">
+        <span class="camp-so__play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="camp-so__promo">
+          <strong>-20%</strong>
+          <small>esta semana</small>
+        </span>
+      </div>
+
+      <p class="camp-so__caption-text">Agenda tu cita en Tijuana y recibe atención el mismo día.</p>
+
+      <div class="camp-so__cta">
+        <span>Enviar mensaje por WhatsApp</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+
+      <!-- Acciones laterales (Reels) -->
+      <div class="camp-so__side"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <figcaption class="camp-so__note">Ejemplo ilustrativo del mismo anuncio en tres formatos.</figcaption>
+</figure>
+
+<script>
+  import '../../scripts/components/camp-social-mock.js';
+</script>

@@ -1,0 +1,63 @@
+/* ══ PW SUBNAV (índice sticky) ══════════════════════════════ */
+
+.pw-subnav {
+  position: sticky;
+  top: var(--navbar-height, 72px); /* ajusta a la altura de tu navbar */
+  z-index: 40;
+  padding-block: 0.6rem;
+  background: color-mix(in srgb, var(--color-surface, #ffffff) 80%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-block: 1px solid var(--pw-line);
+}
+
+.pw-subnav__list {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+.pw-subnav__list::-webkit-scrollbar { display: none; }
+
+.pw-subnav__link {
+  display: block;
+  white-space: nowrap;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pw-muted);
+  text-decoration: none;
+  scroll-snap-align: start;
+  transition: background-color var(--transition, 0.2s ease), color var(--transition, 0.2s ease);
+}
+.pw-subnav__link:hover {
+  color: var(--pw-ink);
+  background: var(--pw-tint);
+}
+.pw-subnav__link.is-active {
+  color: #fff;
+  background: var(--pw-accent);
+}
+.pw-subnav__link:focus-visible {
+  outline: 2px solid var(--pw-accent);
+  outline-offset: 2px;
+}
+
+@media (min-width: 960px) {
+  .pw-subnav__list { justify-content: center; }
+}
+
+/* Las secciones no quedan tapadas por navbar + subnav al saltar */
+main section[id] {
+  scroll-margin-top: calc(var(--navbar-height, 72px) + 64px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

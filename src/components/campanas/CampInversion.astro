@@ -1,0 +1,93 @@
+---
+import '../../styles/web/camp-inversion.css';
+import { adInversion as d, quoterLabels } from '../../data/publicidad';
+
+const mxn = (n: number) => `$${n.toLocaleString('es-MX')}`;
+const defaultPlan = d.plans[0];
+const total = defaultPlan.fee + d.budget.value;
+---
+
+<section class="camp-inv section" id="inversion" aria-labelledby="camp-inv-title" data-camp-inv>
+  <div class="container">
+
+    <header class="camp-inv__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="camp-inv-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <div class="camp-inv__layout">
+
+      <!-- Las dos partes de la inversión -->
+      <ol class="camp-inv__parts" data-reveal>
+        {d.parts.map((p, i) => (
+          <li class:list={['camp-inv__part', `camp-inv__part--${i === 0 ? 'fee' : 'budget'}`]}>
+            <span class="camp-inv__swatch" aria-hidden="true"></span>
+            <div>
+              <h3 class="camp-inv__part-title">{p.title}</h3>
+              <p class="camp-inv__part-text">{p.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <!-- Calculadora -->
+      <form class="camp-inv__calc glass-panel" data-reveal data-camp-inv-calc>
+        <fieldset class="camp-inv__plans">
+          <legend class="camp-inv__legend">1. ¿Qué gestión necesitas?</legend>
+          <div class="camp-inv__radios">
+            {d.plans.map((p, i) => (
+              <label class="camp-inv__radio">
+                <input type="radio" name="camp-plan" value={p.fee} data-quoter={quoterLabels[p.id as keyof typeof quoterLabels]} checked={i === 0} />
+                <span>
+                  <strong>{p.label}</strong>
+                  <small>{mxn(p.fee)}/mes</small>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <div class="camp-inv__range-wrap">
+          <label class="camp-inv__legend" for="camp-inv-budget">2. Presupuesto mensual para anuncios</label>
+          <output class="camp-inv__budget-out" for="camp-inv-budget" data-out-budget>{mxn(d.budget.value)}</output>
+          <input
+            id="camp-inv-budget"
+            class="camp-inv__range"
+            type="range"
+            min={d.budget.min}
+            max={d.budget.max}
+            step={d.budget.step}
+            value={d.budget.value}
+            aria-describedby="camp-inv-disclaimer"
+          />
+          <div class="camp-inv__range-ends" aria-hidden="true">
+            <span>{mxn(d.budget.min)}</span><span>{mxn(d.budget.max)}</span>
+          </div>
+        </div>
+
+        <!-- Resultado -->
+        <div class="camp-inv__result" aria-live="polite">
+          <div class="camp-inv__bar" aria-hidden="true">
+            <span class="camp-inv__bar-fee" data-bar-fee></span>
+            <span class="camp-inv__bar-budget" data-bar-budget></span>
+          </div>
+          <dl class="camp-inv__rows">
+            <div><dt>Gestión VikingDev</dt><dd data-out-fee>{mxn(defaultPlan.fee)}</dd></div>
+            <div><dt>Anuncios (directo a Google o Meta)</dt><dd data-out-ads>{mxn(d.budget.value)}</dd></div>
+            <div class="camp-inv__total"><dt>Inversión mensual estimada</dt><dd data-out-total>{mxn(total)} MXN</dd></div>
+          </dl>
+        </div>
+
+        <p class="camp-inv__disclaimer" id="camp-inv-disclaimer">{d.disclaimer}</p>
+
+        <a href="#cotizador" class="btn btn--primary camp-inv__cta" data-quoter-select={quoterLabels.meta}>Cotizar con este presupuesto</a>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/camp-inversion.js';
+</script>

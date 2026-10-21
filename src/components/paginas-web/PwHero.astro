@@ -1,0 +1,78 @@
+---
+import '../../styles/web/pw-hero.css';
+import { pwHero } from '../../data/paginas-web';
+---
+
+<section class="pw-hero hero-gradient" aria-labelledby="pw-hero-title">
+  <div class="container pw-hero__inner">
+
+    <!-- ── Copy ─────────────────────────────────────────── -->
+    <div class="pw-hero__copy">
+      <nav class="pw-hero__crumbs" aria-label="Migas de pan">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Páginas web</span>
+      </nav>
+
+      <h1 class="pw-hero__h1" id="pw-hero-title">
+        {pwHero.h1Main}
+        <span class="pw-hero__accent">{pwHero.h1Accent}</span>
+      </h1>
+
+      <p class="pw-hero__intro">{pwHero.intro}</p>
+
+      <ul class="pw-hero__chips" aria-label="Datos clave">
+        {pwHero.chips.map((chip) => <li class="pw-hero__chip">{chip}</li>)}
+      </ul>
+
+      <div class="pw-hero__actions">
+        <a href="#cotizador" class="btn btn--primary">Cotiza tu página web gratis</a>
+        <a href="#portafolio" class="btn btn--outline">Ver proyectos</a>
+      </div>
+
+      <p class="pw-hero__proof">
+        <span class="pw-hero__proof-dot" aria-hidden="true"></span>
+        {pwHero.proof}
+      </p>
+    </div>
+
+    <!-- ── Visual: navegador que se "construye" ─────────── -->
+    <div class="pw-hero__visual" aria-hidden="true" data-pw-hero-visual>
+      <div class="pw-hero__glow"></div>
+
+      <div class="pw-hero__browser glass-panel">
+        <div class="pw-hero__bar">
+          <span></span><span></span><span></span>
+          <div class="pw-hero__url">tunegocio.com</div>
+        </div>
+        <div class="pw-hero__page">
+          <div class="pw-hero__block pw-hero__block--nav"></div>
+          <div class="pw-hero__block pw-hero__block--title"></div>
+          <div class="pw-hero__block pw-hero__block--text"></div>
+          <div class="pw-hero__block pw-hero__block--btn"></div>
+          <div class="pw-hero__grid">
+            <div class="pw-hero__block pw-hero__block--card"></div>
+            <div class="pw-hero__block pw-hero__block--card"></div>
+            <div class="pw-hero__block pw-hero__block--card"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pw-hero__float pw-hero__float--speed glass-panel">
+        <strong>&lt; 2 s</strong><span>carga</span>
+      </div>
+      <div class="pw-hero__float pw-hero__float--seo glass-panel">
+        <strong>SEO</strong><span>incluido</span>
+      </div>
+      <div class="pw-hero__float pw-hero__float--wa glass-panel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+        <span>Nuevo mensaje</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/pw-hero.js';
+</script>

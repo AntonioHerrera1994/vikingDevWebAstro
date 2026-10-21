@@ -1,0 +1,130 @@
+/* ══ AD CANALES (Google vs Meta) ════════════════════════════ */
+
+.camp-ch__header {
+  max-width: 760px;
+  margin: 0 auto var(--space-2xl, 3rem);
+  text-align: center;
+}
+
+.camp-ch__grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.camp-ch__card {
+  --tx: 0;
+  --ty: 0;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--pw-radius);
+  border: 1px solid var(--pw-line);
+  transform: perspective(1000px) rotateX(calc(var(--ty) * -4deg)) rotateY(calc(var(--tx) * 4deg));
+  transition: transform 0.4s var(--pw-ease), border-color 0.3s ease;
+}
+.camp-ch__card--google { --camp-c: #1a73e8; }
+.camp-ch__card--meta   { --camp-c: #d6249f; }
+.camp-ch__card:hover { border-color: color-mix(in srgb, var(--camp-c) 40%, transparent); }
+
+.camp-ch__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.camp-ch__icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--camp-c) 12%, transparent);
+  color: var(--camp-c);
+}
+.camp-ch__kicker {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--camp-c) 10%, transparent);
+  color: var(--camp-c);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.camp-ch__title {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  color: var(--pw-ink);
+}
+.camp-ch__text {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-body);
+  line-height: 1.65;
+  color: var(--pw-muted);
+}
+.camp-ch__best {
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pw-muted);
+}
+.camp-ch__list { margin-bottom: 1.5rem; }
+.camp-ch__list svg { color: var(--camp-c); }
+
+.camp-ch__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  color: var(--camp-c);
+  font-weight: 600;
+  text-decoration: none;
+}
+.camp-ch__more svg { transition: translate 0.25s var(--pw-ease); }
+.camp-ch__more:hover svg { translate: 4px 0; }
+
+/* Píldora central "Combínalas" */
+.camp-ch__join {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  background: var(--pw-ink);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, scale 0.3s var(--pw-ease);
+}
+.camp-ch__join:hover { background: var(--pw-accent); }
+.camp-ch__plus {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--pw-accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.camp-ch__join:hover .camp-ch__plus { background: #fff; color: var(--pw-accent); }
+
+@media (min-width: 900px) {
+  .camp-ch__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'google meta'
+      'join join';
+  }
+  .camp-ch__cell--google { grid-area: google; }
+  .camp-ch__cell--meta { grid-area: meta; }
+  .camp-ch__card { height: 100%; }
+  .camp-ch__join { grid-area: join; justify-self: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .camp-ch__card { transform: none; transition: none; }
+}

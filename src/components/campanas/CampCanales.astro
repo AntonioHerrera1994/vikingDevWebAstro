@@ -1,0 +1,61 @@
+---
+import '../../styles/web/camp-canales.css';
+import { adCanales as d } from '../../data/publicidad';
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+const icons: Record<string, string> = {
+  google: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+  meta: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
+};
+---
+
+<section class="camp-ch section" id="canales" aria-labelledby="camp-ch-title" data-camp-ch>
+  <div class="container">
+
+    <header class="camp-ch__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="camp-ch-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <div class="camp-ch__grid">
+      {d.cards.map((c) => (
+        <div class:list={['camp-ch__cell', `camp-ch__cell--${c.id}`]} data-reveal>
+        <article class:list={['camp-ch__card glass-panel', `camp-ch__card--${c.id}`]} data-tilt>
+          <div class="camp-ch__top">
+            <span class="camp-ch__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[c.id]} />
+            </span>
+            <span class="camp-ch__kicker">{c.kicker}</span>
+          </div>
+          <h3 class="camp-ch__title">{c.title}</h3>
+          <p class="camp-ch__text">{c.text}</p>
+          <p class="camp-ch__best">Funciona muy bien para:</p>
+          <ul class="pw-checklist camp-ch__list">
+            {c.best.map((b) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+          <a class="camp-ch__more" href={c.href}>
+            Ver {c.title}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+        </div>
+      ))}
+
+      <a class="camp-ch__join" href="#combo" data-reveal>
+        <span class="camp-ch__plus" aria-hidden="true">+</span>
+        <span>{d.together}</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/camp-canales.js';
+</script>

@@ -1,0 +1,45 @@
+---
+import '../../styles/web/hl-automatizacion.css';
+import { hlAutomatizacion as d } from '../../data/crm-gohighlevel';
+
+const link = '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>';
+const kindClass: Record<string, string> = {
+  Disparador: 'trigger',
+  Acción: 'action',
+  Espera: 'wait',
+};
+---
+
+<section class="hl-flow section" id="automatizacion" aria-labelledby="hl-flow-title" data-hl-flow>
+  <div class="container hl-flow__inner">
+
+    <div class="hl-flow__copy" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title hl-flow__title" id="hl-flow-title">{d.h2}</h2>
+      <p class="hl-flow__lead">{d.lead}</p>
+
+      <p class="pw-bridge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" set:html={link} />
+        <span>{d.bridge.before}<a href={d.bridge.href}>{d.bridge.anchor}</a>{d.bridge.after}</span>
+      </p>
+    </div>
+
+    <ol class="hl-flow__nodes" data-hl-flow-nodes>
+      {d.nodes.map((n, i) => (
+        <li class:list={['hl-flow__node', `hl-flow__node--${kindClass[n.kind] ?? 'action'}`]}>
+          <span class="hl-flow__step" aria-hidden="true">{i + 1}</span>
+          <div class="hl-flow__card">
+            <span class="hl-flow__kind">{n.kind}</span>
+            <h3 class="hl-flow__name">{n.title}</h3>
+            <p class="hl-flow__text">{n.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/hl-automatizacion.js';
+</script>

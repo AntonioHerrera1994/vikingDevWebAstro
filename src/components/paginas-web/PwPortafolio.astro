@@ -1,0 +1,52 @@
+---
+import '../../styles/web/pw-portafolio.css';
+import { pwPortafolio } from '../../data/paginas-web';
+import { vikingProjects } from '../../data/projects';
+
+// Respeta el orden definido en pwPortafolio.featured
+const items = pwPortafolio.featured
+  .map((id) => vikingProjects.find((p) => p.id === id))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
+---
+
+<section class="pw-work section" id="portafolio" aria-labelledby="pw-work-title" data-pw-work>
+  <div class="container">
+
+    <header class="pw-work__header" data-reveal>
+      <div>
+        <span class="section-label">{pwPortafolio.label}</span>
+        <h2 class="section-title" id="pw-work-title">{pwPortafolio.h2}</h2>
+        <p class="section-subtitle">{pwPortafolio.intro}</p>
+      </div>
+      <a href="/#proyectos" class="pw-work__all">
+        Ver todos los proyectos
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </header>
+
+    <ul class="pw-work__grid">
+      {items.map((p) => (
+        <li class="pw-work__item" data-reveal>
+          <a class="pw-work__card" href={p.url} target="_blank" rel="noopener noreferrer">
+            <div class="pw-work__media">
+              <img src={p.image} alt={p.imageAlt} loading="lazy" decoding="async" width="640" height="400" />
+            </div>
+            <div class="pw-work__body">
+              <h3 class="pw-work__title">{p.title}</h3>
+              <p class="pw-work__desc">{p.desc}</p>
+              <span class="pw-work__visit">
+                Ver sitio
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/pw-portafolio.js';
+</script>

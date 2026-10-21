@@ -1,0 +1,39 @@
+---
+// Ilustración: búsqueda que se escribe sola y muestra tu anuncio arriba de los resultados.
+import '../../styles/web/camp-search-mock.css';
+
+const query = 'dentista en tijuana';
+---
+
+<figure class="camp-sm" data-camp-sm data-query={query}>
+  <div class="camp-sm__window glass-panel" aria-hidden="true">
+    <div class="camp-sm__bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="camp-sm__query" data-camp-sm-query>{query}</span>
+      <span class="camp-sm__caret"></span>
+    </div>
+
+    <div class="camp-sm__results" data-camp-sm-results>
+      <div class="camp-sm__ad">
+        <span class="camp-sm__sponsored">Patrocinado</span>
+        <span class="camp-sm__site">
+          <span class="camp-sm__favicon"></span>
+          tunegocio.com
+        </span>
+        <strong class="camp-sm__title">Dentista en Tijuana · Agenda tu Cita Hoy</strong>
+        <span class="camp-sm__desc">Limpieza, ortodoncia e implantes. Respuesta por WhatsApp en minutos.</span>
+        <span class="camp-sm__links">
+          <span>Servicios</span><span>Precios</span><span>Ubicación</span>
+        </span>
+      </div>
+
+      <div class="camp-sm__organic"><span></span><span></span><span class="is-short"></span></div>
+      <div class="camp-sm__organic"><span></span><span></span><span class="is-short"></span></div>
+    </div>
+  </div>
+  <figcaption class="camp-sm__caption">Ejemplo ilustrativo de un anuncio de búsqueda.</figcaption>
+</figure>
+
+<script>
+  import '../../scripts/components/camp-search-mock.js';
+</script>

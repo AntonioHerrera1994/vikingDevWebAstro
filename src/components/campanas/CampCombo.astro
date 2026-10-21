@@ -1,0 +1,51 @@
+---
+import '../../styles/web/camp-combo.css';
+import { adCombo as d } from '../../data/publicidad';
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+---
+
+<section class="camp-combo section" id="combo" aria-labelledby="camp-combo-title" data-camp-combo>
+  <div class="container camp-combo__inner">
+
+    <div class="camp-combo__copy" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title camp-combo__title" id="camp-combo-title">{d.h2}</h2>
+      <p class="camp-combo__lead">{d.lead}</p>
+
+      <!-- Diagrama: las dos plataformas se cruzan en el retargeting -->
+      <div class="camp-combo__venn" aria-hidden="true">
+        <span class="camp-combo__circle camp-combo__circle--g">Google<br />te buscan</span>
+        <span class="camp-combo__circle camp-combo__circle--m">Meta<br />te descubren</span>
+        <span class="camp-combo__center">Retargeting<br />cruzado</span>
+      </div>
+    </div>
+
+    <div class="camp-combo__card" data-reveal>
+      <span class="camp-combo__badge">★ Ahorra más</span>
+      <div class="camp-combo__price-row">
+        <s class="camp-combo__was">{d.compareAt}</s>
+        <span class="camp-combo__price">{d.price}</span>
+        <span class="camp-combo__period">{d.period}</span>
+      </div>
+      <p class="camp-combo__savings">{d.savings}</p>
+
+      <ul class="pw-checklist camp-combo__features">
+        {d.features.map((f) => (
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+
+      <a href="#cotizador" class="btn btn--primary camp-combo__cta" data-quoter-select={d.quoterLabel}>{d.cta}</a>
+      <p class="camp-combo__note">{d.note}</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/camp-combo.js';
+</script>

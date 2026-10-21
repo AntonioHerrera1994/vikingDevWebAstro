@@ -1,0 +1,95 @@
+---
+import '../../styles/web/camp-hero.css';
+import { adHero } from '../../data/publicidad';
+---
+
+<section class="camp-hero hero-gradient" aria-labelledby="camp-hero-title">
+  <div class="container camp-hero__inner">
+
+    <!-- ── Copy ─────────────────────────────────────────── -->
+    <div class="camp-hero__copy">
+      <nav class="camp-hero__crumbs" aria-label="Migas de pan">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Publicidad en Google y Facebook</span>
+      </nav>
+
+      <h1 class="camp-hero__h1" id="camp-hero-title">
+        {adHero.h1Main}
+        <span class="camp-hero__accent">{adHero.h1Accent}</span>
+      </h1>
+
+      <p class="camp-hero__intro">{adHero.intro}</p>
+
+      <ul class="camp-hero__chips" aria-label="Datos clave">
+        {adHero.chips.map((chip) => <li class="camp-hero__chip">{chip}</li>)}
+      </ul>
+
+      <div class="camp-hero__actions">
+        <a href="#cotizador" class="btn btn--primary">Cotiza tu campaña</a>
+        <a href="#inversion" class="btn btn--outline">Calcula tu inversión</a>
+      </div>
+
+      <p class="camp-hero__proof">
+        <span class="camp-hero__proof-dot" aria-hidden="true"></span>
+        {adHero.proof}
+      </p>
+    </div>
+
+    <!-- ── Visual: anuncio en buscador + anuncio en redes → prospecto ── -->
+    <div class="camp-hero__visual" aria-hidden="true" data-camp-hero-visual>
+      <div class="camp-hero__glow"></div>
+
+      <!-- Anuncio en buscador -->
+      <div class="camp-hero__search glass-panel">
+        <div class="camp-hero__bar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span>clínica dental en tijuana</span>
+        </div>
+        <div class="camp-hero__result">
+          <span class="camp-hero__sponsored">Patrocinado</span>
+          <span class="camp-hero__url">tunegocio.com</span>
+          <strong class="camp-hero__headline">Clínica Dental en Tijuana · Agenda Hoy</strong>
+          <span class="camp-hero__line"></span>
+          <span class="camp-hero__line camp-hero__line--short"></span>
+        </div>
+        <div class="camp-hero__result camp-hero__result--organic">
+          <span class="camp-hero__line"></span>
+          <span class="camp-hero__line camp-hero__line--short"></span>
+        </div>
+      </div>
+
+      <!-- Anuncio en redes -->
+      <div class="camp-hero__social glass-panel">
+        <div class="camp-hero__social-head">
+          <span class="camp-hero__dot-avatar"></span>
+          <span class="camp-hero__social-meta">
+            <strong>Tu negocio</strong>
+            <small>Publicidad</small>
+          </span>
+        </div>
+        <div class="camp-hero__social-img"></div>
+        <div class="camp-hero__social-cta">
+          <span>Enviar mensaje</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+
+      <!-- Cursor + resultado -->
+      <span class="camp-hero__cursor">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 8-6 1.5L10 19z"/></svg>
+      </span>
+      <div class="camp-hero__toast glass-panel">
+        <span class="camp-hero__toast-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>
+        </span>
+        <span><strong>Nuevo prospecto</strong><small>desde tu anuncio</small></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/camp-hero.js';
+</script>

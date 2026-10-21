@@ -1,0 +1,63 @@
+---
+import '../../styles/web/hl-whatsapp.css';
+import { hlWhatsapp as d } from '../../data/crm-gohighlevel';
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+const link = '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>';
+---
+
+<section class="hl-wa section" id="whatsapp" aria-labelledby="hl-wa-title" data-hl-wa>
+  <div class="container hl-wa__inner">
+
+    <!-- Copy -->
+    <div class="hl-wa__copy" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="hl-wa-title">{d.h2}</h2>
+      <p class="hl-wa__lead">{d.lead}</p>
+
+      <ul class="pw-checklist hl-wa__bullets">
+        {d.bullets.map((b) => (
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="pw-bridge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" set:html={link} />
+        <span>{d.bridge.before}<a href={d.bridge.href}>{d.bridge.anchor}</a>{d.bridge.after}</span>
+      </p>
+    </div>
+
+    <!-- Teléfono con conversación de ejemplo -->
+    <figure class="hl-wa__phone-wrap" data-reveal>
+      <div class="hl-wa__phone">
+        <div class="hl-wa__top">
+          <span class="hl-wa__avatar" aria-hidden="true">CS</span>
+          <span class="hl-wa__who">
+            <strong>{d.chat.business}</strong>
+            <small>Respuesta automática activa</small>
+          </span>
+        </div>
+
+        <ol class="hl-wa__chat" data-hl-wa-chat>
+          {d.chat.messages.map((m) => (
+            <li class:list={['hl-wa__msg', `hl-wa__msg--${m.from}`]}>
+              {m.from === 'auto' && <span class="hl-wa__tag">Automático</span>}
+              <span class="hl-wa__text">{m.text}</span>
+              <time class="hl-wa__time">{m.time}</time>
+            </li>
+          ))}
+          <li class="hl-wa__typing" aria-hidden="true"><span></span><span></span><span></span></li>
+        </ol>
+      </div>
+      <figcaption class="hl-wa__note">{d.chat.note}</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/hl-whatsapp.js';
+</script>

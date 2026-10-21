@@ -1,0 +1,117 @@
+/* ══ PW BENEFICIOS (bento) ══════════════════════════════════ */
+
+.pw-benefits__header {
+  max-width: 720px;
+  margin: 0 auto var(--space-2xl, 3rem);
+  text-align: center;
+}
+
+.pw-benefits__grid {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pw-benefits__card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  border-radius: var(--pw-radius);
+  border: 1px solid var(--pw-line);
+  transition: border-color 0.3s ease, transform 0.3s var(--pw-ease);
+  isolation: isolate;
+}
+
+/* Spotlight que sigue al cursor (lo posiciona pw-beneficios.js) */
+.pw-benefits__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    320px circle at var(--x, 50%) var(--y, 50%),
+    var(--pw-tint-strong),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.pw-benefits__card:hover::before { opacity: 1; }
+.pw-benefits__card:hover {
+  border-color: color-mix(in srgb, var(--pw-accent) 40%, transparent);
+  transform: translateY(-3px);
+}
+
+.pw-benefits__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+  background: var(--pw-tint);
+  color: var(--pw-accent);
+}
+
+.pw-benefits__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--pw-ink);
+}
+
+.pw-benefits__text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--pw-muted);
+}
+
+/* Tarjeta destacada */
+.pw-benefits__card--wide {
+  background:
+    linear-gradient(135deg, var(--pw-accent), color-mix(in srgb, var(--pw-accent) 60%, var(--pw-ink)));
+  border-color: transparent;
+}
+.pw-benefits__card--wide .pw-benefits__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+.pw-benefits__card--wide .pw-benefits__title {
+  color: #fff;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+}
+.pw-benefits__card--wide .pw-benefits__text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+}
+.pw-benefits__card--wide::before {
+  background: radial-gradient(320px circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.18), transparent 60%);
+}
+
+@media (min-width: 640px) {
+  .pw-benefits__grid { grid-template-columns: repeat(2, 1fr); }
+  .pw-benefits__card--wide { grid-column: span 2; }
+}
+
+@media (min-width: 1024px) {
+  .pw-benefits__grid { grid-template-columns: repeat(4, 1fr); }
+  .pw-benefits__card--wide {
+    grid-column: span 2;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pw-benefits__card,
+  .pw-benefits__card::before { transition: none; }
+  .pw-benefits__card:hover { transform: none; }
+}

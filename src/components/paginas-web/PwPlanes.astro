@@ -1,0 +1,76 @@
+---
+import '../../styles/web/pw-planes.css';
+import { pwPlanes } from '../../data/paginas-web';
+
+// Texto exacto del checkbox en el cotizador (data-label), para preseleccionarlo
+const quoterLabel: Record<string, string> = {
+  landing: 'Landing Page',
+  'pagina-completa': 'Página Web Completa',
+  'tienda-en-linea': 'Tienda en Línea',
+};
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+const link = '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>';
+---
+
+<div class="pw-plans" data-pw-plans>
+  {pwPlanes.map((plan, i) => (
+    <section
+      class:list={['pw-plan section', { 'pw-plan--reverse': i % 2 === 1 }]}
+      id={plan.id}
+      aria-labelledby={`${plan.id}-title`}
+    >
+      <div class="container pw-plan__inner">
+
+        <!-- Copy -->
+        <div class="pw-plan__copy" data-reveal>
+          <span class="section-label">{plan.label}</span>
+          <h2 class="section-title pw-plan__title" id={`${plan.id}-title`}>{plan.h2}</h2>
+          <p class="pw-plan__lead">{plan.lead}</p>
+          <p class="pw-plan__ideal"><strong>Ideal para:</strong> {plan.ideal}</p>
+
+          <p class="pw-bridge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" set:html={link} />
+            <span>{plan.bridge.before}<a href={plan.bridge.href}>{plan.bridge.anchor}</a>{plan.bridge.after}</span>
+          </p>
+        </div>
+
+        <!-- Tarjeta de precio -->
+        <div class:list={['pw-plan__card glass-panel', { 'pw-plan__card--highlight': plan.highlight }]} data-reveal>
+          {plan.highlight && <span class="pw-plan__badge">★ Más popular</span>}
+
+          <div class="pw-plan__price-row">
+            <span class="pw-plan__price">{plan.price}</span>
+            <span class="pw-plan__period">{plan.period}</span>
+          </div>
+          <p class="pw-plan__delivery">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Entrega en {plan.delivery}
+          </p>
+
+          <ul class="pw-checklist pw-plan__features">
+            {plan.features.map((feat) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+                <span>{feat}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#cotizador"
+            class:list={['btn pw-plan__cta', plan.highlight ? 'btn--primary' : 'btn--outline']}
+            data-quoter-select={quoterLabel[plan.id]}
+          >
+            {plan.cta}
+          </a>
+        </div>
+
+      </div>
+    </section>
+  ))}
+</div>
+
+<script>
+  import '../../scripts/components/pw-planes.js';
+</script>

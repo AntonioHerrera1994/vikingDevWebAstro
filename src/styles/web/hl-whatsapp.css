@@ -1,0 +1,141 @@
+/* ══ HL WHATSAPP ════════════════════════════════════════════ */
+
+.hl-wa {
+  background: linear-gradient(180deg, transparent, var(--pw-tint) 25%, var(--pw-tint) 75%, transparent);
+}
+
+.hl-wa__inner {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  align-items: center;
+}
+
+.hl-wa__lead {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--pw-muted);
+}
+.hl-wa__bullets { margin-bottom: 1.5rem; }
+
+/* ── Teléfono ── */
+.hl-wa__phone-wrap {
+  margin: 0;
+  justify-self: center;
+  width: min(100%, 360px);
+}
+
+.hl-wa__phone {
+  overflow: hidden;
+  border-radius: 32px;
+  border: 8px solid var(--pw-ink);
+  background: #efeae2;
+  box-shadow: 0 40px 80px -30px color-mix(in srgb, var(--pw-ink) 50%, transparent);
+}
+
+.hl-wa__top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  background: #075e54;
+  color: #fff;
+}
+.hl-wa__avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.hl-wa__who { display: flex; flex-direction: column; line-height: 1.2; }
+.hl-wa__who strong { font-size: 0.9rem; }
+.hl-wa__who small { font-size: 0.7rem; opacity: 0.8; }
+
+.hl-wa__chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 400px;
+  margin: 0;
+  padding: 1rem 0.8rem;
+  list-style: none;
+}
+
+.hl-wa__msg {
+  position: relative;
+  max-width: 82%;
+  padding: 0.5rem 0.7rem 1.1rem;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #111b21;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+.hl-wa__msg--client { align-self: flex-start; background: #fff; border-top-left-radius: 2px; }
+.hl-wa__msg--auto   { align-self: flex-end; background: #d9fdd3; border-top-right-radius: 2px; }
+
+.hl-wa__tag {
+  display: inline-flex;
+  margin-bottom: 0.2rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: var(--pw-accent);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.hl-wa__text { display: block; }
+.hl-wa__time {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.25rem;
+  font-size: 0.62rem;
+  color: #667781;
+}
+
+/* Animación de entrada (la activa hl-whatsapp.js) */
+.hl-wa__chat.is-animated .hl-wa__msg {
+  opacity: 0;
+  translate: 0 8px;
+  transition: opacity 0.35s ease, translate 0.35s var(--pw-ease);
+}
+.hl-wa__chat.is-animated .hl-wa__msg.is-shown { opacity: 1; translate: 0 0; }
+
+.hl-wa__typing {
+  display: none;
+  align-self: flex-end;
+  gap: 4px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  background: #d9fdd3;
+}
+.hl-wa__typing.is-on { display: inline-flex; }
+.hl-wa__typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #667781;
+  animation: hl-dot 1s ease-in-out infinite;
+}
+.hl-wa__typing span:nth-child(2) { animation-delay: 0.15s; }
+.hl-wa__typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes hl-dot { 50% { translate: 0 -3px; opacity: 0.5; } }
+
+.hl-wa__note {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  text-align: center;
+  color: var(--pw-muted);
+}
+
+@media (min-width: 960px) {
+  .hl-wa__inner { grid-template-columns: 1fr 380px; }
+}

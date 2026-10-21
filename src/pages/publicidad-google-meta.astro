@@ -1,0 +1,125 @@
+---
+import '../styles/global.css'
+
+import Navbar from '../components/navbar.astro';       // AJUSTA igual que en paginas-web-tijuana.astro
+import Footer from '../components/footer.astro';       // AJUSTA
+import Cotizador from '../components/contacto.astro';  // AJUSTA
+import Faq from '../components/Faq.astro';
+
+import PwSubnav from '../components/paginas-web/PwSubnav.astro';
+import PwProceso from '../components/paginas-web/PwProceso.astro';
+
+import CampHero from '../components/campanas/CampHero.astro';
+import CampCanales from '../components/campanas/CampCanales.astro';
+import CampPlatform from '../components/campanas/CampPlatform.astro';
+import CampSearchMock from '../components/campanas/CampSearchMock.astro';
+import CampSocialMock from '../components/campanas/CampSocialMock.astro';
+import CampCombo from '../components/campanas/CampCombo.astro';
+import CampInversion from '../components/campanas/CampInversion.astro';
+
+import '../styles/web/pw-shared.css';
+import { adMeta, adSubnav, adGoogle, adMetaAds, adCombo, adProceso, adFaq } from '../data/publicidad';
+
+// ── Schema: servicio con sus 3 ofertas + migas de pan ──
+const monthly = (name: string, price: number, anchor: string) => ({
+  '@type': 'Offer',
+  name,
+  price,
+  priceCurrency: 'MXN',
+  url: `${adMeta.url}#${anchor}`,
+  priceSpecification: {
+    '@type': 'UnitPriceSpecification',
+    price,
+    priceCurrency: 'MXN',
+    unitText: 'MES',
+  },
+});
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Publicidad en Google y Facebook en Tijuana',
+  serviceType: 'Gestión de campañas de Google Ads y Meta Ads',
+  description: adMeta.description,
+  url: adMeta.url,
+  areaServed: { '@type': 'City', name: 'Tijuana' },
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'VikingDev',
+    url: 'https://vikingdevtj.com/',
+    telephone: '+52-663-247-7816',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Gestión de campañas publicitarias',
+    itemListElement: [
+      monthly('Gestión de Google Ads', adGoogle.priceValue, adGoogle.id),
+      monthly('Gestión de Meta Ads (Facebook e Instagram)', adMetaAds.priceValue, adMetaAds.id),
+      monthly('Gestión de Meta Ads + Google Ads', adCombo.priceValue, 'combo'),
+    ],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://vikingdevtj.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Publicidad en Google y Facebook', item: adMeta.url },
+  ],
+};
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{adMeta.title}</title>
+    <meta name="description" content={adMeta.description} />
+    <link rel="canonical" href={adMeta.url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content={adMeta.title} />
+    <meta property="og:description" content={adMeta.description} />
+    <meta property="og:url" content={adMeta.url} />
+    <meta property="og:image" content={adMeta.image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={adMeta.title} />
+    <meta name="twitter:description" content={adMeta.description} />
+    <meta name="twitter:image" content={adMeta.image} />
+
+    <!-- AJUSTA: favicon, fuentes, GA4 y Meta Pixel igual que en index.astro -->
+
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </head>
+
+  <body>
+    <Navbar />
+
+    <main>
+      <CampHero />
+      <PwSubnav items={adSubnav} />
+      <CampCanales />
+
+      <CampPlatform data={adGoogle}>
+        <CampSearchMock slot="visual" />
+      </CampPlatform>
+
+      <CampPlatform data={adMetaAds} reverse>
+        <CampSocialMock slot="visual" />
+      </CampPlatform>
+
+      <CampCombo />
+      <CampInversion />
+      <PwProceso label={adProceso.label} data={adProceso} />
+      <Cotizador />
+      <Faq title={adFaq.title} subtitle={adFaq.subtitle} faqs={adFaq.faqs} />
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,26 @@
+---
+// Índice sticky reutilizable. Sin props usa el de páginas web.
+import '../../styles/web/pw-subnav.css';
+import { pwSubnav } from '../../data/paginas-web';
+
+interface Props {
+  items?: { id: string; label: string }[];
+}
+const { items = pwSubnav } = Astro.props;
+---
+
+<nav class="pw-subnav" aria-label="Contenido de la página" data-pw-subnav>
+  <div class="container">
+    <ul class="pw-subnav__list">
+      {items.map((item) => (
+        <li>
+          <a class="pw-subnav__link" href={`#${item.id}`} data-target={item.id}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  import '../../scripts/components/pw-subnav.js';
+</script>

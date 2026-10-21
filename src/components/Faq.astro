@@ -1,10 +1,18 @@
 ---
-import '../styles/faq.css';
+import '../styles/faq.css'
 
-const faqs = [
+// Reutilizable: sin props muestra la FAQ del home; las subpáginas pasan las suyas.
+interface FaqItem { q: string; a: string }
+interface Props {
+  title?: string;
+  subtitle?: string;
+  faqs?: FaqItem[];
+}
+
+const defaultFaqs: FaqItem[] = [
   {
     q: '¿Cuánto cuesta una página web en Tijuana?',
-    a: 'Nuestros paquetes empiezan en $6,000 MXN + IVA para una landing page, $7,000 MXN + IVA para una página web completa y $10,000 MXN + IVA para una tienda en línea. Todos incluyen diseño personalizado, SEO on-page y hosting por un año. Consulta el detalle en <a href="#paquetes">paquetes y precios</a> o calcula tu inversión en el <a href="#cotizador">cotizador</a>.',
+    a: 'Nuestros paquetes empiezan en $6,000 MXN + IVA para una landing page, $7,000 MXN + IVA para una página web completa y $10,000 MXN + IVA para una tienda en línea. Todos incluyen diseño personalizado, SEO on-page y hosting por un año. Consulta el detalle en <a href="/paginas-web-tijuana/">páginas web en Tijuana</a> o calcula tu inversión en el <a href="#cotizador">cotizador</a>.',
   },
   {
     q: '¿Cuánto tiempo tarda en estar lista mi página web?',
@@ -37,6 +45,12 @@ const faqs = [
   },
 ];
 
+const {
+  title = 'Preguntas frecuentes sobre páginas web y marketing digital en Tijuana',
+  subtitle = 'Resolvemos las dudas más comunes sobre precios, tiempos, Ads y GoHighLevel.',
+  faqs = defaultFaqs,
+} = Astro.props;
+
 const stripHtml = (html: string): string => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 
 const faqSchema = {
@@ -55,12 +69,8 @@ const faqSchema = {
 
     <header class="faq__header">
       <span class="section-label">Preguntas Frecuentes</span>
-      <h2 class="section-title" id="faq-title">
-        Preguntas frecuentes sobre páginas web y marketing en Tijuana
-      </h2>
-      <p class="section-subtitle faq__subtitle">
-        Resolvemos las dudas más comunes sobre precios, tiempos, Ads y GoHighLevel.
-      </p>
+      <h2 class="section-title" id="faq-title">{title}</h2>
+      <p class="section-subtitle faq__subtitle">{subtitle}</p>
     </header>
 
     <div class="faq__list">

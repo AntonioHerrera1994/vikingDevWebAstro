@@ -1,0 +1,72 @@
+---
+// Sección de plataforma (Google Ads o Meta Ads). El visual llega por el slot "visual".
+import '../../styles/web/camp-platform.css';
+import type { PlatformData } from '../../data/publicidad';
+
+interface Props {
+  data: PlatformData;
+  reverse?: boolean;
+}
+const { data: d, reverse = false } = Astro.props;
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+const link = '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>';
+---
+
+<section
+  class:list={['camp-pf section', `camp-pf--${d.key}`, { 'camp-pf--reverse': reverse }]}
+  id={d.id}
+  aria-labelledby={`${d.id}-title`}
+  data-camp-pf
+>
+  <div class="container">
+
+    <div class="camp-pf__top">
+      <div class="camp-pf__copy" data-reveal>
+        <span class="section-label">{d.label}</span>
+        <h2 class="section-title" id={`${d.id}-title`}>{d.h2}</h2>
+        <p class="camp-pf__lead">{d.lead}</p>
+
+        <ul class="camp-pf__formats" aria-label="Formatos">
+          {d.formats.map((f) => <li>{f}</li>)}
+        </ul>
+
+        <p class="pw-bridge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" set:html={link} />
+          <span>{d.bridge.before}<a href={d.bridge.href}>{d.bridge.anchor}</a>{d.bridge.after}</span>
+        </p>
+      </div>
+
+      <div class="camp-pf__visual" data-reveal>
+        <slot name="visual" />
+      </div>
+    </div>
+
+    <!-- Precio + incluye en franja horizontal -->
+    <div class="camp-pf__plan glass-panel" data-reveal>
+      <div class="camp-pf__price-col">
+        <span class="camp-pf__plan-label">Gestión de {d.label}</span>
+        <div class="camp-pf__price-row">
+          <span class="camp-pf__price">{d.price}</span>
+          <span class="camp-pf__period">{d.period}</span>
+        </div>
+        <p class="camp-pf__note">{d.note}</p>
+        <a href="#cotizador" class="btn btn--primary camp-pf__cta" data-quoter-select={d.quoterLabel}>{d.cta}</a>
+      </div>
+
+      <ul class="pw-checklist camp-pf__features">
+        {d.features.map((f) => (
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/camp-platform.js';
+</script>
