@@ -1,4 +1,4 @@
-// IA Planes: revelado, selector mensual/anual y preselección en el cotizador.
+
 import { reveal } from '../utils/reveal.js';
 import '../utils/quoter-select.js';
 

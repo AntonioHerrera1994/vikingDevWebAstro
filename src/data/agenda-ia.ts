@@ -55,7 +55,7 @@ export const iaDemo = {
   label: 'Pruébalo',
   h2: 'Así funciona tu asistente con inteligencia artificial',
   intro:
-    'Esta es una barbería de ejemplo. Elige una instrucción o escribe la tuya y mira cómo el agente actualiza la agenda y las finanzas al instante.',
+    'Esta es una barbería de ejemplo. Elige una instrucción, escríbela o díctala con el micrófono, y mira cómo el agente actualiza la agenda y las finanzas al instante.',
   note: 'Simulación con datos de ejemplo. En tu cuenta real, el agente trabaja con tu agenda, tus servicios y tus clientes.',
   business: 'Barbería Norte · Tijuana',
   state: {
@@ -121,6 +121,16 @@ export const iaDemo = {
   fallback:
     'En esta demo entiendo instrucciones sobre citas, cobros, ventas, clientes y servicios. Prueba con uno de los ejemplos de abajo.',
   repeated: 'Eso ya quedó hecho en la demo. Prueba otra instrucción o reinicia la simulación.',
+
+  // Voz: dictado con el micrófono y respuestas habladas (Web Speech API del navegador)
+  voice: {
+    lang: 'es-MX',
+    listening: 'Escuchando… habla ahora',
+    noSpeech: 'No alcancé a escucharte. Toca el micrófono e inténtalo de nuevo.',
+    denied: 'Para hablarme, permite el uso del micrófono en tu navegador (ícono del candado junto a la dirección).',
+    error: 'No pude usar el micrófono en este momento. Puedes escribirme la instrucción.',
+    privacy: 'El dictado por voz lo procesa tu navegador y solo se activa cuando tocas el micrófono.',
+  },
 };
 
 export const iaAntesDespues = {

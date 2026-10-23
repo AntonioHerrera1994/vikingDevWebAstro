@@ -338,3 +338,85 @@
   .ia-demo__typing span { animation: none; }
   .ia-demo__log { scroll-behavior: auto; }
 }
+
+/* ══ Voz ════════════════════════════════════════════════════ */
+
+/* Botón "Voz" del agente (barra superior) */
+.ia-demo__voice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--ia-dark-line);
+  background: none;
+  color: var(--ia-dark-text);
+  font-family: var(--ia-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.ia-demo__voice + .ia-demo__reset { margin-left: 0.4rem; }
+.ia-demo__voice:hover { color: #fff; border-color: rgba(255, 255, 255, 0.3); }
+.ia-demo__voice[aria-pressed='true'] {
+  color: var(--ia-dark);
+  background: var(--ia-ok);
+  border-color: var(--ia-ok);
+}
+.ia-demo__voice-on { display: none; }
+.ia-demo__voice[aria-pressed='true'] .ia-demo__voice-on { display: block; }
+.ia-demo__voice[aria-pressed='true'] .ia-demo__voice-off { display: none; }
+.ia-demo__voice:focus-visible,
+.ia-demo__mic:focus-visible { outline: 2px solid var(--pw-accent); outline-offset: 2px; }
+
+/* Micrófono */
+.ia-demo__mic {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--ia-dark-line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.ia-demo__mic:hover:not(:disabled) { background: rgba(255, 255, 255, 0.12); }
+.ia-demo__mic:disabled { opacity: 0.5; cursor: default; }
+
+/* Escuchando: micrófono rojo con ondas */
+.ia-demo__mic.is-listening {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+.ia-demo__mic.is-listening::before,
+.ia-demo__mic.is-listening::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 2px solid #ef4444;
+  animation: ia-mic-wave 1.4s ease-out infinite;
+}
+.ia-demo__mic.is-listening::after { animation-delay: 0.7s; }
+@keyframes ia-mic-wave {
+  from { opacity: 0.8; scale: 1; }
+  to   { opacity: 0; scale: 1.8; }
+}
+.ia-demo__form.is-listening { border-color: #ef4444; }
+.ia-demo__form.is-listening .ia-demo__input::placeholder { color: #fca5a5; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ia-demo__mic.is-listening::before,
+  .ia-demo__mic.is-listening::after { animation: none; opacity: 0.6; scale: 1.3; }
+}
+
+/* Si el navegador no soporta voz, los botones quedan ocultos
+   (sin esto, display:inline-flex/grid anularía el atributo hidden) */
+.ia-demo__voice[hidden],
+.ia-demo__mic[hidden] { display: none; }
+.ia-demo__voice[hidden] + .ia-demo__reset { margin-left: auto; }

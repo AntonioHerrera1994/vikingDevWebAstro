@@ -34,6 +34,18 @@ const { state } = d;
             <strong>Tu agente</strong>
             <small>{d.business}</small>
           </span>
+          <button
+            type="button"
+            class="ia-demo__voice"
+            data-ia-voice
+            aria-pressed="false"
+            aria-label="Activar la voz del agente"
+            hidden
+          >
+            <svg class="ia-demo__voice-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+            <svg class="ia-demo__voice-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+            <span>Voz</span>
+          </button>
           <button type="button" class="ia-demo__reset" data-ia-reset>Reiniciar</button>
         </div>
 
@@ -61,6 +73,16 @@ const { state } = d;
             placeholder="Escríbele a tu agente…"
             data-ia-input
           />
+          <button
+            type="button"
+            class="ia-demo__mic"
+            data-ia-mic
+            aria-pressed="false"
+            aria-label="Hablarle al agente con tu voz"
+            hidden
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/></svg>
+          </button>
           <button type="submit" class="ia-demo__send" aria-label="Enviar instrucción">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
@@ -112,7 +134,7 @@ const { state } = d;
 
     </div>
 
-    <p class="ia-demo__note">{d.note}</p>
+    <p class="ia-demo__note">{d.note} <span data-ia-voice-note hidden>{d.voice.privacy}</span></p>
 
   </div>
 
