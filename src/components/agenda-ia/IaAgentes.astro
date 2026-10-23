@@ -1,0 +1,42 @@
+---
+import '../../styles/web/pw-beneficios.css';
+import '../../styles/web/ia-agentes.css';
+import { iaAgentes as d, type IaIcon } from '../../data/agenda-ia';
+
+const icons: Record<IaIcon, string> = {
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  chart: '<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/>',
+  users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
+  settings: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  whatsapp: '<path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/>',
+};
+---
+
+<section class="pw-benefits ia-agents section" id="agentes" aria-labelledby="ia-agents-title" data-pw-benefits>
+  <div class="container">
+
+    <header class="pw-benefits__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="ia-agents-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <ul class="pw-benefits__grid">
+      {d.items.map((b, i) => (
+        <li class:list={['pw-benefits__card glass-panel', { 'pw-benefits__card--wide': i === 0 }]} data-reveal data-spotlight>
+          <span class="pw-benefits__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[b.icon]} />
+          </span>
+          <h3 class="pw-benefits__title">{b.title}</h3>
+          <p class="pw-benefits__text">{b.text}</p>
+          <span class="ia-command ia-agents__command">{b.command}</span>
+        </li>
+      ))}
+    </ul>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/pw-beneficios.js';
+</script>

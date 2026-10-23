@@ -1,0 +1,125 @@
+---
+
+import '../../styles/web/ia-demo.css';
+import { iaDemo as d } from '../../data/agenda-ia';
+
+const fmtTime = (t: string) => {
+  const [h, m] = t.split(':').map(Number);
+  const suffix = h >= 12 ? 'p.m.' : 'a.m.';
+  return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${suffix}`;
+};
+const mxn = (n: number) => `$${n.toLocaleString('es-MX')}`;
+const tone = (s: string) =>
+  s === 'Pagada' ? 'ok' : s === 'Inasistencia' ? 'bad' : s.startsWith('Anticipo') ? 'warn' : 'neutral';
+
+const { state } = d;
+---
+
+<section class="ia-demo section" id="demo" aria-labelledby="ia-demo-title" data-ia-demo>
+  <div class="container">
+
+    <header class="ia-demo__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="ia-demo-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <div class="ia-demo__grid">
+
+      <!-- ── Chat con el agente ─────────────────────────── -->
+      <div class="ia-demo__app" data-reveal>
+        <div class="ia-demo__bar">
+          <span class="ia-demo__avatar" aria-hidden="true"></span>
+          <span class="ia-demo__who">
+            <strong>Tu agente</strong>
+            <small>{d.business}</small>
+          </span>
+          <button type="button" class="ia-demo__reset" data-ia-reset>Reiniciar</button>
+        </div>
+
+        <ol class="ia-demo__log" role="log" aria-live="polite" aria-label="Conversación con el agente" data-ia-log>
+          <li class="ia-demo__msg ia-demo__msg--agent">
+            <span class="ia-demo__exec">Agente listo</span>
+            Hola 👋 Soy el agente de {d.business}. Pídeme algo como lo harías con un asistente.
+          </li>
+        </ol>
+
+        <div class="ia-demo__chips" role="group" aria-label="Ejemplos de instrucciones">
+          {d.actions.map((a) => (
+            <button type="button" class="ia-demo__chip" data-ia-action={a.id}>{a.chip}</button>
+          ))}
+        </div>
+
+        <form class="ia-demo__form" data-ia-form>
+          <label for="ia-demo-input" class="ia-demo__sr">Escribe una instrucción para el agente</label>
+          <input
+            id="ia-demo-input"
+            class="ia-demo__input"
+            type="text"
+            autocomplete="off"
+            maxlength="140"
+            placeholder="Escríbele a tu agente…"
+            data-ia-input
+          />
+          <button type="submit" class="ia-demo__send" aria-label="Enviar instrucción">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- ── Panel del negocio ──────────────────────────── -->
+      <div class="ia-demo__panel" data-reveal>
+        <p class="ia-demo__panel-title">Vista de tu negocio</p>
+
+        <div class="ia-demo__card" data-ia-card="agenda">
+          <h3 class="ia-demo__card-title">Próximas citas</h3>
+          <ul class="ia-demo__agenda" data-ia-agenda>
+            {state.appointments.map((a) => (
+              <li class="ia-demo__appt" data-id={a.id}>
+                <span class="ia-demo__time"><small>{a.day}</small>{fmtTime(a.time)}</span>
+                <span class="ia-demo__client"><strong>{a.client}</strong>{a.service}</span>
+                <span class:list={['ia-demo__status', `is-${tone(a.status)}`]}>{a.status}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="ia-demo__card ia-demo__card--income" data-ia-card="income">
+          <h3 class="ia-demo__card-title">Ingresos de hoy</h3>
+          <p class="ia-demo__big">{mxn(state.income.total)}</p>
+          <div class="ia-demo__split" aria-hidden="true">
+            <span class="ia-demo__split-cash"></span>
+            <span class="ia-demo__split-card"></span>
+          </div>
+          <p class="ia-demo__legend">
+            <span><i class="is-cash"></i>Efectivo {mxn(state.income.cash)}</span>
+            <span><i class="is-card"></i>Tarjeta {mxn(state.income.card)}</span>
+            <span>{state.income.count} citas</span>
+          </p>
+        </div>
+
+        <div class="ia-demo__minis">
+          <div class="ia-demo__card ia-demo__card--mini" data-ia-card="clients">
+            <h3 class="ia-demo__card-title">Clientes</h3>
+            <p class="ia-demo__mid" data-ia-clients>{state.clients}</p>
+          </div>
+          <div class="ia-demo__card ia-demo__card--mini" data-ia-card="services">
+            <h3 class="ia-demo__card-title">Servicios</h3>
+            <p class="ia-demo__mid" data-ia-services>{state.services}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="ia-demo__note">{d.note}</p>
+
+  </div>
+
+  <!-- Datos del simulador para ia-demo.js -->
+  <script type="application/json" data-ia-demo-data set:html={JSON.stringify(d)} />
+</section>
+
+<script>
+  import '../../scripts/components/ia-demo.js';
+</script>

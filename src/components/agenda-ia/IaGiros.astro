@@ -1,0 +1,63 @@
+---
+
+import '../../styles/web/hl-industrias.css';
+import { iaGiros as d } from '../../data/agenda-ia';
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+---
+
+<section class="hl-ind section" id="giros" aria-labelledby="ia-giros-title" data-hl-ind>
+  <div class="container">
+
+    <header class="hl-ind__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="ia-giros-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <div class="hl-ind__tabs" role="tablist" aria-label="Tipos de negocio" data-reveal>
+      {d.tabs.map((t, i) => (
+        <button
+          type="button"
+          role="tab"
+          class="hl-ind__tab"
+          id={`ia-tab-${t.id}`}
+          aria-controls={`ia-panel-${t.id}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          tabindex={i === 0 ? 0 : -1}
+        >{t.tab}</button>
+      ))}
+    </div>
+
+    <div class="hl-ind__panels">
+      {d.tabs.map((t, i) => (
+        <div
+          class="hl-ind__panel glass-panel"
+          role="tabpanel"
+          id={`ia-panel-${t.id}`}
+          aria-labelledby={`ia-tab-${t.id}`}
+          tabindex="0"
+          hidden={i !== 0}
+        >
+          <div>
+            <h3 class="hl-ind__title">{t.title}</h3>
+            <p class="hl-ind__text">{t.text}</p>
+          </div>
+          <ul class="pw-checklist hl-ind__list">
+            {t.bullets.map((b) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/hl-industrias.js';
+</script>

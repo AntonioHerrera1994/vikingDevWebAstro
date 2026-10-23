@@ -1,0 +1,113 @@
+---
+
+import '../styles/global.css'
+import Navbar from '../components/navbar.astro';     
+import Footer from '../components/footer.astro';       
+import Faq from '../components/Faq.astro';
+
+import PwSubnav from '../components/paginas-web/PwSubnav.astro';
+import PwProceso from '../components/paginas-web/PwProceso.astro';
+
+import IaHero from '../components/agenda-ia/IaHero.astro';
+import IaDemo from '../components/agenda-ia/IaDemo.astro';
+import IaAntesDespues from '../components/agenda-ia/IaAntesDespues.astro';
+import IaAgentes from '../components/agenda-ia/IaAgentes.astro';
+import IaGiros from '../components/agenda-ia/IaGiros.astro';
+import IaPlanes from '../components/agenda-ia/IaPlanes.astro';
+
+import '../styles/web/pw-shared.css';
+import '../styles/web/ia-shared.css';
+import { iaMeta, iaSubnav, iaPlanes, iaProceso, iaFaq } from '../data/agenda-ia';
+
+// ── Schema: servicio con sus 3 planes ──
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Agenda con IA para negocios en Tijuana',
+  serviceType: 'Agenda de citas con inteligencia artificial',
+  description: iaMeta.description,
+  url: iaMeta.url,
+  brand: { '@type': 'Brand', name: 'CodiceAgents' },
+  areaServed: { '@type': 'City', name: 'Tijuana' },
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'VikingDev',
+    url: 'https://vikingdevtj.com/',
+    telephone: '+52-663-247-7816',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Planes de agenda con IA',
+    itemListElement: iaPlanes.plans.map((p) => ({
+      '@type': 'Offer',
+      name: `Plan ${p.name}`,
+      price: p.priceValue,
+      priceCurrency: 'MXN',
+      url: `${iaMeta.url}#planes`,
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: p.priceValue,
+        priceCurrency: 'MXN',
+        unitText: 'MES',
+        valueAddedTaxIncluded: true,
+      },
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://vikingdevtj.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Agenda con IA', item: iaMeta.url },
+  ],
+};
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{iaMeta.title}</title>
+    <meta name="description" content={iaMeta.description} />
+    <link rel="canonical" href={iaMeta.url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content={iaMeta.title} />
+    <meta property="og:description" content={iaMeta.description} />
+    <meta property="og:url" content={iaMeta.url} />
+    <meta property="og:image" content={iaMeta.image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={iaMeta.title} />
+    <meta name="twitter:description" content={iaMeta.description} />
+    <meta name="twitter:image" content={iaMeta.image} />
+
+    <!-- AJUSTA: favicon, fuentes, GA4 y Meta Pixel igual que en index.astro -->
+
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </head>
+
+  <body>
+    <Navbar />
+
+    <main>
+      <IaHero />
+      <PwSubnav items={iaSubnav} />
+      <IaDemo />
+      <IaAntesDespues />
+      <IaAgentes />
+      <IaGiros />
+      <IaPlanes />
+      <PwProceso label={iaProceso.label} data={iaProceso} />
+      
+      <Faq title={iaFaq.title} subtitle={iaFaq.subtitle} faqs={iaFaq.faqs} />
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,95 @@
+---
+import '../../styles/web/ia-planes.css';
+import { iaPlanes as d } from '../../data/agenda-ia';
+
+const check = '<polyline points="20 6 9 17 4 12"/>';
+---
+
+<section class="ia-plans section" id="planes" aria-labelledby="ia-plans-title" data-ia-plans>
+  <div class="container">
+
+    <header class="ia-plans__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="ia-plans-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <!-- Selector mensual / anual -->
+    <div class="ia-plans__toggle" role="group" aria-label="Periodo de pago" data-reveal>
+      <button type="button" class="ia-plans__period" data-period="mensual" aria-pressed="true">Mensual</button>
+      <button type="button" class="ia-plans__period" data-period="anual" aria-pressed="false">
+        Anual <span class="ia-plans__save">2 meses gratis</span>
+      </button>
+    </div>
+
+    <ul class="ia-plans__grid">
+      {d.plans.map((p) => (
+        <li class:list={['ia-plans__card', { 'ia-plans__card--hl': p.highlight }]} data-reveal>
+          <div class="ia-plans__top">
+            <h3 class="ia-plans__name">{p.name}</h3>
+            <span class="ia-plans__tag">{p.tag}</span>
+          </div>
+
+          <p class="ia-plans__price-row">
+            <span class="ia-plans__price" data-monthly={p.priceValue}>{p.price}</span>
+            <span class="ia-plans__per">{d.period}</span>
+          </p>
+          <p class="ia-plans__annual" data-annual-note hidden>
+            Pago anual: <strong data-annual-total={p.priceValue * 10}>${(p.priceValue * 10).toLocaleString('es-MX')}</strong> al año
+          </p>
+
+          <ul class="pw-checklist ia-plans__features">
+            {p.features.map((f) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            class:list={['btn ia-plans__cta', p.highlight ? 'btn--primary' : 'btn--outline']}
+            href={p.href}
+            target="_blank"
+            rel="noopener"
+          >{d.ctaTrial}</a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Incluido + valor de VikingDev -->
+    <div class="ia-plans__extras">
+      <div class="ia-plans__box" data-reveal>
+        <h3 class="ia-plans__box-title">Incluido en todos los planes</h3>
+        <ul class="pw-checklist ia-plans__cols">
+          {d.included.map((f) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="ia-plans__box ia-plans__box--vk" data-reveal>
+        <h3 class="ia-plans__box-title">{d.vikingdev.title}</h3>
+        <ul class="pw-checklist">
+          {d.vikingdev.items.map((f) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={check} />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="#cotizador" class="btn btn--primary ia-plans__help" data-quoter-select="Agenda con IA (CodiceAgents)">{d.ctaHelp}</a>
+      </div>
+    </div>
+
+    <p class="ia-plans__note">{d.trialNote}</p>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/ia-planes.js';
+</script>

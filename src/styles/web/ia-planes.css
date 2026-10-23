@@ -1,0 +1,169 @@
+/* ══ IA PLANES ══════════════════════════════════════════════ */
+
+.ia-plans__header {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+/* Selector mensual / anual */
+.ia-plans__toggle {
+  display: flex;
+  gap: 4px;
+  width: fit-content;
+  margin: 0 auto var(--space-2xl, 3rem);
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--pw-tint);
+  border: 1px solid var(--pw-line);
+}
+.ia-plans__period {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--pw-muted);
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+.ia-plans__period[aria-pressed='true'] { background: var(--ia-dark); color: #fff; }
+.ia-plans__period:focus-visible { outline: 2px solid var(--pw-accent); outline-offset: 2px; }
+.ia-plans__save {
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ia-ok) 18%, transparent);
+  color: #15803d;
+  font-size: 0.7rem;
+}
+.ia-plans__period[aria-pressed='true'] .ia-plans__save { color: var(--ia-ok); }
+
+/* Tarjetas */
+.ia-plans__grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.ia-plans__card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--pw-radius);
+  border: 1px solid var(--pw-line);
+  background: var(--color-surface, #fff);
+}
+
+/* Plan recomendado: oscuro con brillo, estilo CodiceAgents */
+.ia-plans__card--hl {
+  position: relative;
+  background:
+    radial-gradient(420px circle at 100% 0%, color-mix(in srgb, var(--pw-accent) 50%, transparent), transparent 60%),
+    var(--ia-dark);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 40px 80px -40px color-mix(in srgb, var(--pw-accent) 80%, transparent);
+}
+.ia-plans__card--hl .ia-plans__name,
+.ia-plans__card--hl .ia-plans__price,
+.ia-plans__card--hl .pw-checklist li { color: #fff; }
+.ia-plans__card--hl .ia-plans__per,
+.ia-plans__card--hl .ia-plans__annual { color: var(--ia-dark-text); }
+.ia-plans__card--hl .pw-checklist svg { color: var(--ia-ok); }
+.ia-plans__card--hl .ia-plans__tag { background: var(--ia-ok); color: var(--ia-dark); }
+.ia-plans__card--hl .ia-plans__features { border-color: var(--ia-dark-line); }
+
+.ia-plans__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ia-plans__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--pw-ink);
+}
+.ia-plans__tag {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--pw-tint);
+  color: var(--pw-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.ia-plans__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 1rem 0 0.25rem;
+}
+.ia-plans__price {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--pw-ink);
+}
+.ia-plans__per { font-size: 0.85rem; color: var(--pw-muted); }
+.ia-plans__annual {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--pw-muted);
+}
+
+.ia-plans__features {
+  margin: 1.25rem 0 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--pw-line);
+}
+.ia-plans__cta { margin-top: auto; width: 100%; justify-content: center; }
+.ia-plans__card--hl .btn--primary { background: #fff; color: var(--ia-dark); }
+
+/* Incluido + VikingDev */
+.ia-plans__extras { display: grid; gap: 1.25rem; }
+.ia-plans__box {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--pw-radius);
+  border: 1px solid var(--pw-line);
+  background: var(--pw-tint);
+}
+.ia-plans__box--vk {
+  background: var(--color-surface, #fff);
+  border: 1.5px dashed color-mix(in srgb, var(--pw-accent) 45%, transparent);
+}
+.ia-plans__box-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--pw-ink);
+}
+.ia-plans__help { margin-top: 1.25rem; }
+
+.ia-plans__note {
+  margin: 1.5rem auto 0;
+  max-width: 720px;
+  font-size: 0.82rem;
+  text-align: center;
+  color: var(--pw-muted);
+}
+
+@media (min-width: 720px) {
+  .ia-plans__cols { grid-template-columns: 1fr 1fr; column-gap: 1.5rem; }
+}
+
+@media (min-width: 960px) {
+  .ia-plans__grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+  .ia-plans__card--hl { transform: translateY(-12px); }
+  .ia-plans__extras { grid-template-columns: 1.3fr 1fr; }
+}

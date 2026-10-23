@@ -1,0 +1,25 @@
+/* ══ IA AGENTES (complemento del bento pw-beneficios) ═══════ */
+
+.ia-agents .pw-benefits__card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* El comando se alinea al fondo de cada tarjeta */
+.ia-agents .pw-benefits__text { margin-bottom: 1rem; }
+.ia-agents__command {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Tarjeta destacada: oscura, al estilo CodiceAgents */
+.ia-agents .pw-benefits__card--wide {
+  background:
+    radial-gradient(500px circle at 100% 0%, color-mix(in srgb, var(--pw-accent) 45%, transparent), transparent 60%),
+    var(--ia-dark);
+}
+.ia-agents .pw-benefits__card--wide .ia-agents__command {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--ia-dark-line);
+  font-size: 0.9rem;
+}

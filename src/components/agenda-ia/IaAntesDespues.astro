@@ -1,0 +1,64 @@
+---
+
+import '../../styles/web/hl-antes-despues.css';
+import { iaAntesDespues as d } from '../../data/agenda-ia';
+
+const x = '<path d="M18 6 6 18M6 6l12 12"/>';
+const check = '<polyline points="20 6 9 17 4 12"/>';
+---
+
+<section class="hl-ba section" id="problema" aria-labelledby="ia-ba-title" data-hl-ba data-state="despues">
+  <div class="container">
+
+    <header class="hl-ba__header" data-reveal>
+      <span class="section-label">{d.label}</span>
+      <h2 class="section-title" id="ia-ba-title">{d.h2}</h2>
+      <p class="section-subtitle">{d.intro}</p>
+    </header>
+
+    <div class="hl-ba__switch" role="group" aria-label="Comparar">
+      <button type="button" class="hl-ba__opt" data-ba-set="antes" aria-pressed="false">Hoy</button>
+      <button type="button" class="hl-ba__opt" data-ba-set="despues" aria-pressed="true">Con agenda con IA</button>
+      <span class="hl-ba__thumb" aria-hidden="true"></span>
+    </div>
+
+    <div class="hl-ba__grid">
+      <div class="hl-ba__panel hl-ba__panel--antes" data-ba-panel="antes" data-reveal>
+        <h3 class="hl-ba__title">Hoy</h3>
+        <ul class="hl-ba__list">
+          {d.antes.map((item) => (
+            <li>
+              <span class="hl-ba__icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" set:html={x} />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <span class="hl-ba__arrow" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+
+      <div class="hl-ba__panel hl-ba__panel--despues" data-ba-panel="despues" data-reveal>
+        <h3 class="hl-ba__title">Con tu agenda con IA</h3>
+        <ul class="hl-ba__list">
+          {d.despues.map((item) => (
+            <li>
+              <span class="hl-ba__icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" set:html={check} />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/hl-antes-despues.js';
+</script>

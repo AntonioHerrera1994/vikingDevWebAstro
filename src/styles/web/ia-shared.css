@@ -1,0 +1,54 @@
+/* ══ Tokens de la página Agenda con IA ══════════════════════
+   Mezcla VikingDev (acento, tipografías, radios) con el tono
+   oscuro y "de agente" de CodiceAgents. Se importa desde la página. */
+
+:root {
+  --ia-dark: #121212;
+  --ia-dark-2: #1b1b1f;
+  --ia-dark-line: rgba(255, 255, 255, 0.1);
+  --ia-dark-text: rgba(255, 255, 255, 0.72);
+  --ia-ok: #22c55e;
+  --ia-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Roboto Mono', Menlo, monospace;
+}
+
+/* Sección oscura reutilizable */
+.ia-dark {
+  position: relative;
+  overflow: hidden;
+  background: var(--ia-dark);
+  color: #fff;
+  isolation: isolate;
+}
+.ia-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(700px circle at 85% 0%, color-mix(in srgb, var(--pw-accent) 40%, transparent), transparent 60%),
+    radial-gradient(500px circle at 0% 100%, color-mix(in srgb, var(--ia-ok) 14%, transparent), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 100% 32px;
+}
+.ia-dark .section-label { color: var(--color-tertiary-fixed-dim, #b8adff); }
+.ia-dark .section-title { color: #fff; }
+.ia-dark .section-subtitle { color: var(--ia-dark-text); }
+
+/* Comando estilo "agente" */
+.ia-command {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  padding: 0.45rem 0.8rem;
+  border-radius: 10px;
+  background: var(--ia-dark);
+  color: #e6e6e6;
+  font-family: var(--ia-mono);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.ia-command::before {
+  content: '›';
+  color: var(--ia-ok);
+  font-weight: 700;
+}

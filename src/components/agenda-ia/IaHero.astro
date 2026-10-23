@@ -1,0 +1,69 @@
+---
+import '../../styles/web/ia-hero.css';
+import { iaHero } from '../../data/agenda-ia';
+---
+
+<section class="ia-hero ia-dark" aria-labelledby="ia-hero-title">
+  <div class="container ia-hero__inner">
+
+    <!-- ── Copy ─────────────────────────────────────────── -->
+    <div class="ia-hero__copy">
+      <nav class="ia-hero__crumbs" aria-label="Migas de pan">
+        <a href="/">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Agenda con IA</span>
+      </nav>
+
+      <span class="ia-hero__kicker">
+        <span class="ia-hero__pulse" aria-hidden="true"></span>
+        {iaHero.kicker}
+      </span>
+
+      <h1 class="ia-hero__h1" id="ia-hero-title">
+        {iaHero.h1Main}{' '}
+        <span class="ia-hero__accent">{iaHero.h1Accent}</span>
+      </h1>
+
+      <p class="ia-hero__intro">{iaHero.intro}</p>
+
+      <ul class="ia-hero__chips" aria-label="Datos clave">
+        {iaHero.chips.map((chip) => <li class="ia-hero__chip">{chip}</li>)}
+      </ul>
+
+      <div class="ia-hero__actions">
+        <a href="#demo" class="btn btn--primary">Pruébala aquí mismo</a>
+        <a href="#planes" class="btn ia-hero__ghost">Ver planes</a>
+      </div>
+    </div>
+
+    <!-- ── Visual: conversación con el agente (decorativa) ── -->
+    <div class="ia-hero__visual" aria-hidden="true" data-ia-hero-visual>
+      <div class="ia-hero__window">
+        <div class="ia-hero__bar">
+          <span class="ia-hero__dot"></span>
+          <strong>Tu agente</strong>
+          <small>en línea</small>
+        </div>
+        <ol class="ia-hero__chat">
+          {iaHero.chat.map((m) => (
+            <li class:list={['ia-hero__msg', `ia-hero__msg--${m.from}`]}>
+              {m.from === 'agent' && <span class="ia-hero__exec">✓ Ejecutado</span>}
+              {m.text}
+            </li>
+          ))}
+        </ol>
+        <div class="ia-hero__input">
+          <span>Escríbele a tu agente…</span>
+          <span class="ia-hero__send">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import '../../scripts/components/ia-hero.js';
+</script>
