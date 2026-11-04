@@ -94,7 +94,7 @@ const breadcrumbSchema = {
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://vikingdevtj.com/publicidad-google-meta/">
+    <meta name="twitter:url" content="https://vikingdevtj.com/publicidad-google-meta-tijuana/">
     <meta name="twitter:title" content="Agencia de Publicidad Digital en Tijuana | Google y Meta Ads">
     <meta name="twitter:description" content="Agencia de Google Ads y Meta Ads en Tijuana. Creamos y optimizamos tus campañas en Google, Facebook e Instagram. Gestión desde $1,500 MXN + IVA al mes.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/d-web.webp">
@@ -157,23 +157,11 @@ const breadcrumbSchema = {
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-        <!-- ✅ Schema Markup: Service + BreadcrumbList -->
+        <!-- schema Markup: Service + BreadcrumbList -->
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-    <!-- ✅ Schema Markup: FAQPage (opcional) -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: adFaq.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.q, // o faq.question, dependiendo de tu data
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.a, // o faq.answer
-        },
-      })),
-    })} />
+
 </head>
 
   <body>

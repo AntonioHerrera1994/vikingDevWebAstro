@@ -1,62 +1,52 @@
 ---
 import '../styles/global.css'
 
-import Navbar from '../components/navbar.astro';       // AJUSTA si se importa distinto
-import Footer from '../components/footer.astro';       // AJUSTA (el Footer.astro nuevo)
-import Cotizador from '../components/contacto.astro';  // AJUSTA: el componente del cotizador
+import Navbar from '../components/navbar.astro';       // AJUSTA igual que en paginas-web-tijuana.astro
+import Footer from '../components/footer.astro';       // AJUSTA
+import Cotizador from '../components/contacto.astro';  // AJUSTA
 import Faq from '../components/Faq.astro';
 
-import PwHero from '../components/paginas-web/PwHero.astro';
 import PwSubnav from '../components/paginas-web/PwSubnav.astro';
-import PwBeneficios from '../components/paginas-web/PwBeneficios.astro';
-import PwPlanes from '../components/paginas-web/PwPlanes.astro';
-import PwSeo from '../components/paginas-web/PwSeo.astro';
 import PwProceso from '../components/paginas-web/PwProceso.astro';
-import PwPortafolio from '../components/paginas-web/PwPortafolio.astro';
 
-import '../styles/web/pw-shared.css'; // AJUSTA: estilos compartidos de la sección de páginas web
-import { pwMeta, pwPlanes, pwSeo, pwFaq } from '../data/paginas-web';
+import HlHero from '../components/gohighlevel/HlHero.astro';
+import HlAntesDespues from '../components/gohighlevel/HlAntesDespues.astro';
+import HlIncluye from '../components/gohighlevel/HlIncluye.astro';
+import HlWhatsapp from '../components/gohighlevel/HlWhatsapp.astro';
+import HlAutomatizacion from '../components/gohighlevel/HlAutomatizacion.astro';
+import HlIndustrias from '../components/gohighlevel/HlIndustrias.astro';
+import HlPrecio from '../components/gohighlevel/HlPrecio.astro';
 
-// ── Schema: servicio con sus ofertas + migas de pan ──
+import '../styles/web/pw-shared.css';
+import { hlMeta, hlSubnav, hlPrecio, hlProceso, hlFaq } from '../data/crm-gohighlevel';
+
+// ── Schema: servicio + migas de pan ──
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Diseño de páginas web en Tijuana',
-  serviceType: 'Diseño y desarrollo de páginas web',
-  description: pwMeta.description,
-  url: pwMeta.url,
-  areaServed: { '@type': 'City', name: 'Tijuana' },
+  name: 'Implementación y administración de GoHighLevel en español',
+  serviceType: 'CRM y automatización de ventas',
+  description: hlMeta.description,
+  url: hlMeta.url,
+  areaServed: { '@type': 'Country', name: 'México' },
   provider: {
     '@type': 'ProfessionalService',
     name: 'VikingDev',
     url: 'https://vikingdevtj.com/',
     telephone: '+52-663-247-7816',
   },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Paquetes de páginas web',
-    itemListElement: [
-      ...pwPlanes.map((p) => ({
-        '@type': 'Offer',
-        name: p.h2,
-        price: p.priceValue,
-        priceCurrency: 'MXN',
-        url: `${pwMeta.url}#${p.id}`,
-      })),
-      {
-        '@type': 'Offer',
-        name: 'Consultoría SEO y mantenimiento web',
-        price: pwSeo.priceValue,
-        priceCurrency: 'MXN',
-        url: `${pwMeta.url}#seo`,
-        priceSpecification: {
-          '@type': 'UnitPriceSpecification',
-          price: pwSeo.priceValue,
-          priceCurrency: 'MXN',
-          unitText: 'MES',
-        },
-      },
-    ],
+  offers: {
+    '@type': 'Offer',
+    name: 'CRM GoHighLevel administrado, suscripción incluida',
+    price: hlPrecio.priceValue,
+    priceCurrency: 'MXN',
+    url: `${hlMeta.url}#precio`,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: hlPrecio.priceValue,
+      priceCurrency: 'MXN',
+      unitText: 'MES',
+    },
   },
 };
 
@@ -65,7 +55,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://vikingdevtj.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Páginas web en Tijuana', item: pwMeta.url },
+    { '@type': 'ListItem', position: 2, name: 'CRM GoHighLevel', item: hlMeta.url },
   ],
 };
 ---
@@ -77,16 +67,16 @@ const breadcrumbSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     
-    <!-- SEO Principal (ESPECÍFICO PARA PÁGINAS WEB) -->
-    <title>Páginas Web en Tijuana desde $6,000 | VikingDev</title>
-    <meta name="description" content="Diseño de páginas web en Tijuana: landing pages, webs completas y tiendas en línea con SEO y hosting incluido. Entrega en 5 a 10 días. Cotiza gratis.">
-    <link rel="canonical" href="https://vikingdevtj.com/paginas-web/" />
+    <!-- SEO Principal (ESPECÍFICO PARA HIGHLEVEL) -->
+    <title>GoHighLevel en Español: CRM y Automatización | VikingDev</title>
+    <meta name="description" content="Implementamos GoHighLevel en español: CRM para WhatsApp, automatización de seguimiento, agenda y reseñas en Google. Suscripción incluida. Desde $6,000 MXN + IVA al mes.">
+    <link rel="canonical" href="https://vikingdevtj.com/crm-gohighlevel/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vikingdevtj.com/paginas-web/">
-    <meta property="og:title" content="Páginas Web en Tijuana desde $6,000 | VikingDev">
-    <meta property="og:description" content="Diseño de páginas web en Tijuana: landing pages, webs completas y tiendas en línea con SEO y hosting incluido. Entrega en 5 a 10 días. Cotiza gratis.">
+    <meta property="og:url" content="https://vikingdevtj.com/crm-gohighlevel/">
+    <meta property="og:title" content="GoHighLevel en Español: CRM y Automatización | VikingDev">
+    <meta property="og:description" content="Implementamos GoHighLevel en español: CRM para WhatsApp, automatización de seguimiento, agenda y reseñas en Google. Suscripción incluida. Desde $6,000 MXN + IVA al mes.">
     <meta property="og:image" content="https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/d-web.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -94,9 +84,9 @@ const breadcrumbSchema = {
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://vikingdevtj.com/paginas-web/">
-    <meta name="twitter:title" content="Páginas Web en Tijuana desde $6,000 | VikingDev">
-    <meta name="twitter:description" content="Diseño de páginas web en Tijuana: landing pages, webs completas y tiendas en línea con SEO y hosting incluido. Entrega en 5 a 10 días. Cotiza gratis.">
+    <meta name="twitter:url" content="https://vikingdevtj.com/crm-gohighlevel-tijuana/">
+    <meta name="twitter:title" content="GoHighLevel en Español: CRM y Automatización | VikingDev">
+    <meta name="twitter:description" content="Implementamos GoHighLevel en español: CRM para WhatsApp, automatización de seguimiento, agenda y reseñas en Google. Suscripción incluida. Desde $6,000 MXN + IVA al mes.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/d-web.webp">
     
     <!-- Icons y Theme -->
@@ -157,38 +147,28 @@ const breadcrumbSchema = {
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-        <!-- ✅ Schema Markup: Service + BreadcrumbList -->
+    <!-- ✅ Schema Markup: Service + BreadcrumbList -->
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-    <!-- ✅ Schema Markup: FAQPage (opcional) -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: pwFaq.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.a,
-        },
-      })),
-    })} />
+   
 </head>
 
   <body>
     <Navbar />
 
     <main>
-      <PwHero />
-      <PwSubnav />
-      <PwBeneficios />
-      <PwPlanes />
-      <PwSeo />
-      <PwProceso />
-      <PwPortafolio />
+      <HlHero />
+      <PwSubnav items={hlSubnav} />
+      <HlAntesDespues />
+      <HlIncluye />
+      <HlWhatsapp />
+      <HlAutomatizacion />
+      <HlIndustrias />
+      <HlPrecio />
+      <PwProceso label={hlProceso.label} data={hlProceso} />
       <Cotizador />
-      <Faq title={pwFaq.title} subtitle={pwFaq.subtitle} faqs={pwFaq.faqs} />
+      <Faq title={hlFaq.title} subtitle={hlFaq.subtitle} faqs={hlFaq.faqs} />
     </main>
 
     <Footer />
