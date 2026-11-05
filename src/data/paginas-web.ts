@@ -1,5 +1,4 @@
-// src/data/paginas-web.ts
-// Contenido de /paginas-web-tijuana/. Edita textos y precios aquí, no en los componentes.
+
 
 export const pwMeta = {
   title: 'Páginas Web en Tijuana desde $6,000 | VikingDev',
