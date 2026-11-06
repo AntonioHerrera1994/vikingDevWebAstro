@@ -195,8 +195,8 @@ export const hlPrecio = {
   label: 'Precio',
   h2: 'GoHighLevel con precio fijo en pesos',
   intro: 'Un solo pago mensual, sin cargos sorpresa en dólares.',
-  price: '$6,000',
-  priceValue: 6000,
+  price: '$2,500',
+  priceValue: 2500,
   period: 'MXN + IVA al mes',
   note: 'Este precio ya incluye la suscripción mensual de la plataforma HighLevel, sin costos aparte.',
   features: [
@@ -266,7 +266,7 @@ export const hlFaq = {
     },
     {
       q: '¿Cuánto cuesta GoHighLevel?',
-      a: 'Con VikingDev pagas $6,000 MXN + IVA al mes, con la suscripción de la plataforma incluida, además de la configuración, las automatizaciones, la capacitación y el soporte. Si contratas por tu cuenta, la suscripción se paga directo a HighLevel en dólares y la configuración corre por tu cuenta. Revisa el detalle en <a href="#precio">precio</a>.',
+      a: 'Con VikingDev pagas $2,500 MXN + IVA al mes, con la suscripción de la plataforma incluida, además de la configuración, las automatizaciones, la capacitación y el soporte. Si contratas por tu cuenta, la suscripción se paga directo a HighLevel en dólares y la configuración corre por tu cuenta. Revisa el detalle en <a href="#precio">precio</a>.',
     },
     {
       q: '¿GoHighLevel está en español?',
