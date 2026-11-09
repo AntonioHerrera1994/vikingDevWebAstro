@@ -33,6 +33,30 @@ export const vikingProjects: Project[] = [
     url: 'https://esparragosdelosplanes.com/',
   },
   */
+
+    {
+    id: 'asm',
+    image: `/assets/proyectos/aslo.webp`,
+    imageAlt: 'ASLO Auctions - Sitio web de subastas en línea',
+    category: 'Desarrollo Web',
+    filterCategory: 'industrial',
+    title: 'ASLO Auctions',
+    desc: 'Subastas en linea con tecnolgía de vanguardia.',
+    url: 'https://www.asloauctions.com/',
+    stack: 'React, HTML, Tailwind CSS, JS',
+  },
+
+    {
+    id: 'asm',
+    image: `/assets/proyectos/paqrojas.webp`,
+    imageAlt: 'Sitio web de Paquetería Rojas, empresa de transporte y logística',
+    category: 'Desarrollo Web',
+    filterCategory: 'transporte',
+    title: 'Paquetería Rojas',
+    desc: 'Desarrollo de un sitio web para empresa Paquetería Rojas.',
+    url: 'https://paqueteriarojas.com/',
+    stack: 'Wordpress',
+  },
   {
     id: 'asm',
     image: `${IMG}/asm.webp`,

@@ -79,26 +79,32 @@
     mediaQuery.addListener(onResize);
   }
 
-  /* ─── 6. Dropdown "Servicios" (escritorio) ──────────────── */
-  const dd = nav.querySelector('[data-nav-dd]');
+  /* ─── 6. Dropdowns de escritorio (Servicios, Productos…) ── */
+  // Cada <li data-nav-dd> se conecta solo. Para agregar otro dropdown,
+  // basta con copiar el bloque en el HTML: no hay que tocar este archivo.
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const dropdowns = [];
 
-  if (dd) {
+  function setupDropdown(dd) {
     const trigger = dd.querySelector('[data-nav-dd-trigger]');
     const panel   = dd.querySelector('[data-nav-dd-panel]');
-    const items   = Array.from(panel.querySelectorAll('a'));
-    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!trigger || !panel) return;
+
+    const items = Array.from(panel.querySelectorAll('a'));
     let closeTimer = null;
     let openedAt = 0;
 
-    function openDd() {
+    function open() {
       clearTimeout(closeTimer);
       if (dd.classList.contains('is-open')) return;
+      // Solo un dropdown abierto a la vez
+      dropdowns.forEach(function (other) { if (other !== api) other.close(false); });
       dd.classList.add('is-open');
       trigger.setAttribute('aria-expanded', 'true');
       openedAt = Date.now();
     }
 
-    function closeDd(returnFocus) {
+    function close(returnFocus) {
       clearTimeout(closeTimer);
       if (!dd.classList.contains('is-open')) return;
       dd.classList.remove('is-open');
@@ -106,29 +112,32 @@
       if (returnFocus) trigger.focus();
     }
 
+    const api = { dd: dd, open: open, close: close };
+    dropdowns.push(api);
+
     // Clic / toque: abre o cierra. Si se acaba de abrir por hover, el clic no lo cierra.
     trigger.addEventListener('click', function () {
       if (dd.classList.contains('is-open')) {
-        if (Date.now() - openedAt > 400) closeDd(false);
+        if (Date.now() - openedAt > 400) close(false);
       } else {
-        openDd();
+        open();
       }
     });
 
     // Hover en escritorio, con pequeño retraso al salir
     if (canHover) {
-      dd.addEventListener('mouseenter', openDd);
+      dd.addEventListener('mouseenter', open);
       dd.addEventListener('mouseleave', function () {
-        closeTimer = setTimeout(function () { closeDd(false); }, 180);
+        closeTimer = setTimeout(function () { close(false); }, 180);
       });
     }
 
-    // Teclado: flecha abajo entra al panel, flechas recorren, Escape cierra
+    // Teclado: flecha abajo entra al panel, flechas recorren
     trigger.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
-        openDd();
-        items[0] && items[0].focus();
+        open();
+        if (items[0]) items[0].focus();
       }
     });
 
@@ -144,37 +153,42 @@
       }
     });
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && dd.classList.contains('is-open')) {
-        closeDd(dd.contains(document.activeElement));
-      }
-    });
-
-    // Cierra al hacer clic fuera o al sacar el foco del dropdown con Tab
-    document.addEventListener('click', function (e) {
-      if (!dd.contains(e.target)) closeDd(false);
-    });
-
+    // Cierra al sacar el foco del dropdown con Tab
     dd.addEventListener('focusout', function (e) {
-      if (!dd.contains(e.relatedTarget)) closeDd(false);
+      if (!dd.contains(e.relatedTarget)) close(false);
     });
 
-    // Cierra al elegir una opción (útil si el destino es la misma página con #ancla)
+    // Cierra al elegir una opción
     items.forEach(function (link) {
-      link.addEventListener('click', function () { closeDd(false); });
+      link.addEventListener('click', function () { close(false); });
     });
   }
 
-  /* ─── 7. Acordeón "Servicios" (menú móvil) ──────────────── */
-  const acc = mobileMenu.querySelector('[data-nav-acc]');
+  nav.querySelectorAll('[data-nav-dd]').forEach(setupDropdown);
 
-  if (acc) {
+  // Escape y clic fuera: un solo listener para todos los dropdowns
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    dropdowns.forEach(function (d) {
+      if (d.dd.classList.contains('is-open')) d.close(d.dd.contains(document.activeElement));
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    dropdowns.forEach(function (d) {
+      if (!d.dd.contains(e.target)) d.close(false);
+    });
+  });
+
+  /* ─── 7. Acordeones del menú móvil (Servicios, Productos…) ─ */
+  mobileMenu.querySelectorAll('[data-nav-acc]').forEach(function (acc) {
     const accTrigger = acc.querySelector('[data-nav-acc-trigger]');
+    if (!accTrigger) return;
 
     accTrigger.addEventListener('click', function () {
       const open = !acc.classList.contains('is-open');
       acc.classList.toggle('is-open', open);
       accTrigger.setAttribute('aria-expanded', String(open));
     });
-  }
+  });
 })();

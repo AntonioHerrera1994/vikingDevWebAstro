@@ -525,3 +525,26 @@ width: 110px;
     transition: none;
   }
 }
+
+/* Dropdown alineado a la derecha (Productos) */
+.nav__dd--right .nav__dd-panel {
+  left: auto;
+  right: 0;
+  translate: 0 -8px;
+}
+.nav__dd--right.is-open .nav__dd-panel {
+  translate: 0 0;
+}
+
+.nav__dd-panel--sm {
+  width: min(360px, 92vw);
+}
+
+.nav__dd-ext {
+  color: var(--color-secondary);
+  opacity: .6;
+  align-self: center;
+}
+.nav__dd-item:hover .nav__dd-ext {
+  opacity: 1;
+}

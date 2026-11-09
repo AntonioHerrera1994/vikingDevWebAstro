@@ -15,16 +15,19 @@ const filterOptions = [
   { value: 'otro', label: 'Otro' },
 ];
 
-/* Combina ambos portafolios para contar por categoría de forma global */
-const allProjects = [...vikingProjects, ...snitchProjects];
+/* Cuenta proyectos por categoría dentro de una lista */
+function countByCategory(list: typeof vikingProjects) {
+  return filterOptions.reduce<Record<string, number>>((acc, opt) => {
+    acc[opt.value] =
+      opt.value === 'todos'
+        ? list.length
+        : list.filter((p) => p.filterCategory === opt.value).length;
+    return acc;
+  }, {});
+}
 
-const categoryCounts = filterOptions.reduce<Record<string, number>>((acc, opt) => {
-  acc[opt.value] =
-    opt.value === 'todos'
-      ? allProjects.length
-      : allProjects.filter((p) => p.filterCategory === opt.value).length;
-  return acc;
-}, {});
+const vikingCounts = countByCategory(vikingProjects);
+const snitchCounts = countByCategory(snitchProjects);
 ---
 
 <section class="portfolio section" id="proyectos" aria-labelledby="portfolio-title">
@@ -44,7 +47,7 @@ const categoryCounts = filterOptions.reduce<Record<string, number>>((acc, opt) =
             <label class="portfolio__filter-label" for="portfolio-filter-vikingdev">Filtrar por categoría</label>
             <select class="portfolio__filter-select" id="portfolio-filter-vikingdev" data-filter-select>
              {filterOptions.map((opt) => (
-    <option value={opt.value}>{opt.label} ({categoryCounts[opt.value]})</option>
+ <option value={opt.value}>{opt.label} ({vikingCounts[opt.value]})</option>
   ))}
             </select>
           </div>
@@ -123,7 +126,7 @@ const categoryCounts = filterOptions.reduce<Record<string, number>>((acc, opt) =
             <label class="portfolio__filter-label" for="portfolio-filter-snitch">Filtrar por categoría</label>
             <select class="portfolio__filter-select" id="portfolio-filter-snitch" data-filter-select>
              {filterOptions.map((opt) => (
-    <option value={opt.value}>{opt.label} ({categoryCounts[opt.value]})</option>
+    <option value={opt.value}>{opt.label} ({snitchCounts[opt.value]})</option>
   ))}
             </select>
           </div>

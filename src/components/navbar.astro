@@ -25,20 +25,35 @@ const services = [
     price: '$2,500/mes',
     icon: '<circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/><path d="M19 4.5 21 6.5M5 4.5 3 6.5"/>',
   },
-
-     {
-     href: '/agenda-con-ia/',
-     title: 'Agenda con IA',
-     desc: 'Agenda, cobros y finanzas hablando con un agente',
-     price: 'Desde $899/mes',
-     icon: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/>',
-   },
+  {
+    href: '/agenda-con-ia/',
+    title: 'Agenda con IA',
+    desc: 'Agenda, cobros y finanzas hablando con un agente',
+    price: 'Desde $899/mes',
+    icon: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/>',
+  },
 ];
 
+// Productos propios (sitios externos, se abren en otra pestaña)
+const productos = [
+  {
+    href: 'https://codiceagents.com/',
+    title: 'CodiceAgents',
+    desc: 'Agenda, cobros y finanzas hablando con un agente',
+    icon: '<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 3v4M17 5h4"/>',
+  },
+  {
+    href: 'https://asloauctions.com/',
+    title: 'ASLO Auctions',
+    desc: 'Subastas en línea con tecnología de vanguardia',
+    icon: '<path d="m14 13-7.5 7.5a2.1 2.1 0 0 1-3-3L11 10"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/>',
+  },
+];
+
+const externalIcon = '<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>';
 
 const path = Astro.url.pathname.replace(/\/?$/, '/');
 const onService = services.some((s) => s.href === path);
-
 
 const pagesWithQuoter = ['/', ...services.map((s) => s.href)];
 const quoterHref = pagesWithQuoter.includes(path) ? '#cotizador' : '/#cotizador';
@@ -111,8 +126,44 @@ const quoterHref = pagesWithQuoter.includes(path) ? '#cotizador' : '/#cotizador'
       <li><a href={quoterHref} class="nav__link">Cotizador</a></li>
       <li><a href="/#paquetes" class="nav__link">Paquetes</a></li>
       <li><a href="/blog" class="nav__link">Blog</a></li>
-      <li><a href="https://codiceagents.com/" class="nav__link">CodiceAgents</a></li>
-      <li><a href="https://amigo-pro.com/" class="nav__link">Amigo Pro</a></li>
+
+      <!-- Productos (dropdown) — alineado a la derecha para no salirse de la pantalla -->
+      <li class="nav__dd nav__dd--right" data-nav-dd>
+        <button
+          type="button"
+          class="nav__link nav__dd-trigger"
+          aria-expanded="false"
+          aria-controls="nav-dd-productos"
+          data-nav-dd-trigger
+        >
+          Productos
+          <svg class="nav__dd-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+
+        <div class="nav__dd-panel nav__dd-panel--sm" id="nav-dd-productos" data-nav-dd-panel>
+          <ul class="nav__dd-list" role="list">
+            {productos.map((p) => (
+              <li>
+                <a href={p.href} class="nav__dd-item" target="_blank" rel="noopener">
+                  <span class="nav__dd-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={p.icon} />
+                  </span>
+                  <span class="nav__dd-text">
+                    <span class="nav__dd-title">{p.title}</span>
+                    <span class="nav__dd-desc">{p.desc}</span>
+                  </span>
+                  <span class="nav__dd-ext" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" set:html={externalIcon} />
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+
     </ul>
 
     <!-- CTA desktop -->
@@ -185,8 +236,39 @@ const quoterHref = pagesWithQuoter.includes(path) ? '#cotizador' : '/#cotizador'
       <li><a href={quoterHref} class="nav__mobile-link">Cotizador</a></li>
       <li><a href="/#paquetes" class="nav__mobile-link">Paquetes</a></li>
       <li><a href="/blog" class="nav__mobile-link">Blog</a></li>
-      <li><a href="https://codiceagents.com/" class="nav__mobile-link">CodiceAgents</a></li>
-      <li><a href="https://amigo-pro.com/" class="nav__mobile-link">Amigo Pro</a></li>
+
+      <!-- Productos (acordeón) -->
+      <li class="nav__mobile-acc" data-nav-acc>
+        <button
+          type="button"
+          class="nav__mobile-link nav__mobile-acc-trigger"
+          aria-expanded="false"
+          aria-controls="nav-acc-productos"
+          data-nav-acc-trigger
+        >
+          Productos
+          <svg class="nav__dd-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </button>
+        <div class="nav__mobile-acc-panel" id="nav-acc-productos" data-nav-acc-panel>
+          <ul class="nav__mobile-sub" role="list">
+            {productos.map((p) => (
+              <li>
+                <a href={p.href} class="nav__mobile-sublink" target="_blank" rel="noopener">
+                  <span class="nav__dd-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={p.icon} />
+                  </span>
+                  <span class="nav__dd-text">
+                    <span class="nav__dd-title">{p.title}</span>
+                    <span class="nav__dd-desc">{p.desc}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
     </ul>
     <a href={quoterHref} class="btn btn--primary nav__mobile-cta">
       Cotiza Tu Proyecto Gratis →
@@ -194,6 +276,6 @@ const quoterHref = pagesWithQuoter.includes(path) ? '#cotizador' : '/#cotizador'
   </div>
 </nav>
 
-	<script>
-			import "../scripts/menu.js"
-		</script>
+<script>
+  import "../scripts/menu.js"
+</script>
