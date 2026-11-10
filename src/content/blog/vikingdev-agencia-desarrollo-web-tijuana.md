@@ -3,7 +3,7 @@ title: "Conoce VikingDev: páginas web, Ads y HighLevel en Tijuana"
 excerpt: "Quiénes somos, cómo trabajamos y por qué combinamos páginas web, campañas en Google y Meta Ads y automatización con GoHighLevel en un solo equipo en Tijuana."
 category: "Sobre Nosotros"
 date: 2026-08-12
-coverImage: "https://raw.githubusercontent.com/AntonioHerrera1994/vikingDevWebAstro/main/src/assets/blog-vikingfev.webp"
+coverImage: "/../assets/vikingdev-agencia-desarrollo-web-tijuana.webp"
 coverImageAlt: "Equipo de VikingDev, agencia de páginas web, Ads y GoHighLevel en Tijuana"
 readTime: "5 min de lectura"
 ---
